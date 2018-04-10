@@ -19,5 +19,5 @@ For more details - [Refer to this paper.](https://paper.dropbox.com/doc/JeevanRa
 - Utkarsh Gupta
 
 ## Working Repo/Site
-- Repo : https://github.com/utkarsh2102/GoogleUdacity_JeevanRakht/
+- Repo : https://github.com/UdacityFrontEndScholarship/jeevan-rakht/
 - Site : https://utkarsh2102.github.io/GoogleUdacity_JeevanRakht/
