@@ -1,0 +1,23 @@
+"Abstract:
+
+A Virtual Blood Bank kind of web app , that provides a mechanism for people in need to directly talk to willing donors, and also find out blood availability in nearby blood banks.
+
+Details:
+
+On this platform people willing to donate blood can sign up with details of their blood groups, location. Also there ll be accounts of blood banks with details like number of packages of blood available and blood group, location of blood bank to filter out nearest blood banks.
+
+So if someone is in an emergency, he can use this platform to find out nearby blood banks and whether these can help him or not. If blood banks can't help him then he can directly contact willing nearby donors . Also there ll be mechanism to publicly post an advertisement for emergency if some individual donors don't respond. This ad would feature as a notification in users account and draw their attention towards the needy person s predicament.
+
+Possible Technology stack:
+
+Angular 5 to make it a PWA which would work well even in slow network areas. Node js for back end scripting. Mongo dB as a cloud database that could handle large user base. Third party APIs for with and other stuff. 
+
+Miscellaneous:
+
+This app could be applied in real world and would help better lives of people.
+
+This would be more helpful in areas where there's not much medical facilities available. My university is on the outskirts of the city, and people in the nearby region flock around my University's hospital as there isn't much development in that area. And many a times I ve heard them discussing regarding blood related problems when there's not enough blood available in hospital. In this scenario having a mechanism to directly communicate with willing donors would save the day.
+
+
+P.S This is my second entry. Please consider this entry as I believe this is far more better than my previous entry. Also it has a genuine cause. Thanks!
+"
