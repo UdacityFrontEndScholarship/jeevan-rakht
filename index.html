@@ -68,6 +68,66 @@
 
         <!-- Main JS file -->
         <script type="text/javascript" src="assets/js/main.js"></script>
+        <!-- Home page modal Log-In  -->
+        <!-- Log in button -->
+        <div class="row">
+          <div class="col">
+            <button type="button" class="btn btn-primary" data-target="#home-modal" data-toggle="modal">Log In</button>
+          </div>
+        </div>
+        <!-- code for modal -->
+
+        <div class="modal"  id="home-modal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="">
+                <h2 class="modal-title"></h2>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+              </div>
+                <div class="modal-body">
+                  <div class="container">
+                    <form action="" >
+                    <div class="form-group row">
+                      <label for="username">User Name</label>
+                      <input type="text" class="form-control" placeholder="User Name">
+                    </div>
+                    <div class="form-group row">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="form-check row">
+                      <input type="checkbox" class="form-check-input" placeholder="User Name">
+                      <label for="username" class="form-check-label" class="col offset-3">Don't Remember Me</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                  </form>
+                  <div style="text-align: center;">
+                    <h5 >or Sign In with a social network</h5>
+                  </div>                  
+                  <div class="row">
+                    <div class="col-4">
+                      <button type="button" class="btn btn-primary "><i class="fab fa-facebook-square"></i></button>
+                    </div>
+                    <div class="col-4">
+                        <button type="button" class="btn btn-primary"><i class="fab fa-google-plus"></i></button>
+                    </div>
+                    <div class="col-4">
+                        <button type="button" class="btn btn-primary"><i class="fab fa-twitter"></i></button>
+                    </div>
+                  </div>
+                  <div style="text-align: center;margin-top: 20px">Cant't Sign In?</div>
+                  <div style="text-align: center;"><a href="#" >Registration</a></div>
+                    
+                  </div>
+                  
+                  <div class="modal-footer"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
 
 
 
