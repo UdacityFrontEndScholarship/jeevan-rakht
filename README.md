@@ -58,7 +58,7 @@ Below command will run gulpfile.js and start the static website(Frontend)
 OR 
 ```
 Below command will start as full web application(Backend+Frontend)
-
+>>> npm install -g nodemon
 >>> npm start
 ```
 
