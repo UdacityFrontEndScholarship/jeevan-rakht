@@ -17,6 +17,12 @@ For more details - [Refer to this paper.](https://paper.dropbox.com/doc/JeevanRa
 
 ## Contributors
 - Utkarsh Gupta
+- Imran Khan
+- Vidit Kothari
+- Gaurav Singh
+- Shashank Kumar
+- Soumya Bahera
+- Sujan Patel
 
 ## Working Repo/Site
 - Repo : https://github.com/UdacityFrontEndScholarship/jeevan-rakht/
