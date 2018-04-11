@@ -1,0 +1,87 @@
+body {
+    font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif;
+     }
+  
+  #about{
+      text-align: center;
+    }
+    
+  #contact {
+      text-align: center;
+    min-height: 10vh; }
+  
+  #about {
+    font-family: "Baloo", "Segoe UI", Helvetica, Arial, sans-serif; }
+  
+  .contrast {
+    color: #000; }
+  
+  .firm {
+    color: #f4b408; }
+  #logo{
+      color: red;
+  }
+  #main{
+      text-align: center;
+      color: white;
+  }
+  .navbar {
+    background: rgba(255, 45, 0,0.4) !important;
+     }
+  
+  
+  .navbar .nav-link {
+    font-weight: bold;
+    text-transform: uppercase; }
+  
+  .feature {
+    color: black;
+    font-size: 0.8rem; }
+  
+  .footer a {
+    padding: 0.75rem; }
+  
+  img {
+    transition-property: all;
+    transition-duration: 1.5s; }
+  
+  img:hover {
+    transform: scale(1.05);
+    cursor: pointer; }
+  
+  .card {
+    transition-property: all;
+    transition-duration: 1s;
+    background-color:tomato;
+    margin: 10px;
+    border: outset thin;
+    border-radius: 10px;
+    z-index: 999;
+    box-shadow: 0 0 20px 2px rgba(255, 205, 205, 0.65); }
+    @media screen and (max-width: 34em) {
+      .card {
+        margin-top: 10px; } }
+  
+  .card:hover {
+    transform: scale(1.05); }
+  
+  .card-img-top {
+    height: 300px;
+    max-height: 50%;
+    max-width: 95%;
+    border-radius: 10px;
+    margin: 0 auto; }
+  
+  .navbar a {
+    transition-property: all;
+    transition-duration: 0.5s; }
+  
+  .navbar a:hover {
+    transform: scale(1.08); }
+  
+  .social .fa {
+    transition-property: all;
+    transition-duration: 0.2s; }
+  
+  .social .fa:hover {
+    transform: scale(1.5); }
