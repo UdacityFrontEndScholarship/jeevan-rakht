@@ -27,6 +27,7 @@ This project consists of two part like all web application.
 
 ### Below is used to generate Optimized Image 
 * Gruntfile.js
+<br />[Getting started with Grunt](https://gruntjs.com/getting-started)
 
 ## How to launch the app locally?
 * Step1 -- Fork the project repo and clone it in your local directory
@@ -35,8 +36,8 @@ Note : You can directly update the frontend components inside public\ directory
 but we have used gulp to automate the process. You need not to refresh the page after each change 
 or go to codepen to check your changes you made in scss or html or js files. Just run gulp and have fun.
 ```
-* Step2 -- Download and install Node (npm comes along with node)
-[Node](https://nodejs.org/en/)
+* Step2 -- Download and install Node(latest stable version) (npm comes along with node)<br />
+[Node](https://nodejs.org/en/) -- (e.g v 8.11 )
 ```
 verify with below command
 >>>node -v
@@ -51,9 +52,10 @@ verify with below command
 * Step4 -- Launch the application using below command:
 ```
 Below command will run gulpfile.js and start the static website(Frontend)
-
+>>> npm install -g gulp 
 >>> gulp
 ```
+<br />[What is gulp?](https://gulpjs.com/)
 
 OR 
 ```
@@ -61,6 +63,7 @@ Below command will start as full web application(Backend+Frontend)
 >>> npm install -g nodemon
 >>> npm start
 ```
+<br />[What is npm?](https://www.npmjs.com/) 
 
 * Step5 -- No more steps
 ```
