@@ -24,7 +24,7 @@ This project consists of two part like all web application.
 ### Frontend Part
 * \public   -- html files
 * \public\assets -- This will have scss, css, js, images
-* gulpfile.js -- This is a task runner to launch app and motitor for file(scss,css,js) changes and reloads the browser.
+* gulpfile.js -- This is a task runner to launch app and monitor for file(scss,css,js) changes and reloads the browser.
 
 ### Common to both Frontend and Backend
 * package.json
