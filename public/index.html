@@ -32,41 +32,75 @@
     </head>
 
     <body m-md-3>
-        <!-- Main content goes here -->      
-        <nav class="navbar navbar-expand-md navbar-dark sticky-top">
-          <div class="container">
-            <a href="#header" class="navbar-brand text-uppercase " id="logo">
-              <i class="fa fa-tint fa-2x"></i>
-            </a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>            
-            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-              <ul class="navbar-nav text-right mr-3">
-                <li class="nav-item px-md-1">
-                  <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item px-md-1">
-                    <a class="nav-link" href="#">About</a>
-                  </li>
-                <li class="nav-item px-md-1">
-                  <a class="nav-link" href="login.html">Login</a>
-                </li>
-                <li class="nav-item px-md-1">
-                  <a class="nav-link" href="signup.html">Signup</a>
-                </li>
-                <li class="nav-item px-md-1">
-                    <a class="nav-link" href="profile.html">Profile</a>
-                </li>                    
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <section id="header" class="jumbotron px-0 py-3 p-sm-2 m-0 rounded-0 text-left">
-            <div class="container-fluid">
-            </div>
-            <div id="about" class="container">
-            </div>
+        <!-- Main content goes here --> 
+        <section>
+       <header class="site-header">
+           <div class="container">
+               <div class="row"> 
+                   <div class="mobilemenu">
+                       <a href="#" class="menu-toggle-btn">
+                           <span id="toggle" class="">
+                           </span> 
+                       </a> 
+                   </div> 
+                   <div class="header-left"> 
+                       <div class="logo"> 
+                           <a href="home.html">
+                               <img src="assets/images/favicon.png" alt="Universe">
+                           </a> 
+                       </div> 
+                   </div>
+                   <div class="header-right"> 
+                       <div class="header-login-left">
+                           <form class="form-horizontal" method="post" action="https://www.jeevan rakht.net/donors/login_action" id="login_user">
+                               <!-- </ul> -->
+                               <ul class="nav nav-pills"> 
+                                   <li> <label>Email/Mobile Number</label> 
+                                       <input type="text" id="emailid" name="emailid" rel="tooltip" value="" title="Email can contain only letters, numbers, periods (.), @, hyphens (-) and underscores (_)."> 
+                                   </li>
+                                   <li> <label>Password</label> <input type="password" id="password" name="password" rel="tooltip" value="" title=" Please enter your password. Minimum 8 characters,case sensitive."> 
+                                   </li>
+                                   <li> <button type="submit" class="btn btn-danger login-form-head">Login</button> </li> 
+                                   <a href="donors/forgotpassword.html" class="forgot">Forgot password?</a> 
+                               </ul> 
+                           </form> 
+                       </div>
+                       <!-- header-login-left --> 
+                       <div class="header-login-right-desk"> 
+                           <ul> <li><a href="donors/register.html" class="reg-btn hvr-bounce-to-bottom m1">Register</a>
+                               </li> 
+                               <!-- --> <!-- <li> <a href="#" class="reg-btn-2"><i class="fa fa-facebook" aria-hidden="true"></i>Login using FB</a></li> --> 
+                           </ul>
+                       </div> 
+                   </div>
+                   <!-- /.header-right -->
+               </div><!-- row -->
+           </div><!-- container -->
+           <div class="nav-bar-main" role="navigation"> 
+               <div class="container">
+                   <div class="row">
+                       <nav class="main-navigation clearfix visible-md visible-lg" id="bs-example-navbar-collapse-1" role="navigation">
+                           <ul class="main-menu sf-menu sf-js-enabled sf-arrows">
+                               <li class="active"><a href="home.html" class="hvr-bounce-to-bottom-2 m1-2">Search Donors</a>
+                               </li>
+                               <li class=""><a href="aboutus.html" class="hvr-bounce-to-bottom-2 m1-2">About Us</a>
+                               </li>
+                               <!-- <li class=""><a href="https://www.bloodbankindia.net/donors/register"class="hvr-bounce-to-bottom-2 m1-2">Donor Registration</a> </li> --> <!-- <li class=""><a href="https://www.bloodbankindia.net/donors/search">Search Donors</a> </li> --> 
+                               <li class=""><a href="donors/register.html" class="hvr-bounce-to-bottom-2 m1-2">Register as Donor</a> 
+                               </li>
+                               <li class=""><a href="tools/requestblood.html" class="hvr-bounce-to-bottom-2 m1-2">Request Blood</a> 
+                               </li> 
+                               <li class=""><a href="information/blooddonationtips.html" class="hvr-bounce-to-bottom-2 m1-2">Blood Tips</a>
+                               </li> 
+                               <li class=""><a href="contactus.html" class="hvr-bounce-to-bottom-2 m1-2">Contact Us</a></li> </ul> 
+                           <!-- /.main-menu -->
+                       </nav> <!-- /.main-navigation --> 
+                   </div><!-- container -->
+               </div><!-- row --> 
+           </div> <!-- /.nav-bar-main -->
+            </header>
+            
+            <div class="mobile-login"> <a href="#" data-toggle="modal" data-target="#myModal" class="mob-btn"> <i class="fa fa-user fa-1x" aria-hidden="true"></i> Login</a> <a href="donors/register.html" class="mob-btn-2"> <i class="fa fa-lock fa-1x" aria-hidden="true"></i> REGISTER NOW</a> <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> <h4 class="modal-title" id="myModalLabel">Login</h4> </div> <div class="modal-body"> <form class="form-horizontal" method="post" action="https://www.bloodbankindia.net/donors/login_action" id="login_user_mobile" novalidate="novalidate"><!-- </ul> --> <ul class="nav nav-pills"> <li> <label>Email </label> <input type="text" id="emailid" name="emailid" rel="tooltip" value="" title="Email can contain only letters, numbers, periods (.), @, hyphens (-) and underscores (_)."> </li> <li> <label>Password</label> <input type="password" id="password" name="password" rel="tooltip" value="" title=" Please enter your password. Minimum 8 characters,case sensitive."> </li> <li> <button type="submit" class="btn btn-danger login-form-head">Login</button> <a href="donors/forgotpassword.html" class="forgot">Forgot password?</a> <!-- <div class="mobile-fb-btn"> <a href="#" class="reg-btn-2"><i class="fa fa-facebook" aria-hidden="true"></i>Login using Facebook</a> </div> --> </li> </ul> </form> </div> <!-- <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> </div> --> </div> </div> </div> <div class="header-login-right"> <a href="#" class="reg-btn hvr-bounce-to-bottom m1">REGISTER NOW</a> <!-- <p>Facebook Account</p> --> </div> <div class="clearfix"></div> </div>
         </section>
         <section id="main">
           <div class="container">
