@@ -3,11 +3,15 @@
 The code and development of the JeevanRakht's website is housed here.   
 For more details - [Refer to this paper.](https://paper.dropbox.com/doc/JeevanRakht-WebD-Project-ZroUbusvKbwRSRCDFHCOV)
 
+## Project Wireframe
+![wireframe - flow](https://user-images.githubusercontent.com/15084301/38657424-c22747d2-3e3d-11e8-9447-7862553d7142.jpg)
 ## Getting Started
 This project consists of two part like all web application.
 * Frontend Part -- HTML, CSS, jQuery and Bootstrap4
 * Backend Part -- Node.js with express.js and MongoDB 
 
+## Color palette
+![color palette](https://user-images.githubusercontent.com/15084301/38657620-eccfa7bc-3e3e-11e8-9dc2-2e1d6622b8ce.jpg)
 ## Learn About Folder Structure
 ### Backend Part (node.js with MongoDB)
 * \bin:
@@ -38,6 +42,7 @@ or go to codepen to check your changes you made in scss or html or js files. Jus
 ```
 * Step2 -- Download and install Node(latest stable version) (npm comes along with node)<br />
 [Node](https://nodejs.org/en/) -- (e.g v 8.11 )
+<br />[What is npm?](https://www.npmjs.com/) 
 ```
 verify with below command
 >>>node -v
@@ -54,16 +59,21 @@ verify with below command
 Below command will run gulpfile.js and start the static website(Frontend)
 >>> npm install -g gulp 
 >>> gulp
+The application will be running at http://localhost:3000 URL
 ```
-<br />[What is gulp?](https://gulpjs.com/)
+[What is gulp?](https://gulpjs.com/)
+![gulp_run](https://user-images.githubusercontent.com/15084301/38658055-110a4996-3e41-11e8-9c28-9324e87cd008.JPG)
 
 OR 
 ```
 Below command will start as full web application(Backend+Frontend)
 >>> npm install -g nodemon
 >>> npm start
+The application will be running at http://localhost:3000 
+if not then please check if you have set any default PORT in your environment/path variable
+i.e http://localhost:<your_env_port_variable>
 ```
-<br />[What is npm?](https://www.npmjs.com/) 
+![node_run](https://user-images.githubusercontent.com/15084301/38658058-17bea426-3e41-11e8-8dd6-9009ba81fcc3.JPG)
 
 * Step5 -- No more steps
 ```
