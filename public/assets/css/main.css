@@ -1,5 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
 body {
   font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif; }
+
+/* Navbar CSS Starts */
+
+
+nav{
+ background-color: #fff;
+}
+nav li{
+  padding-left: 10px;
+  position: relative;
+}
+nav li a{
+  display: block;
+  color: #000 !important;
+  border: 1px solid #000;
+  margin: 2px;
+  border-radius: 15px;
+  text-align: center;
+
+}
+nav button span{
+  background-color: #000;
+
+}
+
+#logo-header{
+  color: #000 !important;
+  font-size: 30px;
+  font-variant: small-caps;
+  font-family: 'Pacifico', cursive;
+}
+
+.navbar a {
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s; }
+
+.navbar a:hover {
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+        }
+/* NavBar CSS Ends */
 
 #about {
   text-align: center; }
@@ -23,13 +68,6 @@ body {
 #main {
   text-align: center;
   color: white; }
-
-.navbar {
-  background: rgba(255, 45, 0, 0.4) !important; }
-
-.navbar .nav-link {
-  font-weight: bold;
-  text-transform: uppercase; }
 
 .feature {
   color: black;
@@ -77,15 +115,7 @@ img:hover {
   border-radius: 10px;
   margin: 0 auto; }
 
-.navbar a {
-  -webkit-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s; }
 
-.navbar a:hover {
-  -webkit-transform: scale(1.08);
-          transform: scale(1.08); }
 
 .social .fa {
   -webkit-transition-property: all;
