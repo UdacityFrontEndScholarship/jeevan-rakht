@@ -12,6 +12,10 @@ This project consists of two part like all web application.
 
 ## Color palette
 ![color palette](https://user-images.githubusercontent.com/15084301/38657620-eccfa7bc-3e3e-11e8-9dc2-2e1d6622b8ce.jpg)
+
+## Homepage Mockup
+[jeevanrakht.pdf](https://github.com/UdacityFrontEndScholarship/jeevan-rakht/files/1907369/jeevanrakht.pdf)
+
 ## Learn About Folder Structure
 ### Backend Part (node.js with MongoDB)
 * \bin:
