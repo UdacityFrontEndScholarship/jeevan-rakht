@@ -23,7 +23,13 @@ body {
 
 #main {
   text-align: center;
-  color: white; }
+  color: white; 
+  padding:50px;
+  margin:50px;
+  margin-top:80px;
+  background-color: #fa624e41;
+  border-radius: 10px;
+}
 
 .navbar {
   background-color: #b30000; 
@@ -46,7 +52,8 @@ img {
   -webkit-transition-property: all;
   transition-property: all;
   -webkit-transition-duration: 1.5s;
-          transition-duration: 1.5s; }
+          transition-duration: 1.5s;
+         }
 
 img:hover {
   -webkit-transform: scale(1.05);
@@ -58,13 +65,14 @@ img:hover {
   transition-property: all;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
-  background-color: tomato;
+  background-color: rgba(255, 99, 71, 0.938);
   margin: 10px;
   border: outset thin;
   border-radius: 10px;
   z-index: 999;
-  -webkit-box-shadow: 0 0 20px 2px rgba(255, 205, 205, 0.65);
-          box-shadow: 0 0 20px 2px rgba(255, 205, 205, 0.65); }
+  -webkit-box-shadow: 5px 2px 20px 2px rgba(56, 49, 49, 0.65);
+       }
+
 footer {
 	background-color: #b30000;
 	text-align: center;
