@@ -48,10 +48,7 @@ img {
   -webkit-transition-duration: 1.5s;
           transition-duration: 1.5s; }
 
-img:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  cursor: pointer; }
+
 
 .card {
   -webkit-transition-property: all;
