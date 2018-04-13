@@ -19,6 +19,7 @@ This project consists of two part like all web application.
 * \models
 * \routes
 * \views 
+* \controllers 
 * app.js 
 
 ### Frontend Part
