@@ -18,18 +18,22 @@ body {
   color: #f4b408; }
 
 #logo {
-  color: red; }
+  color: white; 
+}
 
 #main {
   text-align: center;
   color: white; }
 
 .navbar {
-  background: rgba(255, 45, 0, 0.4) !important; }
+  background-color: #b30000; 
+}
 
 .navbar .nav-link {
   font-weight: bold;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+    color: white !important;
+}
 
 .feature {
   color: black;
@@ -61,8 +65,59 @@ img:hover {
   z-index: 999;
   -webkit-box-shadow: 0 0 20px 2px rgba(255, 205, 205, 0.65);
           box-shadow: 0 0 20px 2px rgba(255, 205, 205, 0.65); }
+footer {
+	background-color: #b30000;
+	text-align: center;
+	padding: 15px;
+    
+}
+.social a {
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 30px;  
+}
+ 
+.footerImage {
+	padding-right: 4px;
+    border-radius: 5%; 
+}
+
+.social a:before,
+.social a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: transparent;
+    top: 0; bottom: 0; left: 0; right: 0;
+    -webkit-transition: .8s all;
+    transition: .8s all;
+    color: white;  
+}
+
+.social a:hover:after {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    border: 3px solid white;
+    border-radius: 7%;
+}
+.social a:hover:before {
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
+    -webkit-transition: .8s all;
+    transition: .8s all;
+    opacity: 0;
+    border: 3px solid white;
+    border-radius: 7%;
+}
+
 
 @media screen and (max-width: 34em) {
+    li {
+        text-align: left !important;
+    }
   .card {
     margin-top: 10px; } }
 
