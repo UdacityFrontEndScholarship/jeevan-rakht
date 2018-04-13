@@ -130,7 +130,7 @@ footer {
   max-height: 50%;
   max-width: 95%;
   border-radius: 10px;
-  margin: 10px 0px 0px 25px;}
+  margin: 0 auto; }
 
 .navbar a {
   -webkit-transition-property: all;
