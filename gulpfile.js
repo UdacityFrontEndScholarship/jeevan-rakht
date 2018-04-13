@@ -20,12 +20,12 @@ gulp.task('js',function () {
 });
 
 // Static Servers + watching html/scss files
-gulp.task('serve',['sass'],function () {
+gulp.task('serve',function () {
     browserSync.init({
         server: "./public"
     });
-    gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss','public/assets/scss/main.scss'],['sass']);
+    // gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss','public/assets/scss/main.scss'],['sass']);
     gulp.watch('public/*.html').on('change',browserSync.reload);
 });
 
-gulp.task('default',['js','serve']);
+gulp.task('default',['serve']);
