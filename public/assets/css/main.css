@@ -26,13 +26,22 @@ body {
   color: white; }
 
 .navbar {
-  background-color: #b30000; 
+  background-color: #b30000;
+  top: 0;
+	opacity: 100%;
+	-webkit-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out; 
 }
 
 .navbar .nav-link {
   font-weight: bold;
   text-transform: uppercase;
     color: white !important;
+}
+
+.hide-nav {
+	top: -54px;
+	opacity: 0;
 }
 
 .feature {
