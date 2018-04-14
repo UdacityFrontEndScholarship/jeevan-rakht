@@ -1,0 +1,118 @@
+/* ADDED APP.CSS */
+
+body {
+    font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif;
+    background-color: #900000;
+}
+#particles-js {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: auto;
+    z-index: -1;
+}
+header {
+    display: flex;
+}
+#brand-logo {
+    width: 57%;
+    text-align: right;
+}
+#brand-logo img {
+    width: 30%;
+    background: white;
+    border-radius: 0 0 5px 5px;
+}
+#avatar {
+    font-size: 5em; 
+    width: 30%;
+    text-align: right;
+    color: rgb(156, 133, 133);
+}
+#search-locate {
+    display: flex;
+    justify-content: center;
+    margin: 4vh 0;
+    text-align: center;
+}
+#search, #locate {
+    margin: 0 5vh;
+}
+
+#search button, #locate button {
+    padding: 40%;
+    margin: 0;
+    font-size: 3em;
+}
+#search button {
+    color: white;
+    background: #F1c816;
+    border: 6px solid rgba(255, 0, 0, 0);
+    outline: none;
+    border-radius: 10px;
+}
+#locate button {
+    color: white;
+    background: linear-gradient(45deg, #1e5799 0%,#910000 0%,#d00001 100%,#bc1e4b 100%);
+    border: 6px solid rgba(252, 252, 252, 0.986);
+    outline: none;
+    border-radius: 10px;
+}
+.header-text {
+    margin: 20px 0;
+    font-size: 1.5em;
+    color: white;
+}
+footer {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 7vh;
+    background: #F1c816;
+    border-radius: 10px 10px 0 0;
+    padding: 20px;
+}
+
+
+@media screen and (max-width: 500px) {
+    #brand-logo {
+        width: 50%;
+        text-align: left;
+    }
+    #brand-logo img {
+        width: 100%;
+        background: white;
+        border-radius: 0 0 5px 0;
+    }
+    #avatar {
+        font-size: 3.5em; 
+        width: 45%;
+    }
+    #search-locate {
+        flex-direction: column;
+        margin: 4vh 0;
+        text-align: center;
+    }
+       
+    #search button, #locate button {
+        padding: 30%;
+    }
+    #search button {
+        margin-bottom: 10px;
+    }
+    #locate button {
+        margin-top: 10px;
+    }
+    .header-text {
+        display: none;
+    }
+    footer {
+        width: 100%;
+        flex-direction: column;
+        border-radius: unset;
+    }
+}
