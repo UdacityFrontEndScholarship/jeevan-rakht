@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>JeevanRakht</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <!-- Shortcut Icons -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
@@ -24,8 +25,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+
 
     <!-- Main CSS file -->
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -33,42 +34,17 @@
 
 <body m-md-3>
     <!-- Main content goes here -->
-    <nav class="navbar navbar-toggleable-md navbar-expand-md fixed-top navbar-dark">
-
-        <a href="#header" class="navbar-brand text-uppercase " id="logo">
-              <i class="fa fa-tint fa-2x"></i>
-            </a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item px-md-1">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item px-md-1">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item px-md-1">
-                    <a class="nav-link" href="login.html">Login</a>
-                </li>
-                <li class="nav-item px-md-1">
-                    <a class="nav-link" href="signup.html">Signup</a>
-                </li>
-                <li class="nav-item px-md-1">
-                    <a class="nav-link" href="profile.html">Profile</a>
-                </li>
-            </ul>
-        </div>
-
+    <!--navbar -->
+    <!-- Image and text -->
+    <nav class="navbar fixed-top justify-content-center">
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-tint"></i>
+            JeevanRakht
+        </a>
     </nav>
+    <!--/navbar/-->
     <div class="container-fluid">
-        <section id="header" class="jumbotron px-0 py-3 p-sm-2 m-0 rounded-0 text-left">
-            <div class="container-fluid">
-            </div>
-            <div id="about" class="container">
-            </div>
-        </section>
+       
         <section id="main">
             <div class="container">
                 <div class="row">
@@ -97,11 +73,7 @@
                 </div>
             </div>
         </section>
-        <section id="contact">
-            <div class="container p-4">
-                <p class="display-4">contact us</p>
-            </div>
-        </section>
+       
         <section class="footer p-4 mb-5">
             <div class="d-flex flex-column">
                 <!-- Fork Me on Github -->
@@ -158,30 +130,90 @@
                 <div class="d-flex justify-content-center">
                     <p>Around the web</p>
                 </div>
-                <div class="social d-flex justify-content-center">
-                    <a href="#" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
-                </div>
+                <!-- The div of social links is removed and put in the footer nav -->
             </div>
         </section>
        
     </div>
-    <footer class="social">
-        <a href="#medium" class="firstlink">
-            <img class= "footerImage medium" src="assets/images/medium.svg">
-        </a>
-        <a href="#google+">
-            <img class= "footerImage gplus" src="assets/images/google.svg">
-        </a>
-        <a href="#facebook">
-            <img class= "footerImage fb" src="assets/images/facebook.svg">
-        </a>
-        <a href="#instagram">
-            <img class= "footerImage insta" src="assets/images/instagram.svg">
-        </a>
-    </footer>
+    <!-- footer -->
+    <!--Footer-->
+<!--Footer-->
+
+<!--Footer-->
+<footer class="page-footer font-small blue pt-4 mt-4" id="page-footer">
+
+    <!--Footer Links-->
+    <div class="container-fluid ">
+        <div class="row text-center">
+
+            <!--First column-->
+            <div class="col-md-6">
+                <h5 class="text-uppercase">Connect us Socially</h5>
+                <hr>
+                <ul class="list-unstyled">
+                <li>
+                        <i class="fas fa-map-marker fa-2x"></i>
+                        <p>Address_Address_Address</p>
+                </li>
+                <li>
+                        <i class="fas fa-phone-volume fa-2x"></i>
+                        <p>187289781972091</p>
+                       
+                </li>
+                  <li>  
+                        <i class="far fa-envelope fa-2x"></i>
+                        <p>ajfhoajfo@gmail.com</p>
+                  </li>
+                </ul>
+                
+            </div>
+            <!--/.First column-->
+
+            <!--Second column-->
+            <div class="col-md-6">
+                <h5 class="text-uppercase">About</h5>
+                <hr>
+                <ul class="list-unstyled">
+                    <li><p class="text-justify" style="padding-right:100px;padding-left:100px;">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elitbr
+                            Autem eos suscipit voluptate
+                           aspernatur qui amet dolor quam pariatur quos odit, totam 
+                           animi reprehenderit sit nulla
+                           enim ullam ut accusamus dolorum.
+                    </p>  
+                    </li>
+                    <li>
+                            <h5 class="text-uppercase">Connect us Socially</h5>
+                            <hr style="margin-bottom: 30px;">
+                            <i class="fab fa-facebook-square fa-2x"></i>
+                            <i class="fab fa-twitter-square fa-2x"></i>
+                            <i class="fab fa-linkedin fa-2x"></i>
+                            <i class="fab fa-instagram fa-2x"></i>
+                    </li>
+                </ul>
+            </div>
+            <!--/.Second column-->
+        </div>
+    </div>
+    <!--/.Footer Links-->
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3 text-center" id="footer-in-footer" >
+            <a href="#">Privacy</a> | 
+            <a href="#">Know More</a> |
+            <a href="#">Copyright</a>
+        </div>
+    <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
+                      
+<!--/Footer-->
+                      
+                  
+<!--/.Footer-->
+             
+    <!--/footer/-->
 
     <!-- Jquery -->
     <script src="assets/js/jquery.min.js"></script>
