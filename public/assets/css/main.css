@@ -113,6 +113,50 @@ footer {
     border-radius: 7%;
 }
 
+/*
+For news letter start
+*/
+
+.home-newsletter{
+    padding: 20px;
+}
+
+.home-newsletter .single {
+    
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2; 
+}
+.home-newsletter .single h2 {
+    font-size: 22px;
+    color: #b30000;
+    text-transform: uppercase;
+    margin-bottom: 40px; 
+}
+.home-newsletter .single .form-control {
+    height: 50px;
+    background: rgba(255, 255, 255, 0.6);
+    border-color: transparent;
+    border-color: red;
+    border-radius: 20px 0 0 20px; 
+}
+.home-newsletter .single .form-control:focus {
+    box-shadow: none;
+    border-color: #243c4f; 
+}
+.home-newsletter .single .btn {
+    min-height: 50px; 
+    border-radius: 0 20px 20px 0;
+    background: #243c4f;
+    color: #fff;
+}
+
+/*
+For news letter end
+*/
+
 
 @media screen and (max-width: 34em) {
     li {
