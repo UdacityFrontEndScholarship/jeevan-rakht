@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow');
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans');
+
+
 body {
   font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif; }
 
@@ -130,23 +135,25 @@ For news letter start
     z-index: 2; 
 }
 .home-newsletter .single h2 {
-    font-size: 22px;
+    font-size: 30px;
     color: #b30000;
-    text-transform: uppercase;
-    margin-bottom: 40px; 
+    font-family: 'Abel', sans-serif;
+    margin-bottom: 20px; 
 }
 .home-newsletter .single .form-control {
     height: 50px;
     background: rgba(255, 255, 255, 0.6);
     border-color: transparent;
     border-color: red;
-    border-radius: 20px 0 0 20px; 
+    border-radius: 20px 0 0 20px;
+    font-family: 'Black Han Sans', sans-serif;
 }
 .home-newsletter .single .form-control:focus {
     box-shadow: none;
     border-color: #243c4f; 
 }
 .home-newsletter .single .btn {
+    font-family: 'Archivo Narrow', sans-serif;
     min-height: 50px; 
     border-radius: 0 20px 20px 0;
     background: #243c4f;
