@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat+Alternates")
+	body{
+		font-family: 'Montserrat Alternates', sans-serif;
+	}
+.navbar-nav > li{
+  padding-left:10px;
+  padding-right:10px;
+}
+
+.navbar-brand img{
+	height: 55px;
+}
+.navbar .navbar-brand{
+	padding: 0px;
+}
+#navbar{
+	    padding: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    padding-top: 5px;
+}
