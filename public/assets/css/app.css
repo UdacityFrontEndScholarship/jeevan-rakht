@@ -12,8 +12,8 @@ body {
     padding: 0;
     top: 0;
     left: 0;
-    height: 100vh;
-    width: auto;
+    height: 98vh;
+    width: 100%;
     z-index: -1;
 }
 header {
@@ -60,6 +60,7 @@ header {
 #search button:hover {
     color: black;
     box-shadow: 0px 0px 10px 0px black inset;
+    transform: scale(-1) matrix(-1, 0, 0, -1, 0, 0);
 }
 #locate button {
     color: white;
@@ -72,6 +73,7 @@ header {
 #locate button:hover {
     color: #F1c816;
     box-shadow: 0px 0px 10px 0px black inset;
+    transform: scale(-1) matrix(-1, 0, 0, -1, 0, 0);
 }
 .header-text {
     margin: 20px 0;
