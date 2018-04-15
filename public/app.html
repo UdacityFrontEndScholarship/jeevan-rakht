@@ -32,9 +32,21 @@
 
         <!-- Main CSS file -->
         <link rel="stylesheet" href="assets/css/main.css" />
+        <style media="screen">
+        #particles-js {
+          background-color: red;
+}
+        </style>
     </head>
 
-    <body m-md-3>
+    <body m-md-3 id="particles-js">
         <!-- Main content goes here -->
+
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script type="text/javascript">
+          particlesJS.load('particles-js', 'particles.json', function(){
+            console.log('particles.json loaded...')
+          });
+        </script>
     </body>
 </html>
