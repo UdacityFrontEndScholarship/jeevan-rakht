@@ -116,6 +116,7 @@ Connect with co-mods if you stuck anywhere
 - Shashank Kumar
 - Soumya Ranjan Behera
 - Sujan Patel
+- Shivendra Singh
 
 ## Working Repo/Site
 - Repo : https://github.com/UdacityFrontEndScholarship/jeevan-rakht/
