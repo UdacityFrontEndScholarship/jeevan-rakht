@@ -3,6 +3,8 @@
 body {
     font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif;
     background-color: #900000;
+    height: 100vh;
+    margin: 0px;
 }
 #particles-js {
     position: absolute;
@@ -46,6 +48,7 @@ header {
     padding: 40%;
     margin: 0;
     font-size: 3em;
+    transition: .5s all ease-in-out;
 }
 #search button {
     color: white;
@@ -54,6 +57,10 @@ header {
     outline: none;
     border-radius: 10px;
 }
+#search button:hover {
+    color: black;
+    box-shadow: 0px 0px 10px 0px black inset;
+}
 #locate button {
     color: white;
     background: linear-gradient(45deg, #1e5799 0%,#910000 0%,#d00001 100%,#bc1e4b 100%);
@@ -61,20 +68,38 @@ header {
     outline: none;
     border-radius: 10px;
 }
+
+#locate button:hover {
+    color: #F1c816;
+    box-shadow: 0px 0px 10px 0px black inset;
+}
 .header-text {
     margin: 20px 0;
     font-size: 1.5em;
     color: white;
 }
 footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+#footer-wrapper {
     display: flex;
     width: 80%;
     justify-content: space-around;
     margin: auto;
-    margin-top: 7vh;
     background: #F1c816;
     border-radius: 10px 10px 0 0;
     padding: 20px;
+}
+#know-more a {
+    color: inherit;
+    font-weight: 900;
+    text-decoration: none;
+    transition: .5s ease-in-out all;
+}
+#know-more a:hover {
+    color: #d00001;
 }
 
 
@@ -101,16 +126,22 @@ footer {
     #search button, #locate button {
         padding: 30%;
     }
+    
     #search button {
         margin-bottom: 10px;
     }
     #locate button {
         margin-top: 10px;
     }
+
     .header-text {
         display: none;
     }
     footer {
+        position: relative;
+        width: auto;
+    }
+    #footer-wrapper {
         width: 100%;
         flex-direction: column;
         border-radius: unset;
