@@ -12,13 +12,22 @@ This project consists of two part like all web application.
 
 ## Color palette
 ![color palette](https://user-images.githubusercontent.com/15084301/38657620-eccfa7bc-3e3e-11e8-9dc2-2e1d6622b8ce.jpg)
+
+## Homepage Mockup
+[jeevanrakht.pdf](https://github.com/UdacityFrontEndScholarship/jeevan-rakht/files/1907369/jeevanrakht.pdf)
+
+## Web Application page
+[JeevanRakht App](https://jeevanrakht.herokuapp.com/)
+
 ## Learn About Folder Structure
 ### Backend Part (node.js with MongoDB)
 * \bin:
+* \config:
 * \db:
 * \models
 * \routes
 * \views 
+* \controllers 
 * app.js 
 
 ### Frontend Part
@@ -32,6 +41,11 @@ This project consists of two part like all web application.
 ### Below is used to generate Optimized Image 
 * Gruntfile.js
 <br />[Getting started with Grunt](https://gruntjs.com/getting-started)
+
+### Below is used to deploy web app on Heroku 
+* Procfile
+* Procfile.windows
+<br />[Learn about building, deploying and managing your apps on Heroku](https://devcenter.heroku.com/)
 
 ## How to launch the app locally?
 * Step1 -- Fork the project repo and clone it in your local directory
@@ -79,6 +93,8 @@ i.e http://localhost:<your_env_port_variable>
 ```
 Connect with co-mods if you stuck anywhere
 ```
+## RESTFull APIs for jeevanrakht web application
+[jeevanrakht_REST_APIs.pdf](https://github.com/UdacityFrontEndScholarship/jeevan-rakht/files/1911725/jeevanrakht_REST_APIs.pdf)
 
 ## Contributing Guidelines
 1. Add assets such as images and other media in assets folder.
