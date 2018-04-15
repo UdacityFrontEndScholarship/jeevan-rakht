@@ -1,0 +1,106 @@
+/*styling nav-bar   */
+.navbar-dark.bg-danger{
+	background-color: #d20001!important;
+}
+
+a.nav-link{
+	color: white!important;
+	width:120px;
+	text-align:center;
+	padding: 25px;
+
+}
+.btn.btn-outline-success{
+	background-color:#f1c816;
+	color:black;
+	border: black;
+}
+/*carousel  */
+.carousel-item{
+	height:530px;
+	width:100%;
+}
+.font-color{
+	color:#504644;
+}
+.size5{
+	font-size: 30px;
+}
+.sizep{
+	font-size:20px;
+}
+/*help-line  */
+p.lead{
+	text-align: center;
+	font-size: 15px;
+}
+div.container{
+	height: 60px;
+	margin-bottom:0px;
+}
+div.jumbotron.jumbotron-fluid{
+	height: 40px;
+	padding: 5px;
+	padding-top:10px;
+	background-color:#f1c816;
+	
+}
+/*some content  */
+.heading{
+	font-weight:normal;
+}
+ div.col-7.col-lg-8{
+ 	background-color:#9db198;
+ 	padding:5px;
+ 	align-items: center;
+ 	border-radius: 5px;
+ 	 }
+/* registration form */
+div.col-5.col-lg-4{
+	background-color:#d20001;
+	padding:8px;
+	border-radius: 5px;
+		}
+div.container-fluid{
+margin-top:-30px;
+margin-left:-5px;
+
+}
+.row{
+	margin-right:-30px;
+	height:450px;
+}
+/* people */
+.col-lg-3{
+	background-color: #ccc;
+	}
+.col-lg-6{
+	background-color:#eee;
+	
+}
+/*auto-scrolling list*/
+.vertical-menu {
+    width:100%;
+    height:90%;
+    overflow-y: auto;
+    padding: 0px;
+    margin:0px;
+}
+
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display:block;
+    padding:5px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color:black;
+    color: white;
+}
+/*  */
