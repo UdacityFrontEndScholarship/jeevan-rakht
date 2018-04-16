@@ -33,14 +33,136 @@
         <!-- Main CSS file -->
         <link rel="stylesheet" href="assets/css/main.css" />
         <style media="screen">
-        #particles-js {
-          background-color: red;
-}
-        </style>
+            #particles-js {
+              background-color:#900000
+                          }  
+            .row{
+                margin: 0px;
+                padding: 0px;
+            }
+
+            .white{
+             width:185px; 
+             background-color: white;
+             border-bottom-left-radius: 8px;
+             border-bottom-right-radius: 8px;
+             margin: 0 auto;
+             }
+    
+             .logo{
+                width:190px;
+                transform: none !important;
+                padding: 0px 10px 10px 10px;
+             }
+    
+             .user{
+                 float: right;
+             }
+             .fa-user-circle-o{
+             -webkit-text-fill-color: white;
+             margin-top: -65px;
+            background-color: #504644;
+            border-radius: 35px;
+            margin-left: 10px;
+             }
+
+             h1{
+                 color: #fff;
+             }
+
+             .col-md-6 .container{
+                 position: relative;
+                 height: 300px;
+                 width: 300px;
+                 border-radius: 10px;
+             }
+
+             .col-md-6 .search{
+                background-color: yellow;
+             }
+
+             .col-md-6 .donate{
+                 background-color: #c70001;
+             }
+            
+             .donate:hover{
+                border: 5px solid #ffffff;
+                background: linear-gradient(#cb0001 50%,#9c0000 )
+             }
+
+             .search:hover{
+                border: 5px solid #ffffff;
+                background: linear-gradient(yellow 50%,#fbff4ce8);
+             }
+             
+             .middle-icon{
+                position: absolute;
+                left: 100px;
+                top: 100px;
+             }
+
+             .fa-search{
+                 font-size: 80px;
+                 color: #fff;   
+             }
+
+             .one{
+                 padding-top: 100px;
+             }
+
+              .st0{
+                  fill:#FFFFFF;
+             }
+        #Layer_1{
+            width: 80px;
+            } 
+
+            </style>
     </head>
 
     <body m-md-3 id="particles-js">
         <!-- Main content goes here -->
+
+        <div class="container">
+            <div class="row">
+                <div class="white">
+                    <img src="assets/images/logo.png" class="logo" alt="logo">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 ">
+                <a href="https://github.com/praveen-me"><i class="fa fa-user-circle-o fa-3x pull-right"></i></a>
+            </div>
+        </div>
+      
+        <div class="container one">
+            <div class="row">
+                <div class=" col-md-6 col-xs-12">
+                    <h1 class="text-center"><b>LOCATE</b> Blood</h1>
+                    <div class="container search ">
+                        <i class="fa fa-search fa-6x middle-icon"></i>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <h1 class="text-center"><b>DONATE</b> Blood</h1>
+                    <div class="container donate"> 
+                        <svg version="1.1" id="Layer_1" class="middle-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        viewBox="0 0 100.7 89.2" style="enable-background:new 0 0 100.7 89.2;" xml:space="preserve">
+                            <path class="st0" d="M35.2,89.1c-10,0-20-0.1-30,0.1c-3.9,0.1-5.4-1.4-5.2-5.3c0.2-4,0.2-8,0-12c-0.1-3.5,1.2-5.7,4.9-5.1
+                                c6,0.9,10.5-1.5,14.7-5.6c4.1-4,9.4-5.5,15.1-5.4c8.2,0.1,16.3,0.1,24.5,0c4.1,0,7.5,0.9,8,5.5c0.4,3.5-2.7,5.6-7.8,5.7
+                                c-3.5,0-7-0.3-10.5,0.2c-1.4,0.2-2.5,1.9-3.8,2.8c1.2,0.9,2.4,2.4,3.7,2.5c6.7,0.2,13.3,0.4,20-0.1c2.4-0.2,5-1.6,7.1-3.2
+                                c5-3.6,9.7-7.7,14.5-11.4c3-2.3,6.2-3.1,8.8,0.3c2.5,3.2,1.3,6.2-1.7,8.6c-8.1,6.4-16,13.1-24.3,19.2c-2.5,1.8-6,3-9.1,3.1
+                                C54.5,89.4,44.9,89.1,35.2,89.1z"/>
+                            <path class="st0" d="M50.5,45.3c-12.3,0.5-20.9-13.2-15.3-22.6c4-6.7,8-13.4,12.1-19.9c2-3.2,4.4-2.7,6.2,0.2
+                                c4.1,6.4,8.6,12.7,11.9,19.5C70.8,33.3,62.8,45.2,50.5,45.3z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div> 
+        </div>
+
 
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
         <script type="text/javascript">
