@@ -17,6 +17,81 @@
 	    padding: 0px;
     padding-left: 5px;
     padding-right: 5px;
-    padding-bottom: 2px;
-    padding-top: 5px;
+    padding-bottom:1px;
+    padding-top: 2px;
+  
+
 }
+.carousel {
+  height: 350px;
+}
+
+.carousel-item > img {
+  width:640px;
+  height:360px;
+}
+p.lead{
+	text-align: center;
+	font-size: 15px;
+	color: white;
+}
+/*div.container{
+	height: 60px;
+	margin-bottom:0px;
+}*/
+div.jumbotron.jumbotron-fluid{
+	height: 40px;
+	padding: 5px;
+	padding-top:10px;
+	background-color:#3c88c4;
+
+
+
+/* css for sign up page */
+
+/*html,
+body,
+header,
+.view {
+  height: 100%;
+}
+
+@media (max-width: 740px) {
+  header {
+    height: 1000px;
+  }
+}
+
+.top-nav-collapse {
+  background-color: #3f51b5 !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+}
+
+@media (max-width: 768px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #3f51b5 !important;
+  }
+}
+
+.rgba-gradient {
+  background: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
+  background: -webkit-gradient(linear, 45deg, from(rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%)));
+  background: linear-gradient(to 45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
+}
+
+.card {
+  background-color: rgba(126, 123, 215, 0.2);
+}
+
+.md-form label {
+  color: #ffffff;
+}
+
+h6 {
+  line-height: 1.7;
+}
+        
+*/
