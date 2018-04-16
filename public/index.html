@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
-<body m-md-3>
+<body m-md-3 id="particles-js">
 
     <!-- Main content goes here -->
     <nav class="navbar navbar-toggleable-md navbar-expand-md fixed-top navbar-dark">
@@ -195,6 +195,13 @@
 
     <!-- Main JS file -->
     <script type="text/javascript" src="assets/js/main.js"></script>
+
+    <!-- Particle JS -->
+             <script type="text/javascript" src= "assets/js/particles.js"></script>
+              <script type="text/javascript"> 
+                particlesJS.load('assets/js/particles-js', 'assets/js/particlesjs-config.json',function(){
+            console.log('callback - particles.js config loaded');});</script>
+        <!--end particle JS-->
 </body>
 
 </html>
