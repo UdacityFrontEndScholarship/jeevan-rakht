@@ -29,160 +29,329 @@
 
     <!-- Main CSS file -->
     <link rel="stylesheet" href="assets/css/main.css" />
+    <!--animate-->
+    <link href="assets/css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <script src="assets/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 </head>
 
-<body m-md-3>
-    <!-- Main content goes here -->
-    <nav class="navbar navbar-toggleable-md navbar-expand-md fixed-top navbar-dark">
-
-        <a href="#header" class="navbar-brand text-uppercase " id="logo">
-              <i class="fa fa-tint fa-2x"></i>
-            </a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item px-md-1">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item px-md-1">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item px-md-1">
-                    <a class="nav-link" href="login.html">Login</a>
-                </li>
-                <li class="nav-item px-md-1">
-                    <a class="nav-link" href="signup.html">Signup</a>
-                </li>
-                <li class="nav-item px-md-1">
-                    <a class="nav-link" href="profile.html">Profile</a>
-                </li>
-            </ul>
+<body>
+        <!--Top header section-->
+    <div class="mn_hd_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="hd_left">
+                        <p class="para_hd wow fadeInLeft animated">Welcome to blood donation center</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="hd_rite wow fadeInRight animated">
+                        <a href="#" class="lk_hd"><i class="fab fa-facebook-f soc_icn"></i></a>
+                        <a href="#" class="lk_hd"><i class="fab fa-twitter soc_icn"></i></a>
+                        <a href="#" class="lk_hd"><i class="fab fa-google-plus-g soc_icn"></i></a>
+                        <a href="#" class="lk_hd"><i class="fab fa-youtube soc_icn"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-
-    </nav>
-    <div class="container-fluid">
-        <section id="header" class="jumbotron px-0 py-3 p-sm-2 m-0 rounded-0 text-left">
-            <div class="container-fluid">
-            </div>
-            <div id="about" class="container">
-            </div>
-        </section>
-        <section id="main">
-            <div class="container">
-                <div class="row">
-                    <div class="col col-md-6">
-                        <div class="card">
-                            <div class="card-header d-block">
-                                <span class="px-2">Locate</span>
-                            </div>
-                            <img class="card-img-top" src="assets/images_optimized/JeevanRakht_small.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title"></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-md-6">
-                        <div class="card">
-                            <div class="card-header d-block">
-                                <span class="px-2">Donate</span>
-                            </div>
-                            <img class="card-img-top" src="assets/images_optimized/JeevanRakht_small.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title"></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="contact">
-            <div class="container p-4">
-                <p class="display-4">contact us</p>
-            </div>
-        </section>
-        <section class="footer p-4 mb-5">
-            <div class="d-flex flex-column">
-                <!-- Fork Me on Github -->
-                <div class="d-flex justify-content-center">
-                    <a href="https://github.com/utkarsh2102/GoogleUdacity_JeevanRakht" class="github-corner">
-              <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#ff4405; color:#fff;">
-                <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z">
-                </path>
-                <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm">
-                </path>
-                <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body">
-                </path>
-              </svg>
-            </a>
-                    <style>
-                        .github-corner:hover .octo-arm {
-                            animation: octocat-wave 560ms ease-in-out
-                        }
-
-                        @keyframes octocat-wave {
-                            0%,
-                            100% {
-                                transform: rotate(0)
-                            }
-                            20%,
-                            60% {
-                                transform: rotate(-25deg)
-                            }
-                            40%,
-                            80% {
-                                transform: rotate(10deg)
-                            }
-                        }
-
-                        @media (max-width:500px) {
-                            .github-corner:hover .octo-arm {
-                                animation: none
-                            }
-                            .github-corner .octo-arm {
-                                animation: octocat-wave 560ms ease-in-out
-                            }
-                        }
-
-                    </style>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <p>Tools used on this work:</p>
-                    <ul class="list-unstyled">
-                        <li><a href="https://gruntjs.com/" target="_blank" class="firm" target="_blank">Grunt</a> </li>
-                        <li><a href="http://gulpjs.com/" class="firm" target="_blank">Gulp</a></li>
-                        <li><a href="http://www.imagemagick.org/" class="firm" target="_blank">ImageMagick</a></li>
-                    </ul>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <p>Around the web</p>
-                </div>
-                <div class="social d-flex justify-content-center">
-                    <a href="#" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
-                    <a href="#" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
-                </div>
-            </div>
-        </section>
-       
     </div>
-    <footer class="social">
-        <a href="#medium" class="firstlink">
-            <img class= "footerImage medium" src="assets/images/medium.svg">
-        </a>
-        <a href="#google+">
-            <img class= "footerImage gplus" src="assets/images/google.svg">
-        </a>
-        <a href="#facebook">
-            <img class= "footerImage fb" src="assets/images/facebook.svg">
-        </a>
-        <a href="#instagram">
-            <img class= "footerImage insta" src="assets/images/instagram.svg">
-        </a>
-    </footer>
+    <!--Top Header Section End Here-->
 
+    <!--Navigation Section-->
+    <div class="nav_mn wow fadeInLeft animated" data-wow-delay=".5s">
+        <div class="container">
+            <div class="">
+                <nav class="navbar navbar-expand-lg nav_hd_1">
+                    <a class="navbar-brand" href="#"><img class="logo_1" src="assets/images/logo/logo_1.png" alt="Jeevan Rakht"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto hd_ul">
+                            <li class="nav-item hd_li">
+                                <a class="nav-link hd_an" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item hd_li">
+                                <a class="nav-link hd_an" href="#">Blood Request</a>
+                            </li>
+                            <li class="nav-item hd_li">
+                                <a class="nav-link hd_an" href="#">Donate</a>
+                            </li>
+                            <li class="nav-item hd_li">
+                                <a class="nav-link hd_an" href="#">Sign In</a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0 hd_sec">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn hd_btn" type="submit">Search</button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--Navigation section end here-->
+
+    <!--Banner Section-->
+    <div class="banner">
+        <div class="ban_1 wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">
+            <h2 class="ban_h1">DONATE BLOOD AND SAVE LIFE</h2>
+            <p class="ban_pa">YOUR BLOOD CAN BRING SMILE IN OTHER PERSON FACE </p>
+        </div>
+    </div>
+    <!--Banner Section End Here-->
+    <!--Why Section-->
+    <div class="why_mn">
+        <div class="container">
+            <div class="main_row_1">
+                <div class="why_hd wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">
+                    <h1 class="why_do">WHY DONATE</h1>
+                    <img src="assets/images/why/bld_1.jjpg.png" alt="Jeevan Rakht" class="wh_im_bd">
+                </div>
+                <div class="wh_mn_2">
+                    <div class="row">
+                        <div class="col-lg-4 wow fadeInLeft animated">
+                            <div class="wh_mn_di">
+                                <img class="wh_img" src="assets/images/why/heart.png" alt="Save Life">
+                            </div>
+                            <div class="wh_mn_di">
+                                <p class="wh_pa">Save Lives</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 wow fadeInDown animated animated">
+                            <div class="wh_mn_di">
+                                <img class="wh_img" src="assets/images/why/blood-transfusion.png" alt="Save Life">
+                            </div>
+                            <div class="wh_mn_di">
+                                <p class="wh_pa">Blood Storage</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 wow fadeInRight animated">
+                            <div class="wh_mn_di">
+                                <img class="wh_img" src="assets/images/why/hospital.png" alt="Save Life">
+                            </div>
+                            <div class="wh_mn_di">
+                                <p class="wh_pa">Live Longer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="row">
+                        <div class="col-lg-4 wow fadeInLeft animated">
+                            <div class="wh_mn_di">
+                                <img class="wh_img" src="assets/images/why/scale.png" alt="Save Life">
+                            </div>
+                            <div class="wh_mn_di">
+                                <p class="wh_pa">Maintain Weight</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 wow fadeInDown animated animated">
+                            <div class="wh_mn_di">
+                                <img class="wh_img" src="assets/images/why/ribbon.png" alt="Save Life">
+                            </div>
+                            <div class="wh_mn_di">
+                                <p class="wh_pa">Reduces Cancer</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 wow fadeInRight animated">
+                            <div class="wh_mn_di">
+                                <img class="wh_img" src="assets/images/why/first-aid-kit.png" alt="Save Life">
+                            </div>
+                            <div class="wh_mn_di">
+                                <p class="wh_pa">Speed Up Healing</p>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+    <!--Why Section End Here-->
+
+    <!--Article Section-->
+    <div class="why_mn" style="background-color: #fff;">
+        <div class="container">
+            <div class="main_row_2">
+                <div class="ar_sec_1">
+                    <div class="row">
+                        <div class="col-lg-5 wow fadeInLeft animated" style="margin-top: 49px;">
+                            <div>
+                                <h1 class="why_do">DONATION ARTICLE</h1>
+                            </div>
+                            <div class="art_mn_hd">
+                                <div class="ar_an_icon">
+                                    <a href="#"><img src="assets/images/why/blood_1.png" class="ar_an"></a>
+                                </div>
+                                <div class="ar_an_sec">
+                                    <a href="#" class="ar_sec_1">Lorem Ipsum is simply dummy text of the printing</a>
+                                </div>
+                            </div>
+                            <div class="art_mn_hd">
+                                <div class="ar_an_icon">
+                                    <a href="#"><img src="assets/images/why/blood_1.png" class="ar_an"></a>
+                                </div>
+                                <div class="ar_an_sec">
+                                    <a href="#" class="ar_sec_1">Lorem Ipsum is simply dummy text of the printing</a>
+                                </div>
+                            </div>
+                            <div class="art_mn_hd">
+                                <div class="ar_an_icon">
+                                    <a href="#"><img src="assets/images/why/blood_1.png" class="ar_an"></a>
+                                </div>
+                                <div class="ar_an_sec">
+                                    <a href="#" class="ar_sec_1">Lorem Ipsum is simply dummy text of the printing</a>
+                                </div>
+                            </div>
+                            <div class="art_mn_hd">
+                                <div class="ar_an_icon">
+                                    <a href="#"><img src="assets/images/why/blood_1.png" class="ar_an"></a>
+                                </div>
+                                <div class="ar_an_sec">
+                                    <a href="#" class="ar_sec_1">Lorem Ipsum is simply dummy text of the printing</a>
+                                </div>
+                            </div>
+                            <div class="art_mn_hd">
+                                <div class="ar_an_icon">
+                                    <a href="#"><img src="assets/images/why/blood_1.png" class="ar_an"></a>
+                                </div>
+                                <div class="ar_an_sec">
+                                    <a href="#" class="ar_sec_1">Lorem Ipsum is simply dummy text of the printing</a>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="col-lg-7 scrl_hd wow fadeInRight animated" style="padding-left: 0px; padding-right: 0px;">
+                                <div class="ar_img_1">
+                                    <img src="assets/images/need/need.png" alt="Jeeven Rakht" class="art_im_hg">
+                                </div>
+                                <div class="ar_sc_mv">
+                                    <div class="art_mn_dv">
+                                        <i class="far fa-calendar-alt fa_ar"></i> April 4
+                                        <h4 class="ar_hre"> O- Blood Donor Needed</h4>
+                                        <div>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="art_mn_dv">
+                                        <i class="far fa-calendar-alt fa_ar"></i> April 4
+                                        <h4 class="ar_hre"> O- Blood Donor Needed</h4>
+                                        <div>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                        </div>
+                                    </div>
+                                    <div class="art_mn_dv">
+                                        <i class="far fa-calendar-alt fa_ar"></i> April 4
+                                        <h4 class="ar_hre"> O- Blood Donor Needed</h4>
+                                        <div>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Article Section End-->
+    <!--Footer Section Starts -->
+    <div class="why_mn" style="background-color: #131313;">
+        <div class="container">
+            <div class="main_row_2">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="foot_cl_di wow fadeInLeft animated">
+                            <h4 class="foot_hd">SUBSCRIBE US</h4>
+                            <p class="foot_pa_1">Signup for regular newsletter and stay up to date with our latest news.</p>
+                            <form class="foot_frm">
+                                <div class="ft_mn_dv">
+                                    <input class="ft_int" id="ft_mc" type="email" name="EMAIL" placeholder="ENTER YOUR EMAIL">
+                                </div>
+                                <div>
+                                    <button class="btn foot_btn_1" type="submit">JOIN NEWSLETTER</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 wow fadeInDown animated animated"" style="padding-left: 100px;">
+                        <div class="foot_cl_di wow fadeInDown animated animated">
+                            <h4 class="foot_hd">CONTACT US</h4>
+                        </div>
+                        <div class="ft_mn_dv_1">
+                            <i class="far fa-envelope ft_en_dv"></i>
+                            <a href="#" class="foot_an">support@examples.com</a>
+                            <a href="#"  class="foot_an">helpme@examples.com</a>
+                        </div>
+                        <div class="ft_mn_dv_1">
+                            <i class="far fa-envelope ft_en_dv"></i>
+                            <a href="#" class="foot_an">support@examples.com</a>
+                            <a href="#"  class="foot_an">helpme@examples.com</a>
+                        </div>
+                        <div class="ft_mn_dv_1">
+                            <i class="far fa-envelope ft_en_dv"></i>
+                            <a href="#" class="foot_an">support@examples.com</a>
+                            <a href="#"  class="foot_an">helpme@examples.com</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 wow fadeInRight animated" style="padding-left: 100px;">
+                        <div class="foot_cl_di ">
+                            <h4 class="foot_hd">ABOUT US</h4>
+                        </div>
+                        <div class="ft_mn_dv_2">
+                            <a href="#"  class="foot_an">ABOUT US</a>
+                        </div>
+                        <div class="ft_mn_dv_2">
+                            <a href="#"  class="foot_an">HOW IT WORKS</a>
+                        </div>
+                        <div class="ft_mn_dv_2">
+                            <a href="#"  class="foot_an">FAQs</a>
+                        </div>
+                        <div class="ft_mn_dv_2">
+                            <a href="#"  class="foot_an">TERMS AND CONDITION</a>
+                        </div>
+                        <div class="ft_mn_dv_2">
+                            <a href="#"  class="foot_an">PRIVACY POLICY</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer Section Complete-->
+
+    <!--Footer 2 section start-->
+    <div class="foot_dwn_mn">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="wow fadeInLeft animated">
+                        <img class="ft_mg_dw" src="assets/images/logo/logo_1.png" alt="Jeevan Rakht">
+                    </div>
+                    <div>
+                        <p class="ft_dw_pa_1">© 2018 JEEVAN RAKHT | All Rights Reserved</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hd_rite wow fadeInRight animated">
+                        <a href="#" class="lk_hd"><i class="fab fa-facebook-f soc_icn"></i></a>
+                        <a href="#" class="lk_hd"><i class="fab fa-twitter soc_icn"></i></a>
+                        <a href="#" class="lk_hd"><i class="fab fa-google-plus-g soc_icn"></i></a>
+                        <a href="#" class="lk_hd"><i class="fab fa-youtube soc_icn"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Jquery -->
     <script src="assets/js/jquery.min.js"></script>
 
