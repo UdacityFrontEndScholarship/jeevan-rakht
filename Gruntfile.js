@@ -48,8 +48,8 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           src: ['*.{gif,jpg,png}'],
-          cwd: 'assets/images',
-          dest: 'assets/images_optimized/'
+          cwd: 'public/assets/images',
+          dest: 'public/assets/images_optimized/'
         }]
       }
     },
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
     /* Clear out the images directory if it exists */
     clean: {
       dev: {
-        src: ['assets/images_optimized'],
+        src: ['public/assets/images_optimized'],
       },
     },
 
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
     mkdir: {
       dev: {
         options: {
-          create: ['assets/images_optimized']
+          create: ['public/assets/images_optimized']
         },
       },
     },
@@ -76,7 +76,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           src: 'images_src/fixed/*.{gif,jpg,png}',
-          dest: 'assets/images_optimized/'
+          dest: 'public/assets/images_optimized/'
         }]
       },
     },
