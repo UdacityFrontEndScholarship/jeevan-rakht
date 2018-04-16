@@ -79,6 +79,7 @@ header {
     color: rgb(0, 0, 0);
     background: #F1c816;
     box-shadow: 0px 0px 10px 0px black inset;
+    border: 6px solid rgba(255, 255, 255, 0);
 }
 .header-text {
     margin: 20px 0;
