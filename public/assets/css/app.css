@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ADDED APP.CSS */
 
 body {
@@ -152,3 +153,57 @@ footer {
         border-radius: unset;
     }
 }
+=======
+body {
+  font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif; }
+
+#header img{
+  width: 4rem;
+  height: 4rem;
+}
+#header{
+  font-size: 1.5rem;
+}
+.contrast {
+  color: #000; }
+
+.firm {
+  color: #f4b408; }
+
+#logo {
+  color: white; 
+}
+
+#main {
+  text-align: center; }
+
+.footer a {
+  padding: 0.75rem; }
+
+.card {
+  background-color: tomato;
+  margin: 10px;
+  max-width: 50vmax;
+  text-align: center;
+  border: outset thin;
+  border-radius: 10px;
+  z-index: 999;
+  -webkit-box-shadow: 0 0 20px 2px rgba(255, 205, 205, 0.65);
+          box-shadow: 0 0 20px 2px rgba(255, 205, 205, 0.65); }
+
+@media screen and (max-width: 34em) {
+    li {
+        text-align: left !important;
+    }
+  .card {
+    margin-top: 10px; } 
+  }
+
+
+.card-img-top {
+  height: 300px;
+  max-height: 50%;
+  max-width: 95%;
+  border-radius: 10px;
+  margin: 0 auto; }
+>>>>>>> upstream/master

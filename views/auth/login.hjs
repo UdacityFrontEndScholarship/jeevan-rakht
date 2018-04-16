@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>JeevanRakht - {{title}}</title>
+
+        <!-- Shortcut Icons -->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="apple-touch-icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+        <!-- SEO tags -->
+        <meta name="description" content="The Official website of JeevanRakht">
+        <meta name="keywords" content="JeevanRakht, Blood Dontation, Blood Bank, Google Udacity Project JeevanRakht">
+
+        <!--GOOGLE FONT-->
+        <link href="https://fonts.googleapis.com/css?family=Arvo|Lato" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="assets/css/bootstrap.css" />
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Main CSS file -->
+        <link rel="stylesheet" href="assets/css/app.css" />
+    </head>
+
+    <body m-md-3>
+        <!-- Main content goes here -->      
+          <section id="header" class="jumbotron px-0 py-3 p-sm-2 m-0 rounded-0 text-left">
+              <div class="container">
+                <div class="row">
+                  <div class="col-6 col-md-2 offset-md-8 offset-3 my-auto text-right"><a href="/login" class="text-danger">login </a>|<a href="/signup" class="text-danger"> signup</a> </div>
+                  <div class="col-3 col-md-2"><a href="/users"><img src="assets/images/profile.jpg" class="rounded rounded-circle" alt=""></a></div>
+                </div>
+              </div>
+          </section>
+        <section id="login" class="main">
+        <div class="container p-3 mt-5 bg-light">
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="/"><button type="button" class="btn btn-secondary">Cancel</button></a>
+            </form>
+        </div>
+            <!-- GOOGLE PLUS SIGN IN-->
+            <div class="row" id="gplogin">
+                <div id="signinButton" class="col-md-12 text-center">
+                    <span class="g-signin"
+                            data-scope="openid email" 
+                            data-clientid="206205063091-03p9vfum443gup692b3d9tuii2hg8unt.apps.googleusercontent.com" 
+                            data-redirecturi="postmessage" 
+                            data-accesstype="offline" 
+                            data-cookiepolicy="single_host_origin" 
+                            data-callback="signInCallback" 
+                            data-approvalprompt="force">			
+                    </span>	
+                </div>
+            </div>
+
+            <div class="row" id="fblogin">
+                <div class="col-md-12 text-center">
+                <button>
+                        <fb:login-button 
+                            scope="public_profile,email" 
+                            onlogin="sendTokenToServer();">
+                            <a href='javascript:sendTokenToServer()'>Login with Facebook</a>
+                        </fb:login-button>
+                </button>			
+                </div>
+            </div>        
+        </section>
+        <section class="footer p-4 mb-2 text-center text-danger">
+          <div class="row">
+            <div class="col-12 text-center">
+                <p>Want to know more?</p>
+            </div>
+            <div class="col-xs-12 col-md-3 text-primary">
+              <a href="mailto:jeevanrakht.in@gmail.com" target="_blank">Contact Us</a>
+            </div>
+            <div class="col-xs-12 col-md-3 text-primary">
+              <a href="index.html" target="_blank">Go to website</a>
+            </div>
+            <div class="col-xs-12 col-md-3 text-primary">
+              <a href="policy.html" target="_blank">Terms &amp; policy</a>
+            </div>
+            <div class="col-xs-12 col-md-3 text-primary">
+              <a href="privacy.html" target="_blank">Privacy</a>
+            </div>
+            <div class="col-12 text-center mt-3">
+                <p>&copy; 2018, jeevanrakht.in, Inc. or its affiliates</p>
+            </div>                                          
+          </div>
+        </section>
+    <script>
+		function signInCallback(authResult){
+			if (authResult['code']){
+				// $('#signinButton').attr("style","display:none");
+				// console.log('One time code from authResult: ');
+				// console.log(authResult['code']);
+				// console.log(authResult['status']);
+				$('.login').attr("style","display:none");
+				$.ajax({
+					type: 'POST',
+					url: '/gconnect?state={{STATE}}',
+					processData: false,
+					contentType: 'application/octet-stream; charset=utf-8',
+					data: authResult['code'],
+					success: function(result){
+						if (result){
+							$('#result').html('Login Successfull! <br>'+ result+ '<br>Redirecting');
+							setTimeout(function(){
+								window.location.href="/home";
+							},4000);
+						}else
+						{
+							$('#result').html('Failed to make server side call.\
+								Check your configuration and console.');
+						}
+					}
+				});
+			}else if(authResult['error']){
+				console.log('There was an error: '+ authResult['error']);			
+				// console.log(authResult);
+			}	
+		}
+	</script>
+<!--END GOOGLE PLUS SIGN IN -->
+
+<!--FACEBOOK SIGN IN -->
+	<script>
+	window.fbAsyncInit = function() {
+	FB.init({
+	  	appId      : '303950806802847',
+	   	cookie     : true,  // enable cookies to allow the server to access 
+	                       // the session
+	   	xfbml      : true,  // parse social plugins on this page
+	   	version    : 'v2.8' // use version 2.2
+		});
+	};
+	// Load the SDK asynchronously
+	(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	 // Here we run a very simple test of the Graph API after login is
+	 // successful.  See statusChangeCallback() for when this call is made.
+	 function sendTokenToServer() {
+	   var access_token = FB.getAuthResponse()['accessToken'];
+	   // console.log(access_token)
+	   console.log('Welcome!  Fetching your information.... ');
+	   FB.api('/me', function(response) {
+	     	console.log('Successful login for: ' + response.name);
+	     	$('.login').attr("style","display:none");
+		    $.ajax({
+		    type: 'POST',
+		    url: '/fbconnect?state={{STATE}}',
+		    processData: false,
+		    data: access_token,
+		    contentType: 'application/octet-stream; charset=utf-8',
+		    success: function(result) {
+		      // Handle or verify the server response if necessary.
+		      	if(result){
+			        $('#result').html('Login Successful!</br>'+ result + '</br>Redirecting...')
+			        setTimeout(function() {
+			        		window.location.href = "/home";
+			        }, 4000);			          
+			    }
+			    else{
+			        $('#result').html('Failed to make a server-side call. Check your configuration and console.');
+			    }
+		      }
+		      
+	  		});
+		});
+	}
+	</script>        
+
+        <!-- Jquery -->
+        <script src="assets/js/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- Main JS file -->
+        <script src="assets/js/app.js"></script>
+        <!-- Main content goes here -->
+        <script>
+            (function($){
+                $('#login').on( 'click', function(e) {
+                    var email =  $('#exampleInputEmail1').val();
+                    var pwd =  $( '#exampleInputPassword1' ).val();
+                    var JSONObj = {
+                        "email"         	    :email,
+                        "pwd"                   :pwd,
+                        "status"                :'publish'
+                    };
+                    var data = JSON.stringify(JSONObj);
+                    console.log(data);
+                    $.ajax({
+                        type: 'POST',
+                        url: '/login',
+                        processData: false,
+                        contentType: 'json',
+                        data: data,
+                        success: function(result){
+                            if (result){
+                                console.log(result);
+                            }else
+                            {
+                                console.log('Failed to make server side call.\
+                                    Check your configuration and console.');
+                            }
+                        }
+                    });
+            });     	
+        })(jQuery);                    
+        </script>
+    <!--Ajax Call to SIGN IN -->
+	<!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
+	<script async defer src="https://apis.google.com/js/client:platform.js?onload=start"></script>
+	<!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->	    
+      </body>
+  </html>
