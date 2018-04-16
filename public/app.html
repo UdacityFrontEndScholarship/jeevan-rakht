@@ -32,97 +32,15 @@
 
         <!-- Main CSS file -->
         <link rel="stylesheet" href="assets/css/main.css" />
-        <style media="screen">
-            #particles-js {
-              background-color:#900000
-                          }  
-            .row{
-                margin: 0px;
-                padding: 0px;
-            }
+        <link rel="stylesheet" href="assets/css/appIssue.css">
 
-            .white{
-             width:185px; 
-             background-color: white;
-             border-bottom-left-radius: 8px;
-             border-bottom-right-radius: 8px;
-             margin: 0 auto;
-             }
-    
-             .logo{
-                width:190px;
-                transform: none !important;
-                padding: 0px 10px 10px 10px;
-             }
-    
-             .user{
-                 float: right;
-             }
-             .fa-user-circle-o{
-             -webkit-text-fill-color: white;
-             margin-top: -65px;
-            background-color: #504644;
-            border-radius: 35px;
-            margin-left: 10px;
-             }
-
-             h1{
-                 color: #fff;
-             }
-
-             .col-md-6 .container{
-                 position: relative;
-                 height: 300px;
-                 width: 300px;
-                 border-radius: 10px;
-             }
-
-             .col-md-6 .search{
-                background-color: yellow;
-             }
-
-             .col-md-6 .donate{
-                 background-color: #c70001;
-             }
-            
-             .donate:hover{
-                border: 5px solid #ffffff;
-                background: linear-gradient(#cb0001 50%,#9c0000 )
-             }
-
-             .search:hover{
-                border: 5px solid #ffffff;
-                background: linear-gradient(yellow 50%,#fbff4ce8);
-             }
-             
-             .middle-icon{
-                position: absolute;
-                left: 100px;
-                top: 100px;
-             }
-
-             .fa-search{
-                 font-size: 80px;
-                 color: #fff;   
-             }
-
-             .one{
-                 padding-top: 100px;
-             }
-
-              .st0{
-                  fill:#FFFFFF;
-             }
-        #Layer_1{
-            width: 80px;
-            } 
-
-            </style>
     </head>
 
-    <body m-md-3 id="particles-js">
+    <body id="particles-js">
         <!-- Main content goes here -->
 
+
+       <!-- Logo  -->
         <div class="container">
             <div class="row">
                 <div class="white">
@@ -130,22 +48,29 @@
                 </div>
             </div>
         </div>
+        <!-- Logo -->
 
+        <!-- Profile -->
         <div class="row">
             <div class="col-md-12 ">
-                <a href="https://github.com/praveen-me"><i class="fa fa-user-circle-o fa-3x pull-right"></i></a>
+                <a href="login.html"><i class="fa fa-user-circle-o fa-3x pull-right"></i></a>
             </div>
         </div>
-      
+      <!-- Profile -->
+
+        <!-- Middle Content Starts -->
         <div class="container one">
             <div class="row">
                 <div class=" col-md-6 col-xs-12">
+                    <div class="innerblk1">
                     <h1 class="text-center"><b>LOCATE</b> Blood</h1>
                     <div class="container search ">
                         <i class="fa fa-search fa-6x middle-icon"></i>
                     </div>
                 </div>
+                </div>
                 <div class="col-md-6 col-xs-12">
+                        <div class="innerblk2">
                     <h1 class="text-center"><b>DONATE</b> Blood</h1>
                     <div class="container donate"> 
                         <svg version="1.1" id="Layer_1" class="middle-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -160,10 +85,22 @@
                         </svg>
                     </div>
                 </div>
+                </div>
             </div> 
         </div>
+        <!-- Middle Content Ends -->
 
+        <!-- Footer Starts -->
+            <footer class="container fixed-bottom">
+                <div class="row">
+                    <div class="text-center col-md-4 col-xxs-12">+91-9999999999</div>
+                    <div class="text-center col-md-4 col-xxs-12"> <a href="index.html" style="text-decoration:none; color:black"><b>Know More</b></a> </div>
+                    <div class="text-center col-md-4 col-xxs-12"> <a href="" style="text-decoration:none; color:black">mail@jeevanrakht.in</a> </div>
+                </div>
+            </footer>
+        <!-- Footer Ends -->
 
+            <!-- Particle.js Library Included -->
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
         <script type="text/javascript">
           particlesJS.load('particles-js', 'particles.json', function(){
