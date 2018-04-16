@@ -1,52 +1,92 @@
-body {
-  font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif; }
-
-#header img{
-  width: 4rem;
-  height: 4rem;
+body{
+  background-color: #b61924;
 }
-#header{
-  font-size: 1.5rem;
-}
-.contrast {
-  color: #000; }
+#particles-js {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    height: 98vh;
+    width: 100%;
+    z-index: -1;
 
-.firm {
-  color: #f4b408; }
-
-#logo {
-  color: white; 
-}
-
-#main {
-  text-align: center; }
-
-.footer a {
-  padding: 0.75rem; }
-
-.card {
-  background-color: tomato;
-  margin: 10px;
-  max-width: 50vmax;
-  text-align: center;
-  border: outset thin;
-  border-radius: 10px;
-  z-index: 999;
-  -webkit-box-shadow: 0 0 20px 2px rgba(255, 205, 205, 0.65);
-          box-shadow: 0 0 20px 2px rgba(255, 205, 205, 0.65); }
-
-@media screen and (max-width: 34em) {
-    li {
-        text-align: left !important;
-    }
-  .card {
-    margin-top: 10px; } 
   }
 
+ canvas{
+  position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;;
+ 
+} 
 
-.card-img-top {
+h2{
+  text-align: center;
+  color: white;
+  margin:1%;
+  padding:2%;
+}
+header{
+  display: flex;
+}
+.brand-logo{
+  width: 57%;
+  text-align: right;
+}
+.logo{
+  height: 100px;
+  width: auto;
+  background-color: white;
+  margin-top: -2px;
+}
+
+.avatar{
+  display: block;
+  padding: 10px;
+  margin: auto;
+  font-size: 5em;
+}
+.btn-warning{
+  color: white;
+  background-color: #F1c816;
+}
+.btn-danger{
+  color: white;
+  border-style: solid;
+  border-color: white;
+  border-width: medium;
+  background: linear-gradient(45deg, #1e5799 0%,#910000 0%,#d00001 100%,#bc1e4b 100%);
+   background-image: linear-gradient(45deg, rgb(30, 87, 153) 0%, rgb(145, 0, 0) 0%, rgb(208, 0, 1) 100%, rgb(188, 30, 75) 100%);
+}
+.btn-size{
   height: 300px;
-  max-height: 50%;
-  max-width: 95%;
-  border-radius: 10px;
-  margin: 0 auto; }
+  width: 100%;
+  font-size:5em;
+  font-color:white;
+
+}
+
+.row{
+  padding:10%;
+}
+
+.cardimg{
+  padding: 10px;
+  margin:auto;
+
+}
+
+
+
+.footer {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    margin: auto;
+    background: #F1c816;
+    border-radius: 10px 10px 0 0;
+    padding: 20px; 
+}

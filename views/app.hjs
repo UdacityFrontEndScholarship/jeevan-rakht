@@ -32,71 +32,56 @@
     </head>
 
     <body m-md-3>
-      <!-- Main content goes here -->
-          <section id="header" class="jumbotron px-0 py-3 p-sm-2 m-0 rounded-0 text-left">
-              <div class="container">
-                <div class="row">
-                  <div class="col-6 col-md-2 offset-md-8 offset-3 my-auto text-right"><a href="/login" class="text-danger">login </a>|<a href="/signup" class="text-danger"> signup</a> </div>
-                  <div class="col-3 col-md-2"><a href="/users"><img src="assets/images/profile.jpg" class="rounded rounded-circle" alt=""></a></div>
+      <div id="particles-js"">
+            <!-- Main content goes here -->
+            <header>
+              <div class="brand-logo">
+              <img src="assets/images/logo.png" class="rounded logo">
+            </div>
+          
+               <div class="avatar" style="text-align: right;">
+              <i href="#"  class="fas fa-user-circle"></i>
+            </div>
+            </header>
+            
+            
+              <div class="row">
+                <div class="col-sm-6 col-md-6">
+                  <h2>LOCATE Blood</h2>
+                  <button href="#"  type="button" class="btn btn-warning btn-size">
+                    <i class="fas fa-search"></i>
+                  </button>  
                 </div>
+                <div class="col-sm-6 col-md-6">
+                  <h2>DONATE Blood</h2>
+                  <button type="button" class="btn btn-danger btn-size">
+                    <i class="fas fa-heart"></i>
+                  </button>  
+                </div> 
               </div>
-          </section>
-          <section id="main" class="mt-5">
-              <div class="container">
-                  <div class="row  mx-auto">
-                      <div class="col-12 col-md-6">
-                          <div class="card">
-                              <div class="card-header d-block">
-                                  <span class="px-2"><a href="/locate">Locate</a></span>
-                              </div>
-                              <img class="card-img-top" src="assets/images_optimized/JeevanRakht_small.jpg" alt="Card image cap">
-                              <div class="card-body">
-                                  <h5 class="card-title"></h5>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-12 col-md-6">
-                          <div class="card">
-                              <div class="card-header d-block">
-                                  <span class="px-2"><a href="/donate">Donate</a></span>
-                              </div>
-                              <img class="card-img-top" src="assets/images_optimized/JeevanRakht_small.jpg" alt="Card image cap">
-                              <div class="card-body">
-                                  <h5 class="card-title"></h5>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </section>
-        <section class="footer p-4 mb-2 text-center text-danger">
-          <div class="row">
-            <div class="col-12 text-center">
-                <p>Want to know more?</p>
-            </div>
-            <div class="col-xs-12 col-md-3 text-primary">
-              <a href="mailto:jeevanrakht.in@gmail.com" target="_blank">Contact Us</a>
-            </div>
-            <div class="col-xs-12 col-md-3 text-primary">
-              <a href="index.html" target="_blank">Go to website</a>
-            </div>
-            <div class="col-xs-12 col-md-3 text-primary">
-              <a href="policy.html" target="_blank">Terms &amp; policy</a>
-            </div>
-            <div class="col-xs-12 col-md-3 text-primary">
-              <a href="privacy.html" target="_blank">Privacy</a>
-            </div>
-            <div class="col-12 text-center mt-3">
-                <p>&copy; 2018, jeevanrakht.in, Inc. or its affiliates</p>
-            </div>                                          
-          </div>
-        </section>
+               
+              <footer class="footer">
+                <div id="contactnumber"> 00-0000-0000</div>
+                <div id="more">
+                  <a href="#"> Know More</a>
+                </div>
+                <div id="email">jevan-rakht@gmail.com</div>
+              
+            </footer>
+       </div>
+         
         <!-- Jquery -->
         <script src="assets/js/jquery.min.js"></script>
+        
 
         <!-- Bootstrap -->
         <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
+
+        <!--Particle JS -->
+        <script src="assets/js/particles.js"></script>
+        <script src="assets/js/particles.min.js"></script>
+
         <!-- Main JS file -->
         <script src="assets/js/app.js"></script>
       </body>
