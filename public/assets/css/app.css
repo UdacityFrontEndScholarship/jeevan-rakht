@@ -59,7 +59,9 @@ header {
 }
 #search button:hover {
     color: black;
+    background: linear-gradient(45deg, #1e5799 0%,#910000 0%,#d00001 100%,#bc1e4b 100%);
     box-shadow: 0px 0px 10px 0px black inset;
+    border-color: white;
     transform: scale(-1) matrix(-1, 0, 0, -1, 0, 0);
 }
 #locate button {
@@ -71,7 +73,8 @@ header {
 }
 
 #locate button:hover {
-    color: #F1c816;
+    color: rgb(0, 0, 0);
+    background: #F1c816;
     box-shadow: 0px 0px 10px 0px black inset;
     transform: scale(-1) matrix(-1, 0, 0, -1, 0, 0);
 }
