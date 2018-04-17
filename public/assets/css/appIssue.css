@@ -57,18 +57,20 @@
    }
   
    .donate:hover{
-      border: 5px solid #ffffff;
-      background: linear-gradient(#cb0001 50%,#9c0000 );
-      transition: 0.5s;
-      -webkit-transition: 0.5s;
+      border: 10px solid transparent;
+      background: linear-gradient(#cb0001 40%,#9c0000 60% );
+      box-shadow: 0px 0px 10px 0px black inset;
+      transition: 0.2s;
+      -webkit-transition: 0.2s;
       display: border-box;
    }
 
    .search:hover{
-      border: 5px solid #ffffff;
-      background: linear-gradient(#f1c816 50%,#fbff4ce8);
-      transition: 0.5s;
-      -webkit-transition: 0.5s;
+      border: 10px solid transparent;
+      background: linear-gradient(#f1c816 40%,#fbff4ce8 60%);
+      box-shadow: 0px 0px 10px 0px black inset;
+      transition: 0.2s;
+      -webkit-transition: 0.2s;
       display:border-box;
    }
    
