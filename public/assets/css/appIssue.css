@@ -1,0 +1,121 @@
+/* CSS For app.html */
+
+#particles-js {
+    background-color:#900000
+                }  
+  .row{
+      margin: 0px;
+      padding: 0px;
+  }
+
+  body{position:relative; z-index: -3;}
+
+  .particles-js-canvas-el{position: absolute; top:0; z-index: -2;}
+
+  .white{
+   width:185px; 
+   background-color: white;
+   border-bottom-left-radius: 8px;
+   border-bottom-right-radius: 8px;
+   margin: 0 auto;
+   }
+
+   .logo{
+      width:190px;
+      transform: none !important;
+      padding: 0px 10px 10px 10px;
+   }
+
+   .user{
+       float: right;
+   }
+   .fa-user-circle-o{
+   -webkit-text-fill-color: white;
+   margin-top: -65px;
+  background-color: #504644;
+  border-radius: 35px;
+  margin-left: 10px;
+   }
+
+   h1{
+       color: #fff;
+   }
+
+   .col-md-6 .container{
+       position: relative;
+       height: 300px;
+       width: 300px;
+       border-radius: 10px;
+   }
+
+   .col-md-6 .search{
+      background-color:#f1c816;
+   }
+
+   .col-md-6 .donate{
+       background-color: #c70001;
+   }
+  
+   .donate:hover{
+      border: 10px solid transparent;
+      background: linear-gradient(#cb0001 40%,#9c0000 60% );
+      box-shadow: 0px 0px 10px 0px black inset;
+      transition: 0.2s;
+      -webkit-transition: 0.2s;
+      display: border-box;
+   }
+
+   .search:hover{
+      border: 10px solid transparent;
+      background: linear-gradient(#f1c816 40%,#fbff4ce8 60%);
+      box-shadow: 0px 0px 10px 0px black inset;
+      transition: 0.2s;
+      -webkit-transition: 0.2s;
+      display:border-box;
+   }
+   
+   .middle-icon{
+      position: absolute;
+      left: 100px;
+      top: 100px;
+   }
+
+   .fa-search{
+       font-size: 80px;
+       color: #fff;   
+   }
+
+   .one{
+       padding-top: 100px;
+   }
+
+    .st0{
+        fill:#FFFFFF;
+   }
+#Layer_1{
+  width: 80px ;
+  } 
+
+  footer {
+      min-height: 50px;
+      bottom: 0;
+      width: 100%;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+       justify-content: space-around;
+        margin: auto;
+        background: #F1c816;
+        padding: 10px 20px;
+  }
+
+ .innerblk1{float:right;}
+ .innerblk2{float:left;}
+ 
+ @media(max-width:755px){
+  .innerblk1{
+      float:none;
+      }
+ .innerblk2{
+     float:none;
+     }
+ }
