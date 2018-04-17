@@ -32,7 +32,8 @@
     </head>
 
     <body m-md-3>
-        <!-- Main content goes here -->      
+
+        <!-- Main content goes here -->
         <nav class="navbar navbar-expand-md navbar-dark sticky-top">
           <div class="container">
             <a href="#header" class="navbar-brand text-uppercase " id="logo">
@@ -40,7 +41,7 @@
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
-            </button>            
+            </button>
             <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
               <ul class="navbar-nav text-right mr-3">
                 <li class="nav-item px-md-1">
@@ -57,7 +58,7 @@
                 </li>
                 <li class="nav-item px-md-1">
                     <a class="nav-link" href="profile.html">Profile</a>
-                </li>                    
+                </li>
               </ul>
             </div>
           </div>
@@ -70,15 +71,18 @@
         </section>
         <section id="login">
         <div class="container p-3 mt-5 bg-light">
-            <form>
-                <div class="form-group">
+            <form class="lp-form">
+                <div class="form-group lp-form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
-                <div class="form-group">
+                <div class="form-group lp-form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" required class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group lp-form-group">
+                    <a href="signup.html">New User? SignUp!</a>
                 </div>
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -130,7 +134,7 @@
               <a href="#" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
             </div>
           </div>
-        </section>        
+        </section>
 
         <!-- Jquery -->
         <script src="assets/js/jquery.min.js"></script>
