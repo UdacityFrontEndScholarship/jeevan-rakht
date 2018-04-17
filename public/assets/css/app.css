@@ -1,5 +1,5 @@
 body {
-  font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif; }
+  font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif;}
 
 #header img{
   width: 4rem;
@@ -50,3 +50,28 @@ body {
   max-width: 95%;
   border-radius: 10px;
   margin: 0 auto; }
+/* for logIn & signUp*/
+.text-danger {
+	font-style: sans-serif, serif;
+	font-size: 0.80em;
+	color: white;
+	border: 0.09em black solid;
+	margin: 0.05;
+	background-color: #282828;
+	text-align: center;
+	/*padding-bottom: 0.2em;*/
+	padding: 0.1em;
+	font-weight: bold;
+	border-radius: 0.2em;
+}
+/* when signUp & LogIn active */
+
+.Active {
+	font-style: sans-serif, serif;
+	font-size: 0.80em;
+	color: white;
+	border: 1em white solid;
+	margin: 2em;
+	text-align: center;
+	padding-bottom: 0.2em;	
+}
