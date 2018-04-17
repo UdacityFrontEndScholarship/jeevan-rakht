@@ -1,3 +1,22 @@
+/* BRAND STYLES */
+:root {
+  --primary-color-light: #d20001;
+  --primary-color-dark: #900000;
+  --secondary-color: #f1c816;
+  --accent-color: #9db198;
+  --text-color-light: #504644;
+  --text-color-dark: #333333;
+  --white: #fafafa;
+  --font-title: "Merriweather Sans", sans-serif;
+  --font-body: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: initial;
+}
+
 body {
   font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif; }
 
@@ -50,3 +69,136 @@ body {
   max-width: 95%;
   border-radius: 10px;
   margin: 0 auto; }
+
+
+/* === Styles related to app.hjs === */
+
+#particles-js {
+  background: var(--primary-color-dark);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+canvas {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.vh-100 {
+  min-height: 100vh;
+}
+
+.zi-1 {
+  z-index: 1;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.logo-wrapper {
+  background: var(--white);
+  padding: 10px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+
+.logo {
+  max-height: 60px;
+}
+
+.profile-btn {
+  background: var(--white);
+  color: var(--text-color-dark);
+  font-size: 3rem;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+}
+
+@media (min-width: 768px) {
+  .logo {
+    max-height: 80px;
+  }
+
+  .profile-btn {
+    font-size: 4rem;
+  }
+}
+
+.option-label {
+  color: var(--white);
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 20px 0 10px;
+}
+
+.option-btn {
+  display: block;
+  width: 200px;
+  height: 200px;
+  line-height: 197px;
+  background: var(--secondary-color);
+  color: var(--white);
+  font-size: 4rem;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid var(--secondary-color);
+  transition: all 0.3s ease-out;
+}
+
+.option-btn:hover {
+  background: linear-gradient(
+    var(--primary-color-light),
+    var(--primary-color-dark)
+  );
+  border-color: var(--white);
+  color: var(--white);
+  transform: scale(1.035);
+}
+
+@media (min-width: 992px) {
+  .option-label {
+    font-size: 1.7rem;
+    margin: 0 0 12px;
+  }
+
+  .option-btn {
+    height: 275px;
+    width: 300px;
+    line-height: 270px;
+  }
+}
+
+.app-footer {
+  background: var(--secondary-color);
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 0.4em;
+  text-align: center;
+}
+
+.footer-link {
+  display: block;
+  padding: 0.1em;
+  font-size: 14px;
+  color: var(--text-color-dark);
+  transition: 0.2s ease-in;
+}
+
+.footer-link:hover {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.footer-dot {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .footer-dot {
+    display: block;
+    font-size: 1.1rem;
+  }
+}

@@ -54,3 +54,6 @@ function hasScrolled() {
     lastScrollPosition = currentScroll;
 
 }
+
+// Particles JS Initialization
+particlesJS.load("particles-js", "assets/js/particlesjs-config.json");
