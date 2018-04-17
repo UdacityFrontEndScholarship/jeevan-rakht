@@ -97,13 +97,15 @@
   } 
 
   footer {
-      position: fixed;
       min-height: 50px;
       bottom: 0;
       width: 100%;
-      background-color: #f1c816;
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
+       justify-content: space-around;
+        margin: auto;
+        background: #F1c816;
+        padding: 10px 20px;
   }
 
  .innerblk1{float:right;}
