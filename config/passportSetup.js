@@ -18,7 +18,7 @@ passport.deserializeUser((id, done) => {
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: 'https://infinite-wave-37938.herokuapp.com/auth/google/redirect'
+    callbackURL: 'https://blooming-beach-54940.herokuapp.com/auth/google/redirect'
 }, (accessToken, refreshToken, profile, done) => {
     console.log('passport callback function fired.');
     Google.findOne({ googleId: profile.id }).then((res) => {
