@@ -106,6 +106,7 @@ h6 {
 .btn-outline-success:not(:disabled):not(.disabled).active,
 .btn-outline-success:not(:disabled):not(.disabled):active,
 .show>.btn-outline-success.dropdown-toggle {
+.btn-outline-success:not(:disabled):not(.disabled).active, .btn-outline-success:not(:disabled):not(.disabled):active, .show>.btn-outline-success.dropdown-toggle {
   color: #fff;
   background-color: var(--primary-color-dark);
   border-color: var(--primary-color-dark);
@@ -803,7 +804,6 @@ a[href*="#followme"]::before {
 
 .logo {
   margin: 0 auto;
-=======
 }
 form .form-group{
   margin: 0;
