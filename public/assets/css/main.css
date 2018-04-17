@@ -261,6 +261,7 @@ footer .first ul {
   padding: 1em 0 0 0;
   font-size: 0.8em;
 }
+
 footer .first li {
   list-style: none;
   margin-top: 0.4em;
@@ -269,12 +270,14 @@ footer .first li {
 footer .second h6 {
   text-align: center;
 }
+
 footer .second .subscribe {
   margin: 0;
   padding: 0;
   margin-top: 1em;
   border: 2px solid var(--primary-color-light);
 }
+
 footer .second .subscribe button {
   padding: 1px 6px;
   width: 2em;
@@ -283,13 +286,16 @@ footer .second .subscribe button {
   color: var(--white);
   background-color: var(--primary-color-light);
 }
+
 footer .second .subscribe .input-field {
   border: none;
   width: 100%;
 }
+
 footer .second .social {
   margin-top: 2em;
-} 
+}
+
 footer .second .social .fab,
 footer .second .social .fas {
   color: var(--primary-color-light);
@@ -299,6 +305,27 @@ footer .second .social .fas {
 footer .third {
   padding-left: 16em;
 }
+
 footer .third h6.order-3{
   margin: 0;
+}
+
+/*Contact Us Section*/
+#homeSocialLinks {
+  font-size:38px;
+  padding:7px;
+  padding-left:15px;
+}
+
+#homeSocialLinks a:hover {
+	text-decoration: none;
+}
+
+.icon {
+  color:#aaaaaa;
+  padding-left: 15px;
+}
+
+.icon:hover {
+  color:rgba(0,0,0,0.6);
 }
