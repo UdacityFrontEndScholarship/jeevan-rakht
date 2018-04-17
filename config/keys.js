@@ -1,5 +1,5 @@
 const keys = {
-  mongodb: 'mongodb://gaurav:12345@localhost:27017/admin',
+  mongodb: 'mongodb://scholar:udacity@ds017258.mlab.com:17258/jeevanrakht',
   secret: 'Use Random generated string'
 }
 
