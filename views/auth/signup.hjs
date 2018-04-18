@@ -1,107 +1,123 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>JeevanRakht - {{title}}</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Shortcut Icons -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
-        <link rel="apple-touch-icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <title>JeevanRakht - {{title}}</title>
 
-        <!-- SEO tags -->
-        <meta name="description" content="The Official website of JeevanRakht">
-        <meta name="keywords" content="JeevanRakht, Blood Dontation, Blood Bank, Google Udacity Project JeevanRakht">
+    <!-- Shortcut Icons -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" type="image/x-icon" href="assets/images/favicon.ico">
 
-        <!--GOOGLE FONT-->
-        <link href="https://fonts.googleapis.com/css?family=Arvo|Lato" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <!-- SEO tags -->
+    <meta name="description" content="The Official website of JeevanRakht">
+    <meta name="keywords" content="JeevanRakht, Blood Dontation, Blood Bank, Google Udacity Project JeevanRakht">
 
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <!--GOOGLE FONT-->
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
 
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
 
-        <!-- Main CSS file -->
-        <link rel="stylesheet" href="assets/css/app.css" />
-    </head>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <body m-md-3>
-        <!-- Main content goes here -->      
-          <section id="header" class="jumbotron px-0 py-3 p-sm-2 m-0 rounded-0 text-left">
-              <div class="container">
-                <div class="row">
-                  <div class="col-6 col-md-2 offset-md-8 offset-3 my-auto text-right"><a href="/login" class="text-danger">login </a>|<a href="/signup" class="text-danger"> signup</a> </div>
-                  <div class="col-3 col-md-2"><a href="/users"><img src="assets/images/profile.jpg" class="rounded rounded-circle" alt=""></a></div>
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="assets/css/app.css" />
+</head>
+
+<body m-md-3>
+    <!-- Main content goes here -->
+    <section id="header" class="jumbotron px-0 py-3 p-sm-2 m-0 rounded-0 text-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-2 offset-md-8 offset-3 my-auto text-right">
+                    <a href="/login" class="text-danger">login </a>|
+                    <a href="/signup" class="text-danger"> signup</a>
                 </div>
-              </div>
-          </section>
-        <section id="signup">
+                <div class="col-3 col-md-2">
+                    <a href="/users">
+                        <img src="assets/images/profile.jpg" class="rounded rounded-circle" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="signup">
         <div class="container p-3 mt-5 bg-light">
-            <form>
+            {{#alertMessage}}
+            <div class="alert alert-danger">{{alertMessage}}</div>
+            {{/alertMessage}}
+            <form method="POST" action="/signup">
                 <div class="form-group">
                     <label for="firstname">First name</label>
-                    <input type="text" class="form-control" id="firstname" autocomplete="name" aria-describedby="firstname" placeholder="Enter Name">
+                    <input type="text" name="fname" class="form-control" id="firstname" autocomplete="name" aria-describedby="firstname" placeholder="Enter Name">
                 </div>
                 <div class="form-group">
                     <label for="mobileHelp">Mobile</label>
-                    <input type="number" class="form-control" id="mobileHelp" autocomplete="mobile" aria-describedby="mobileHelp" placeholder="Enter Mobile">
+                    <input type="number" name="number" class="form-control" id="mobileHelp" autocomplete="mobile" aria-describedby="mobileHelp"
+                        placeholder="Enter Mobile">
                     <small id="mobileHelp" class="form-text text-muted">We'll never share your mobile with anyone else.</small>
-                </div>                            
+                </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" autocomplete="email" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="text" name="email" class="form-control" id="exampleInputEmail1" autocomplete="email" aria-describedby="emailHelp"
+                        placeholder="Enter email">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" name="pass1" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
                 <div class="form-group">
                     <label for="confPassword1">Confirm password</label>
-                    <input type="password" class="form-control" id="confPassword1" placeholder="Password">
+                    <input type="password" name="pass2" class="form-control" id="confPassword1" placeholder="Password">
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <input type="checkbox" name="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Remember me</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <a href="/"><button type="button" class="btn btn-secondary">Cancel</button></a>
+                <a href="/">
+                    <button type="button" class="btn btn-secondary">Cancel</button>
+                </a>
             </form>
-        </div>  
-        </section>
-        <section class="footer p-4 mb-2 text-center text-danger">
-          <div class="row">
+        </div>
+    </section>
+    <section class="footer p-4 mb-2 text-center text-danger">
+        <div class="row">
             <div class="col-12 text-center">
                 <p>Want to know more?</p>
             </div>
             <div class="col-xs-12 col-md-3 text-primary">
-              <a href="mailto:jeevanrakht.in@gmail.com" target="_blank">Contact Us</a>
+                <a href="mailto:jeevanrakht.in@gmail.com" target="_blank">Contact Us</a>
             </div>
             <div class="col-xs-12 col-md-3 text-primary">
-              <a href="index.html" target="_blank">Go to website</a>
+                <a href="index.html" target="_blank">Go to website</a>
             </div>
             <div class="col-xs-12 col-md-3 text-primary">
-              <a href="policy.html" target="_blank">Terms &amp; policy</a>
+                <a href="policy.html" target="_blank">Terms &amp; policy</a>
             </div>
             <div class="col-xs-12 col-md-3 text-primary">
-              <a href="privacy.html" target="_blank">Privacy</a>
+                <a href="privacy.html" target="_blank">Privacy</a>
             </div>
             <div class="col-12 text-center mt-3">
                 <p>&copy; 2018, jeevanrakht.in, Inc. or its affiliates</p>
-            </div>                                          
-          </div>
-        </section>
-        <!-- Jquery -->
-        <script src="assets/js/jquery.min.js"></script>
-        <!-- Bootstrap -->
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <!-- Main JS file -->
-        <script src="assets/js/app.js"></script>
-      </body>
-  </html>
+            </div>
+        </div>
+    </section>
+    <!-- Jquery -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Main JS file -->
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

@@ -1,13 +1,11 @@
 const mongoose = require('mongoose');
-const userCtrl = require('../controllers/userController.js');
 
-const keys = require('../config/keys');
-
-mongoose.connect(keys.mongodb || 'mongodb://localhost:27017/jeevanrakht',function(error){
-  if (error) {
-    console.log('Error connecting to database.');
-  }  
-  console.log('Connected');
+mongoose.connect(process.env.MONGODB || 'mongodb://localhost:27017/jeevan_rakht').then(() => {
+    console.log('Connected');
+}, (err) => {
+    console.error('Error', err);
 });
+
+mongoose.Promise = global.Promise;
 
 module.exports = mongoose;

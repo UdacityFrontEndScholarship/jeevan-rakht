@@ -1,7 +1,23 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const passport = require('passport');
+const jwt = require('jsonwebtoken');
+const router = express.Router();
 
-router.get('/', function(req, res, next) {
-    res.send('Google OAuth2 connection Endpoint');
-    });
+router.get('/google', passport.authenticate('google', {
+    scope: ['profile']
+}));
+
+router.get('/google/redirect', passport.authenticate('google'), (req, res, next) => {
+    if (req.user) {
+        const payload = {
+            id: req.user.id
+        }
+        const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' });
+        res.status(200).json({
+            message: 'auth successful',
+            token: token
+        });
+    }
+});
+
 module.exports = router;
