@@ -50,12 +50,12 @@
     </section>
     <section id="login" class="main">
         <div class="container p-3 mt-5 bg-light">
-            {{#if successMessage}}
+            {{#successMessage}}
             <div class="alert alert-success">{{successMessage}}</div>
-            {{/if}}
-            {{#if alertMessage}}
+            {{/successMessage}}
+            {{#alertMessage}}
             <div class="alert alert-danger">{{alertMessage}}</div>
-            {{/if}}
+            {{/alertMessage}}
             <form method="POST" action="/login">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>

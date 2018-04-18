@@ -6,7 +6,6 @@ const logger = require('morgan');
 const sassMiddleware = require('node-sass-middleware');
 const passport = require('passport');
 const bodyParser = require('body-parser');
-const exphbs = require('express-handlebars');
 
 const mainRouter = require('./routes/main/app');
 const locateRouter = require('./routes/main/locate');
@@ -38,8 +37,7 @@ app.use(passport.initialize());
 app.use(bodyParser.urlencoded({ extended: false }))
     // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
+app.set('view engine', 'hjs');
 
 app.use(logger('dev'));
 app.use(express.json());

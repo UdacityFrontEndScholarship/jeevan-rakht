@@ -50,9 +50,9 @@
     </section>
     <section id="signup">
         <div class="container p-3 mt-5 bg-light">
-            {{#if alertMessage}}
+            {{#alertMessage}}
             <div class="alert alert-danger">{{alertMessage}}</div>
-            {{/if}}
+            {{/alertMessage}}
             <form method="POST" action="/signup">
                 <div class="form-group">
                     <label for="firstname">First name</label>

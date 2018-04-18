@@ -40,14 +40,16 @@
                         <img src="assets/images/logo.png" alt="" class="logo">
                     </a>
                 </div>
-                {{#if user}}
+                {{#user}}
                 <a href="/users" class="zi-1" title="{{user}}">
                     <i class="profile-btn fas fa-user-circle"></i>
                 </a>
-                {{/if}}            
+                {{/user}} 
+                {{^user}}           
                 <a href="/users" class="zi-1">
                     <i class="profile-btn fas fa-user-circle"></i>
                 </a>            
+                {{/user}}
             </header>
 
             <main class="options-wrapper d-flex flex-wrap justify-content-center mt-4 mb-5">
