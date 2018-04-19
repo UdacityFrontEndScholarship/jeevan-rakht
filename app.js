@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
+var session = require('express-session');
+var flash = require('connect-flash');
 
 var mainRouter = require('./routes/main/app');
 var locateRouter = require('./routes/main/locate');
@@ -26,8 +28,7 @@ var verifyEmailFinishRouter = require('./routes/profile/verifyemail_finish');
 var gploginRouter = require('./routes/oauth2/fbconnect');
 var fbloginRouter = require('./routes/oauth2/gconnect');
 
-
-var mongoose = require('mongoose');
+var mongoose = require('./db/mongoose');
 
 var app = express();
 
@@ -39,12 +40,23 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true
+}));
 app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   indentedSyntax: true, // true = .sass and false = .scss
   sourceMap: true
 }));
+app.use(flash());
+app.use(function(req, res, next) {
+  res.locals.alertMessage = req.flash('alertMessage');
+  res.locals.successMessage = req.flash('successMessage');
+  next();
+});
 
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use(['/app','/'], mainRouter);
