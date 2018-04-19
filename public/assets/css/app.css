@@ -18,7 +18,12 @@ body {
 }
 
 body {
-  font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif;}
+  font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif;
+  background-image: url("https://image.ibb.co/mkDkj7/Pics_Art_04_17_03_09_36.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 #header img{
   width: 4rem;
@@ -173,22 +178,15 @@ body {
 	padding-bottom: 0.2em;	
 }
 /*For page not found error 404*/
-.col {
+/* {
 	text-align: center;
 	color: white;
-	background-image: url("https://image.ibb.co/mkDkj7/Pics_Art_04_17_03_09_36.jpg");
-	max-width: 600px;
-	min-width: 480px;
-	min-height:480px;
-	max-height: 600px;
-	background-repeat: no-repeat;
-	background-position: center;
+	
 	width: ;
 	height: ;
 	margin: 1em;
 	padding: 0.2em;
-	overflow:
-}
+}*/
 .text-app {
 	color: red;
 	font-weight: bold;
