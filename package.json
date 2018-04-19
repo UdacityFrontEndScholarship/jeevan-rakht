@@ -1,7 +1,7 @@
 {
   "name": "jeevanrakht",
   "version": "1.0.0",
-  "description": "",
+  "description": "The code and development of the JeevanRakht's website is housed here.   \r For more details - [Refer to this paper.](https://paper.dropbox.com/doc/JeevanRakht-WebD-Project-ZroUbusvKbwRSRCDFHCOV)",
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./bin/www"
@@ -31,5 +31,14 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-sass": "^3.2.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geetanjali195/jeevan-rakht.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/geetanjali195/jeevan-rakht/issues"
+  },
+  "homepage": "https://github.com/geetanjali195/jeevan-rakht#readme"
 }
