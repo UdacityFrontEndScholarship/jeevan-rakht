@@ -18,7 +18,12 @@ body {
 }
 
 body {
-  font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif; }
+  font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif;
+  background-image: url("https://image.ibb.co/mkDkj7/Pics_Art_04_17_03_09_36.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 #header img{
   width: 4rem;
@@ -69,6 +74,134 @@ body {
   max-width: 95%;
   border-radius: 10px;
   margin: 0 auto; }
+
+/* for logIn & signUp*/
+.text-danger {
+	font-style: sans-serif, serif;
+	font-size: 0.80em;
+	color: white;
+	border: 0.09em black solid;
+	margin: 0.05;
+	background-color: #282828;
+	text-align: center;
+	/*padding-bottom: 0.2em;*/
+	padding: 0.1em;
+	font-weight: bold;
+	border-radius: 0.2em;
+}
+/* when signUp & LogIn active */
+
+.Active {
+	font-style: sans-serif, serif;
+	font-size: 0.80em;
+	color: white;
+	border: 1em white solid;
+	margin: 2em;
+	text-align: center;
+	padding-bottom: 0.2em;	
+}
+body {
+  font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif;}
+
+#header img{
+  width: 4rem;
+  height: 4rem;
+}
+#header{
+  font-size: 1.5rem;
+}
+.contrast {
+  color: #000; }
+
+.firm {
+  color: #f4b408; }
+
+#logo {
+  color: white; 
+}
+
+#main {
+  text-align: center; }
+
+.footer a {
+  padding: 0.75rem; }
+
+.card {
+  background-color: tomato;
+  margin: 10px;
+  max-width: 50vmax;
+  text-align: center;
+  border: outset thin;
+  border-radius: 10px;
+  z-index: 999;
+  -webkit-box-shadow: 0 0 20px 2px rgba(255, 205, 205, 0.65);
+          box-shadow: 0 0 20px 2px rgba(255, 205, 205, 0.65); }
+
+@media screen and (max-width: 34em) {
+    li {
+        text-align: left !important;
+    }
+  .card {
+    margin-top: 10px; } 
+  }
+
+
+.card-img-top {
+  height: 300px;
+  max-height: 50%;
+  max-width: 95%;
+  border-radius: 10px;
+  margin: 0 auto; }
+  
+/* for logIn & signUp*/
+.text-danger {
+	font-size: 0.80em;
+	color: white;
+	border: 0.09em orangered solid;
+	margin: 0.05em;
+	padding: 0.2em;
+	background-color: red;
+	text-align: center;
+	/*padding-bottom: 0.2em;*/
+	padding: 0.1em;
+	font-weight: bold;
+	border-radius: 0.2em;
+}
+/* when signUp & LogIn active */
+
+.Active {
+	font-size: 0.80em;
+	color: white;
+	border: 1em white solid;
+	margin: 2em;
+	text-align: center;
+	padding-bottom: 0.2em;	
+}
+/*For page not found error 404*/
+/* {
+	text-align: center;
+	color: white;
+	
+	width: ;
+	height: ;
+	margin: 1em;
+	padding: 0.2em;
+}*/
+.text-app {
+	color: red;
+	font-weight: bold;
+	margin-top: 460px;
+}
+.btn {
+	color: white;
+	background: orange;
+	border: 2px solid red;
+	border-radius: 0.5em;
+	margin: 2px 2px 1px 1px;
+	padding: 6px;
+}
+
+=======
 
 
 /* === Styles related to app.hjs === */
