@@ -19,19 +19,20 @@ $(window).on('click', function (e) {
         e.stopPropagation();
     }
 });
-// TODO: Set didScroll to true when user scrolls
+
+//Set didScroll to true when user scrolls
 $(window).scroll(function (e) {
     didScroll = true;
 });
-// TODO: Check if the user scrolled every 250ms
-setInterval(checkScrolled, 250);
 
-function checkScrolled() {
+//Check if the user scrolled every 250ms
+setInterval(function() {
     if (didScroll) {
         hasScrolled();
         didScroll = false;
     }
-}
+}, 250);
+
 
 function hasScrolled() {
     let currentScroll = $(this).scrollTop();
@@ -39,16 +40,13 @@ function hasScrolled() {
     if (Math.abs(lastScrollPosition - currentScroll) <= delta)
         return;
 
-    // TODO: When user scrolls down, hide navbar
-    // TODO: When user scrolls up, show navbar
     if (currentScroll > lastScrollPosition && currentScroll > navHeight) {
-        // scroll down
-        nav.addClass('hide-nav');
+        //When user scrolls down, hide navbar
+        $('nav')[0].style.top =  ('-' + $('nav').outerHeight() + 'px');
     } else {
-        // scroll up
-        // if user has not scrolled past document which is possible for mac users
+        //When user scrolls up, show navbar
         if (currentScroll + $(window).height() < $(document).height()) {
-            nav.removeClass('hide-nav');
+          $('nav')[0].style.top = '0px';
         }
     }
     lastScrollPosition = currentScroll;
