@@ -43,6 +43,9 @@
           </section>
         <section id="login" class="main">
         <div class="container p-3 mt-5 bg-light">
+            {{#successMessage}}
+            <div class="alert alert-success">{{successMessage}}</div>
+            {{/successMessage}}
             <form>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
