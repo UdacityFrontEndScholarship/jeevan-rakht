@@ -329,3 +329,6 @@ footer .third h6.order-3{
 .icon:hover {
   color:rgba(0,0,0,0.6);
 }
+textarea{
+  resize: none;
+}
