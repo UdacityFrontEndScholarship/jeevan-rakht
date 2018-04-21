@@ -25,8 +25,8 @@ var updateEmailRouter = require('./routes/profile/update_email');
 var updateMobileRouter = require('./routes/profile/update_mobile');
 var verifyEmailRouter = require('./routes/profile/verifyemail');
 var verifyEmailFinishRouter = require('./routes/profile/verifyemail_finish');
-var gploginRouter = require('./routes/oauth2/fbconnect');
-var fbloginRouter = require('./routes/oauth2/gconnect');
+var fbloginRouter = require('./routes/oauth2/fbconnect');
+var gploginRouter = require('./routes/oauth2/gconnect');
 
 var mongoose = require('./db/mongoose');
 
@@ -37,14 +37,15 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hjs');
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 // trust first proxy, remove below line when deploying in order to secure cookies over https connection
-app.set('trust proxy', 1) 
+app.set('trust proxy', 1)
 app.use(cookieSession({
   name: 'session',
-  keys: ['key1', 'key2']
+  secret: 'random_string_goes_here',
+  maxAge: 30 * 60 * 1000
 }))
 app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
