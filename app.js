@@ -25,8 +25,8 @@ var updateEmailRouter = require('./routes/profile/update_email');
 var updateMobileRouter = require('./routes/profile/update_mobile');
 var verifyEmailRouter = require('./routes/profile/verifyemail');
 var verifyEmailFinishRouter = require('./routes/profile/verifyemail_finish');
-var gploginRouter = require('./routes/oauth2/fbconnect');
-var fbloginRouter = require('./routes/oauth2/gconnect');
+var gploginRouter = require('./routes/oauth2/gconnect');
+var fbloginRouter = require('./routes/oauth2/fbconnect');
 
 var mongoose = require('./db/mongoose');
 
