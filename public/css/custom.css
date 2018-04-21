@@ -1,0 +1,29 @@
+body{
+    overflow-x: hidden;
+}
+
+#logo{
+    padding-left: 20px;
+}
+
+#start:hover{
+    background: #00cfff !important;
+}
+
+.fade{
+    opacity:0.8;
+    border-radius: 20px;
+   
+}
+.fade:nth-child(3){
+    margin-top: -30px;
+}
+label {
+  margin: -4px 0;
+}
+    
+ input[type=number]::-webkit-inner-spin-button, 
+ input[type=number]::-webkit-outer-spin-button { 
+ -webkit-appearance: none; 
+ margin: 0; 
+}
