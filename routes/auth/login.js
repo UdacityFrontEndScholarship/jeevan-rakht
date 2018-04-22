@@ -17,7 +17,7 @@ router.post('/', function(req, res, next) {
     }
     loginUser(userObj, function(err, result) {
         if (err) {
-            res.render('auth/login', { title: 'Login', alertMessage: 'Something went wrong on our side.' });
+            res.render('auth/login', { title: 'Login', alertMessage: 'Something went wrong on our side.', emailValue: req.body.email });;
         } else if (result === 1) {
             findByEmail(req.body.email, function(err, result) {
                 if (err) {
@@ -28,9 +28,9 @@ router.post('/', function(req, res, next) {
                 }
             });
         } else if (result === 0) {
-            res.render('auth/login', { title: 'Login', alertMessage: 'Wrong Password.' });
+            res.render('auth/login', { title: 'Login', alertMessage: 'Wrong Password.', emailValue: req.body.email });
         } else if (!result) {
-            res.render('auth/login', { title: 'Login', alertMessage: 'User does not exist.' });
+            res.render('auth/login', { title: 'Login', alertMessage: 'User does not exist.', emailValue: req.body.email });
         }
     });
 });
