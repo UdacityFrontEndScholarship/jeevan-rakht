@@ -6,6 +6,7 @@ var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 var cookieSession = require('cookie-session');
 var flash = require('connect-flash');
+var bodyParser = require('body-parser');
 
 var mainRouter = require('./routes/main/app');
 var locateRouter = require('./routes/main/locate');
@@ -46,7 +47,9 @@ app.use(cookieSession({
   name: 'session',
   secret: 'random_string_goes_here',
   maxAge: 30 * 60 * 1000
-}))
+}));
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
