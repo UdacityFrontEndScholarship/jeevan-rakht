@@ -6,7 +6,6 @@ var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 var cookieSession = require('cookie-session');
 var flash = require('connect-flash');
-var bodyParser = require('body-parser');
 
 var mainRouter = require('./routes/main/app');
 var locateRouter = require('./routes/main/locate');
@@ -38,8 +37,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hjs');
 
 app.use(logger('dev'));
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 // trust first proxy, remove below line when deploying in order to secure cookies over https connection
 app.set('trust proxy', 1)
@@ -48,8 +47,6 @@ app.use(cookieSession({
   secret: 'random_string_goes_here',
   maxAge: 30 * 60 * 1000
 }));
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
 app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
