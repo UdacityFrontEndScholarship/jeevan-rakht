@@ -60,25 +60,55 @@ var deleteUser = function(email, callback) {
         }
     });
 }
-var createOAuthUser = function(usrObj,callback){
+var createOAuthUser = function(usrObj, callback) {
     var newUser = new UserAcct({
-        user_name:usrObj.username
-        ,email:usrObj.email
-        ,picture:usrObj.picture
-        ,active_flag: usrObj.active_flag
-        ,user_type: usrObj.type
-        ,notification_flag: usrObj.not_flag
-        ,OAuth2_user : [usrObj.provider]
+        user_name: usrObj.username,
+        email: usrObj.email,
+        picture: usrObj.picture,
+        active_flag: usrObj.active_flag,
+        user_type: usrObj.type,
+        notification_flag: usrObj.not_flag,
+        OAuth2_user: [usrObj.provider]
     });
-        newUser.save(function(err,data){
-            if (err){
-                console.log('Unable to save user', err);
-                callback(err, undefined);
-                return;
-            }
-            console.log('Saved from user model', data);
-            callback(err, data);
-        });
+    newUser.save(function(err, data) {
+        if (err) {
+            console.log('Unable to save user', err);
+            callback(err, undefined);
+            return;
+        }
+        console.log('Saved from user model', data);
+        callback(err, data);
+    });
+}
+
+var loginUser = function(userObj, callback) {
+    UserAcct.findOne({ email: userObj.email }, function(err, resultFromDb) {
+        console.log(resultFromDb);
+        if (err) {
+            console.log('something went wrong while fetching user from db.');
+            callback(err, undefined);
+            return;
+        } else if (resultFromDb) {
+            console.log('user found.');
+            bcrypt.compare(userObj.password, resultFromDb.password, function(err, result) {
+                if (err) {
+                    console.log('something went wrong while comparing password with hashed one.');
+                    callback(err, undefined);
+                    return;
+                } else if (result) {
+                    callback(undefined, 1);
+                    return;
+                } else if (!result) {
+                    callback(undefined, 0);
+                    return;
+                }
+            });
+        } else if (!resultFromDb) {
+            console.log('user not found');
+            callback(undefined, resultFromDb);
+            return;
+        }
+    });
 }
 
 var updateUser = function() {}
@@ -88,3 +118,4 @@ module.exports.findByEmail = findByEmail;
 module.exports.updateUser = updateUser;
 module.exports.deleteUser = deleteUser;
 module.exports.createOAuthUser = createOAuthUser;
+module.exports.loginUser = loginUser;
