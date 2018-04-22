@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="styles.css" type = "text/css"/>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<div class="logo"><a href="index.php"><img src="images/jeevanrakht.jpg"/></a></div>
+</div>
+
+        <div class="topNav">
+            <ul>
+                <li><a href="index.php">Home</a></li> 
+                <li><a href="whydonateblood.html">  Why Donate Blood? </a></li> 
+                <li><a href="whoneedblood.html"> Who Needs Blood?</a></li> 
+                <li><a href="referafriend.php">Refer a Friend </a></li> 
+            </ul>
+        </div>      
+        <div class="contentArea">
+    <div class="leftMain1">
+    <p class="qHeading">Add Your Blood Bank</p>
+    <form name="addbloodbank" method="post" onsubmit="return validatebloodbank();">
+        <p>
+            <label>Type</label>
+            <select name="bloodtype">
+                <option>Independent</option>
+                <option>Government</option>
+                <option>Hospital</option>
+            </select>
+        </p>
+        <p> 
+            <label>Name:</label> 
+            <input type="text"  name="hospitalname" value="Blood Bank name" onfocus="checkvalue(document.addbloodbank.hospitalname, 'Blood Bank name');" onblur="checkvalue1(document.addbloodbank.hospitalname, 'Blood Bank name');"/>
+        </p>
+        <p><label>Contact Person</label>
+            <input type="text" name="contactperson" value="Contact Person" onfocus="checkvalue(document.addbloodbank.contactperson, 'Contact Person');" onblur="checkvalue1(document.addbloodbank.contactperson, 'Contact Person');" /> 
+        </p>
+        <p>
+             <label>Contact No.</label>
+            <input type="text" name="contactno" value="Contact No" onfocus="checkvalue(document.addbloodbank.contactno, 'Contact No');" onblur="checkvalue1(document.addbloodbank.contactno, 'Contact No');" /> 
+         </p>
+        <p> 
+            <label>Email:</label><input type="text" name="email" value="Email" onfocus="checkvalue(document.addbloodbank.email, 'Email');" onblur="checkvalue1(document.addbloodbank.email, 'Email');"/>
+        </p>
+        <p> <label>Address:</label>
+            <textarea  name="address"/></textarea>
+        </p>
+        <p> <label>Country:</label>
+            <script>country_list();</script>
+        </p>
+        <p> 
+            <label>State:</label>
+            <span id="statechange"><script>state_list();</script></span>
+        </p>
+        <p> 
+            <label>City:</label><input type="text"  name="city" value="City" onfocus="checkvalue(document.addbloodbank.city, 'City');" onblur="checkvalue1(document.addbloodbank.city, 'City');"/>
+        </p>
+        <p> 
+            <label>Locality:</label> 
+            <input type="text"  name="locality" value="Locality" onfocus="checkvalue(document.addbloodbank.locality, 'Locality');" onblur="checkvalue1(document.addbloodbank.locality, 'Locality');"/>
+        </p>
+        
+        <p> <label> &nbsp;  </label> <input type="submit"  name="submit" class="button"   value="Register" onclick="insert" /></p>
+    </form>
+    </div>
+
+    <div class="rightDiv">
+        <p>Are You Ready To Save Life?</p>
+        <p>"Virtual Blood Bank is one of the biggest movements towards saving precious human life.
+    Be a Leader and make this philanthropic movement a grand success. The moto of this movement is 'Give blood.. Give now.. Give offen.."</p>
+        <div class="readMore"><a href="whydonateblood.html" style="text-decoration:none;"> Read More..</a></div>
+        <div style="height:250px"></div>
+    </div>
+</div>
+   </div>
+</body>
+</html>
