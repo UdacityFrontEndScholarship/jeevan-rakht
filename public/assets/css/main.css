@@ -25,11 +25,6 @@ body {
   position: relative;
 }
 
-body,
-html {
-  height: 100%;
-}
-
 .nav .open>a,
 .nav .open>a:hover,
 .nav .open>a:focus {
@@ -642,7 +637,6 @@ a[href*="#followme"]::before {
 
 .hamburger {
   position: fixed;
-  top: 30px;
   z-index: 999;
   display: block;
   width: 32px;
