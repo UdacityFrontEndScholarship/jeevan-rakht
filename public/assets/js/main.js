@@ -1,11 +1,13 @@
 // This is our Main JS file.
 // Please modify as and when required.
 // alert('works');
-let didScroll = false;
-let lastScrollPosition = 0;
-let delta = 2;
-let nav = $('.navbar');
-let navHeight = nav.outerHeight();
+let didScroll = false,
+  lastScrollPosition = 0,
+  delta = 2,
+  nav = $('.navbar');
+var trigger = $('.hamburger'),
+    overlay = $('.overlay'),
+    isClosed = false;
 // Select the navbar item list div
 const drawer = $('.collapse');
 /**
@@ -40,9 +42,9 @@ function hasScrolled() {
     if (Math.abs(lastScrollPosition - currentScroll) <= delta)
         return;
 
-    if (currentScroll > lastScrollPosition && currentScroll > navHeight) {
+    if (currentScroll > lastScrollPosition && currentScroll > nav.outerHeight()) {
         //When user scrolls down, hide navbar
-        $('nav')[0].style.top =  ('-' + $('nav').outerHeight() + 'px');
+        $('nav')[0].style.top =  ('-' + nav.outerHeight() + 'px');
     } else {
         //When user scrolls up, show navbar
         if (currentScroll + $(window).height() < $(document).height()) {
@@ -50,35 +52,26 @@ function hasScrolled() {
         }
     }
     lastScrollPosition = currentScroll;
-
 }
 
 
-$(document).ready(function () {
-    var trigger = $('.hamburger'),
-        overlay = $('.overlay'),
-        isClosed = false;
+trigger.click(function () {
+  $('#wrapper').toggleClass('toggled');
+  $('#wrapper.toggled #sidebar-wrapper').css('top', nav.outerHeight());
+  if (isClosed == true) {
+    overlay.hide();
+    trigger.removeClass('is-open');
+    trigger.addClass('is-closed');
 
-    trigger.click(function () {
-        hamburger_cross();
-    });
-
-    function hamburger_cross() {
-
-        if (isClosed == true) {
-            overlay.hide();
-            trigger.removeClass('is-open');
-            trigger.addClass('is-closed');
-            isClosed = false;
-        } else {
-            overlay.show();
-            trigger.removeClass('is-closed');
-            trigger.addClass('is-open');
-            isClosed = true;
-        }
+    isClosed = false;
+    //Enable scrolling
+    $('body')[0].style.height = '';
+  } else  {
+      overlay.show();
+      trigger.removeClass('is-closed');
+      trigger.addClass('is-open');
+      isClosed = true;
+      //Disable scrolling
+      $('body')[0].style.height = '100%';
     }
-
-    $('[data-toggle="offcanvas"]').click(function () {
-        $('#wrapper').toggleClass('toggled');
-    });
 });
