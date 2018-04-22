@@ -42,25 +42,28 @@
               </div>
           </section>
         <div class="container p-3 mt-5 bg-light">
-            {{#successMessage}}
-            <div class="alert alert-success">{{successMessage}}</div>
-            {{/successMessage}}
-            <div id="oauth-login-result" class="col-md-12 text-center"></div>
         </div>
         <section id="login" class="main">
         <div class="container p-3 mt-5 bg-light">
-            <form>
+            {{#successMessage}}
+            <div class="alert alert-success">{{successMessage}}</div>
+            {{/successMessage}}
+            {{#alertMessage}}
+            <div class="alert alert-danger">{{alertMessage}}</div>
+            {{/alertMessage}}
+            <div id="oauth-login-result" class="col-md-12 text-center"></div>
+            <form method="POST" action="/login">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" {{#emailValue}}value="{{emailValue}}"{{/emailValue}}>
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" name="pwd" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <input type="checkbox" name="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -211,23 +214,22 @@
         <!-- Main JS file -->
         <script src="assets/js/app.js"></script>
         <!-- Main content goes here -->
-        <script>
+        {{!-- <script>
             (function($){
-                $('#login').on( 'click', function(e) {
+                $('#login').on( 'submit', function(e) {
+                    e.preventDefault();
                     var email =  $('#exampleInputEmail1').val();
                     var pwd =  $( '#exampleInputPassword1' ).val();
-                    var JSONObj = {
+                    var data = {
                         "email"         	    :email,
                         "pwd"                   :pwd,
                         "status"                :'publish'
                     };
-                    var data = JSON.stringify(JSONObj);
-                    console.log(data);
                     $.ajax({
                         type: 'POST',
                         url: '/login',
-                        processData: false,
-                        contentType: 'json',
+                        processData: true,
+                        contentType: 'application/x-www-form-urlencoded',
                         data: data,
                         success: function(result){
                             if (result){
@@ -241,7 +243,7 @@
                     });
             });
         })(jQuery);
-        </script>
+        </script> --}}
     <!--Ajax Call to SIGN IN -->
 	<!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
 	<script async defer src="https://apis.google.com/js/client:platform.js?onload=start"></script>

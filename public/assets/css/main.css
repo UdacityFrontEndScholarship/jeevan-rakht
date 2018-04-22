@@ -25,11 +25,6 @@ body {
   position: relative;
 }
 
-body,
-html {
-  height: 100%;
-}
-
 .nav .open>a,
 .nav .open>a:hover,
 .nav .open>a:focus {
@@ -50,7 +45,8 @@ h6 {
 .navbar {
   padding: 0.2em 1em;
   background-color: var(--white);
-  transition: top 0.5s ease-in-out;
+  box-shadow: 0px 5px 15px 0px rgba(153,153,153,0.5);
+
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -95,6 +91,27 @@ h6 {
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
+
+
+
+.btn-outline-danger{
+  box-shadow: 0px 5px 25px 0px rgba(153,153,153,0.5);
+}
+
+.btn-outline-danger:hover,
+.btn-outline-danger:active {
+  color: var(--white) !important;
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.btn-outline-danger{
+
+  color: var(--secondary-color);
+  background-color: white;
+  border-color: var(--secondary-color);
+}
+
 
 .btn-outline-success:hover,
 .btn-outline-success:active {
@@ -217,9 +234,9 @@ a.carousel-control-next {
 
 .card {
   padding: 0.8em;
-  border-radius: 2px;
+  border-radius: 12px;
   background-color: rgba(250, 250, 250, 0.9);
-  box-shadow: 0px 2px 6px 1px rgba(67, 67, 67, 0.6);
+  box-shadow: 0px 5px 15px 0px rgba(153, 153, 153, 0.6);
 }
 
 .card.one {
@@ -246,14 +263,24 @@ a.carousel-control-next {
   text-align: center;
 }
 
-.form-group {
-  margin: 0;
-  margin-top: -1.2em;
+.help-section{
+  margin: 50px 0px;
+}
+
+
 }
 
 .lp-form-group {
   padding: 25px 0px 10px 0px;
 }
+
+.fa-question{
+  font-size: 400px;
+  margin-left: 100px;
+  margin-top: 25px;
+  color:var(--secondary-color);
+}
+
 
 .form-btn {
   margin-top: 0.4em;
@@ -274,12 +301,48 @@ a.carousel-control-next {
   background-color: rgba(250, 250, 250, 0.5);
 }
 
+.query{
+  margin-top:35px;
+  margin-bottom:60px;
+}
+
+.text-center{
+  margin-bottom:35px;
+}
+
+.mages{
+  padding:50px;
+  box-shadow: 0px 5px 25px 0px rgba(153,153,153,0.5);
+  margin-right:40px;
+  border-radius: 20px;
+}
+
+.live-message{
+  
+  margin-bottom:40px;
+  margin-left:45px;
+}
+
+.thought{
+margin-top: 100px;
+box-shadow:0px -5px 10px 0px rgba(153,153,153,0.5);
+
+}
+
+.blood{
+  box-shadow: 0px 5px 15px 0px rgba(153,153,153,0.5);
+}
+
+
+
 /* Call to action */
 
 .call-to-action {
   height: 100px;
   background: var(--white);
-  box-shadow: 0px 5px 6px -1px rgba(110, 109, 110, 0.4);
+
+
+
 }
 
 .call-to-action h5 {
@@ -642,7 +705,6 @@ a[href*="#followme"]::before {
 
 .hamburger {
   position: fixed;
-  top: 30px;
   z-index: 999;
   display: block;
   width: 32px;
