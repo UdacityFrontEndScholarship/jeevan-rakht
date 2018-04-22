@@ -254,6 +254,11 @@ a.carousel-control-next {
 .lp-form-group {
   padding: 25px 0px 10px 0px;
 }
+navbar .form-group {
+  margin: 0;
+  margin-top: -1.2em;
+  padding: 0;
+}
 
 .form-btn {
   margin-top: 0.4em;
@@ -559,6 +564,7 @@ footer .third h6.order-3 {
   width: 100%;
   padding: 0;
   margin: 0;
+<<<<<<< HEAD
   border-radius: 0;
   border: none;
   background-color: #222;
