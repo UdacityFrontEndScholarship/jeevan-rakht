@@ -106,7 +106,6 @@ h6 {
 .btn-outline-success:not(:disabled):not(.disabled).active,
 .btn-outline-success:not(:disabled):not(.disabled):active,
 .show>.btn-outline-success.dropdown-toggle {
-.btn-outline-success:not(:disabled):not(.disabled).active, .btn-outline-success:not(:disabled):not(.disabled):active, .show>.btn-outline-success.dropdown-toggle {
   color: #fff;
   background-color: var(--primary-color-dark);
   border-color: var(--primary-color-dark);
@@ -202,7 +201,7 @@ a.carousel-control-next {
 
 .info {
   padding: 4em 0;
-  background: url('../images_optimized/will-o-253882-unsplash_large_2x.jpg') top center/cover no-repeat;
+  background: url('../images/will-o-253882-unsplash.jpg') top center/cover no-repeat;
 }
 
 .card {
@@ -254,11 +253,6 @@ a.carousel-control-next {
 
 .lp-form-group {
   padding: 25px 0px 10px 0px;
-}
-navbar .form-group {
-  margin: 0;
-  margin-top: -1.2em;
-  padding: 0;
 }
 
 .form-btn {
@@ -565,12 +559,6 @@ footer .third h6.order-3 {
   width: 100%;
   padding: 0;
   margin: 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 6a6186491e03aa8b36b92c3dc43d5cc8d733dc72
   border-radius: 0;
   border: none;
   background-color: #222;
@@ -688,7 +676,6 @@ a[href*="#followme"]::before {
   display: block;
   -webkit-transform: translate3d(-100px, 0, 0);
   -webkit-transition: all .35s ease-in-out;
->>>>>>> repeated reabase conflict
 }
 
 .hamburger.is-closed .hamb-top,
@@ -811,12 +798,4 @@ a[href*="#followme"]::before {
 
 .logo {
   margin: 0 auto;
-}
-form .form-group{
-  margin: 0;
-  padding: 0;
-<<<<<<< HEAD
-}form .form-group{
-  margin: 0;
-  padding: 0;
 }

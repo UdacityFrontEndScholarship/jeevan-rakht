@@ -202,7 +202,7 @@ a.carousel-control-next {
 
 .info {
   padding: 4em 0;
-  background: url('../images_optimized/will-o-253882-unsplash_large_2x.jpg') top center/cover no-repeat;
+  background: url('../images/will-o-253882-unsplash.jpg') top center/cover no-repeat;
 }
 
 .card {
@@ -566,11 +566,8 @@ footer .third h6.order-3 {
   padding: 0;
   margin: 0;
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 <<<<<<< HEAD
-=======
->>>>>>> 6a6186491e03aa8b36b92c3dc43d5cc8d733dc72
   border-radius: 0;
   border: none;
   background-color: #222;
@@ -813,10 +810,6 @@ a[href*="#followme"]::before {
   margin: 0 auto;
 }
 form .form-group{
-  margin: 0;
-  padding: 0;
-<<<<<<< HEAD
-}form .form-group{
   margin: 0;
   padding: 0;
 }
