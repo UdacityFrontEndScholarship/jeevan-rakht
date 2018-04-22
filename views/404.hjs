@@ -29,6 +29,7 @@
 
         <!-- Main CSS file -->
         <link rel="stylesheet" href="assets/css/app.css" />
+		<link rel="stylesheet" href="C:\Users\chetanbhatia\Downloads\jeevan-rakht-master\jeevan-rakht\public\assets\css\app.css" />
     </head>
 
     <body m-md-3>
@@ -46,11 +47,14 @@
             <div class="container text-center">
                 <div class="row">
                 <div class="col">
-                    <h1>404</h1>
-                    <p>We couldn’t find this page.</p>
+                    <!--<h1>404</h1>-->
+                    <!--<h1>404</h1>-->
+                 <div class="text-app">
+				   <!--<p>We couldn’t find this page.</p>-->
                     <p>If you came here by folowing links from our site then please Contact Us to report the issue.</p>
                     <p><a href="/" class="btn btn-block btn-primary">Return to homepage</a></p>
-                </div>    
+                </div>
+				</div>    
                 </div>	    
             </div>	
         </section>
