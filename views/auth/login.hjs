@@ -32,7 +32,7 @@
     </head>
 
     <body m-md-3>
-        <!-- Main content goes here -->      
+        <!-- Main content goes here -->
           <section id="header" class="jumbotron px-0 py-3 p-sm-2 m-0 rounded-0 text-left">
               <div class="container">
                 <div class="row">
@@ -41,11 +41,14 @@
                 </div>
               </div>
           </section>
-        <section id="login" class="main">
         <div class="container p-3 mt-5 bg-light">
             {{#successMessage}}
             <div class="alert alert-success">{{successMessage}}</div>
             {{/successMessage}}
+            <div id="oauth-login-result" class="col-md-12 text-center"></div>
+        </div>
+        <section id="login" class="main">
+        <div class="container p-3 mt-5 bg-light">
             <form>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
@@ -68,28 +71,28 @@
             <div class="row" id="gplogin">
                 <div id="signinButton" class="col-md-12 text-center">
                     <span class="g-signin"
-                            data-scope="openid email" 
-                            data-clientid="206205063091-03p9vfum443gup692b3d9tuii2hg8unt.apps.googleusercontent.com" 
-                            data-redirecturi="postmessage" 
-                            data-accesstype="offline" 
-                            data-cookiepolicy="single_host_origin" 
-                            data-callback="signInCallback" 
-                            data-approvalprompt="force">			
-                    </span>	
+                            data-scope="openid email"
+                            data-clientid="206205063091-03p9vfum443gup692b3d9tuii2hg8unt.apps.googleusercontent.com"
+                            data-redirecturi="postmessage"
+                            data-accesstype="offline"
+                            data-cookiepolicy="single_host_origin"
+                            data-callback="signInCallback"
+                            data-approvalprompt="force">
+                    </span>
                 </div>
             </div>
 
             <div class="row" id="fblogin">
                 <div class="col-md-12 text-center">
                 <button>
-                        <fb:login-button 
-                            scope="public_profile,email" 
+                        <fb:login-button
+                            scope="public_profile,email"
                             onlogin="sendTokenToServer();">
                             <a href='javascript:sendTokenToServer()'>Login with Facebook</a>
                         </fb:login-button>
-                </button>			
+                </button>
                 </div>
-            </div>        
+            </div>
         </section>
         <section class="footer p-4 mb-2 text-center text-danger">
           <div class="row">
@@ -110,7 +113,7 @@
             </div>
             <div class="col-12 text-center mt-3">
                 <p>&copy; 2018, jeevanrakht.in, Inc. or its affiliates</p>
-            </div>                                          
+            </div>
           </div>
         </section>
     <script>
@@ -120,7 +123,7 @@
 				// console.log('One time code from authResult: ');
 				// console.log(authResult['code']);
 				// console.log(authResult['status']);
-				$('.login').attr("style","display:none");
+				$('#login').attr("style","display:none");
 				$.ajax({
 					type: 'POST',
 					url: '/gconnect?state={{STATE}}',
@@ -129,21 +132,21 @@
 					data: authResult['code'],
 					success: function(result){
 						if (result){
-							$('#result').html('Login Successfull! <br>'+ result+ '<br>Redirecting');
+							$('#oauth-login-result').html('Login Successfull! <br>'+ result+ '<br>Redirecting');
 							setTimeout(function(){
-								window.location.href="/home";
+								window.location.href="/";
 							},4000);
 						}else
 						{
-							$('#result').html('Failed to make server side call.\
+							$('#oauth-login-result').html('Failed to make server side call.\
 								Check your configuration and console.');
 						}
 					}
 				});
 			}else if(authResult['error']){
-				console.log('There was an error: '+ authResult['error']);			
+				console.log('There was an error: '+ authResult['error']);
 				// console.log(authResult);
-			}	
+			}
 		}
 	</script>
 <!--END GOOGLE PLUS SIGN IN -->
@@ -153,7 +156,7 @@
 	window.fbAsyncInit = function() {
 	FB.init({
 	  	appId      : '303950806802847',
-	   	cookie     : true,  // enable cookies to allow the server to access 
+	   	cookie     : true,  // enable cookies to allow the server to access
 	                       // the session
 	   	xfbml      : true,  // parse social plugins on this page
 	   	version    : 'v2.8' // use version 2.2
@@ -175,7 +178,7 @@
 	   console.log('Welcome!  Fetching your information.... ');
 	   FB.api('/me', function(response) {
 	     	console.log('Successful login for: ' + response.name);
-	     	$('.login').attr("style","display:none");
+	     	$('#login').attr("style","display:none");
 		    $.ajax({
 		    type: 'POST',
 		    url: '/fbconnect?state={{STATE}}',
@@ -185,20 +188,20 @@
 		    success: function(result) {
 		      // Handle or verify the server response if necessary.
 		      	if(result){
-			        $('#result').html('Login Successful!</br>'+ result + '</br>Redirecting...')
+			        $('#oauth-login-result').html('Login Successful!</br>'+ result + '</br>Redirecting...')
 			        setTimeout(function() {
-			        		window.location.href = "/home";
-			        }, 4000);			          
+			        		window.location.href = "/";
+			        }, 4000);
 			    }
 			    else{
-			        $('#result').html('Failed to make a server-side call. Check your configuration and console.');
+			        $('#oauth-login-result').html('Failed to make a server-side call. Check your configuration and console.');
 			    }
 		      }
-		      
+
 	  		});
 		});
 	}
-	</script>        
+	</script>
 
         <!-- Jquery -->
         <script src="assets/js/jquery.min.js"></script>
@@ -236,12 +239,12 @@
                             }
                         }
                     });
-            });     	
-        })(jQuery);                    
+            });
+        })(jQuery);
         </script>
     <!--Ajax Call to SIGN IN -->
 	<!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
 	<script async defer src="https://apis.google.com/js/client:platform.js?onload=start"></script>
-	<!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->	    
+	<!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->
       </body>
   </html>

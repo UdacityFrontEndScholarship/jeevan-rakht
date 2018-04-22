@@ -60,6 +60,26 @@ var deleteUser = function(email, callback) {
         }
     });
 }
+var createOAuthUser = function(usrObj,callback){
+    var newUser = new UserAcct({
+        user_name:usrObj.username
+        ,email:usrObj.email
+        ,picture:usrObj.picture
+        ,active_flag: usrObj.active_flag
+        ,user_type: usrObj.type
+        ,notification_flag: usrObj.not_flag
+        ,OAuth2_user : [usrObj.provider]
+    });
+        newUser.save(function(err,data){
+            if (err){
+                console.log('Unable to save user', err);
+                callback(err, undefined);
+                return;
+            }
+            console.log('Saved from user model', data);
+            callback(err, data);
+        });
+}
 
 var updateUser = function() {}
 
@@ -67,3 +87,4 @@ module.exports.signupUser = signupUser;
 module.exports.findByEmail = findByEmail;
 module.exports.updateUser = updateUser;
 module.exports.deleteUser = deleteUser;
+module.exports.createOAuthUser = createOAuthUser;
