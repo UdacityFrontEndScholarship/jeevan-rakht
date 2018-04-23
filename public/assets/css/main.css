@@ -853,7 +853,7 @@ a[href*="#followme"]::before {
 /*-------------------------------------*/
 
 #nav {
-  padding: 20px;
+  padding: 5px;
 }
 
 /* For centering logo */
@@ -861,3 +861,47 @@ a[href*="#followme"]::before {
 .logo {
   margin: 0 auto;
 }
+/*Login card*/
+.container.signin-container {
+    margin-top: 8%;
+}
+
+.card.signin-card {
+    padding: 40px 0px 20px;
+    background-color: gainsboro;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+img.signin-img {
+    padding: 0 2rem 2rem;
+    max-height: 7rem;
+    margin: auto;
+    display: block;
+}
+
+form.signin-form {
+    max-width: 350px;
+    margin: auto;
+}
+
+button.signin-btn {
+    color: white;
+    background-color: #d64829;
+    width: 100%;
+    margin-bottom: 1.2rem;
+}
+
+a.new-accnt {
+    font-size: 1.2rem;
+    text-align: center;
+    display: block;
+    margin-top: 15px;
+}
+body.login-body {
+	background-image: url("../images/medieval_town_of_pals_catalonia-wallpaper-3840x2160.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
