@@ -46,7 +46,7 @@ h6 {
   padding: 0.2em 1em;
   background-color: var(--white);
   box-shadow: 0px 5px 15px 0px rgba(153,153,153,0.5);
-
+  transition: top 0.5s ease-in-out;
 }
 
 .navbar-dark .navbar-nav .nav-link {
