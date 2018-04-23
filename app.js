@@ -35,7 +35,12 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hjs');
-
+app.set('partials',
+        {head: 'partials/head'
+         ,header: 'partials/header'
+         ,footer: 'partials/footer'
+         ,utilityJS: 'partials/utilityJS'
+        });
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

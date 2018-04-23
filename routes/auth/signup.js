@@ -8,7 +8,8 @@ var { findByEmail, signupUser } = require('../../controllers/userController');
 var passExpression = '^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})';
 
 router.get('/', function(req, res, next) {
-    res.render('auth/signup', { title: 'Signup' });
+    partials = req.app.get('partials');
+    res.render('auth/signup', { title: 'Signup' ,partials: partials});
 });
 
 router.post('/', function(req, res, next) {
