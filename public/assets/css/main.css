@@ -23,6 +23,8 @@ body {
   color: var(--text-color-dark);
   overflow-x: hidden;
   position: relative;
+  font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif;
+  background-color: #fbfbfb;
 }
 
 .nav .open>a,
@@ -45,7 +47,6 @@ h6 {
 .navbar {
   padding: 0.2em 1em;
   background-color: var(--white);
-  box-shadow: 0px 5px 15px 0px rgba(153,153,153,0.5);
 
 }
 
@@ -89,7 +90,6 @@ h6 {
   font-family: var(--font-title);
   font-weight: 700;
   letter-spacing: 0.04em;
-  text-transform: uppercase;
 }
 
 
@@ -201,10 +201,10 @@ a.carousel-control-next {
 }
 
 .helpline {
-  display: flex;
-  justify-content: center;
-  height: 50px;
   background-color: var(--primary-color-light);
+  color: #fff;
+  margin-top: -17px;
+  font-size: 16px;
 }
 
 .helpline h5 {
@@ -296,9 +296,9 @@ a.carousel-control-next {
 }
 
 .form-control {
-  border-radius: 2px;
-  border: 2px solid var(--text-color-dark);
-  background-color: rgba(250, 250, 250, 0.5);
+  border-radius: 4px;
+  border: 1px solid var(--text-color-dark);
+  background-color: rgb(250, 250, 250);
 }
 
 .query{
@@ -307,7 +307,7 @@ a.carousel-control-next {
 }
 
 .text-center{
-  margin-bottom:35px;
+  margin-bottom:0px;
 }
 
 .mages{
@@ -861,3 +861,165 @@ a[href*="#followme"]::before {
 .logo {
   margin: 0 auto;
 }
+
+/*New Css By Megha Sharma*/
+/*Top Header*/
+.mn_hd_1{background-color: #bc2416;}
+.hd_left{float: left;}
+.hd_rite{
+  float: right;
+  margin-top: 14px;
+}
+
+.para_hd{
+  margin-top: 16px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.lk_hd {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: #333333;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 1.8;
+  margin-right: 8px;
+  transition: all 0.3s ease-out;
+}
+
+.soc_icn{color: #fff;
+  font-size: 14px;
+  border: 0 solid #FFF;
+  background-clip: padding-box;
+}
+.soc_icn:hover{
+  color: #fe3c47;
+  transition: all 0.3s ease-out;
+}
+
+.nav_mn{background-color: #fff;}
+.logo_1{width: 170px;}
+.nav_hd_1{padding: 20px 0px;}
+.hd_ul{width: 100%;}
+.hd_li{width: 25%;}
+.hd_an{text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333333;
+}
+.hd_an:hover{
+  color: #bc2416;
+  transition: all 0.3s ease-out;
+}
+
+.hd_sec{display: contents;}
+.hd_btn{background-color: #bc2416;
+  color: #fff;
+  border-radius: 5px;
+}
+.hd_btn:hover{background-color: #e21e0c;}
+.banner {
+  background-image: url("../images/banner/banner_2.jpg");
+  min-height: 600px;
+  background-position: center;
+  background-size: cover;
+  top: 0;
+}
+.ban_1{text-align: center;
+  color: #fff;
+  padding-top: 170px;
+}
+.ban_h1{    font-size: 50px;
+  font-weight: bold;
+}
+.ban_pa{font-size: 22px;
+  font-weight: 400;}
+.main_row_1{padding: 50px 0px;  }
+.why_hd{text-align: center;}
+.why_do{font-weight: bold; color: #343434;}
+.wh_img{width: 100px;}
+.wh_mn_di{text-align: center; }
+.wh_pa{
+  font-size: 30px;
+  font-weight: 600;
+}
+.wh_mn_2{padding: 80px 0px;}
+.wh_pa{
+  font-size: 22px;
+  font-weight: 600;
+  color: #4c4c4c;
+  margin-top: 10px;
+}
+.wh_im_bd{width: 110px;}
+.ar_an{
+  width: 30px;
+  float: left;
+  margin-left: -8px;
+}
+.ar_sec_1 a{
+  text-decoration: none;
+  font-size: 17px;
+  color: #343434;
+  font-weight: 500;
+}
+.ar_sec_1 a:hover{
+  color: #bc2416;
+}
+.ar_an_sec{margin: 20px 0px;}
+.scrl_hd{background-color: #fbfbfb; }
+.art_im_hg{width: 300px; float: left;}
+.main_row_2{padding: 80px 0px;}
+.fa_ar{color: #bc2416; font-size: 22px; margin-right: 5px;}
+.art_mn_dv{overflow: hidden; padding: 30px 30px 0px;}
+.ar_hre{margin: 15px 0;}
+.foot_hd{color: #fff;}
+.foot_pa_1{color: #fff; margin: 30px 0px 10px;}
+.ft_int{
+  padding: 10px 170px 10px 5px;
+  /* color: #333; */
+  background-color: #444;
+  border: none;}
+.ft_mn_dv{margin: 20px 0px;}
+.foot_btn_1{
+  background-color: #bc2416;
+  color: #fff;
+  padding: 10px 25px;
+}
+.foot_btn_1:hover{background-color: #e04132;}
+.ft_en_dv{float: left;
+  color: #bc2416;
+  font-size: 22px;
+  margin-right: 15px;
+  margin-top: 3px;
+}
+.ft_mn_dv_1{margin: 30px 0px 10px;}
+.ft_mn_dv_1 a{
+  text-decoration: none;
+  color: #fff;
+}
+.ft_mn_dv_1 a:hover{color: #bc2416; transition: all 0.3s ease-out;}
+.ft_mn_dv_2 a {
+  text-decoration: none;
+  color: #fff;
+}
+.ft_mn_dv_2 a:hover{color: #bc2416; transition: all 0.3s ease-out;  }
+.ft_mn_dv_2{margin: 25px 0px 20px 0px;}
+.foot_dwn_mn{
+  padding: 10px 0px;
+}
+.ft_mg_dw{width: 100px;}
+.ft_dw_pa_1{
+  font-size: 14px;
+  color: #333;
+  margin-top: 8px;
+  margin-bottom: 0px;
+}
+.ar_sc_mv{
+  width: 350px;
+  float: right;
+  max-height: 387px;
+  overflow-y: scroll;
+}
+.ar_img_1{width: 300px;}
