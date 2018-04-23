@@ -268,8 +268,6 @@ a.carousel-control-next {
 }
 
 
-}
-
 .lp-form-group {
   padding: 25px 0px 10px 0px;
 }
@@ -313,8 +311,9 @@ a.carousel-control-next {
 .mages{
   padding:50px;
   box-shadow: 0px 5px 25px 0px rgba(153,153,153,0.5);
-  margin-right:40px;
+  margin: 0 auto;
   border-radius: 20px;
+  width:90%;
 }
 
 .live-message{
