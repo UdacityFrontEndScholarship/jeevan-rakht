@@ -3,12 +3,13 @@ var router = express.Router();
 
 var keys = require('../../config/keys');
 var { loginUser, findByEmail } = require('../../controllers/userController');
+var { authenticate } = require('../../controllers/authenticateController');
 var state = keys.secret;
 
-router.get('/', function(req, res, next) {
+router.get('/', authenticate, function(req, res, next) {
     req.session.STATE = state;
     partials = req.app.get('partials');
-  	res.render('auth/login', { title: 'Login', STATE: state, partials: partials});
+    res.render('auth/login', { title: 'Login', STATE: state, partials: partials });
 });
 
 router.post('/', function(req, res, next) {
@@ -25,7 +26,15 @@ router.post('/', function(req, res, next) {
                 if (err) {
                     console.log(err);
                 } else if (result) {
-                    req.session.user = result.id;
+                    var sessionObj = {
+                        userId: result.id,
+                        login: true
+                    }
+                    if (result.picture.length >= 1) {
+                        req.flash('userPicture', result.picture[0]);
+                    }
+                    req.flash('login', 'true');
+                    req.session.generalUser = sessionObj;
                     res.redirect('/');
                 }
             });

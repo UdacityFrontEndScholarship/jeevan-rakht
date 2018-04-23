@@ -62,6 +62,8 @@ app.use(flash());
 app.use(function(req, res, next) {
   res.locals.alertMessage = req.flash('alertMessage');
   res.locals.successMessage = req.flash('successMessage');
+  res.locals.userPicture = req.flash('userPicture');
+  res.locals.login = req.flash('login');
   next();
 });
 
