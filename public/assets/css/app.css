@@ -240,12 +240,13 @@ canvas {
   text-align: center;
   font-size: 37px;
   text-transform: uppercase;
-  font-family: serif;
+  /* font-family: serif; */
 }
 
 .headingLocateBlood b {
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
   padding-right: 10px;
+  font-weight:  700;
 }
 
 .searchRadius {
@@ -306,10 +307,24 @@ canvas {
 
 @media screen and (max-width:500px) {
   .backArrow {
-    top: 28px;
-    left: 10px;
+    top: 7px;
+    left: 15px;
   }
   .headingLocateBlood {
     font-size: 24px;
+  }
+  .locateBlood{
+    padding-top: 5px;
+  }
+  .logo-wrapper{
+  display: block !important;
+  margin-left: calc(100% - 214px);
+  }
+  .footer-link{
+    
+display:  inline-block;
+  }
+  .searchBlood{
+    width: 95%;
   }
 }

@@ -6,7 +6,7 @@
                     </a>
                 </div>
                 <div class="option-label mr-2 zi-1" > 
-                    <a href="/login" class="option-label">login </a>|<a href="/signup" class="option-label"> signup</a> 
+                    
                 </div>
                 <a href="/users" class="zi-1">
                     {{!-- <i class="profile-btn fas fa-user-circle"></i> --}}
