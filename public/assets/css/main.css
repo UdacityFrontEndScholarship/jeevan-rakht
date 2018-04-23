@@ -13,7 +13,9 @@
 }
 
 /*---------*/
+
 /* Global */
+
 /*--------*/
 
 html,
@@ -45,7 +47,7 @@ h6 {
 .navbar {
   padding: 0.2em 1em;
   background-color: var(--white);
-  box-shadow: 0px 5px 15px 0px rgba(153,153,153,0.5);
+  box-shadow: 0px 5px 15px 0px rgba(153, 153, 153, 0.5);
   transition: top 0.5s ease-in-out;
 }
 
@@ -92,10 +94,8 @@ h6 {
   text-transform: uppercase;
 }
 
-
-
-.btn-outline-danger{
-  box-shadow: 0px 5px 25px 0px rgba(153,153,153,0.5);
+.btn-outline-danger {
+  box-shadow: 0px 5px 25px 0px rgba(153, 153, 153, 0.5);
 }
 
 .btn-outline-danger:hover,
@@ -105,13 +105,11 @@ h6 {
   border-color: var(--secondary-color);
 }
 
-.btn-outline-danger{
-
+.btn-outline-danger {
   color: var(--secondary-color);
   background-color: white;
   border-color: var(--secondary-color);
 }
-
 
 .btn-outline-success:hover,
 .btn-outline-success:active {
@@ -263,24 +261,20 @@ a.carousel-control-next {
   text-align: center;
 }
 
-.help-section{
+.help-section {
   margin: 50px 0px;
-}
-
-
 }
 
 .lp-form-group {
   padding: 25px 0px 10px 0px;
 }
 
-.fa-question{
+.fa-question {
   font-size: 400px;
   margin-left: 100px;
   margin-top: 25px;
-  color:var(--secondary-color);
+  color: var(--secondary-color);
 }
-
 
 .form-btn {
   margin-top: 0.4em;
@@ -301,48 +295,41 @@ a.carousel-control-next {
   background-color: rgba(250, 250, 250, 0.5);
 }
 
-.query{
-  margin-top:35px;
-  margin-bottom:60px;
+.query {
+  margin-top: 35px;
+  margin-bottom: 60px;
 }
 
-.text-center{
-  margin-bottom:35px;
+.text-center {
+  margin-bottom: 35px;
 }
 
-.mages{
-  padding:50px;
-  box-shadow: 0px 5px 25px 0px rgba(153,153,153,0.5);
-  margin-right:40px;
+.mages {
+  padding: 50px;
+  box-shadow: 0px 5px 25px 0px rgba(153, 153, 153, 0.5);
+  margin-right: 40px;
   border-radius: 20px;
 }
 
-.live-message{
-  
-  margin-bottom:40px;
-  margin-left:45px;
+.live-message {
+  margin-bottom: 40px;
+  margin-left: 45px;
 }
 
-.thought{
-margin-top: 100px;
-box-shadow:0px -5px 10px 0px rgba(153,153,153,0.5);
-
+.thought {
+  margin-top: 100px;
+  box-shadow: 0px -5px 10px 0px rgba(153, 153, 153, 0.5);
 }
 
-.blood{
-  box-shadow: 0px 5px 15px 0px rgba(153,153,153,0.5);
+.blood {
+  box-shadow: 0px 5px 15px 0px rgba(153, 153, 153, 0.5);
 }
-
-
 
 /* Call to action */
 
 .call-to-action {
   height: 100px;
   background: var(--white);
-
-
-
 }
 
 .call-to-action h5 {
@@ -436,13 +423,16 @@ footer .third h6.order-3 {
   color: rgba(0, 0, 0, 0.6);
 }
 
-
 /*-------------------------------*/
+
 /*        Sidebar Main Styles    */
+
 /*-------------------------------*/
 
 /*-------------------------------*/
+
 /*           Wrappers            */
+
 /*-------------------------------*/
 
 #wrapper {
@@ -492,7 +482,9 @@ footer .third h6.order-3 {
 }
 
 /*-------------------------------*/
+
 /*     Sidebar nav styles        */
+
 /*-------------------------------*/
 
 .navbar {
@@ -633,7 +625,9 @@ footer .third h6.order-3 {
 }
 
 /*-----------------*/
+
 /*Fontawesome icons*/
+
 /*-----------------*/
 
 .nav.sidebar-nav li a::before {
@@ -698,7 +692,9 @@ a[href*="#followme"]::before {
 }
 
 /*-------------------------------*/
+
 /*       Hamburger-Cross         */
+
 /*-------------------------------*/
 
 /* all animations and effects on the toggle button */
@@ -830,7 +826,9 @@ a[href*="#followme"]::before {
 }
 
 /*-------------------------------*/
+
 /*            Overlay            */
+
 /*-------------------------------*/
 
 /* when the sidebar is activated the body gets blured and inactive with an overlay to prevent clicks on body */
@@ -849,7 +847,9 @@ a[href*="#followme"]::before {
 }
 
 /*-------------------------------------*/
+
 /* readjustments to get desired result */
+
 /*-------------------------------------*/
 
 #nav {
@@ -861,47 +861,49 @@ a[href*="#followme"]::before {
 .logo {
   margin: 0 auto;
 }
+
 /*Login card*/
+
 .container.signin-container {
-    margin-top: 8%;
+  margin-top: 8%;
 }
 
 .card.signin-card {
-    padding: 40px 0px 20px;
-    background-color: gainsboro;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  padding: 40px 0px 20px;
+  background-color: gainsboro;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 img.signin-img {
-    padding: 0 2rem 2rem;
-    max-height: 7rem;
-    margin: auto;
-    display: block;
+  padding: 0 2rem 2rem;
+  max-height: 7rem;
+  margin: auto;
+  display: block;
 }
 
 form.signin-form {
-    max-width: 350px;
-    margin: auto;
+  max-width: 350px;
+  margin: auto;
 }
 
 button.signin-btn {
-    color: white;
-    background-color: #d64829;
-    width: 100%;
-    margin-bottom: 1.2rem;
+  color: white;
+  background-color: #d64829;
+  width: 100%;
+  margin-bottom: 1.2rem;
 }
 
 a.new-accnt {
-    font-size: 1.2rem;
-    text-align: center;
-    display: block;
-    margin-top: 15px;
-}
-body.login-body {
-	background-image: url("../images/medieval_town_of_pals_catalonia-wallpaper-3840x2160.jpg");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  font-size: 1.2rem;
+  text-align: center;
+  display: block;
+  margin-top: 15px;
 }
 
+body.login-body {
+  background-image: url("../images/adult-blood-business-220723.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

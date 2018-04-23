@@ -1,4 +1,5 @@
 /* BRAND STYLES */
+
 :root {
   --primary-color-light: #d20001;
   --primary-color-dark: #900000;
@@ -11,37 +12,43 @@
   --font-body: "Montserrat", sans-serif;
 }
 
-html,
-body {
+html, body {
   height: 100%;
   overflow-x: initial;
 }
 
 body {
-  font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif; }
+  font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif;
+}
 
-#header img{
+#header img {
   width: 4rem;
   height: 4rem;
 }
-#header{
+
+#header {
   font-size: 1.5rem;
 }
+
 .contrast {
-  color: #000; }
+  color: #000;
+}
 
 .firm {
-  color: #f4b408; }
+  color: #f4b408;
+}
 
 #logo {
-  color: white; 
+  color: white;
 }
 
 #main {
-  text-align: center; }
+  text-align: center;
+}
 
 .footer a {
-  padding: 0.75rem; }
+  padding: 0.75rem;
+}
 
 .card {
   background-color: tomato;
@@ -52,24 +59,25 @@ body {
   border-radius: 10px;
   z-index: 999;
   -webkit-box-shadow: 0 0 20px 2px rgba(255, 205, 205, 0.65);
-          box-shadow: 0 0 20px 2px rgba(255, 205, 205, 0.65); }
+  box-shadow: 0 0 20px 2px rgba(255, 205, 205, 0.65);
+}
 
 @media screen and (max-width: 34em) {
-    li {
-        text-align: left !important;
-    }
-  .card {
-    margin-top: 10px; } 
+  li {
+    text-align: left !important;
   }
-
+  .card {
+    margin-top: 10px;
+  }
+}
 
 .card-img-top {
   height: 300px;
   max-height: 50%;
   max-width: 95%;
   border-radius: 10px;
-  margin: 0 auto; }
-
+  margin: 0 auto;
+}
 
 /* === Styles related to app.hjs === */
 
@@ -121,7 +129,6 @@ canvas {
   .logo {
     max-height: 80px;
   }
-
   .profile-btn {
     font-size: 4rem;
   }
@@ -149,10 +156,7 @@ canvas {
 }
 
 .option-btn:hover {
-  background: linear-gradient(
-    var(--primary-color-light),
-    var(--primary-color-dark)
-  );
+  background: linear-gradient( var(--primary-color-light), var(--primary-color-dark));
   border-color: var(--white);
   color: var(--white);
   transform: scale(1.035);
@@ -163,7 +167,6 @@ canvas {
     font-size: 1.7rem;
     margin: 0 0 12px;
   }
-
   .option-btn {
     height: 275px;
     width: 300px;
@@ -200,5 +203,113 @@ canvas {
   .footer-dot {
     display: block;
     font-size: 1.1rem;
+  }
+}
+
+/*Locate blood starts here*/
+
+.locateBlood {
+  background-color: #fafafa;
+  border-radius: 7px;
+  padding: 8% 10%;
+  width: 98%;
+  max-width: 910px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.backArrow {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-image: url(../icons_svg/back.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  background-size: 26px;
+  background-color: transparent;
+  border: 0px;
+  outline: none;
+}
+
+.headingLocateBlood {
+  display: block;
+  text-align: center;
+  font-size: 37px;
+  text-transform: uppercase;
+  font-family: serif;
+}
+
+.headingLocateBlood b {
+  font-family: sans-serif;
+  padding-right: 10px;
+}
+
+.searchRadius {
+  background-image: url(../icons_svg/compass.svg);
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 16px);
+  background-position-y: center;
+  background-size: 19px;
+}
+
+.BloodGroup {
+  background-image: url(../icons_svg/injection.svg);
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 16px);
+  background-position-y: center;
+  background-size: 19px;
+}
+
+.when_date {
+  background-image: url(../icons_svg/calander.svg);
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 16px);
+  background-position-y: center;
+  background-size: 19px;
+}
+
+.locateBlood input {
+  border: 1px solid #e4e2e2;
+  padding: 14px 10px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.locateBlood input:focus {
+  outline: 1px solid #FFC107;
+}
+
+.locateInput {
+  background-image: url(../icons_svg/location.svg);
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 16px);
+  background-position-y: center;
+  background-size: 19px;
+}
+
+.searchBlood {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 57px;
+  width: 250px;
+  height: 52px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #de1f11;
+  border: 0px;
+}
+
+@media screen and (max-width:500px) {
+  .backArrow {
+    top: 28px;
+    left: 10px;
+  }
+  .headingLocateBlood {
+    font-size: 24px;
   }
 }
