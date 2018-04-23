@@ -6,7 +6,9 @@ var { loginUser, findByEmail } = require('../../controllers/userController');
 var state = keys.secret;
 
 router.get('/', function(req, res, next) {
-    res.render('auth/login', { title: 'Login' });
+    req.session.STATE = state;
+    partials = req.app.get('partials');
+  	res.render('auth/login', { title: 'Login', STATE: state, partials: partials});
 });
 
 router.post('/', function(req, res, next) {
