@@ -9,7 +9,7 @@
       <!-- Your code goes here -->      
           <div class="locateBlood">
             <span class="backArrow"></span>
-            <label class="headingLocateBlood"><b>Locate</b>Blood</label>
+            <label class="headingLocateBlood"><b>LOCATE</b>Blood</label>
             <input class="locateInput" type="text" placeholder="Location"/>
             <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">

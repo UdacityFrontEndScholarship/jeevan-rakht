@@ -239,7 +239,6 @@ canvas {
   display: block;
   text-align: center;
   font-size: 37px;
-  text-transform: uppercase;
   font-family: Spectral, serif;
 }
 
@@ -281,7 +280,8 @@ canvas {
 }
 
 .locateBlood input:focus, .locateBlood input:hover {
-  outline: 1px solid #f1c816;
+  outline: 1px solid var(--secondary-color);
+  box-shadow: 0 0 5px var(--secondary-color);
 }
 
 .locateInput {
@@ -307,7 +307,7 @@ canvas {
 
 @media screen and (max-width:500px) {
   .backArrow {
-    top: 27px;
+    top: 26px;
     left: 15px;
   }
   .headingLocateBlood {
@@ -355,22 +355,22 @@ canvas {
 }
 .locateBlood input:hover::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   font-family: Spectral, sans-serif;
-  color: #5e5e5e;
+  color: #343a40;
   font-style: normal;
 }
 .locateBlood input:hover::-moz-placeholder { /* Firefox 19+ */
   font-family: Spectral, sans-serif;
-  color: #5e5e5e;
+  color: #343a40;
   font-style: normal;
 }
 .locateBlood input:hover:-ms-input-placeholder { /* IE 10+ */
   font-family: Spectral, sans-serif;
-  color: #5e5e5e;
+  color: #343a40;
   font-style: normal;
 }
 .locateBlood input:hover:-moz-placeholder { /* Firefox 18- */
   font-family: Spectral, sans-serif;
-  color: #5e5e5e;
+  color: #343a40;
   font-style: normal;
 }
 .locateBlood input[type='number'] {
