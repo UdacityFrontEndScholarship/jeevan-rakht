@@ -1,50 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title>JeevanRakht - {{title}}</title>
-
-        <!-- Shortcut Icons -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
-        <link rel="apple-touch-icon" type="image/x-icon" href="assets/images/favicon.ico">
-
-        <!-- SEO tags -->
-        <meta name="description" content="The Official website of JeevanRakht">
-        <meta name="keywords" content="JeevanRakht, Blood Dontation, Blood Bank, Google Udacity Project JeevanRakht">
-
-        <!--GOOGLE FONT-->
-        <link href="https://fonts.googleapis.com/css?family=Arvo|Lato" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
-
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="assets/css/bootstrap.css" />
-
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <!-- Main CSS file -->
-        <link rel="stylesheet" href="assets/css/app.css" />
-    </head>
+    {{>head}}
 
     <body id="particles-js" class="m-md-3">
         <!-- Main content goes here -->      
         <div class="container vh-100 d-flex flex-column justify-content-between">
-            <header class="d-flex justify-content-center align-items-center">
-                <div class="d-flex flex-1 justify-content-sm-center">
-                    <a href="/" class="logo-wrapper zi-1">
-                        <img src="assets/images/logo.png" alt="" class="logo">
-                    </a>
-                </div>
-
-                <a href="/users" class="zi-1">
-                    <i class="profile-btn fas fa-user-circle"></i>
-                </a>
-            </header>
+           {{>header}}
       <!-- Your code goes here -->      
         <section id="main" class="zi-1 bg-light">
             <div class="container text-center">
@@ -58,31 +20,11 @@
                 </div>	    
             </div>	
         </section>        
-            <footer class="app-footer d-md-flex justify-content-md-around align-items-md-center zi-1">
-                <a class="footer-link" href="tel:+919999999999">+91 - 9999999999</a>
-
-                <span class="footer-dot">•</span>
-
-                <a class="footer-link middle" href="index.html">
-                    <strong>Know More</strong>
-                </a>
-
-                <span class="footer-dot">•</span>
-
-                <a class="footer-link" href="mailto:mail@jeevanrakht.in">mail@jeevanrakht.in</a>
-            </footer>
+            {{>footer}}
 
         </div>
         <!-- End Container -->
         
-        <!-- Jquery -->
-        <script src="assets/js/jquery.min.js"></script>
-        <!-- Bootstrap -->
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <!-- Particles JS-->
-        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-        <!-- Main JS file -->
-        <script src="assets/js/app.js"></script>
+       {{>utilityJS}}
       </body>
   </html>
