@@ -303,6 +303,11 @@ canvas {
   color: #fff;
   background-color: #de1f11;
   border: 0px;
+  font-family: Montserrat;
+  font-weight:  500;
+  letter-spacing: 0.5px;
+  transition: all ease 0.2s;
+  cursor:  pointer;
 }
 
 @media screen and (max-width:500px) {
@@ -382,4 +387,6 @@ canvas {
   -webkit-appearance: none;
   margin: 0;
 }
-
+.searchBlood:hover{
+  background-color: #cd1608;
+}
