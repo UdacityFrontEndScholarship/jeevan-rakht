@@ -8,11 +8,10 @@ var state = keys.secret;
 router.get('/', function(req, res, next) {
     req.session.STATE = state;
     partials = req.app.get('partials');
-  	res.render('auth/login', { title: 'Login', STATE: state, partials: partials});
+    res.render('auth/login', { title: 'Login', STATE: state, partials: partials });
 });
 
 router.post('/', function(req, res, next) {
-    console.log(req.body);
     var userObj = {
         email: req.body.email,
         password: req.body.pwd
@@ -25,8 +24,21 @@ router.post('/', function(req, res, next) {
                 if (err) {
                     console.log(err);
                 } else if (result) {
-                    req.session.user = result.id;
-                    res.redirect('/');
+                    var sessionObj = {
+                        userId: result.id,
+                        login: true
+                    }
+                    if (result.picture.length >= 1) {
+                        req.flash('userPicture', result.picture[0]);
+                    }
+                    req.flash('login', 'true');
+                    req.session.generalUser = sessionObj;
+                    if (req.query.next) {
+                        var nextUrl = req.query.next;
+                        res.redirect(nextUrl);
+                    } else {
+                        res.redirect('/');
+                    }
                 }
             });
         } else if (result === 0) {
