@@ -307,14 +307,14 @@ canvas {
 
 @media screen and (max-width:500px) {
   .backArrow {
-    top: 7px;
+    top: 27px;
     left: 15px;
   }
   .headingLocateBlood {
     font-size: 24px;
   }
   .locateBlood{
-    padding-top: 5px;
+    padding-top: 25px;
   }
   .logo-wrapper{
   display: block !important;
