@@ -17,9 +17,13 @@
         <!--GOOGLE FONT-->
         <link href="https://fonts.googleapis.com/css?family=Arvo|Lato" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Spectral" rel="stylesheet">
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="assets/css/bootstrap.css" />
+
+        <!-- Bootstrap Date-Picker Stylesheet-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css" />
 
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" />
