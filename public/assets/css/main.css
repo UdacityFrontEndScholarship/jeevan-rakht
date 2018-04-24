@@ -42,6 +42,10 @@ h6 {
 
 /* Navbar */
 
+#nav{
+  height: 75px;
+}
+
 .navbar {
   padding: 0.2em 1em;
   background-color: var(--white);
