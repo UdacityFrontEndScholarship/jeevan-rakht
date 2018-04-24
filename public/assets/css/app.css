@@ -240,11 +240,11 @@ canvas {
   text-align: center;
   font-size: 37px;
   text-transform: uppercase;
-  /* font-family: serif; */
+  font-family: Spectral, serif;
 }
 
 .headingLocateBlood b {
-  /* font-family: sans-serif; */
+  font-family: Montserrat, serif;
   padding-right: 10px;
   font-weight:  700;
 }
@@ -315,6 +315,8 @@ canvas {
   }
   .locateBlood{
     padding-top: 25px;
+    /* margin-top:  28px; */
+    /* margin-bottom: 32px; */
   }
   .logo-wrapper{
   display: block !important;
