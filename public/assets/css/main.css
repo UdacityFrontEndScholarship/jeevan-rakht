@@ -903,4 +903,22 @@ body.login-body {
     background-position: center;
     background-size: cover;
 }
+/* end of login*/
+
+/*Query form enhanced*/
+.query-section {
+    padding: 0rem 4rem;
+}
+button.query-btn {
+    color: white;
+    background-color: var(--primary-color-light);
+    width: 100%;
+    margin-bottom: 1.2rem;
+}
+label.query-header {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
 
