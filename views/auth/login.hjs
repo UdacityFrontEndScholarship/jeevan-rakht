@@ -16,7 +16,7 @@
             <div class="alert alert-danger">{{alertMessage}}</div>
             {{/alertMessage}}
             <div id="oauth-login-result" class="col-md-12 text-center"></div>
-            <form method="POST" action="/login">
+            <form method="POST">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
                     <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" {{#emailValue}}value="{{emailValue}}"{{/emailValue}}>
