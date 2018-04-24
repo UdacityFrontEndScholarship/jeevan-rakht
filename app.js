@@ -77,6 +77,8 @@ app.use(function(req, res, next) {
                 req.user = result;
                 delete req.user.password;
                 next();
+            } else if (!result) {
+                next();
             }
         });
         return;
