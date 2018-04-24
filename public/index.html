@@ -262,76 +262,87 @@
         </div>
     </div>
     <!--live message section end here-->
-
-
-
-
-
-
-
-    <div class="thought row call-to-action d-flex align-items-center">
-        <div class="col col-md-8 offset-md-2 d-flex justify-content-around align-items-center">
-            <div class="col">
-                <img src="assets/images/drop.png">
-            </div>
-            <div class="col">
-                <h5 class="card-title">Thought of the day</h5>
-                <p class="card-text">A single donation can potentially help more than one patient.</p>
-            </div>
-
-        </div>
-    </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
     <!-- Call to action -->
 
     <!-- FOOTER -->
-    <footer>
+    <div class="footer">
         <div class="row">
-            <div class="col col-md-12 d-flex flex-row align-items-center justify-content-between">
-                <div class="col col-md-4 first">
-                    <a href="#header">
-                        <img src="assets/images_optimized/logo_small.png" alt="logo for JeevanRakht" height="50px" />
-                    </a>
-                    <ul>
-                        <li>
-                            <strong>Address:</strong> No.29, xyz, lorem ipsum street,District, State - 000000
-                        </li>
-                        <li>
-                            <strong>Phone:</strong> 1900-xxxx-xxxx
-                        </li>
-                    </ul>
+            <div class="col-md-4 col-sm-12">
+                <img src="assets/images_optimized/logo_small.png" alt="logo for JeevanRakht" height="50px">
+                <h6 class="address">Main Office</h6>
+                <h7 class="d-address">New Delhi, India</h7>
+            </div>
+            <div class="col-md-4 col-sm-12 subscribe">
+                <button type="button" class="btn btn-md newsletter" data-toggle="modal" data-target="#newsletter">Get Newsletter</button>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h2>[ logo for donate blood ]</h2>
+            </div>
+        </div>
+    </div>
+
+    <!--Newsletter Modal-->
+    <!-- Modal -->
+
+    <div class="modal fade" id="newsletter" tabindex="-1" role="dialog" aria-labelledby="newsletter" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contentLabel">Get Exclusive Newsletter</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
                 </div>
-                <div class="col col-md-4 second">
-                    <h6>Subscribe to newsletter</h6>
-                    <div class="subscribe d-flex flex-row flex-nowrap align-self-center justify-content-between">
-                        <input type="email" name="newsletter" id="newsletter" class="input-field">
-                        <button type="button" class="btn btn-outline-success align-self-stretch">
-                            <i class="fas fa-check"></i>
-                        </button>
+                <div class="modal-body">
+                    <div class="conatiner-fluid">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <img class="img-fluid signin-img" src="assets/images_optimized/logo_small.png" alt="Logo">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="modalFormWrapper">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="forName">What's your Name?</label>
+                                            <input type="text" class="form-control" id="formName" placeholder="Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formEmail">Where should we send your Newsletter?</label>
+                                            <input type="text" class="form-control" id="formEmail" placeholder="Email">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col col-md-4 third d-flex align-self-center flex-wrap justify-content-end">
-                    <div class="img order-1">
-                        <img src="assets/images_optimized/drop_small.png" alt="logo for JeevanRakht" height="50px" />
-                    </div>
-                    <h6 class="order-2">Save life.</h6>
-                    <h6 class="order-3">Donate blood.</h6>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-secondary subscribe" data-dismiss="modal">Subscribe</button>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+
 
     <!-- Contact Us Section -->
+    <footer class="social">
+        <a href="#medium" class="firstlink">
+            <img class= "footerImage medium" src="assets/images/medium.svg">
+        </a>
+        <a href="#google+">
+            <img class= "footerImage gplus" src="assets/images/google.svg">
+        </a>
+        <a href="#facebook">
+            <img class= "footerImage fb" src="assets/images/facebook.svg">
+        </a>
+        <a href="#instagram">
+            <img class= "footerImage insta" src="assets/images/instagram.svg">
+        </a>
+    </footer>
+
+    <!--
     <section class="container-fluid" id="contact" style="background-color:#f6f6f6;">
         <div class="row">
             <h1 class="w-100 mx-auto text-center section-heading" style="color:#777777; background-color:#f6f6f6; padding-top:10px; font-size:2.0rem;">Contact Us</h1>
@@ -361,6 +372,7 @@
             </div>
         </div>
     </section>
+-->
 
     <!-- ****************************
         End of main content markup
@@ -452,6 +464,7 @@
     <!--************************* 
         End of Sidebar Markup
     **************************-->
+
 
 
 
