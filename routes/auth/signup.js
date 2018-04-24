@@ -4,11 +4,10 @@ var validator = require('validator');
 var router = express.Router();
 
 var { findByEmail, signupUser } = require('../../controllers/userController');
-var { authenticate } = require('../../controllers/authenticateController');
 
 var passExpression = '^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})';
 
-router.get('/', authenticate, function(req, res, next) {
+router.get('/', function(req, res, next) {
     partials = req.app.get('partials');
     res.render('auth/signup', { title: 'Signup' ,partials: partials});
 });

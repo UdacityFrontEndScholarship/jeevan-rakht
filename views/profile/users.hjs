@@ -8,6 +8,9 @@
       <!-- Your code goes here -->      
         <section id="profile" class="zi-1">
             <div class="container p-3 mt-20 bg-light text-center">
+            {{#alertMessage}}
+            <div class="alert alert-danger">{{alertMessage}}</div>
+            {{/alertMessage}}
                 <div class="row">      
                     <div class="col-12">
                         <h5 id="name" class="card-title">Jeevan Rakht</h5>

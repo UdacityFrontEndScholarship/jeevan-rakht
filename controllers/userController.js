@@ -52,6 +52,22 @@ var findByEmail = function(email, callback) {
     });
 }
 
+var findById = function(id, callback) {
+    UserAcct.findById(id, function(err, emailResult) {
+        if (err) {
+            console.log('something went wrong while finding user in database.', err);
+            callback(err, undefined);
+            return;
+        } else if (emailResult) {
+            console.log('user found', emailResult);
+            callback(err, emailResult);
+            return;
+        }
+        console.log('user not found', emailResult);
+        callback(err, emailResult);
+    });
+}
+
 var deleteUser = function(email, callback) {
     UserAcct.remove({ email: email }, function(err, success) {
         if (!err) {
@@ -119,3 +135,4 @@ module.exports.updateUser = updateUser;
 module.exports.deleteUser = deleteUser;
 module.exports.createOAuthUser = createOAuthUser;
 module.exports.loginUser = loginUser;
+module.exports.findById = findById;

@@ -3,17 +3,15 @@ var router = express.Router();
 
 var keys = require('../../config/keys');
 var { loginUser, findByEmail } = require('../../controllers/userController');
-var { authenticate } = require('../../controllers/authenticateController');
 var state = keys.secret;
 
-router.get('/', authenticate, function(req, res, next) {
+router.get('/', function(req, res, next) {
     req.session.STATE = state;
     partials = req.app.get('partials');
     res.render('auth/login', { title: 'Login', STATE: state, partials: partials });
 });
 
 router.post('/', function(req, res, next) {
-    console.log(req.body);
     var userObj = {
         email: req.body.email,
         password: req.body.pwd
@@ -35,7 +33,12 @@ router.post('/', function(req, res, next) {
                     }
                     req.flash('login', 'true');
                     req.session.generalUser = sessionObj;
-                    res.redirect('/');
+                    if (req.query.next) {
+                        var nextUrl = req.query.next;
+                        res.redirect(nextUrl);
+                    } else {
+                        res.redirect('/');
+                    }
                 }
             });
         } else if (result === 0) {
