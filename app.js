@@ -58,15 +58,6 @@ app.use(sassMiddleware({
     indentedSyntax: true, // true = .sass and false = .scss
     sourceMap: true
 }));
-app.use(flash());
-app.use(function(req, res, next) {
-    res.locals.alertMessage = req.flash('alertMessage');
-    res.locals.successMessage = req.flash('successMessage');
-    res.locals.userPicture = req.flash('userPicture');
-    res.locals.login = req.flash('login');
-    next();
-});
-
 app.use(function(req, res, next) {
     if (req.session && req.session.generalUser) {
         var userId = req.session.generalUser.userId;
@@ -91,7 +82,17 @@ app.use(function(req, res, next) {
 });
 
 // app.use(express.static(path.join(__dirname, 'public')));
-app.use(['/app', '/'], mainRouter);
+app.use(['/','/app'], mainRouter);
+app.use(express.static('public'));
+
+app.use(flash());
+app.use(function(req, res, next) {
+    res.locals.alertMessage = req.flash('alertMessage');
+    res.locals.successMessage = req.flash('successMessage');
+    res.locals.userPicture = req.flash('userPicture');
+    res.locals.login = req.flash('login');
+    next();
+});
 
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
@@ -114,7 +115,7 @@ app.use('/conwith_donor', connDonorRouter);
 app.use('/fbconnect', fbloginRouter);
 app.use('/gconnect', gploginRouter);
 
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

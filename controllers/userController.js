@@ -127,6 +127,19 @@ var loginUser = function(userObj, callback) {
     });
 }
 
+var activateUser = function(user,callback) {
+    user.active_flag = 'A';    
+    user.save(function(err, data) {
+        if (err) {
+            console.log('Unable to save user', err);
+            callback(err, undefined);
+            return;
+        }
+        console.log('Saved from user model', data);
+        callback(err, data);
+    });    
+}
+
 var updateUser = function() {}
 
 module.exports.signupUser = signupUser;
@@ -136,3 +149,4 @@ module.exports.deleteUser = deleteUser;
 module.exports.createOAuthUser = createOAuthUser;
 module.exports.loginUser = loginUser;
 module.exports.findById = findById;
+module.exports.activateUser = activateUser;
