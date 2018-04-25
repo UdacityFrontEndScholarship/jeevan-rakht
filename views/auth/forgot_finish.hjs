@@ -16,13 +16,13 @@
             <tr id ="tablerow">
               <td class="text-right">New password :</td>
               <td class="text-left">
-                <input type="password" name="password" id="password" value="{{password}}" required>
+                <input type="password" name="password" id="password" value="{{password}}" required placeholder="New password">
               </td>
             </tr>
             <tr id ="tablerow">
               <td>Confirm new password :</td>
               <td>
-                <input type="password" name="verify" id="verify" value="{{vpw}}" required>
+                <input type="password" name="verify" id="verify" value="{{vpw}}" required placeholder="Confirm new password">
               </td>
             </tr>
           </table>

@@ -13,21 +13,22 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
+    partials = req.app.get('partials');
     const email = validator.isEmail(req.body.email);
     const password = validator.matches(req.body.pass1, passExpression);
     console.log(req.body);
     findByEmail(req.body.email, function(err, result) {
         if (!err && !result) {
             if (req.body.fname.length < 3) {
-                res.render('auth/signup', { title: 'Signup', alertMessage: 'Valid first name is required.' });
+                res.render('auth/signup', { title: 'Signup', partials: partials, alertMessage: 'Valid first name is required.' });
             } else if (req.body.number.length !== 10) {
-                res.render('auth/signup', { title: 'Signup', alertMessage: 'Valid mobile number is required.' });
+                res.render('auth/signup', { title: 'Signup', partials: partials, alertMessage: 'Valid mobile number is required.' });
             } else if (!email) {
-                res.render('auth/signup', { title: 'Signup', alertMessage: 'Valid email is required.' });
+                res.render('auth/signup', { title: 'Signup', partials: partials, alertMessage: 'Valid email is required.' });
             } else if (!password) {
-                res.render('auth/signup', { title: 'Signup', alertMessage: 'At least on capital letter is required in password.' });
+                res.render('auth/signup', { title: 'Signup', partials: partials, alertMessage: 'At least one capital letter is required in password.' });
             } else if (req.body.pass1 !== req.body.pass2) {
-                res.render('auth/signup', { title: 'Signup', alertMessage: 'Both passwords should match.' });
+                res.render('auth/signup', { title: 'Signup', partials: partials, alertMessage: 'Both passwords should match.' });
             } else {
                 var userObj = {
                     user_name: req.body.fname,
@@ -47,7 +48,7 @@ router.post('/', function(req, res, next) {
                 });
             }
         } else if (result) {
-            res.render('auth/signup', { title: 'Signup', alertMessage: 'User already exists.' });
+            res.render('auth/signup', { title: 'Signup', partials: partials, alertMessage: 'User already exists.' });
             return;
         }
     });

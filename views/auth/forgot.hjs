@@ -16,7 +16,7 @@
             <tr id ="tablerow">
               <td>Email :</td>
               <td>
-                <input type="email" name="email" id="email" value="{{email}}" required>
+                <input type="email" name="email" id="email" value="{{email}}" required placeholder="email">
               </td>
             </tr>
           </table>
