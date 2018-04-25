@@ -137,7 +137,34 @@ var activateUser = function(user,callback) {
         }
         console.log('Saved from user model', data);
         callback(err, data);
-    });    
+    });  
+}  
+var updatePassword = function(userObj, callback) {
+    UserAcct.findOne({ email: userObj.email }, function(err, result) {
+        if (err) {
+            callback(err, undefined);
+        } else if (result) {
+            var salt = bcrypt.genSaltSync(10);
+            bcrypt.hash(userObj.password, salt, function(err, hash) {
+                if (err) {
+                    callback(err, undefined);
+                } else if (hash) {
+                    var item = {
+                        password: hash
+                    }
+                    UserAcct.updateOne({ email: userObj.email }, { $set: item }, function(err, newResult) {
+                        if (err) {
+                            callback(err, undefined);
+                        } else if (newResult) {
+                            callback(undefined, newResult);
+                        }
+                    });
+                }
+            });
+        } else if (!result) {
+            callback(undefined, undefined);
+        }
+    });
 }
 
 var updateUser = function() {}
@@ -150,3 +177,4 @@ module.exports.createOAuthUser = createOAuthUser;
 module.exports.loginUser = loginUser;
 module.exports.findById = findById;
 module.exports.activateUser = activateUser;
+module.exports.updatePassword = updatePassword;
