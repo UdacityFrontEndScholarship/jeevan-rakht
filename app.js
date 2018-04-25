@@ -6,6 +6,7 @@ var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 var cookieSession = require('cookie-session');
 var flash = require('connect-flash');
+var Keygrip = require('keygrip')
 
 var mainRouter = require('./routes/main/app');
 var locateRouter = require('./routes/main/locate');
@@ -39,7 +40,9 @@ app.set('partials', {
     head: 'partials/head',
     header: 'partials/header',
     footer: 'partials/footer',
-    utilityJS: 'partials/utilityJS'
+    utilityJS: 'partials/utilityJS',
+    oauth2_btns: 'partials/oauth2_btns',
+    oauth2_ajax: 'partials/oauth2_ajax'
 });
 app.use(logger('dev'));
 app.use(express.json());
@@ -49,8 +52,10 @@ app.use(cookieParser());
 app.set('trust proxy', 1)
 app.use(cookieSession({
     name: 'session',
-    secret: 'random_string_goes_here',
+    keys: new Keygrip(['key1', 'key2'], 'SHA384', 'base64'),    
     maxAge: 30 * 60 * 1000
+    // httpOnly: true,
+    // secure: true
 }));
 app.use(sassMiddleware({
     src: path.join(__dirname, 'public'),
@@ -58,17 +63,24 @@ app.use(sassMiddleware({
     indentedSyntax: true, // true = .sass and false = .scss
     sourceMap: true
 }));
+app.use(express.static(path.join(__dirname, 'public'),{index: 'app.hjs'}));
+
+app.use(flash());
 app.use(function(req, res, next) {
-    if (req.session && req.session.generalUser) {
-        var userId = req.session.generalUser.userId;
-        findById(userId, function(err, result) {
+    res.locals.alertMessage = req.flash('alertMessage');
+    res.locals.successMessage = req.flash('successMessage');
+    if (req.session && req.session.user) {
+        var userId = req.session.user._id;
+        findById(userId, function(err, user) {
             if (err) {
                 next();
-            } else if (result) {
-                req.user = result;
+            } else if (user) {
+                req.user = user;
                 delete req.user.password;
+                req.session.user = user;  // refresh the session value
+                res.locals.user = user;   // expose the user to the template  
                 next();
-            } else if (!result) {
+            } else if (!user) {
                 next();
             }
         });
@@ -77,23 +89,11 @@ app.use(function(req, res, next) {
         //Do something here...
         next();
         return;
+    }else{
+        next();
     }
-    next();
 });
-
-// app.use(express.static(path.join(__dirname, 'public')));
-app.use(['/','/app'], mainRouter);
-app.use(express.static('public'));
-
-app.use(flash());
-app.use(function(req, res, next) {
-    res.locals.alertMessage = req.flash('alertMessage');
-    res.locals.successMessage = req.flash('successMessage');
-    res.locals.userPicture = req.flash('userPicture');
-    res.locals.login = req.flash('login');
-    next();
-});
-
+app.use(['/'], mainRouter);
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
 app.use('/forgot', forgotRouter);

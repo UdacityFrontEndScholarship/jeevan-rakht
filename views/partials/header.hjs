@@ -5,28 +5,21 @@
             <img src="assets/images/logo.png" alt="" class="logo">
         </a>
     </div>
-    {{#login}}
+    {{#user}}
     <div class="option-label mr-2 zi-1">
-        <form action="/logout" method="POST">
-            <a href="/login" class="option-label">logout</a>
-        </form>
+        <a href="/logout" class="option-label">logout </a>
     </div>
-    {{/login}} {{^login}}
+    <a href="/users" class="zi-1" id="header">
+        <img class="profile-btn fas fa-user-circle" src="{{user.picture}}" alt="">
+    </a>
+    {{/user}} 
+    {{^user}}
     <div class="option-label mr-2 zi-1">
         <a href="/login" class="option-label">login </a>|
         <a href="/signup" class="option-label"> signup</a>
     </div>
-    {{/login}} {{#userPicture}}
     <a href="/users" class="zi-1" id="header">
-        {{!--
-        <i class="profile-btn fas fa-user-circle"></i> --}}
-        <img class="profile-btn fas fa-user-circle" src="{{userPicture}}" alt="">
-    </a>
-    {{/userPicture}} {{^userPicture}}
-    <a href="/users" class="zi-1">
-        {{!--
-        <i class="profile-btn fas fa-user-circle"></i> --}}
         <img class="profile-btn fas fa-user-circle" src="" alt="">
     </a>
-    {{/userPicture}}
+    {{/user}}
 </header>

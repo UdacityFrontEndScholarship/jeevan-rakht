@@ -30,15 +30,7 @@ router.post('/', function(req, res, next) {
                 if (err) {
                     return res.status(500).send({ "error": err.message }); 
                 } else if (result) {
-                    var sessionObj = {
-                        userId: result.id,
-                        login: true
-                    }
-                    if (result.picture.length >= 1) {
-                        req.flash('userPicture', result.picture[0]);
-                    }
-                    req.flash('login', 'true');
-                    req.session.generalUser = sessionObj;
+                    req.session.user = result;
                     if (req.query.next) {
                         var nextUrl = req.query.next;
                         res.redirect(nextUrl);
