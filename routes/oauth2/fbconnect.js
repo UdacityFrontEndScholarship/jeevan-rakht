@@ -89,13 +89,12 @@ router.post('/', rawParser,function(req, res, next) {
                     req.session.user = user;
                 }
                 console.log("Zooooooooooooooooom");
-                console.log(req.session);
                 let output = '';
                 output += '<h1>Welcome, ';
-                output += req.session.user.user_name;
+                output += data['name'];
                 output += '!</h1>';
                 output += '<img src="';
-                output += req.session.user.picture;
+                output += data['picture'];
                 output += ' " style = "width: 160px; height: 160px;border-radius: 150px;\
                 -webkit-border-radius: 150px;-moz-border-radius: 150px;"> ';
                 res.send(output);    
