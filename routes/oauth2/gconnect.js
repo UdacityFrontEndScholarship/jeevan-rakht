@@ -75,6 +75,18 @@ router.post('/', rawParser,function(req, res, next) {
                         if (err){
                             return res.status(500).send({ "error": err.message });     
                         }
+                        let sendResp = function(){
+                            console.log("Zooooooooooooooooom");
+                            let output = '';
+                            output += '<h1>Welcome, ';
+                            output += data['name'];
+                            output += '!</h1>';
+                            output += '<img src="';
+                            output += data['picture'];
+                            output += ' " style = "width: 160px; height: 160px;border-radius: 150px;\
+                            -webkit-border-radius: 150px;-moz-border-radius: 150px;"> ';
+                            res.send(output);                        
+                        };                        
                         if (!user) {
                             let userObj = req.session;
                             userObj.username = data['name']
@@ -90,21 +102,13 @@ router.post('/', rawParser,function(req, res, next) {
                                 // sets a cookie with the user's info
                                 req.session.user = newUser;
                                 req.flash('successMessage', 'User created with Google Signin.');
+                                sendResp();
                             });
                         }else if(user){
                             // sets a cookie with the user's info
                             req.session.user = user;
+                            sendResp();
                         }
-                        console.log("Zooooooooooooooooom");
-                        let output = '';
-                        output += '<h1>Welcome, ';
-                        output += data['name'];
-                        output += '!</h1>';
-                        output += '<img src="';
-                        output += data['picture'];
-                        output += ' " style = "width: 160px; height: 160px;border-radius: 150px;\
-                        -webkit-border-radius: 150px;-moz-border-radius: 150px;"> ';
-                        res.send(output);                        
                     });
                 })
                 .catch(error => {

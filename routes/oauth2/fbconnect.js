@@ -47,6 +47,7 @@ router.post('/', rawParser,function(req, res, next) {
             // Store the access token and gplus_id in the session for later use.
             req.session.access_token = access_token;
             req.session.provider = 'facebook'
+            req.session.fb_id = data['id']
             // Get user picture
             let url3 = 'https://graph.facebook.com/v2.8/me/picture';
             console.log(url3);
@@ -56,25 +57,39 @@ router.post('/', rawParser,function(req, res, next) {
                         ,redirect: 0
                         ,height : 200
                         ,width : 200
-                        ,email:data['email']
+                        ,email :data['email']
+                        ,name :data['name']
                     }
                 }
             );
         })
         .then(response => {
-            req.session.picture = response.data['data']['url'];
+            let picture = response.data['data']['url'];
             let email = response.config.params.email;
+            let name = response.config.params.name;
             //See if user exists, if it doesn't make a new one
             //Srore the user in session
             findByEmail(email,function(err, user) {
                 if (err){
                     return res.status(500).send({ "error": err.message });     
                 }                
+                let sendResp = function(){
+                    console.log("Zooooooooooooooooom");
+                    let output = '';
+                    output += '<h1>Welcome, ';
+                    output += name;
+                    output += '!</h1>';
+                    output += '<img src="';
+                    output += picture;
+                    output += ' " style = "width: 160px; height: 160px;border-radius: 150px;\
+                    -webkit-border-radius: 150px;-moz-border-radius: 150px;"> ';
+                    res.send(output);    
+                };
                 if (!user) {
                     let userObj = req.session;
-                    userObj.username = data['name']
-                    userObj.picture = data['picture']
-                    userObj.email = data['email']                       
+                    userObj.username = name
+                    userObj.picture = picture
+                    userObj.email = email
                     userObj.not_flag = 'N';
                     userObj.active_flag = 'A';
                     userObj.type = '1';
@@ -84,20 +99,12 @@ router.post('/', rawParser,function(req, res, next) {
                         }
                         req.session.user = newUser;
                         req.flash('successMessage', 'User created with Google Signin.');
+                        sendResp();
                     });
                 }else if(user){
                     req.session.user = user;
+                    sendResp();
                 }
-                console.log("Zooooooooooooooooom");
-                let output = '';
-                output += '<h1>Welcome, ';
-                output += data['name'];
-                output += '!</h1>';
-                output += '<img src="';
-                output += data['picture'];
-                output += ' " style = "width: 160px; height: 160px;border-radius: 150px;\
-                -webkit-border-radius: 150px;-moz-border-radius: 150px;"> ';
-                res.send(output);    
             });
         })
         .catch(error => {
