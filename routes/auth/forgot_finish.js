@@ -10,7 +10,7 @@ var passExpression = '^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*
 router.get('/', checkToken, function(req, res, next) {  
   partials = req.app.get('partials');
     // If we found a token, find a matching user
-    UserAcct.findById({ _id: req.tokenResult._userId }, function (err, user) {
+    findById({ _id: req.tokenResult._userId }, function (err, user) {
 			if (err) {
 				return res.status(500).send({ "error": err.message }); 
 			}			        
