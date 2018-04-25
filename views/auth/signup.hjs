@@ -5,6 +5,7 @@
         <!-- Main content goes here -->      
         <div class="container vh-100 d-flex flex-column justify-content-between">
           {{>header}}
+        <div id="oauth-login-result" class="col-md-12 bg-light text-center" style="display:none"></div>
         <section id="signup" class="zi-1 text-center bg-light">
         <div class="container p-3">
             {{#alertMessage}}
@@ -83,20 +84,31 @@
             <br>
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <a href="/"><button type="button" class="btn btn-secondary">Cancel</button></a>
-            <br><br>
-            <p><a href="/forgot" class="text-danger font-weight-bold">Forgot password?</a></p>
+            <br>
         </form>
+        <div class="row p-3">   
+            <div class="col">
+                <h5 class=""><span>Already have an account!</span></h5>
+                <p><a class="font-weight-bold" href="/login">Go to login</a></p>                    
+            </div>
+        </div>    
+            <!-- GOOGLE PLUS and FB SIGN IN buttons partials-->
+            {{>oauth2_btns}}
         </div>  
         </section>
         {{>footer}}
         </div>
         {{>utilityJS}}
+        <!--Ajax Call to SIGN IN -->
+        {{>oauth2_ajax}}
+	    <!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
+	    <script async defer src="https://apis.google.com/js/client:platform.js?onload=start"></script>
+	    <!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->        
+        
+        <!--Below scripts controlls party type radio button action -->
         <script>
         var partySelect = $("input:radio[name=usertype]");
         var callback = function(evt){
-            // if (!$("table").hasClass("open")){
-            // 	$("table").addClass("open");
-            // }
             var RadioButtonCheck = $('form input[type=radio]:checked').val();
             console.log(RadioButtonCheck);
             if (RadioButtonCheck == "Individual") {

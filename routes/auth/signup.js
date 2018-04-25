@@ -2,14 +2,16 @@ var express = require('express');
 var bcrypt = require('bcryptjs');
 var validator = require('validator');
 var router = express.Router();
-
+var keys = require('../../config/keys');
+var state = keys.secret;
 var { findByEmail, signupUser } = require('../../controllers/userController');
 
 var passExpression = '^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})';
 
 router.get('/', function(req, res, next) {
+    req.session.STATE = state;
     partials = req.app.get('partials');
-    res.render('auth/signup', { title: 'Signup' ,partials: partials});
+    res.render('auth/signup', { title: 'Signup' ,STATE: state ,partials: partials});
 });
 
 router.post('/', function(req, res, next) {
