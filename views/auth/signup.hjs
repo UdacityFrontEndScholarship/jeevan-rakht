@@ -14,19 +14,19 @@
         <h2>Signup</h2>
         <form method="POST">
             <fieldset><legend>User Type</legend>
-                <input type="radio" name="usertype" value="Individual" required > Self(Individual)
-                <input type="radio" name="usertype" value="Non-Individual" required> Blood Bank(Non-Individual)
+                <input type="radio" name="usertype" value="Individual" required {{#inputValue.indiv}}checked{{/inputValue.indiv}}> Self(Individual)
+                <input type="radio" name="usertype" value="Non-Individual" required {{#inputValue.nonIndiv}}checked{{/inputValue.nonIndiv}}> Blood Bank(Non-Individual)
                 <table class="indiv">
                 <tr id ="tablerow">
                     <td>First Name :</td>
                     <td>
-                        <input type="text" name="firstname" value="{{firstname}}" placeholder="first name">
+                        <input type="text" name="firstname" value="{{inputValue.firstname}}" placeholder="first name">
                     </td>
                 </tr>
                 <tr id ="tablerow">
                     <td>Last Name :</td>
                     <td>
-                        <input type="text" name="lastname" value="{{lastname}}" placeholder="last name">
+                        <input type="text" name="lastname" value="{{inputValue.lastname}}" placeholder="last name">
                     </td>
                 </tr>
                 </table>
@@ -34,19 +34,19 @@
                 <tr id ="tablerow">
                     <td>Bank Name :</td>
                     <td>
-                        <input type="text" name="orgname" value="{{orgname}}" placeholder="bank name">
+                        <input type="text" name="orgname" value="{{inputValue.orgname}}" placeholder="bank name">
                     </td>
                 </tr>
                 <tr id ="tablerow">
                     <td>Bank License :</td>
                     <td>
-                        <input type="text" name="license" value="{{license}}" placeholder="license">
+                        <input type="text" name="license" value="{{inputValue.license}}" placeholder="license">
                     </td>
                 </tr>
                 <tr id ="tablerow">
                     <td>Blood Unit Stock :</td>
                     <td>
-                        <input type="number" name="stock" value="{{stock}}" placeholder="blood stock">
+                        <input type="number" name="stock" value="{{inputValue.stock}}" placeholder="blood stock">
                     </td>
                 </tr>
                 </table>
@@ -55,7 +55,7 @@
                 <tr id ="tablerow">
                     <td>Email :</td>
                     <td>
-                        <input type="email" name="email" id="email" value="{{email}}" placeholder="email">
+                        <input type="email" name="email" id="email" value="{{inputValue.email}}" placeholder="email">
                     </td>
                 </tr>                
                 <tr id ="tablerow">

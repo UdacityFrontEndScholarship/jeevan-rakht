@@ -7,6 +7,7 @@ function login_required(req, res, next) {
         // and in login post method check the next value if it is there, then redirect to
         // this next URL otherwise redirect to home
         var nextUrl = req.originalUrl;
+        req.flash('alertMessage', 'You need to login first to access your profile page.')
         res.redirect('/login?next=' + nextUrl);
     } else {
         next();

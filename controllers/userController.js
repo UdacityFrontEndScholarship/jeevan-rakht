@@ -2,14 +2,7 @@ const UserAcct = require('../models/user');
 const bcrypt = require('bcryptjs');
 
 var signupUser = function(usrObj, callback) {
-    var newUser = new UserAcct({
-        user_name: usrObj.user_name,
-        email: usrObj.email,
-        password: usrObj.password,
-        user_type: usrObj.type,
-        notification_flag: usrObj.not_flag,
-        active_flag: usrObj.active_flag
-    });
+    var newUser = new UserAcct(usrObj);
     bcrypt.genSalt(11, function(err, salt) {
         if (err) {
             console.log('Some error occured while salting.', err);

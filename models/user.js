@@ -5,7 +5,6 @@ var UserAccount = new Schema({
     user_name: {
         type: String,
         minlength: 6,
-        required: true
     },            
     email: {
         type: String,
