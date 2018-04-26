@@ -4,7 +4,6 @@ var {verify_token} = require('../../controllers/tokenController');
 var {findById, activateUser} = require('../../controllers/userController');
 
 router.get('/', function(req, res, next) {
-    partials = req.app.get('partials');
     token = req.query.token;
     if(!token){
       req.flash('alertMessage', 'Make sure you came here by following reset link sent to your email.');

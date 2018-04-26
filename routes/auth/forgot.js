@@ -5,15 +5,14 @@ var {findByEmail} = require('../../controllers/userController');
 var {generate_token} = require('../../controllers/tokenController');
 
 router.get('/', function(req, res, next) {
-	partials = req.app.get('partials');
-	res.render('auth/forgot', { title: 'Forgot password',partials: partials});
+	res.render('auth/forgot', { title: 'Forgot password'});
 });
 router.post('/', function(req, res, next) {
 	// Make sure this account already exist
 	var in_email = req.body.email;
 	if(!in_email){
 		var message = 'Invalid Email.';
-		res.render('auth/forgot', { title: 'Forgot password',partials: req.app.get('partials'), alertMessage: message});
+		res.render('auth/forgot', { title: 'Forgot password', alertMessage: message});
 		return;
 	}
 	findByEmail(req.body.email, function(err, user) {
@@ -23,7 +22,7 @@ router.post('/', function(req, res, next) {
 		}
 		if(!user){
 			var message = 'The email address you have entered is not registered.';
-			res.render('auth/forgot', { title: 'Forgot password',partials: req.app.get('partials'), alertMessage: message});
+			res.render('auth/forgot', { title: 'Forgot password', alertMessage: message});
 			return;			
 		}
 		// Create a reset password token for this user

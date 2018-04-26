@@ -15,7 +15,7 @@
           <table id="tablecontainer">
             <tr id ="tablerow">
               <td class="text-right">New password :</td>
-              <td class="text-left">
+              <td>
                 <input type="password" name="password" id="password" value="{{password}}" required placeholder="New password">
               </td>
             </tr>
