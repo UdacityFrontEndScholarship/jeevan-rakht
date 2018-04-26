@@ -10,8 +10,7 @@ router.get('/', function(req, res, next) {
     res.redirect('/users');		
     return;		  
   }
-  partials = req.app.get('partials');
-  res.render('profile/verifyemail', { title: 'Verify Email', partials: partials});
+  res.render('profile/verifyemail', { title: 'Verify Email'});
 });
 
 router.post('/', function(req, res, next) {
@@ -19,7 +18,7 @@ router.post('/', function(req, res, next) {
 	var in_email = req.body.email;
 	if(!in_email){
 		var message = 'Invalid Email.';
-		res.render('profile/verifyemail', { title: 'Verify Email',partials: req.app.get('partials'), alertMessage: message});
+		res.render('profile/verifyemail', { title: 'Verify Email', alertMessage: message});
 		return;
 	}
 	findByEmail(req.body.email, function(err, user) {
@@ -29,13 +28,13 @@ router.post('/', function(req, res, next) {
 		}
 		if(!user){
 			var message = 'The email address you have entered is not registered.';
-			res.render('profile/verifyemail', { title: 'Verify Email',partials: req.app.get('partials'), alertMessage: message});
+			res.render('profile/verifyemail', { title: 'Verify Email', alertMessage: message});
 			return;			
     }
     console.log("User in Req" ,req.user._id.toString(),user._id.toString());
 		if(req.user && (req.user._id.toString() !== user._id.toString())){
 			var message = 'The email address you have entered is already registered with other account.';
-			res.render('profile/verifyemail', { title: 'Verify Email',partials: req.app.get('partials'), alertMessage: message});
+			res.render('profile/verifyemail', { title: 'Verify Email', alertMessage: message});
 			return;			
 		}    
 		// Create a verification token for this user

@@ -4,8 +4,7 @@ var router = express.Router();
 var { login_required } = require('../../utils/authValidator');
 
 router.get('/', login_required, function(req, res, next) {
-    partials = req.app.get('partials');
-    res.render('profile/users', { title: 'Profile', partials: partials });
+    res.render('profile/users', { title: 'Profile' });
 });
 
 router.put('/', function(req, res, next) {
