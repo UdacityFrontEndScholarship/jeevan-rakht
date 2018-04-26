@@ -9,8 +9,8 @@
     <div class="option-label mr-2 zi-1">
         <a href="/logout" class="option-label">logout </a>
     </div>
-    <a href="/users" class="zi-1" id="header">
-        <img class="profile-btn fas fa-user-circle" src="{{user.picture}}" alt="">
+    <a href="/users" class="zi-1">
+        <img class="profile-btn fas fa-user-circle" id="profile-icon" src="{{user.picture}}" alt="">
     </a>
     {{/user}} 
     {{^user}}
