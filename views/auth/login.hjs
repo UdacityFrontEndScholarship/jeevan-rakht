@@ -6,13 +6,13 @@
           {{>header}}
         <div id="oauth-login-result" class="container p-2 p-md-4 bg-light text-center zi-1" style="display:none"></div>
         
-        <section id="login" class="container d-flex flex-column flex-wrap align-items-center my-5 zi-1">
+        <section id="login" class="container d-flex flex-column flex-wrap align-items-center my-5">
 
             {{#successMessage}}
-            <div class="alert alert-success mb-3">{{successMessage}}</div>
+            <div class="alert alert-success mb-3  zi-1">{{successMessage}}</div>
             {{/successMessage}}
             {{#alertMessage}}
-            <div class="alert alert-danger mb-3">{{alertMessage}}</div>
+            <div class="alert alert-danger mb-3  zi-1">{{alertMessage}}</div>
             {{/alertMessage}}
 
             <div class="main-content zi-1">
