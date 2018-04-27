@@ -2,48 +2,53 @@
 <html>
     {{>head}}
     <body id="particles-js" m-md-3>
-        <!-- Main content goes here -->
-        <div class="container vh-100 d-flex flex-column justify-content-between">
+        <div class="vh-100 d-flex flex-column justify-content-between">
           {{>header}}
-        <div id="oauth-login-result" class="col-md-12 bg-light text-center" style="display:none"></div>
-        <section id="login" class="zi-1 bg-light text-center">
-        <div class="container p-3">
+        <div id="oauth-login-result" class="container p-2 p-md-4 bg-light text-center zi-1" style="display:none"></div>
+        
+        <section id="login" class="container d-flex flex-column flex-wrap align-items-center my-5 zi-1">
+
             {{#successMessage}}
-            <div class="alert alert-success">{{successMessage}}</div>
+            <div class="alert alert-success mb-3">{{successMessage}}</div>
             {{/successMessage}}
             {{#alertMessage}}
-            <div class="alert alert-danger">{{alertMessage}}</div>
+            <div class="alert alert-danger mb-3">{{alertMessage}}</div>
             {{/alertMessage}}
-            <form method="POST">
-                <h2>Login</h2>
-                <table id="tablecontainer">
-                    <tr id ="tablerow">
-                        <td>Username :</td>
-                        <td>
-                            <input type="email" name="email" value="{{emailValue}}" required placeholder="email">
-                        </td>
-                    </tr>
-                    <tr id ="tablerow">
-                        <td>Password :</td>
-                        <td>
-                            <input type="password" name="pwd" value="{{pwd}}" required placeholder="password">
-                        </td>
-                    </tr>
-                </table>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <a href="/"><button type="button" class="btn btn-secondary">Cancel</button></a>
-            </form>
-            <br><br>
-        <div class="row p-3">   
-            <div class="col">
-            <p><a href="/forgot" class="text-danger font-weight-bold">Forgot password?</a></p>
-            <h5 class=""><span>Don't have an account?</span></h5>
-            <p><a class="font-weight-bold" href="/signup">Create an account</a></p>            
+
+            <div class="main-content zi-1">
+                <a href="/" class="back-arrow">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+
+                <div class="signin-wrapper">
+                    <form method="POST">
+                        <div class="input-wrapper">
+                            <input type="email" name="email" value="{{emailValue}}" placeholder="username" required>
+                            <i class="far fa-user"></i>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <input type="password" name="pwd" value="{{pwd}}" placeholder="password" required>
+                            <i class="fas fa-unlock"></i>
+                        </div>
+
+                        <button type="submit" class="signin-btn">SIGN IN</button>
+                    </form>
+
+                    <p class="or">or</p>
+                    <!-- GOOGLE PLUS and FB SIGN IN buttons partials-->
+                    {{>oauth2_btns}}
+
+                    <div class="help-txt">
+                        <p>Forgot password? <strong>RESET</strong> <a href="/forgot">here</a>.</p>
+
+                        <p>New user? <strong>REGISTER</strong> <a href="/signup">here</a>.</p>
+                    </div>
+                </div>
             </div>
-        </div>                
-            <!-- GOOGLE PLUS and FB SIGN IN buttons partials-->
-            {{>oauth2_btns}}
-        </div>
+
+           
+      
         </section>
         {{>footer}}
         </div>

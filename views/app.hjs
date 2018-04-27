@@ -4,7 +4,7 @@
 {{>head}}
 
 <body id="particles-js" m-md-3>
-    <div class="container vh-100 d-flex flex-column justify-content-between">
+    <div class="vh-100 d-flex flex-column justify-content-between">
 
         {{>header}}
 
