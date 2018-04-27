@@ -69,6 +69,7 @@ app.use(flash());
 app.use(function(req, res, next) {
     res.locals.alertMessage = req.flash('alertMessage');
     res.locals.successMessage = req.flash('successMessage');
+    res.locals.partials = req.app.get('partials');
     if (req.session && req.session.user) {
         var userId = req.session.user._id;
         findById(userId, function(err, user) {

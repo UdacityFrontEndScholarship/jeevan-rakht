@@ -7,12 +7,10 @@ var state = keys.secret;
 
 router.get('/', function(req, res, next) {
     req.session.STATE = state;
-    partials = req.app.get('partials');
-    res.render('auth/login', { title: 'Login', STATE: state, partials: partials });
+    res.render('auth/login', { title: 'Login', STATE: state});
 });
 
-router.post('/', function(req, res, next) {
-    partials = req.app.get('partials');
+router.post('/', function(req, res, next) {    
     var userObj = {
         email: req.body.email,
         password: req.body.pwd
@@ -20,8 +18,7 @@ router.post('/', function(req, res, next) {
     loginUser(userObj, function(err, result) {
         if (err) {
             res.render('auth/login', 
-                        { title: 'Login', 
-                        partials : partials,
+                        { title: 'Login',                         
                         alertMessage: 'Something went wrong on our side.', 
                         emailValue: req.body.email });            
             return;
@@ -41,14 +38,12 @@ router.post('/', function(req, res, next) {
             });
         } else if (result === 0) {
             res.render('auth/login', 
-                            { title: 'Login', 
-                            partials : partials,
+                            { title: 'Login',                             
                             alertMessage: 'Wrong Password.', 
                             emailValue: req.body.email });
         } else if (!result) {
             res.render('auth/login', 
-                            { title: 'Login', 
-                            partials : partials,
+                            { title: 'Login',                             
                             alertMessage: 'User does not exist.', 
                             emailValue: req.body.email });
         }
