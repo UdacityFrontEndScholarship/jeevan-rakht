@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+{{>head}}
+
+<body id="particles-js" m-md-3>
+    <div class="container vh-100 d-flex flex-column justify-content-between">
+
+        {{>header}}
+
+        <main class="options-wrapper d-flex flex-wrap justify-content-center mt-4 mb-5">
+            <div class="option mx-4 zi-1">
+                <div class="option-label">
+                    <strong>LOCATE</strong> Blood
+                </div>
+
+                <a href="/locate" class="option-btn">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+            <!-- End Option -->
+
+            <div class="option mx-4 zi-1">
+                <div class="option-label">
+                    <strong>DONATE</strong> Blood
+                </div>
+
+                <a href="/donate" class="option-btn">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </a>
+            </div>
+            <!-- End Option -->
+        </main>
+
+        {{>footer}}
+
+    </div>
+    <!-- End Container -->
+
+    {{>utilityJS}}
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    {{>head}}
+    <body id="particles-js" m-md-3>
+        <!-- Main content goes here -->
+        <div class="container vh-100 d-flex flex-column justify-content-between">
+          {{>header}}
+        <div id="oauth-login-result" class="col-md-12 bg-light text-center" style="display:none"></div>
+        <section id="login" class="zi-1 bg-light text-center">
+        <div class="container p-3">
+            {{#successMessage}}
+            <div class="alert alert-success">{{successMessage}}</div>
+            {{/successMessage}}
+            {{#alertMessage}}
+            <div class="alert alert-danger">{{alertMessage}}</div>
+            {{/alertMessage}}
+            <form method="POST">
+                <h2>Login</h2>
+                <table id="tablecontainer">
+                    <tr id ="tablerow">
+                        <td>Username :</td>
+                        <td>
+                            <input type="email" name="email" value="{{emailValue}}" required placeholder="email">
+                        </td>
+                    </tr>
+                    <tr id ="tablerow">
+                        <td>Password :</td>
+                        <td>
+                            <input type="password" name="pwd" value="{{pwd}}" required placeholder="password">
+                        </td>
+                    </tr>
+                </table>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="/"><button type="button" class="btn btn-secondary">Cancel</button></a>
+            </form>
+            <br><br>
+        <div class="row p-3">   
+            <div class="col">
+            <p><a href="/forgot" class="text-danger font-weight-bold">Forgot password?</a></p>
+            <h5 class=""><span>Don't have an account?</span></h5>
+            <p><a class="font-weight-bold" href="/signup">Create an account</a></p>            
+            </div>
+        </div>                
+            <!-- GOOGLE PLUS and FB SIGN IN buttons partials-->
+            {{>oauth2_btns}}
+        </div>
+        </section>
+        {{>footer}}
+        </div>
+        {{>utilityJS}}
+        <!--Ajax Call to SIGN IN -->
+        {{>oauth2_ajax}}
+	    <!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
+	    <script async defer src="https://apis.google.com/js/client:platform.js?onload=start"></script>
+	    <!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->
+      </body>
+  </html>

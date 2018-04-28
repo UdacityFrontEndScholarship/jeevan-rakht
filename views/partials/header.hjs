@@ -1,0 +1,25 @@
+{{! header.hjs }}
+<header class="d-flex justify-content-center align-items-center">
+    <div class="d-flex flex-1 justify-content-sm-center">
+        <a href="/" class="logo-wrapper zi-1">
+            <img src="assets/images/logo.png" alt="" class="logo">
+        </a>
+    </div>
+    {{#user}}
+    <div class="option-label mr-2 zi-1">
+        <a href="/logout" class="option-label">logout </a>
+    </div>
+    <a href="/users" class="zi-1">
+        <img class="profile-btn fas fa-user-circle" id="profile-icon" src="{{user.picture}}" alt="">
+    </a>
+    {{/user}} 
+    {{^user}}
+    <div class="option-label mr-2 zi-1">
+        <a href="/login" class="option-label">login </a>|
+        <a href="/signup" class="option-label"> signup</a>
+    </div>
+    <a href="/users" class="zi-1" id="header">
+        <img class="profile-btn fas fa-user-circle" src="" alt="">
+    </a>
+    {{/user}}
+</header>
