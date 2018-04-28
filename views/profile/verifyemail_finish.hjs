@@ -5,9 +5,12 @@
         <!-- Main content goes here -->      
         <div class="container vh-100 d-flex flex-column justify-content-between">
           {{>header}}
-        <section class="main zi-1">
+        <section id="main" class="zi-1 text-center bg-light">
       <!-- Your code goes here -->      
-
+        {{#alertMessage}}
+        <div class="alert alert-danger">{{alertMessage}}</div>
+        {{/alertMessage}}            
+          <a href="/"><button type="button" class="btn btn-secondary">Go to home</button></a>
         </section>
         {{>footer}}
         </div>

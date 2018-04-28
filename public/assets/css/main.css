@@ -273,10 +273,10 @@ a.carousel-control-next {
 }
 
 .fa-question{
-  font-size: 400px;
-  margin-left: 100px;
-  margin-top: 25px;
+  font-size: 25rem;
   color:var(--secondary-color);
+  width:100%;
+  text-align:center;
 }
 
 
@@ -909,7 +909,7 @@ body.login-body {
 
 /*Query form enhanced*/
 .query-section {
-    padding: 0rem 4rem;
+    padding: 0rem 3rem;
 }
 button.query-btn {
     color: white;
@@ -921,6 +921,11 @@ label.query-header {
     display: block;
     text-align: center;
     font-weight: bold;
+}
+.query-image{
+  display:flex;
+  align-items: center;
+  justify-content:center;
 }
 /*Query form end*/
 /*Footer */

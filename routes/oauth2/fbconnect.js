@@ -23,12 +23,10 @@ router.post('/', rawParser,function(req, res, next) {
         'grant_type=fb_exchange_token&client_id='+app_id
         +'&client_secret='+app_secret
         +'&fb_exchange_token='+token;
-        console.log(token);
         console.log(url1);
         axios.get(url1)
         .then(response => {
             let result = response.data;
-            console.log(result);
             // let access_token = JSON.stringify(result).split(',')[0].split(':')[1].replace(/"/g,'');
             let access_token = result.access_token;
             console.log(access_token);
@@ -46,13 +44,10 @@ router.post('/', rawParser,function(req, res, next) {
         .then(response => {
             access_token = response.config.params.access_token;
             let data = response.data;
-            console.log(data);
             // Store the access token and gplus_id in the session for later use.
             req.session.access_token = access_token;
             req.session.provider = 'facebook'
-            req.session.username = data['name']
             req.session.fb_id = data['id']
-            req.session.email = data['email']
             // Get user picture
             let url3 = 'https://graph.facebook.com/v2.8/me/picture';
             console.log(url3);
@@ -62,50 +57,55 @@ router.post('/', rawParser,function(req, res, next) {
                         ,redirect: 0
                         ,height : 200
                         ,width : 200
-                        ,email:data['email']
+                        ,email :data['email']
+                        ,name :data['name']
                     }
                 }
             );
         })
         .then(response => {
-            req.session.picture = response.data['data']['url'];
+            let picture = response.data['data']['url'];
             let email = response.config.params.email;
-            console.log(response.data);
+            let name = response.config.params.name;
             //See if user exists, if it doesn't make a new one
             //Srore the user in session
             findByEmail(email,function(err, user) {
-                console.log("email");
-                if (!err && !user) {
+                if (err){
+                    return res.status(500).send({ "error": err.message });     
+                }                
+                let sendResp = function(){
+                    console.log("Zooooooooooooooooom");
+                    let output = '';
+                    output += '<h1>Welcome, ';
+                    output += name;
+                    output += '!</h1>';
+                    output += '<img src="';
+                    output += picture;
+                    output += ' " style = "width: 160px; height: 160px;border-radius: 150px;\
+                    -webkit-border-radius: 150px;-moz-border-radius: 150px;"> ';
+                    res.send(output);    
+                };
+                if (!user) {
                     let userObj = req.session;
+                    userObj.username = name
+                    userObj.picture = picture
+                    userObj.email = email
                     userObj.not_flag = 'N';
                     userObj.active_flag = 'A';
                     userObj.type = '1';
-                    console.log("create");
                     createOAuthUser(userObj,function(err, newUser) {
                         if (err) {
-                            console.log(err);
-                            res.status(500);
-                            res.send("Internal DB Error");
-                            return;
+                            return res.status(500).send({ "error": err.message });     
                         }
-                        console.log("new");
                         req.session.user = newUser;
                         req.flash('successMessage', 'User created with Google Signin.');
+                        sendResp();
                     });
                 }else if(user){
                     req.session.user = user;
+                    sendResp();
                 }
             });
-            console.log(req.session);
-            let output = '';
-            output += '<h1>Welcome, ';
-            output += req.session.username;
-            output += '!</h1>';
-            output += '<img src="';
-            output += req.session.picture;
-            output += ' " style = "width: 160px; height: 160px;border-radius: 150px;\
-            -webkit-border-radius: 150px;-moz-border-radius: 150px;"> ';
-            res.send(output);
         })
         .catch(error => {
             req.session = null;

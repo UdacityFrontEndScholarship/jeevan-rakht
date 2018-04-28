@@ -5,45 +5,122 @@
         <!-- Main content goes here -->      
         <div class="container vh-100 d-flex flex-column justify-content-between">
           {{>header}}
-        <section id="signup" class="zi-1">
-        <div class="container p-3 mt-5 bg-light">
+        <div id="oauth-login-result" class="col-md-12 bg-light text-center" style="display:none"></div>
+        <section id="signup" class="zi-1 text-center bg-light">
+        <div class="container p-3">
             {{#alertMessage}}
             <div class="alert alert-danger">{{alertMessage}}</div>
             {{/alertMessage}}
-            <form method="POST" action="/signup">
-                <div class="form-group">
-                    <label for="firstname">First name</label>
-                    <input type="text" name="fname" class="form-control" id="firstname" autocomplete="name" aria-describedby="firstname" placeholder="Enter Name">
-                </div>
-                <div class="form-group">
-                    <label for="mobileHelp">Mobile</label>
-                    <input type="number" name="number" class="form-control" id="mobileHelp" autocomplete="mobile" aria-describedby="mobileHelp" placeholder="Enter Mobile">
-                    <small id="mobileHelp" class="form-text text-muted">We'll never share your mobile with anyone else.</small>
-                </div>                            
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" autocomplete="email" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" name="pass1" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group">
-                    <label for="confPassword1">Confirm password</label>
-                    <input type="password" name="pass2" class="form-control" id="confPassword1" placeholder="Password">
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" name="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                </div>
+        <h2>Signup</h2>
+        <form method="POST">
+            <fieldset><legend>User Type</legend>
+                <input type="radio" name="usertype" value="Individual" required {{#inputValue.indiv}}checked{{/inputValue.indiv}}> Self(Individual)
+                <input type="radio" name="usertype" value="Non-Individual" required {{#inputValue.nonIndiv}}checked{{/inputValue.nonIndiv}}> Blood Bank(Non-Individual)
+                <table class="indiv">
+                <tr id ="tablerow">
+                    <td>First Name :</td>
+                    <td>
+                        <input type="text" name="firstname" value="{{inputValue.firstname}}" placeholder="first name">
+                    </td>
+                </tr>
+                <tr id ="tablerow">
+                    <td>Last Name :</td>
+                    <td>
+                        <input type="text" name="lastname" value="{{inputValue.lastname}}" placeholder="last name">
+                    </td>
+                </tr>
+                </table>
+                <table class="nonindiv">
+                <tr id ="tablerow">
+                    <td>Bank Name :</td>
+                    <td>
+                        <input type="text" name="orgname" value="{{inputValue.orgname}}" placeholder="bank name">
+                    </td>
+                </tr>
+                <tr id ="tablerow">
+                    <td>Bank License :</td>
+                    <td>
+                        <input type="text" name="license" value="{{inputValue.license}}" placeholder="license">
+                    </td>
+                </tr>
+                <tr id ="tablerow">
+                    <td>Blood Unit Stock :</td>
+                    <td>
+                        <input type="number" name="stock" value="{{inputValue.stock}}" placeholder="blood stock">
+                    </td>
+                </tr>
+                </table>
+            </fieldset>
+            <table id="tablecontainer">
+                <tr id ="tablerow">
+                    <td>Email :</td>
+                    <td>
+                        <input type="email" name="email" id="email" value="{{inputValue.email}}" placeholder="email">
+                    </td>
+                </tr>                
+                <tr id ="tablerow">
+                    <td>Password :</td>
+                    <td>
+                        <input type="password" name="pwd" id="password" value="{{pww}}" required  placeholder="password">
+                    </td>
+                </tr>
+                <tr id ="errorrow">
+                    <td></td><td>{{ pwerror }} </td>
+                </tr>
+                <tr id ="tablerow">
+                    <td>Confirm Password :</td>
+                    <td>
+                        <input type="password" name="verify" id="verify" value="{{vpw}}" required  placeholder="confirm password">
+                    </td>
+                </tr>
+                {{!-- <tr id ="tablerow">
+                    <td>Send me the email alert for available blood need near me :</td>
+                    <td>
+                        <input type="radio" name="notif" value="0" required checked> No
+                        <input type="radio" name="notif" value="1" required> Yes
+                    </td>
+                </tr>			 --}}
+            </table>
+            <br>
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <a href="/"><button type="button" class="btn btn-secondary">Cancel</button></a>
-            </form>
+            <br>
+        </form>
+        <div class="row p-3">   
+            <div class="col">
+                <h5 class=""><span>Already have an account!</span></h5>
+                <p><a class="font-weight-bold" href="/login">Go to login</a></p>                    
+            </div>
+        </div>    
+            <!-- GOOGLE PLUS and FB SIGN IN buttons partials-->
+            {{>oauth2_btns}}
         </div>  
         </section>
         {{>footer}}
         </div>
         {{>utilityJS}}
+        <!--Ajax Call to SIGN IN -->
+        {{>oauth2_ajax}}
+	    <!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
+	    <script async defer src="https://apis.google.com/js/client:platform.js?onload=start"></script>
+	    <!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->        
+        
+        <!--Below scripts controlls party type radio button action -->
+        <script>
+        var partySelect = $("input:radio[name=usertype]");
+        var callback = function(evt){
+            var RadioButtonCheck = $('form input[type=radio]:checked').val();
+            console.log(RadioButtonCheck);
+            if (RadioButtonCheck == "Individual") {
+                $(".indiv").addClass("open");
+                $(".nonindiv").removeClass("open");
+            }else if (RadioButtonCheck == "Non-Individual") {
+                $(".nonindiv").addClass("open");
+                $(".indiv").removeClass("open");
+            }
+        };
+        $(partySelect).on('change',callback);
+        $(window).on('load',callback);
+        </script>        
       </body>
   </html>
