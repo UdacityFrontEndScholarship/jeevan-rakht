@@ -6,12 +6,20 @@
         </a>
     </div>
     {{#user}}
-    <div class="option-label mr-2 zi-1">
-        <a href="/logout" class="option-label">logout </a>
-    </div>
+        <div class="dropdown">
     <a href="/users" class="zi-1">
-        <img class="profile-btn fas fa-user-circle" id="profile-icon" src="{{user.picture}}" alt="">
-    </a>
+       <img class="profile-btn fas fa-user-circle dropbtn" id="profile-icon" src="{{user.picture}}" alt="">
+    </a>  
+    <div class="dropdown-content">
+        <a href="/verify">Verify</a>
+        <a href="/update_mobile">Update Mobile</a>
+        <a href="/update_email">Update Email</a>
+        <a href="/forgot">Update Password </a>
+        <a href="/logout">Logout </a>
+    
+    </div>
+    </div>
+    
     {{/user}} 
     {{^user}}
     <div class="option-label mr-2 zi-1">
