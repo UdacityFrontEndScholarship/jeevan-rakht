@@ -488,7 +488,6 @@ height: 50px; }
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
-    overflow: hidden;
     z-index: 1;
 }
 
