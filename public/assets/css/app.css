@@ -1,4 +1,5 @@
 /* BRAND STYLES */
+
 :root {
   --primary-color-light: #d20001;
   --primary-color-dark: #900000;
@@ -11,37 +12,43 @@
   --font-body: "Montserrat", sans-serif;
 }
 
-html,
-body {
+html, body {
   height: 100%;
   overflow-x: initial;
 }
 
 body {
-  font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif; }
-
-#header img{
-  width: 4rem;
-  height: 4rem;
+  font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif;
 }
-#header{
+
+#profile-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+#header {
   font-size: 1.5rem;
 }
+
 .contrast {
-  color: #000; }
+  color: #000;
+}
 
 .firm {
-  color: #f4b408; }
+  color: #f4b408;
+}
 
 #logo {
-  color: white; 
+  color: white;
 }
 
 #main {
-  text-align: center; }
+  text-align: center;
+}
 
 .footer a {
-  padding: 0.75rem; }
+  padding: 0.75rem;
+}
 
 .card {
   background-color: tomato;
@@ -52,24 +59,28 @@ body {
   border-radius: 10px;
   z-index: 999;
   -webkit-box-shadow: 0 0 20px 2px rgba(255, 205, 205, 0.65);
-          box-shadow: 0 0 20px 2px rgba(255, 205, 205, 0.65); }
+  box-shadow: 0 0 20px 2px rgba(255, 205, 205, 0.65);
+}
 
 @media screen and (max-width: 34em) {
-    li {
-        text-align: left !important;
-    }
-  .card {
-    margin-top: 10px; } 
+  li {
+    text-align: left !important;
   }
-
+  .card {
+    margin-top: 10px;
+  }
+  section#login, section#signup, section#main{
+    margin: 0; 
+    }   
+}
 
 .card-img-top {
   height: 300px;
   max-height: 50%;
   max-width: 95%;
   border-radius: 10px;
-  margin: 0 auto; }
-
+  margin: 0 auto;
+}
 
 /* === Styles related to app.hjs === */
 
@@ -121,9 +132,12 @@ canvas {
   .logo {
     max-height: 80px;
   }
-
   .profile-btn {
     font-size: 4rem;
+  }
+  #profile-icon {
+    width: 4rem;
+    height: 4rem;
   }
 }
 
@@ -149,10 +163,7 @@ canvas {
 }
 
 .option-btn:hover {
-  background: linear-gradient(
-    var(--primary-color-light),
-    var(--primary-color-dark)
-  );
+  background: linear-gradient( var(--primary-color-light), var(--primary-color-dark));
   border-color: var(--white);
   color: var(--white);
   transform: scale(1.035);
@@ -163,7 +174,6 @@ canvas {
     font-size: 1.7rem;
     margin: 0 0 12px;
   }
-
   .option-btn {
     height: 275px;
     width: 300px;
@@ -201,4 +211,232 @@ canvas {
     display: block;
     font-size: 1.1rem;
   }
+}
+
+/*Locate blood starts here*/
+
+.locateBlood {
+  background-color: #fafafa;
+  border-radius: 7px;
+  padding: 8% 10%;
+  width: 98%;
+  max-width: 910px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.backArrow {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-image: url(../icons_svg/back.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  background-size: 26px;
+  background-color: transparent;
+  border: 0px;
+  outline: none;
+}
+
+.headingLocateBlood {
+  display: block;
+  text-align: center;
+  font-size: 37px;
+  font-family: Spectral, serif;
+}
+
+.headingLocateBlood b {
+  font-family: Montserrat, serif;
+  padding-right: 10px;
+  font-weight: 700;
+}
+
+.searchRadius {
+  background-image: url(../icons_svg/compass.svg);
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 16px);
+  background-position-y: center;
+  background-size: 19px;
+}
+
+.BloodGroup {
+  background-image: url(../icons_svg/injection.svg);
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 16px);
+  background-position-y: center;
+  background-size: 19px;
+}
+
+.when_date {
+  background-image: url(../icons_svg/calander.svg);
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 16px);
+  background-position-y: center;
+  background-size: 19px;
+}
+
+.locateBlood input {
+  border: 1px solid #e4e2e2;
+  padding: 14px 10px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.locateBlood input:focus, .locateBlood input:hover {
+  outline: 1px solid var(--secondary-color);
+  box-shadow: 0 0 5px var(--secondary-color);
+}
+
+.locateInput {
+  background-image: url(../icons_svg/location.svg);
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 16px);
+  background-position-y: center;
+  background-size: 19px;
+}
+
+.searchBlood {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 57px;
+  width: 250px;
+  height: 52px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #de1f11;
+  border: 0px;
+  font-family: Montserrat;
+  font-weight:  500;
+  letter-spacing: 0.5px;
+  transition: all ease 0.2s;
+  cursor:  pointer;
+}
+
+@media screen and (max-width:500px) {
+  .backArrow {
+    top: 26px;
+    left: 15px;
+  }
+  .headingLocateBlood {
+    font-size: 24px;
+  }
+  .locateBlood {
+    padding-top: 25px;
+    /* margin-top:  28px; */
+    /* margin-bottom: 32px; */
+  }
+  .logo-wrapper {
+    display: block !important;
+    margin-left: calc(100% - 214px);
+  }
+  .footer-link {
+    display: inline-block;
+  }
+  .searchBlood {
+    width: 95%;
+  }
+}
+.locateBlood input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-family: Spectral, sans-serif;
+    font-style: italic;
+    color: #c3c3c3;
+    transition: all ease 0.2s;
+}
+.locateBlood input::-moz-placeholder { /* Firefox 19+ */
+  font-family: Spectral, sans-serif;
+    font-style: italic;
+    color: #c3c3c3;
+    transition: all ease 0.2s;
+}
+.locateBlood input:-ms-input-placeholder { /* IE 10+ */
+  font-family: Spectral, sans-serif;
+    font-style: italic;
+    color: #c3c3c3;
+    transition: all ease 0.2s;
+}
+.locateBlood input:-moz-placeholder { /* Firefox 18- */
+  font-family: Spectral, sans-serif;
+    font-style: italic;
+    color: #c3c3c3;
+    transition: all ease 0.2s;
+}
+.locateBlood input:hover::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-family: Spectral, sans-serif;
+  color: #343a40;
+  font-style: normal;
+}
+.locateBlood input:hover::-moz-placeholder { /* Firefox 19+ */
+  font-family: Spectral, sans-serif;
+  color: #343a40;
+  font-style: normal;
+}
+.locateBlood input:hover:-ms-input-placeholder { /* IE 10+ */
+  font-family: Spectral, sans-serif;
+  color: #343a40;
+  font-style: normal;
+}
+.locateBlood input:hover:-moz-placeholder { /* Firefox 18- */
+  font-family: Spectral, sans-serif;
+  color: #343a40;
+  font-style: normal;
+}
+.locateBlood input[type='number'] {
+  -moz-appearance:textfield;
+}
+/* Webkit browsers like Safari and Chrome */
+.locateBlood input[type=number]::-webkit-inner-spin-button,
+.locateBlood input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.searchBlood:hover{
+  
+background-color: #cd1608;
+}
+
+/* Added by Backend team */
+fieldset{
+    margin: 10px;
+    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;
+}
+legend{
+    width: 20vmax;    
+}
+.indiv, .nonindiv{
+display: none;
+}
+
+.indiv.open, .nonindiv.open{
+display: table;
+}
+
+#login, #signup, #main{
+background-color: rgba(0, 0, 0, 0.5);
+margin-left: 15%;
+margin-right: 15%;
+margin-top: 1%; }
+
+input,select, textarea {
+color: black; }
+
+table {
+margin: 0 auto;
+z-index: 1;
+width: 100%;
+height: 50px; }
+
+#tablerow td{
+  text-align: center;
+  padding: 5px;
+}    
+#tablerow td:first-child{  
+  display: none;
 }
