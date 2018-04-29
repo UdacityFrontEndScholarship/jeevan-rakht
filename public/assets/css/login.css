@@ -1,38 +1,78 @@
-body.signin {
-    background-color: skyblue;
+body,html{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: sans-serif;
 }
-
-.container.signin-container {
-    margin-top: 8%;
+.d1{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	float: left;
+	background: url(../images/background.png) center no-repeat;
+	background-size: 100% 100%;
 }
-
-.card.signin-card {
-    padding: 40px 0px 20px;
-    background-color: gainsboro;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+.login{
+	position: fixed;
+	overflow: hidden;
+	width: 100%;
+	max-width: 500px;
+	right: 0;
+	margin: 0;
+	background: #fff;
+	height: 100%;
+	z-index: 1;
 }
-
-img.signin-img {
-    padding: 0 2rem 2rem;
-    margin: auto;
-    display: block;
+.login img{
+	width: 100%;
 }
-
-form.signin-form {
-    max-width: 350px;
-    margin: auto;
+.login form{
+	margin: 30px 30px;
 }
-
-button.signin-btn {
-    color: white;
-    background-color: #d64829;
-    width: 100%;
-    margin-bottom: 1.2rem;
+.login h2{
+	font-size: 30px;
+	color: #000;
 }
-
-a.new-accnt {
-    font-size: 1.2rem;
-    text-align: center;
-    display: block;
-    margin-top: 15px;
+.login a{
+	text-decoration:none;
+	color: #DE1F26;
+	margin: 10px 0;
+}
+.login span{
+	font-size: 15px;
+	font-weight: 700;
+	color: #808080;
+	margin: 10px 0 0 5px;
+}
+.login label{
+	display: block;
+	font-size: 15px;
+	font-weight: 700;
+	color: #808080;
+	margin: 10px 0;
+}
+.txtb{
+	width: 100%;
+	padding: 10px 0;
+	border-radius: 5px;
+	border-color: #C0C0C0;
+	font-size: 18px;
+	font-family: "Times New Roman", Times, serif;
+}
+input[type="checkbox"]{
+	margin: 30px 0;
+	width: 18px;
+ 	height: 18px;
+ 	cursor: pointer;
+}
+.btn{
+	display: block;
+	float: right;
+	background: #DE1F26;
+	font-size: 18px;
+	padding: 8px 30px;
+	color: white;
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
 }
