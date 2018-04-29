@@ -9,7 +9,7 @@
 					contentType: 'application/octet-stream; charset=utf-8',
 					data: authResult['code'],
 					success: function(result){
-                        $('#login, #signup').attr("style","display:none");
+                        $('#login, #signup').attr("style","display:none !important");
                         $('#oauth-login-result').attr("style","display:unset");
 						if (result){
 							$('#oauth-login-result').html('Login Successfull! <br>'+ result+ '<br>Redirecting');
@@ -63,7 +63,7 @@
 		    data: access_token,
 		    contentType: 'application/octet-stream; charset=utf-8',
 		    success: function(result) {
-                $('#login').attr("style","display:none");
+                $('#login').attr("style","display:none !important");
                 $('#oauth-login-result').attr("style","display:unset");                
 		      // Handle or verify the server response if necessary.
 		      	if(result){
