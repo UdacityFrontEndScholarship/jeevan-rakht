@@ -1,0 +1,26 @@
+{{! oauth2_btns.hjs }}
+            
+<div id="signinButton" class="g-signin social-signin-btn g-btn" 
+    data-scope="openid email"
+    data-clientid="206205063091-03p9vfum443gup692b3d9tuii2hg8unt.apps.googleusercontent.com"
+    data-redirecturi="postmessage"
+    data-accesstype="offline"
+    data-cookiepolicy="single_host_origin"
+    data-callback="signInCallback"
+    data-approvalprompt="force">
+
+    <span class="social-signin-icon">
+        <i class="fab fa-fw fa-google"></i>
+    </span>
+
+    <span class="social-signin-text">Sign in with Google</span>
+    
+</div>
+
+<div class="social-signin-btn fb-btn" onclick="FB.login(sendTokenToServer)">
+    <span class="social-signin-icon">
+        <i class="fab fa-fw fa-facebook-f"></i>
+    </span>
+
+    <span class="social-signin-text">Sign in with Facebook</span>   
+</div>

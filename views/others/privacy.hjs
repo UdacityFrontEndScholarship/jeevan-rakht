@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    {{>head}}
+    <body m-md-3>
+        <!-- Main content goes here -->      
+          {{>header}}
+        <section id="main zi-1">
+      <!-- Your code goes here -->      
+
+        </section>
+        {{>footer}}
+        {{>utilityJS}}
+      </body>
+  </html>

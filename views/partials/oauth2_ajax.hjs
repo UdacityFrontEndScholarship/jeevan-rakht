@@ -1,0 +1,83 @@
+<!--GOOGLE PLUS SIGN IN -->
+    <script>
+		function signInCallback(authResult){
+			if (authResult['code']){
+				$.ajax({
+					type: 'POST',
+					url: '/gconnect?state={{STATE}}',
+					processData: false,
+					contentType: 'application/octet-stream; charset=utf-8',
+					data: authResult['code'],
+					success: function(result){
+                        $('#login, #signup').attr("style","display:none !important");
+                        $('#oauth-login-result').attr("style","display:unset");
+						if (result){
+							$('#oauth-login-result').html('Login Successfull! <br>'+ result+ '<br>Redirecting');
+							setTimeout(function(){
+								window.location.href="/";
+							},4000);
+						}else
+						{
+							$('#oauth-login-result').html('Failed to make server side call.\
+								Check your configuration and console.');
+						}
+					}
+				});
+			}else if(authResult['error']){
+				console.log('There was an error: '+ authResult['error']);
+				// console.log(authResult);
+			}
+		}
+	</script>
+<!--END GOOGLE PLUS SIGN IN -->
+
+<!--FACEBOOK SIGN IN -->
+	<script>
+	window.fbAsyncInit = function() {
+	FB.init({
+	  	appId      : '303950806802847',
+	   	cookie     : true,  // enable cookies to allow the server to access
+	                       // the session
+	   	xfbml      : true,  // parse social plugins on this page
+	   	version    : 'v2.8' // use version 2.2
+		});
+	};
+	// Load the SDK asynchronously
+	(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	 // Here we run a very simple test of the Graph API after login is
+	 // successful.  See statusChangeCallback() for when this call is made.
+	 function sendTokenToServer() {
+	   var access_token = FB.getAuthResponse()['accessToken'];
+	   console.log('Welcome!  Fetching your information.... ');
+	   FB.api('/me', function(response) {
+		    $.ajax({
+		    type: 'POST',
+		    url: '/fbconnect?state={{STATE}}',
+		    processData: false,
+		    data: access_token,
+		    contentType: 'application/octet-stream; charset=utf-8',
+		    success: function(result) {
+				$('#login, #signup').attr("style","display:none !important");
+                $('#oauth-login-result').attr("style","display:unset");                
+		      // Handle or verify the server response if necessary.
+		      	if(result){
+			        $('#oauth-login-result').html('Login Successful!</br>'+ result + '</br>Redirecting...')
+			        setTimeout(function() {
+			        		window.location.href = "/";
+			        }, 4000);
+			    }
+			    else{
+			        $('#oauth-login-result').html('Failed to make a server-side call. Check your configuration and console.');
+			    }
+		      }
+
+	  		});
+		});
+	}
+	</script>

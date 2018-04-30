@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    {{>head}}
+    <body id="particles-js" m-md-3>
+        <div class="vh-100 d-flex flex-column justify-content-between">
+          {{>header}}
+        <div id="oauth-login-result" class="container p-2 p-md-4 bg-light text-center zi-1" style="display:none"></div>
+        
+        <section id="login" class="container d-flex flex-column flex-wrap align-items-center my-5">
+
+            {{#successMessage}}
+            <div class="alert alert-success mb-3  zi-1">{{successMessage}}</div>
+            {{/successMessage}}
+            {{#alertMessage}}
+            <div class="alert alert-danger mb-3  zi-1">{{alertMessage}}</div>
+            {{/alertMessage}}
+
+            <div class="main-content zi-1">
+                <a href="/" class="back-arrow">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+
+                <div class="signin-wrapper">
+                    <form method="POST">
+                        <div class="input-wrapper">
+                            <input type="email" name="email" value="{{emailValue}}" placeholder="username" required>
+                            <i class="far fa-user"></i>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <input type="password" name="pwd" value="{{pwd}}" placeholder="password" required>
+                            <i class="fas fa-unlock"></i>
+                        </div>
+
+                        <button type="submit" class="signin-btn">SIGN IN</button>
+                    </form>
+
+                    <p class="or">or</p>
+                    <!-- GOOGLE PLUS and FB SIGN IN buttons partials-->
+                    {{>oauth2_btns}}
+
+                    <div class="help-txt">
+                        <p>Forgot password? <strong>RESET</strong> <a href="/forgot">here</a>.</p>
+
+                        <p>New user? <strong>REGISTER</strong> <a href="/signup">here</a>.</p>
+                    </div>
+                </div>
+            </div>
+
+           
+      
+        </section>
+        {{>footer}}
+        </div>
+        {{>utilityJS}}
+        <!--Ajax Call to SIGN IN -->
+        {{>oauth2_ajax}}
+	    <!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
+	    <script async defer src="https://apis.google.com/js/client:platform.js?onload=start"></script>
+	    <!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->
+      </body>
+  </html>

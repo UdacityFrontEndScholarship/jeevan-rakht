@@ -1,0 +1,29 @@
+{{! head.hjs }}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JeevanRakht - {{title}}</title>
+
+    <!-- Shortcut Icons -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+    <!-- SEO tags -->
+    <meta name="description" content="The Official website of JeevanRakht">
+    <meta name="keywords" content="JeevanRakht, Blood Dontation, Blood Bank, Google Udacity Project JeevanRakht">
+
+    <!--GOOGLE FONT-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Spectral:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" />
+
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="assets/css/app.css" />
+</head>
