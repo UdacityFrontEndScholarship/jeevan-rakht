@@ -250,6 +250,46 @@ a.carousel-control-next {
   color: var(--white);
   font-family: var(--font-title);
 }
+/* Vertical Scrolling List */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+#verticalScrollList{
+  width:260px;
+  margin:20px auto;
+  height:280px;
+  background-color:#333333;
+  overflow:hidden;
+}
+ 
+#verticalScrollList ul{
+  list-style:none;
+  position:relative;
+}
+#verticalScrollList li{
+  height:80px;
+  background-color:#333333;
+   text-align:center;
+  border-bottom:1px solid #900000;
+  vertical-align: 
+}
+#verticalScrollList h2{
+  color:#9db;
+  padding-top:10px;
+  font-size:24px;
+}
+#verticalScrollList p{
+  text-align:left;
+  padding:10px;
+  color:#eee;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+ }
 
 /* Main */
 
