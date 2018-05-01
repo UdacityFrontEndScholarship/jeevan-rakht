@@ -1,102 +1,44 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{>head}}
 
-        <title>JeevanRakht - {{title}}</title>
+<body id="particles-js" m-md-3>
+    <div class="vh-100 d-flex flex-column justify-content-between">
 
-        <!-- Shortcut Icons -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
-        <link rel="apple-touch-icon" type="image/x-icon" href="assets/images/favicon.ico">
+        {{>header}}
 
-        <!-- SEO tags -->
-        <meta name="description" content="The Official website of JeevanRakht">
-        <meta name="keywords" content="JeevanRakht, Blood Dontation, Blood Bank, Google Udacity Project JeevanRakht">
-
-        <!--GOOGLE FONT-->
-        <link href="https://fonts.googleapis.com/css?family=Arvo|Lato" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
-
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="assets/css/bootstrap.css" />
-
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <!-- Main CSS file -->
-        <link rel="stylesheet" href="assets/css/app.css" />
-    </head>
-
-    <body id="particles-js" m-md-3>
-        <div class="container vh-100 d-flex flex-column justify-content-between">
-
-            <header class="d-flex justify-content-center align-items-center">
-                <div class="d-flex flex-1 justify-content-sm-center">
-                    <a href="/" class="logo-wrapper zi-1">
-                        <img src="assets/images/logo.png" alt="" class="logo">
-                    </a>
+        <main class="options-wrapper d-flex flex-wrap justify-content-center mt-4 mb-5">
+            <div class="option mx-4 zi-1">
+                <div class="option-label">
+                    <strong>LOCATE</strong> Blood
                 </div>
 
-                <a href="/users" class="zi-1">
-                    <i class="profile-btn fas fa-user-circle"></i>
+                <a href="/locate" class="option-btn">
+                    <i class="fas fa-search"></i>
                 </a>
-            </header>
+            </div>
+            <!-- End Option -->
 
-            <main class="options-wrapper d-flex flex-wrap justify-content-center mt-4 mb-5">
-                <div class="option mx-4 zi-1">
-                    <div class="option-label">
-                        <strong>LOCATE</strong> Blood
-                    </div>
-
-                    <a href="/locate" class="option-btn">
-                        <i class="fas fa-search"></i>
-                    </a>
+            <div class="option mx-4 zi-1">
+                <div class="option-label">
+                    <strong>DONATE</strong> Blood
                 </div>
-                <!-- End Option -->
 
-                <div class="option mx-4 zi-1">
-                    <div class="option-label">
-                        <strong>DONATE</strong> Blood
-                    </div>
-
-                    <a href="/donate" class="option-btn">
-                        <i class="fas fa-hand-holding-heart"></i>
-                    </a>
-                </div>
-                <!-- End Option -->
-            </main>
-
-            <footer class="app-footer d-md-flex justify-content-md-around align-items-md-center zi-1">
-                <a class="footer-link" href="tel:+919999999999">+91 - 9999999999</a>
-
-                <span class="footer-dot">•</span>
-
-                <a class="footer-link middle" href="index.html">
-                    <strong>Know More</strong>
+                <a href="/donate" class="option-btn">
+                    <i class="fas fa-hand-holding-heart"></i>
                 </a>
+            </div>
+            <!-- End Option -->
+        </main>
 
-                <span class="footer-dot">•</span>
+        {{>footer}}
 
-                <a class="footer-link" href="mailto:mail@jeevanrakht.in">mail@jeevanrakht.in</a>
-            </footer>
+    </div>
+    <!-- End Container -->
 
-        </div>
-        <!-- End Container -->
-        
-        <!-- Jquery -->
-        <script src="assets/js/jquery.min.js"></script>
-        <!-- Bootstrap -->
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <!-- Particles JS-->
-        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-        <!-- Main JS file -->
-        <script src="assets/js/app.js"></script>
+    {{>utilityJS}}
 
-      </body>
+</body>
 
-  </html>
+</html>

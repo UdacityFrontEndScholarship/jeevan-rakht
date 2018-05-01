@@ -2,14 +2,7 @@ const UserAcct = require('../models/user');
 const bcrypt = require('bcryptjs');
 
 var signupUser = function(usrObj, callback) {
-    var newUser = new UserAcct({
-        user_name: usrObj.user_name,
-        email: usrObj.email,
-        password: usrObj.password,
-        user_type: usrObj.type,
-        notification_flag: usrObj.not_flag,
-        active_flag: usrObj.active_flag
-    });
+    var newUser = new UserAcct(usrObj);
     bcrypt.genSalt(11, function(err, salt) {
         if (err) {
             console.log('Some error occured while salting.', err);
@@ -48,6 +41,22 @@ var findByEmail = function(email, callback) {
             return;
         }
         console.log('Email not found', emailResult);
+        callback(err, emailResult);
+    });
+}
+
+var findById = function(id, callback) {
+    UserAcct.findById(id, function(err, emailResult) {
+        if (err) {
+            console.log('something went wrong while finding user in database.', err);
+            callback(err, undefined);
+            return;
+        } else if (emailResult) {
+            console.log('user found', emailResult);
+            callback(err, emailResult);
+            return;
+        }
+        console.log('user not found', emailResult);
         callback(err, emailResult);
     });
 }
@@ -111,6 +120,46 @@ var loginUser = function(userObj, callback) {
     });
 }
 
+var activateUser = function(user,callback) {
+    user.active_flag = 'A';    
+    user.save(function(err, data) {
+        if (err) {
+            console.log('Unable to save user', err);
+            callback(err, undefined);
+            return;
+        }
+        console.log('Saved from user model', data);
+        callback(err, data);
+    });  
+}  
+var updatePassword = function(userObj, callback) {
+    UserAcct.findOne({ email: userObj.email }, function(err, result) {
+        if (err) {
+            callback(err, undefined);
+        } else if (result) {
+            var salt = bcrypt.genSaltSync(10);
+            bcrypt.hash(userObj.password, salt, function(err, hash) {
+                if (err) {
+                    callback(err, undefined);
+                } else if (hash) {
+                    var item = {
+                        password: hash
+                    }
+                    UserAcct.updateOne({ email: userObj.email }, { $set: item }, function(err, newResult) {
+                        if (err) {
+                            callback(err, undefined);
+                        } else if (newResult) {
+                            callback(undefined, newResult);
+                        }
+                    });
+                }
+            });
+        } else if (!result) {
+            callback(undefined, undefined);
+        }
+    });
+}
+
 var updateUser = function() {}
 
 module.exports.signupUser = signupUser;
@@ -119,3 +168,6 @@ module.exports.updateUser = updateUser;
 module.exports.deleteUser = deleteUser;
 module.exports.createOAuthUser = createOAuthUser;
 module.exports.loginUser = loginUser;
+module.exports.findById = findById;
+module.exports.activateUser = activateUser;
+module.exports.updatePassword = updatePassword;

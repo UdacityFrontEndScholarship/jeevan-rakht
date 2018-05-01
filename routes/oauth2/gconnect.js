@@ -25,7 +25,6 @@ router.post('/', rawParser,function(req, res, next) {
     }
     // Obtain authorization code
     let code = req.body.toString('utf8');
-    console.log(code);
     // Exchange authorization code with access token
     oauth2Client.getToken(code, function (err, tokens) {
         // Now tokens contains an access_token and an optional refresh_token. Save them.
@@ -42,12 +41,10 @@ router.post('/', rawParser,function(req, res, next) {
           let openID_token = jwtDecode(tokens['id_token'])
         //   console.log(openID_token);
           let gplus_id = openID_token['sub'];
-          console.log("Current gplus id: " +gplus_id);
           let pr =  function(url1){
             axios.get(url1)
             .then(response => {
                 let result = response.data;
-                console.log(result);
                 // Verify that the access token is used for the intended user.
                 if (result['user_id'] !== gplus_id){
                 console.log("Token's user ID doesn't match given user ID.");
@@ -64,55 +61,55 @@ router.post('/', rawParser,function(req, res, next) {
                 }
                 //Get user info
                 let url2 = "https://www.googleapis.com/oauth2/v1/userinfo?access_token="+access_token+"&alt=json";
-                console.log(url2);
                 return axios.get(url2);
                 })
                 .then(response => {
                     let data = response.data;
-                    console.log(data);
                     // Store the access token and gplus_id in the session for later use.
                     req.session.access_token = access_token;
                     req.session.gplus_id = gplus_id;
-                    req.session.provider = 'google'
-                    req.session.username = data['name']
-                    req.session.picture = data['picture']
-                    req.session.email = data['email']
-
+                    req.session.provider = 'google' 
                     //See if user exists, if it doesn't make a new one
                     //Srore the user in session
                     findByEmail(data['email'],function(err, user) {
-                        console.log("email");
-                        if (!err && !user) {
+                        if (err){
+                            return res.status(500).send({ "error": err.message });     
+                        }
+                        let sendResp = function(){
+                            console.log("Zooooooooooooooooom");
+                            let output = '';
+                            output += '<h1>Welcome, ';
+                            output += data['name'];
+                            output += '!</h1>';
+                            output += '<img src="';
+                            output += data['picture'];
+                            output += ' " style = "width: 160px; height: 160px;border-radius: 150px;\
+                            -webkit-border-radius: 150px;-moz-border-radius: 150px;"> ';
+                            res.send(output);                        
+                        };                        
+                        if (!user) {
                             let userObj = req.session;
+                            userObj.username = data['name']
+                            userObj.picture = data['picture']
+                            userObj.email = data['email']   
                             userObj.not_flag = 'N';
                             userObj.active_flag = 'A';
                             userObj.type = '1';
-                            console.log("create");
                             createOAuthUser(userObj,function(err, newUser) {
                                 if (err) {
-                                    console.log(err);
-                                    res.status(500);
-                                    res.send("Internal DB Error");
-                                    return;
+                                    return res.status(500).send({ "error": err.message });     
                                 }
-                                console.log("new");
+                                // sets a cookie with the user's info
                                 req.session.user = newUser;
                                 req.flash('successMessage', 'User created with Google Signin.');
+                                sendResp();
                             });
                         }else if(user){
+                            // sets a cookie with the user's info
                             req.session.user = user;
+                            sendResp();
                         }
                     });
-                    console.log(req.session);
-                    let output = '';
-                    output += '<h1>Welcome, ';
-                    output += req.session.username;
-                    output += '!</h1>';
-                    output += '<img src="';
-                    output += req.session.picture;
-                    output += ' " style = "width: 160px; height: 160px;border-radius: 150px;\
-                    -webkit-border-radius: 150px;-moz-border-radius: 150px;"> ';
-                    res.send(output);
                 })
                 .catch(error => {
                     req.session = null;
@@ -129,22 +126,15 @@ router.post('/', rawParser,function(req, res, next) {
         // the access token
         let stored_access_token = req.session.access_token;
         let stored_gplus_id = req.session.gplus_id;
-        console.log("Stored gplus id: " +stored_gplus_id);
         let stored_url = "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token="+stored_access_token;
-        console.log(stored_url);
-        console.log(req.session);
         axios.get(stored_url)
         .then(response => {
-            console.log(req.session);
-            console.log(response.data);
             if (stored_access_token && gplus_id === stored_gplus_id){
                 res.status(200);
                 res.send("<p>Current user is already connected.</p>");
             }else{
-                console.log("stored_url: " +stored_url);
                 // Check that the access token is valid.
                 let url1 = "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token="+access_token;
-                console.log("url1: " +url1);
                 pr(url1);
             }
             })
@@ -152,7 +142,6 @@ router.post('/', rawParser,function(req, res, next) {
                 console.log("Store access_toke API error");
                 console.log(Object.keys(error));
                 let url1 = "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token="+access_token;
-                console.log("url1: " +url1);
                 pr(url1);
             })
             .catch(error => {console.log("inside catch error");console.log(error);})

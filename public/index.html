@@ -17,7 +17,7 @@
     <meta name="keywords" content="JeevanRakht, Blood Dontation, Blood Bank, Google Udacity Project JeevanRakht">
 
     <!--GOOGLE FONT-->
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700|Montserrat:400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Spectral:400,400i,700,700i" rel="stylesheet">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -29,6 +29,8 @@
     <!-- Main CSS file -->
     <!--<link rel="stylesheet" href="assets/css/main.css" />-->
     <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Sidebar CSS file for hamburger menu -->
+    <link rel="stylesheet" href="assets/css/sidebar.css">
 </head>
 
 <body m-md-3>
@@ -97,34 +99,34 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
-            <div class="carousel-inner">
+            <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
                     <!-- <img class="d-block w-100" src="assets/images/tim-marshall-114623-unsplash.jpg" alt="First slide"> -->
-                    <img class="d-block w-100" src="assets/images_optimized/tim-marshall-114623-unsplash_small.jpg" srcset="assets/images_optimized/tim-marshall-114623-unsplash_large_2x.jpg 1600w, 
-                                assets/images_optimized/tim-marshall-114623-unsplash_medium_1x.jpg 800w, 
+                    <img class="d-block w-100" src="assets/images_optimized/tim-marshall-114623-unsplash_small.jpg" srcset="assets/images_optimized/tim-marshall-114623-unsplash_large_2x.jpg 1600w,
+                                assets/images_optimized/tim-marshall-114623-unsplash_medium_1x.jpg 800w,
                                 assets/images_optimized/tim-marshall-114623-unsplash_small.jpg 320w" sizes="100vw" alt="First slide" />
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Your blood donation can save lives</h5>
+                    <div class="carousel-caption">
+                        <h5><span id="carousel-h5-inline">Your Blood Can Save Lives!</span></h5>
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Become a donor</button>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <!-- <img class="d-block w-100" src="assets/images/action-adult-affection-339620.jpg" alt="Second slide"> -->
-                    <img class="d-block w-100" src="assets/images_optimized/action-adult-affection-339620_small.jpg" srcset="assets/images_optimized/action-adult-affection-339620_large_2x.jpg 1600w, 
-                                assets/images_optimized/action-adult-affection-339620_medium_1x.jpg 800w, 
+                    <img class="d-block w-100" src="assets/images_optimized/action-adult-affection-339620_small.jpg" srcset="assets/images_optimized/action-adult-affection-339620_large_2x.jpg 1600w,
+                                assets/images_optimized/action-adult-affection-339620_medium_1x.jpg 800w,
                                 assets/images_optimized/action-adult-affection-339620_small.jpg 320w" sizes="100vw" alt="Second slide" />
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Your blood donation can save lives</h5>
+                    <div class="carousel-caption">
+                        <h5><span id="carousel-h5-inline">Your Blood Can Save Lives!</span></h5>
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Become a donor</button>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <!-- <img class="d-block w-100" src="assets/images/girl-1822480_1920.jpg" alt="Third slide"> -->
-                    <img class="d-block w-100" src="assets/images_optimized/girl-1822480_1920_small.jpg" srcset="assets/images_optimized/girl-1822480_1920_large_2x.jpg 1600w, 
-                                assets/images_optimized/girl-1822480_1920_medium_1x.jpg 800w, 
+                    <img class="d-block w-100" src="assets/images_optimized/girl-1822480_1920_small.jpg" srcset="assets/images_optimized/girl-1822480_1920_large_2x.jpg 1600w,
+                                assets/images_optimized/girl-1822480_1920_medium_1x.jpg 800w,
                                 assets/images_optimized/girl-1822480_1920_small.jpg 320w" sizes="100vw" alt="Third slide" />
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Your blood donation can save lives</h5>
+                    <div class="carousel-caption">
+                        <h5><span id="carousel-h5-inline">Your Blood Can Save Lives!</span></h5>
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Become a donor</button>
                     </div>
                 </div>
@@ -147,13 +149,14 @@
 
 
 
-    <div class="blood ow call-to-action d-flex align-items-center">
-        <div class="col col-md-8 offset-md-2 d-flex justify-content-around align-items-center">
+    <div class="row blood call-to-action align-items-center">
+        <div class="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-around align-items-center">
             <h5>In need of blood?</h5>
-            <div>
-                <a class="btn btn-outline-success my-2 my-sm-0" href="#">Find a donor</a>
-                <a class="btn btn-outline-success my-2 my-sm-0" href="#">Locate blood bank</a>
-            </div>
+        </div>
+
+        <div class="col col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 col-sm-offset-right-1 col-md-offset-right-1 col-lg-offset-right-1 col-xl-offset-right-1">
+            <a class="btn btn-outline-success my-2 my-sm-2 blood-btn" href="#">Find a donor</a>
+            <a class="btn btn-outline-success my-2 my-sm-2 blood-btn" href="#">Locate blood bank</a>
         </div>
     </div>
 
@@ -165,10 +168,10 @@
     <div class="query container-fluid">
         <h2 class="text-center">Any Query?</h2>
         <div class="row">
-            <div class="col-md-8 col-sm-12">
+            <div class=" col-sm-12 col-md-6 col-lg-6 query-image">
                 <i class="fas fa-question"></i>
             </div>
-            <div class="col-md-4 col-sm-12 query-section">
+            <div class=" col-sm-12 col-md-5 col-md-offset-right-1 col-lg-5 col-lg-offset-right-1 query-section">
 
                 <div class="card query-card">
                     <div class="card-block">
@@ -213,8 +216,8 @@
 
     <div class="live-message">
         <div class="row">
-            <div class="col">
-                <div class="card" style="width: 18rem;">
+            <div class="col col-sm-6 col-md-6 col-lg-4">
+                <div class="card" style="width: auto;">
                     <div class="card-body">
                         <h5 class="card-title">O+ BLOOD NEEDED</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Today 11:00 AM</h6>
@@ -224,8 +227,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
+            <div class="col col-sm-6 col-md-6 col-lg-4">
+                <div class="card" style="width: auto;">
                     <div class="card-body">
                         <h5 class="card-title">AB+ BLOOD NEEDED</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Today 6:15 AM</h6>
@@ -235,8 +238,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
+            <div class="col col-sm-6 col-md-6 col-lg-4">
+                <div class="card" style="width: auto;">
                     <div class="card-body">
                         <h5 class="card-title">A+ BLOOD NEEDED</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Today 4:00 AM</h6>
@@ -246,8 +249,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
+            <div class="col col-sm-6 col-md-6 col-lg-4">
+                <div class="card" style="width: auto;">
                     <div class="card-body">
                         <h5 class="card-title">B+ BLOOD NEEDED</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Today 12PM</h6>
@@ -267,15 +270,15 @@
     <!-- FOOTER -->
     <div class="footer">
         <div class="row">
-            <div class="col-md-4 col-sm-12">
+            <div class="col-sm-12 col-md-4 col-lg-4">
                 <img src="assets/images_optimized/logo_small.png" alt="logo for JeevanRakht" height="50px">
                 <h6 class="address">Main Office</h6>
                 <h7 class="d-address">New Delhi, India</h7>
             </div>
-            <div class="col-md-4 col-sm-12 subscribe">
+            <div class="col-sm-12 col-md-4 col-lg-4 subscribe">
                 <button type="button" class="btn btn-md newsletter" data-toggle="modal" data-target="#newsletter">Get Newsletter</button>
             </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="col-sm-12 col-md-4 col-lg-4">
                 <h2>[ logo for donate blood ]</h2>
             </div>
         </div>
@@ -329,16 +332,16 @@
     <!-- Contact Us Section -->
     <footer class="social">
         <a href="#medium" class="firstlink">
-            <img class= "footerImage medium" src="assets/images/medium.svg">
+            <i class="fab fa-blogger icon footerImage medium"></i>
         </a>
         <a href="#google+">
-            <img class= "footerImage gplus" src="assets/images/google.svg">
+              <i class="fab fa-google-plus-square icon footerImage gplus"></i>
         </a>
         <a href="#facebook">
-            <img class= "footerImage fb" src="assets/images/facebook.svg">
+            <i class="fab fa-twitter icon footerImage fb"></i>
         </a>
         <a href="#instagram">
-            <img class= "footerImage insta" src="assets/images/instagram.svg">
+            <i class="far fa-envelope icon footerImage insta"></i>
         </a>
     </footer>
 
@@ -379,7 +382,7 @@
     **********************************-->
 
 
-    <!--*************** 
+    <!--***************
         Sidebar Markup
     ******************-->
     <div id="wrapper">
@@ -461,7 +464,7 @@
     </div>
     <!-- /#wrapper -->
 
-    <!--************************* 
+    <!--*************************
         End of Sidebar Markup
     **************************-->
 
