@@ -12,6 +12,11 @@
   --font-body: 'Montserrat', sans-serif;
 }
 
+/* Added responsive font size for better reading experience */
+:root {
+  font-size: calc(1vw + 1vh + .5vmin);
+}
+
 /*---------*/
 /* Global */
 /*--------*/
@@ -189,30 +194,53 @@ a.carousel-control-next {
   top: 10%;
 }
 
+/* set max-height instead of height for responsiveness */
 .carousel.slide {
-  height: 93vh;
+  max-height: 93vh;
 }
 
+/* set max-height instead of height for responsiveness */
 .carousel-item {
-  max-width: 100%;
   width: 100%;
-  height: 93vh;
-  max-width: none;
+  max-height: 93vh;
+}
+
+.carousel-item img {
+  /*  */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .carousel-caption {
-  bottom: 25%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -15%);
+
 }
 
 .carousel-caption h5 {
-  margin-bottom: 4em;
-  font-size: 1.4em;
+  margin-bottom: 0.2em;
+  font-size: 2.5vw;
+  padding: 10px;
+  background: #383434a1;
+  white-space: nowrap;
+}
+
+.carousel-caption button {
+  font-size: 2vw;
+}
+
+#carousel-h5-inline {
+  display: inline;
 }
 
 .helpline {
   display: flex;
   justify-content: center;
-  height: 50px;
+  height: auto;
+  padding: 0.5em 0; /* some padding added */
   background-color: var(--primary-color-light);
 }
 
@@ -282,10 +310,11 @@ a.carousel-control-next {
 }
 
 .fa-question{
-  font-size: 400px;
-  margin-left: 100px;
-  margin-top: 25px;
+  /* changed font size to 30vw from 25rem to make it responsive */
+  font-size: 30vw;
   color:var(--secondary-color);
+  width:100%;
+  text-align:center;
 }
 
 
@@ -311,6 +340,7 @@ a.carousel-control-next {
 .query{
   margin-top:35px;
   margin-bottom:60px;
+  padding: 0 1em;
 }
 
 .text-center{
@@ -328,7 +358,9 @@ a.carousel-control-next {
 .live-message{
 
   margin-bottom:40px;
-  margin-left:45px;
+  /* Added right margin and changed margin units to em from 45px */
+  margin-left:1em;
+  margin-right: 1em;
 }
 
 .thought{
@@ -346,11 +378,10 @@ box-shadow:0px -5px 10px 0px rgba(153,153,153,0.5);
 /* Call to action */
 
 .call-to-action {
-  height: 100px;
+  /* changed height from 100px to auto to fix content overflow */
+  height: auto;
   background: var(--white);
-
-
-
+  padding: 1em;
 }
 
 .call-to-action h5 {
@@ -362,6 +393,12 @@ box-shadow:0px -5px 10px 0px rgba(153,153,153,0.5);
 .call-to-action .btn {
   margin: 0 0.6em;
 }
+
+/* made In Need of Blood buttons block level */
+.blood-btn {
+  display: block !important;
+}
+
 
 /* Footer */
 
@@ -493,7 +530,8 @@ body.login-body {
 
 /*Query form enhanced*/
 .query-section {
-    padding: 0rem 4rem;
+    /* removed query form padding which was 3rem */
+    /* padding: 0rem 3rem; */
 }
 button.query-btn {
     color: white;
@@ -506,6 +544,15 @@ label.query-header {
     text-align: center;
     font-weight: bold;
 }
+/* PART where Vicks2010's PR had issue*/
+/*Start*/
+.query-image{
+  display:flex;
+  align-items: center;
+  justify-content:center;
+}
+/*End*/
+
 
 /*Query form end*/
 /*Footer */
@@ -532,7 +579,8 @@ div.subscribe {
 button.newsletter{
     color: white;
     background-color: var(--primary-color-light);
-    width: 80%;
+    /* commented out width to fix button text overflow */
+    /* width: 80%; */
     border-radius: 5px;
 }
 button.subscribe{

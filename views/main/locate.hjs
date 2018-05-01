@@ -7,7 +7,23 @@
           {{>header}}
         <section class="main zi-1">
       <!-- Your code goes here -->      
-
+          <div class="locateBlood">
+            <span class="backArrow"></span>
+            <label class="headingLocateBlood"><b>LOCATE</b>Blood</label>
+            <input class="locateInput" type="text" placeholder="Location"/>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <input class="searchRadius" type="number" min="1" placeholder="Search Radius in Km"/>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <input class="BloodGroup" type="text" placeholder="Blood Group"/>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <input class="when_date" type="date" placeholder="When"/>
+              </div>
+              <button class="searchBlood">SEARCH</button>
+            </div>
+          </div>
         </section>
         {{>footer}}
         </div>

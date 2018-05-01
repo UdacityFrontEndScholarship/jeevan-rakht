@@ -1,14 +1,16 @@
 {{! footer.hjs }}
-            <footer class="app-footer d-md-flex justify-content-md-around align-items-md-center zi-1">
-                <a class="footer-link" href="tel:+919999999999">+91 - 9999999999</a>
+<footer class="app-footer">
+    <div class="footer-content d-flex justify-content-around align-items-center zi-1">
+        <a class="footer-link" href="tel:+919999999999">+91 - 9999999999</a>
 
-                <span class="footer-dot">•</span>
+        <span class="footer-dot">•</span>
 
-                <a class="footer-link middle" href="index.html">
-                    <strong>Know More</strong>
-                </a>
+        <a class="footer-link" href="index.html">
+            <strong>Know More</strong>
+        </a>
 
-                <span class="footer-dot">•</span>
+        <span class="footer-dot">•</span>
 
-                <a class="footer-link" href="mailto:mail@jeevanrakht.in">mail@jeevanrakht.in</a>
-            </footer>
+        <a class="footer-link" href="mailto:mail@jeevanrakht.in">mail@jeevanrakht.in</a>
+    </div>
+</footer>

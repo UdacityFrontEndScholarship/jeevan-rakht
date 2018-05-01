@@ -2,187 +2,61 @@
 <html>
     {{>head}}
     <body id="particles-js" m-md-3>
-        <!-- Main content goes here -->
-        <div class="container vh-100 d-flex flex-column justify-content-between">
+        <div class="vh-100 d-flex flex-column justify-content-between">
           {{>header}}
-        <div class="container p-3 mt-5 bg-light">
-        </div>
-        <section id="login" class="main zi-1">
-        <div class="container p-3 mt-5 bg-light">
+        <div id="oauth-login-result" class="container p-2 p-md-4 bg-light text-center zi-1" style="display:none"></div>
+        
+        <section id="login" class="container d-flex flex-column flex-wrap align-items-center my-5">
+
             {{#successMessage}}
-            <div class="alert alert-success">{{successMessage}}</div>
+            <div class="alert alert-success mb-3  zi-1">{{successMessage}}</div>
             {{/successMessage}}
             {{#alertMessage}}
-            <div class="alert alert-danger">{{alertMessage}}</div>
+            <div class="alert alert-danger mb-3  zi-1">{{alertMessage}}</div>
             {{/alertMessage}}
-            <div id="oauth-login-result" class="col-md-12 text-center"></div>
-            <form method="POST" action="/login">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" {{#emailValue}}value="{{emailValue}}"{{/emailValue}}>
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" name="pwd" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" name="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <a href="/"><button type="button" class="btn btn-secondary">Cancel</button></a>
-            </form>
-        </div>
-            <!-- GOOGLE PLUS SIGN IN-->
-            <div class="row" id="gplogin">
-                <div id="signinButton" class="col-md-12 text-center">
-                    <span class="g-signin"
-                            data-scope="openid email"
-                            data-clientid="206205063091-03p9vfum443gup692b3d9tuii2hg8unt.apps.googleusercontent.com"
-                            data-redirecturi="postmessage"
-                            data-accesstype="offline"
-                            data-cookiepolicy="single_host_origin"
-                            data-callback="signInCallback"
-                            data-approvalprompt="force">
-                    </span>
+
+            <div class="main-content zi-1">
+                <a href="/" class="back-arrow">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+
+                <div class="signin-wrapper">
+                    <form method="POST">
+                        <div class="input-wrapper">
+                            <input type="email" name="email" value="{{emailValue}}" placeholder="username" required>
+                            <i class="far fa-user"></i>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <input type="password" name="pwd" value="{{pwd}}" placeholder="password" required>
+                            <i class="fas fa-unlock"></i>
+                        </div>
+
+                        <button type="submit" class="signin-btn">SIGN IN</button>
+                    </form>
+
+                    <p class="or">or</p>
+                    <!-- GOOGLE PLUS and FB SIGN IN buttons partials-->
+                    {{>oauth2_btns}}
+
+                    <div class="help-txt">
+                        <p>Forgot password? <strong>RESET</strong> <a href="/forgot">here</a>.</p>
+
+                        <p>New user? <strong>REGISTER</strong> <a href="/signup">here</a>.</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="row" id="fblogin">
-                <div class="col-md-12 text-center">
-                <button>
-                        <fb:login-button
-                            scope="public_profile,email"
-                            onlogin="sendTokenToServer();">
-                            <a href='javascript:sendTokenToServer()'>Login with Facebook</a>
-                        </fb:login-button>
-                </button>
-                </div>
-            </div>
+           
+      
         </section>
         {{>footer}}
         </div>
         {{>utilityJS}}
-    <script>
-		function signInCallback(authResult){
-			if (authResult['code']){
-				// $('#signinButton').attr("style","display:none");
-				// console.log('One time code from authResult: ');
-				// console.log(authResult['code']);
-				// console.log(authResult['status']);
-				$('#login').attr("style","display:none");
-				$.ajax({
-					type: 'POST',
-					url: '/gconnect?state={{STATE}}',
-					processData: false,
-					contentType: 'application/octet-stream; charset=utf-8',
-					data: authResult['code'],
-					success: function(result){
-						if (result){
-							$('#oauth-login-result').html('Login Successfull! <br>'+ result+ '<br>Redirecting');
-							setTimeout(function(){
-								window.location.href="/";
-							},4000);
-						}else
-						{
-							$('#oauth-login-result').html('Failed to make server side call.\
-								Check your configuration and console.');
-						}
-					}
-				});
-			}else if(authResult['error']){
-				console.log('There was an error: '+ authResult['error']);
-				// console.log(authResult);
-			}
-		}
-	</script>
-<!--END GOOGLE PLUS SIGN IN -->
-
-<!--FACEBOOK SIGN IN -->
-	<script>
-	window.fbAsyncInit = function() {
-	FB.init({
-	  	appId      : '303950806802847',
-	   	cookie     : true,  // enable cookies to allow the server to access
-	                       // the session
-	   	xfbml      : true,  // parse social plugins on this page
-	   	version    : 'v2.8' // use version 2.2
-		});
-	};
-	// Load the SDK asynchronously
-	(function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/en_US/sdk.js";
-		fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	 // Here we run a very simple test of the Graph API after login is
-	 // successful.  See statusChangeCallback() for when this call is made.
-	 function sendTokenToServer() {
-	   var access_token = FB.getAuthResponse()['accessToken'];
-	   // console.log(access_token)
-	   console.log('Welcome!  Fetching your information.... ');
-	   FB.api('/me', function(response) {
-	     	console.log('Successful login for: ' + response.name);
-	     	$('#login').attr("style","display:none");
-		    $.ajax({
-		    type: 'POST',
-		    url: '/fbconnect?state={{STATE}}',
-		    processData: false,
-		    data: access_token,
-		    contentType: 'application/octet-stream; charset=utf-8',
-		    success: function(result) {
-		      // Handle or verify the server response if necessary.
-		      	if(result){
-			        $('#oauth-login-result').html('Login Successful!</br>'+ result + '</br>Redirecting...')
-			        setTimeout(function() {
-			        		window.location.href = "/";
-			        }, 4000);
-			    }
-			    else{
-			        $('#oauth-login-result').html('Failed to make a server-side call. Check your configuration and console.');
-			    }
-		      }
-
-	  		});
-		});
-	}
-	</script>
-        {{!-- <script>
-            (function($){
-                $('#login').on( 'submit', function(e) {
-                    e.preventDefault();
-                    var email =  $('#exampleInputEmail1').val();
-                    var pwd =  $( '#exampleInputPassword1' ).val();
-                    var data = {
-                        "email"         	    :email,
-                        "pwd"                   :pwd,
-                        "status"                :'publish'
-                    };
-                    $.ajax({
-                        type: 'POST',
-                        url: '/login',
-                        processData: true,
-                        contentType: 'application/x-www-form-urlencoded',
-                        data: data,
-                        success: function(result){
-                            if (result){
-                                console.log(result);
-                            }else
-                            {
-                                console.log('Failed to make server side call.\
-                                    Check your configuration and console.');
-                            }
-                        }
-                    });
-            });
-        })(jQuery);
-        </script> --}}
-    <!--Ajax Call to SIGN IN -->
-	<!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
-	<script async defer src="https://apis.google.com/js/client:platform.js?onload=start"></script>
-	<!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->
+        <!--Ajax Call to SIGN IN -->
+        {{>oauth2_ajax}}
+	    <!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
+	    <script async defer src="https://apis.google.com/js/client:platform.js?onload=start"></script>
+	    <!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->
       </body>
   </html>
