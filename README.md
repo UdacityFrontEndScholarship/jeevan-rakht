@@ -1,11 +1,7 @@
 # GoogleUdacity_JeevanRakht
-
 JeevanRakht is a Virtual Blood Bank web app, that aims at providing mechanism for people in need to directly talk to willing donors, and also find out blood availability in nearby blood banks.
 On this platform people willing to donate blood can sign up with details of their blood groups, location. Also there’ll be accounts of blood banks with details like number of packages of blood available and blood group, location of blood bank to filter out nearest blood banks.
 You can find the project's wireframe below which depicts the basic flow of our web application.
-
-## Classified Documents (Access restricted to Mods/Co-Mods only)
-For more details on project specifications, tasks etc refer to this [Jeevanrakht paper doc.](https://paper.dropbox.com/doc/JeevanRakht-WebD-Project-ZroUbusvKbwRSRCDFHCOV)
 
 ## Project Wireframe
 ![wireframe - flow](https://user-images.githubusercontent.com/15084301/38657424-c22747d2-3e3d-11e8-9447-7862553d7142.jpg)
