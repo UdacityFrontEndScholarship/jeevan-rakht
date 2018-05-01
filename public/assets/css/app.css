@@ -443,56 +443,173 @@ height: 50px; }
 
 
 
-
-.dropbtn {
-    background-color: #fff;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
+.main-content {
+    background: var(--white);
+    width: 100%;
+    border-radius: 10px;
     position: relative;
-    display: inline-block;
-    z-index: 1;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
+  }
+  
+  .back-arrow {
+    color: var(--text-color-light);
     position: absolute;
-    background-color: #fff;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
+    top: 20px;
+    left: 24px;
+    font-size: 1.5rem;
+    transform: .2s;
+  }
+  
+  .back-arrow:hover {
+    color: #000;
+  }
+  
+  @media (min-width: 480px) {
+    .back-arrow {
+      top: 30px;
+      left: 30px;
+    }
+  }
+  
+  .signin-wrapper {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 75px 0 63px;
+  }
+  
+  .input-wrapper {
+    position: relative;
+  }
+  
+  .input-wrapper input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px 35px 10px 15px;
+    border: 1.2px solid #f3f3f3;
+    border-radius: 3px;
+    background: #fff;
+    font-family: Spectral, sans-serif;
+    font-style: italic;
+    color: var(--text-color-dark);
+    outline: none;
+  }
+  
+  ::-webkit-input-placeholder {
+    color: var(--accent-color);
+  }
+  
+  ::-moz-placeholder {
+    color: var(--accent-color);
+  }
+  
+  :-ms-input-placeholder {
+    color: var(--accent-color);
+  }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
+  .input-wrapper input:focus {
+    box-shadow: 0 0 5px var(--secondary-color);
+    border-color: var(--secondary-color);
+  }
+  
+  .input-wrapper i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-color);
+    font-size: 1em;
+    pointer-events: none;
+  }
+  
+  .input-wrapper input:focus ~ i {
+    color: var(--text-color-dark);
+  }
+  
+  .signin-btn {
+    background: linear-gradient( var(--primary-color-dark), var(--primary-color-dark) );
+    margin-bottom: 15px;
+    padding: 13px 10px 10px;
+    display: block;
+    width: 100%;
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: Montserrat, sans-serif;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+    transition: background .2s ease-out;
+  }
+  
+  .signin-btn:hover {
+    background: linear-gradient( var(--primary-color-light), var(--primary-color-dark) );
+  }
+  
+  .or {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .social-signin-btn {
+    background: var(--white);
+    margin-bottom: 15px;
+    border-radius: 2px;
+    padding: 8px 10px;
+    color: var(--white);
+    font-family: Montserrat, sans-serif;
+    cursor: pointer;
+    background: var(--primary-color-dark);
+  }
+  
+  @media (min-width: 360px) {
+    .social-signin-btn {
+      padding: 8px 20px;
+    }
+  }
+  
+  .social-signin-icon {
+    padding-right: 10px;
+    display: inline-block;
+    font-size: 1.3rem;
+  }
+  
+  .g-btn {
+    background: #dc4b38;
+  }
+  
+  .fb-btn {
+    background: #49639c;
+  }
+  
+  .social-signin-text {
+    border-left: 1px solid var(--white);
+    padding-left: 15px;
+  }
+  
+  .social-signin-text:hover {
     text-decoration: none;
-    display: block;
-    z-index: 1;
-}
-
-.dropdown:hover{
-    display:block;
-    z-index: 1;
-}
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #fff}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-    z-index: 1;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: #fff;
-    z-index: 1;
-}
+  }
+  
+  .help-txt {
+    margin-top: 25px;
+  }
+  
+  .help-txt p {
+    margin: 5px;
+    color: var(--text-color-dark);
+    font-family: Spectral, serif;
+    font-style: italic;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+  }
+  
+  .help-txt a {
+    color: var(--text-color-dark);
+    text-decoration: underline;
+    text-decoration-color: var(--text-color-dark);
+  }
+  
+  .help-txt a:hover {
+    text-decoration: none;
+  }
