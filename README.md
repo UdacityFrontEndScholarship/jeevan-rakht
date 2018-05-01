@@ -1,7 +1,7 @@
 # GoogleUdacity_JeevanRakht
-
-The code and development of the JeevanRakht's website is housed here.   
-For more details - [Refer to this paper.](https://paper.dropbox.com/doc/JeevanRakht-WebD-Project-ZroUbusvKbwRSRCDFHCOV)
+JeevanRakht is a Virtual Blood Bank web app, that aims at providing mechanism for people in need to directly talk to willing donors, and also find out blood availability in nearby blood banks.
+On this platform people willing to donate blood can sign up with details of their blood groups, location. Also there’ll be accounts of blood banks with details like number of packages of blood available and blood group, location of blood bank to filter out nearest blood banks.
+You can find the project's wireframe below which depicts the basic flow of our web application.
 
 ## Project Wireframe
 ![wireframe - flow](https://user-images.githubusercontent.com/15084301/38657424-c22747d2-3e3d-11e8-9447-7862553d7142.jpg)
@@ -25,22 +25,45 @@ https://jeevanrakht.herokuapp.com/
 https://jeevanrakht.herokuapp.com/index.html
 
 ## Learn About Folder Structure (Check FAQ for more info on folder structure)
-### Backend Part (node.js with MongoDB)
-* \bin:
-* \config:
-* \db:
-* \models
-* \routes
-* \views
-* \controllers
-* app.js
+```
+Note : The folder structure may changes i.e we may include/exclude some folders/files as project progresses but the 
+overall sructure will remain as presented below:
+```
+### Backend Part (node.js, express.js with MongoDB)
+* \bin          -- Application code listening for HTTP requests
+* \config       -- DB connection URL, OAuth2 secrets etc to be used in application
+* \db           -- MongoDB Driver code to be used in application
+* \models       -- MongoDB collections schema
+* \routes       -- Apllication code for handling different UI routes e.g /login, /users etc
+* \views        -- Apllication related htmls files related to application routes
+* \controllers  -- Methods to interact with DB and reflects the data on views
+* \utils        -- Common Utility functions used in application
+* app.js        -- Application driver code
 
 ### Frontend Part
-* \public   -- html files
+* \public   
+  - index.html -- homepage for our website
 * \public\assets -- This will have scss, css, js, images
+  - css
+    - app.css   -- CSS for our application
+    - main.css  -- CSS for our website
+  - js
+    - app.js    -- JS for our application
+    - main.js   -- JS for website
+  - images      -- Put your images here
+  - optimized_images  -- we will create optimized images using grunt & image magick to optimize site/app performance.
+  - scss        -- We are not using it as most people are not familier with scss
+
 * gulpfile.js -- This is a task runner to launch app and monitor for file(scss,css,js) changes and reloads the browser.
 
 ### Common to both Frontend and Backend
+* \views -- This will have htmls for our app (the htmls are with .hjs extension)
+  - \auth     -- This module will have htmls related to authentication and authorization e.g login, signup etc.
+  - \main     -- This module will have htmls related to main blocks of app e.g locate and donate
+  - \profile  -- This module will have htmls related to user profiles
+  - \partials -- This module will have common htmls blocks which will be used in all other htmls. e.g head, header, footer etc
+  - app.hjs   -- This is the home page of our app
+  - 404.hjs   -- html for page not found
 * package.json
 
 ### Below is used to generate Optimized Image

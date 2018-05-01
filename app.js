@@ -128,6 +128,7 @@ app.use(function(err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
+    res.locals.partials = req.app.get('partials');
     console.log("Error on route")
     console.log(err.message);
     console.log(err.status);
