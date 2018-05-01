@@ -29,17 +29,19 @@
     <!-- Main CSS file -->
     <!--<link rel="stylesheet" href="assets/css/main.css" />-->
     <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Sidebar CSS file for hamburger menu -->
+    <link rel="stylesheet" href="assets/css/sidebar.css">
 </head>
 
-<body m-md-3>
+<body m-md-3 onLoad="scrollDiv_init()">
 
 
     <!-- ****************************
         Start of main content markup
-    **********************************-->
+    ********************************** -->
 
     <!-- NavBar -->
-    <nav class="navbar navbar-toggleable-md navbar-expand-md fixed-top navbar-dark" id="nav">
+    <nav class="navbar navbar-toggleable-lg navbar-expand-lg fixed-top navbar-dark" id="nav">
 
         <!-- Toggle button-->
 
@@ -48,11 +50,7 @@
             <span class="hamb-middle"></span>
             <span class="hamb-bottom"></span>
         </button>
-
-
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+      <span class="navbar-toggler-icon"></span>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item px-md-1">
@@ -97,14 +95,14 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
-            <div class="carousel-inner">
+            <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
                     <!-- <img class="d-block w-100" src="assets/images/tim-marshall-114623-unsplash.jpg" alt="First slide"> -->
                     <img class="d-block w-100" src="assets/images_optimized/tim-marshall-114623-unsplash_small.jpg" srcset="assets/images_optimized/tim-marshall-114623-unsplash_large_2x.jpg 1600w,
                                 assets/images_optimized/tim-marshall-114623-unsplash_medium_1x.jpg 800w,
                                 assets/images_optimized/tim-marshall-114623-unsplash_small.jpg 320w" sizes="100vw" alt="First slide" />
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Your blood donation can save lives</h5>
+                    <div class="carousel-caption">
+                        <h5><span id="carousel-h5-inline">Your Blood Can Save Lives!</span></h5>
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Become a donor</button>
                     </div>
                 </div>
@@ -113,8 +111,8 @@
                     <img class="d-block w-100" src="assets/images_optimized/action-adult-affection-339620_small.jpg" srcset="assets/images_optimized/action-adult-affection-339620_large_2x.jpg 1600w,
                                 assets/images_optimized/action-adult-affection-339620_medium_1x.jpg 800w,
                                 assets/images_optimized/action-adult-affection-339620_small.jpg 320w" sizes="100vw" alt="Second slide" />
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Your blood donation can save lives</h5>
+                    <div class="carousel-caption">
+                        <h5><span id="carousel-h5-inline">Your Blood Can Save Lives!</span></h5>
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Become a donor</button>
                     </div>
                 </div>
@@ -123,8 +121,8 @@
                     <img class="d-block w-100" src="assets/images_optimized/girl-1822480_1920_small.jpg" srcset="assets/images_optimized/girl-1822480_1920_large_2x.jpg 1600w,
                                 assets/images_optimized/girl-1822480_1920_medium_1x.jpg 800w,
                                 assets/images_optimized/girl-1822480_1920_small.jpg 320w" sizes="100vw" alt="Third slide" />
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Your blood donation can save lives</h5>
+                    <div class="carousel-caption">
+                        <h5><span id="carousel-h5-inline">Your Blood Can Save Lives!</span></h5>
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Become a donor</button>
                     </div>
                 </div>
@@ -147,17 +145,45 @@
 
 
 
-    <div class="blood ow call-to-action d-flex align-items-center">
-        <div class="col col-md-8 offset-md-2 d-flex justify-content-around align-items-center">
+    <div class="row blood call-to-action align-items-center">
+        <div class="col col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-around align-items-center">
             <h5>In need of blood?</h5>
-            <div>
-                <a class="btn btn-outline-success my-2 my-sm-0" href="#">Find a donor</a>
-                <a class="btn btn-outline-success my-2 my-sm-0" href="#">Locate blood bank</a>
-            </div>
+        </div>
+
+        <div class="col col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 col-sm-offset-right-1 col-md-offset-right-1 col-lg-offset-right-1 col-xl-offset-right-1">
+            <a class="btn btn-outline-success my-2 my-sm-2 blood-btn" href="#">Find a donor</a>
+            <a class="btn btn-outline-success my-2 my-sm-2 blood-btn" href="#">Locate blood bank</a>
         </div>
     </div>
 
-
+    <div class="row">
+        <div class="col-md-8">
+        </div>
+        
+        <div class="col-md-4">
+            <div id="verticalScrollList" class="container" onMouseOver="pauseDiv()" onMouseOut="resumeDiv()">
+                <ul>
+                    <li><h2>Head line 1</h2></li>
+                    <li><h2>Head line 2</h2></li>
+                    <li><h2>Head line 3</h2></li>
+                    <li><h2>Head line 4</h2></li>
+                    <li><h2>Head line 5</h2></li>
+                    <li><h2>Head line 6</h2></li>
+                    <li><h2>Head line 7</h2></li>
+                    <li><h2>Head line 8</h2></li>
+                    <li><h2>Head line 9</h2></li>
+                    <li><h2>Head line 10</h2></li>
+                    <li><h2>Head line 11</h2></li>
+                    <li><h2>Head line 12</h2></li>
+                    <li><h2>Head line 13</h2></li>
+                    <li><h2>Head line 14</h2></li>
+                    <li><h2>Head line 15</h2></li>
+                    <li><h2>Head line 16</h2></li>
+                    <br><br><br><br><br><br><br><br><br><br><br>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <!-- MAIN -->
 
@@ -165,10 +191,10 @@
     <div class="query container-fluid">
         <h2 class="text-center">Any Query?</h2>
         <div class="row">
-            <div class="col-md-6 col-sm-12 query-image">
+            <div class=" col-sm-12 col-md-6 col-lg-6 query-image">
                 <i class="fas fa-question"></i>
             </div>
-            <div class="col-md-5 col-sm-12 query-section">
+            <div class=" col-sm-12 col-md-5 col-md-offset-right-1 col-lg-5 col-lg-offset-right-1 query-section">
 
                 <div class="card query-card">
                     <div class="card-block">
@@ -213,8 +239,8 @@
 
     <div class="live-message">
         <div class="row">
-            <div class="col">
-                <div class="card" style="width: 18rem;">
+            <div class="col col-sm-6 col-md-6 col-lg-4">
+                <div class="card" style="width: auto;">
                     <div class="card-body">
                         <h5 class="card-title">O+ BLOOD NEEDED</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Today 11:00 AM</h6>
@@ -224,8 +250,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
+            <div class="col col-sm-6 col-md-6 col-lg-4">
+                <div class="card" style="width: auto;">
                     <div class="card-body">
                         <h5 class="card-title">AB+ BLOOD NEEDED</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Today 6:15 AM</h6>
@@ -235,8 +261,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
+            <div class="col col-sm-6 col-md-6 col-lg-4">
+                <div class="card" style="width: auto;">
                     <div class="card-body">
                         <h5 class="card-title">A+ BLOOD NEEDED</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Today 4:00 AM</h6>
@@ -246,8 +272,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
+            <div class="col col-sm-6 col-md-6 col-lg-4">
+                <div class="card" style="width: auto;">
                     <div class="card-body">
                         <h5 class="card-title">B+ BLOOD NEEDED</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Today 12PM</h6>
@@ -267,15 +293,15 @@
     <!-- FOOTER -->
     <div class="footer">
         <div class="row">
-            <div class="col-md-4 col-sm-12">
+            <div class="col-sm-12 col-md-4 col-lg-4">
                 <img src="assets/images_optimized/logo_small.png" alt="logo for JeevanRakht" height="50px">
                 <h6 class="address">Main Office</h6>
                 <h7 class="d-address">New Delhi, India</h7>
             </div>
-            <div class="col-md-4 col-sm-12 subscribe">
+            <div class="col-sm-12 col-md-4 col-lg-4 subscribe">
                 <button type="button" class="btn btn-md newsletter" data-toggle="modal" data-target="#newsletter">Get Newsletter</button>
             </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="col-sm-12 col-md-4 col-lg-4">
                 <h2>[ logo for donate blood ]</h2>
             </div>
         </div>

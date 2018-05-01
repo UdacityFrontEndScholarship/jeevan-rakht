@@ -16,13 +16,16 @@
     <meta name="keywords" content="JeevanRakht, Blood Dontation, Blood Bank, Google Udacity Project JeevanRakht">
 
     <!--GOOGLE FONT-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Spectral:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Spectral:400,400i,700,700i" rel="stylesheet">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/css/bootstrap.css" />
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" />
+
+    <!-- Flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
     <!-- Main CSS file -->
     <link rel="stylesheet" href="assets/css/app.css" />
