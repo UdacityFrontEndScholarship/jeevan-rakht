@@ -1,0 +1,137 @@
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtsirN68OAeo4fv8o0iEOZ5dJlEAHLUxA"></script>
+<script>
+	var addrSelect = $("input:radio[name=addrtype]");
+	var startPos;
+	var x = $("#locerror");
+	var currgeocoder;
+	var componentForm = {
+		addr_line1: '',
+		administrative_area_level_2: 'long_name',
+		locality: 'long_name',
+		administrative_area_level_1: 'long_name',
+		postal_code: 'short_name',
+		latitude: '',
+		longitude: '',
+		place_id: ''
+	};
+	var callback = function(evt){
+		var RadioButtonCheck = $('form input[type=radio][name=addrtype]:checked').val();			
+		if (RadioButtonCheck == "gps") {
+		    if (navigator.geolocation) {
+		     	navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
+		    } else {
+		        x.innerHTML = "Geolocation is not supported by this browser.";
+		    }
+		}else if (RadioButtonCheck == "userinput") {
+			for (var component in componentForm) {
+			  document.getElementById(component).value = '';
+			  $('#'+component).removeAttr('readonly');
+			}			
+		}
+	};
+
+	$(addrSelect).on('change',callback);	
+	// $(window).on('load',callback);
+
+	var geoOptions =  {
+		// timeout: 600,
+		enableHighAccuracy: true,
+		maximumAge: 5 * 60 * 1000
+	};
+	var geoSuccess = function(position) {
+		for (var component in componentForm) {
+		  document.getElementById(component).value = '';
+		  document.getElementById(component).disabled = false;
+		}
+		var startPos = position;
+		geo_loc = processGeolocationResult(startPos);
+		currLatLong = geo_loc.split(",");
+		initializeCurrent(currLatLong[0], currLatLong[1]);
+		// initializeCurrent(25.713768, 86.991793);
+	};
+
+	var geoError = function(error) {
+		console.log('Error occurred. Error code : ' + error.code);
+		console.log('Error messgae: ' + error.message);
+		// error.code can be:
+		//   0: unknown error
+		//   1: permission denied
+		//   2: position unavailable (error response from location provider)
+		//   3: timed out
+		switch(error.code) {
+		    case error.PERMISSION_DENIED:
+		        x.html("User denied the request for Geolocation: "+error.message);
+		        break;
+		    case error.POSITION_UNAVAILABLE:
+		        x.html("Location information is unavailable: "+error.message);
+		        break;
+		    case error.TIMEOUT:
+		        x.html("The request to get user location timed out: "+error.message);
+		        break;
+		    case error.UNKNOWN_ERROR:
+		        x.html("An unknown error occurred: "+error.message);
+		        break;
+		}	
+	};	
+
+	//Get geo location result
+
+	var processGeolocationResult=function(position) {
+		html5Lat = position.coords.latitude; //Get latitude
+		html5Lon = position.coords.longitude; //Get longitude
+		$('form input[name=lat]').val(html5Lat);
+		$('form input[name=lng]').val(html5Lon);
+		// html5TimeStamp = position.timestamp; //Get timestamp
+		// html5Accuracy = position.coords.accuracy; //Get accuracy in meters
+		return (html5Lat).toFixed(10) + ", " + (html5Lon).toFixed(10);
+	}
+
+	//Check value is present or not & call google api function
+
+	var initializeCurrent=function(latcurr, longcurr) {
+	     currgeocoder = new google.maps.Geocoder();
+
+	     if (latcurr != '' && longcurr != '') {
+	         var myLatlng = new google.maps.LatLng(latcurr, longcurr);
+	         return getCurrentAddress(myLatlng);
+	     }
+	};
+
+	//Get current address
+	var getCurrentAddress = function(location) {
+		currgeocoder.geocode({
+		  'location': location
+		}, 
+		function(results, status) {
+		if (status == google.maps.GeocoderStatus.OK) {
+			$('form input[name=place_id]').val(results[0].place_id);		    
+			var place = results[0];
+
+			// Get each component of the address from the place details
+			// and fill the corresponding field on the form.
+			var addrline1 = ''
+			for (var j = 0; j < 3; j++) {
+				var addressType = place.address_components[j].types[0];
+				mytypes = ["premise","political","sublocality"]
+				mytypes.forEach(function(type){
+				if (addressType == type){ 
+					addrline1 = addrline1 + place.address_components[j]['short_name'] + ', ';     }
+				})
+			}
+			document.getElementById('addr_line1').value = addrline1;        
+ 		    $('#addr_line1').attr('readonly',true);
+			for (var i = 0; i < place.address_components.length; i++) {
+			  	var addressType = place.address_components[i].types[0];
+			  	if (componentForm[addressType]) {
+			    	var val = place.address_components[i][componentForm[addressType]];
+			    	document.getElementById(addressType).value = val;
+    		    	$('#'+addressType).attr('readonly',true);
+
+			  	}
+			}			    
+		} else {
+		    alert('Geocode was not successful for the following reason: ' + status);
+		}
+	});
+	};
+</script>					
