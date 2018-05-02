@@ -53,6 +53,7 @@ var UserAccount = new Schema({
         type: Array
     },
     address: {
+        addr_type: { type: String },
         addr_line1: { type: String },
         addr_line2: { type: String },
         city: { type: String },

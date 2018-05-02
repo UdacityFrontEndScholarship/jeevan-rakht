@@ -1,0 +1,53 @@
+<fieldset class="p-1 m-0"><legend>Address Details</legend> 
+<div class="manualaddress open text-left">
+<div class="form-row">
+    <div class="form-group col-12">
+        <label for="addr_line1">Address line1</label>
+		<input id="addr_line1" class="form-control" type="text" name="address1" value="{{address1}}" placeholder="addr line 1" readonly>
+    </div>
+    <div class="form-group col-12">
+        <label for="administrative_area_level_2">Address line2</label>
+        <input id="administrative_area_level_2" class="form-control" type="text" name="address2" value="{{address2}}" placeholder="addr line 2" readonly>
+    </div>
+</div>		
+<div class="form-row">
+    <div class="form-group col-md-3">
+        <label for="locality">City</label>
+        <input id="locality" type="text" class="form-control" name="city" value="{{city}}" placeholder="city" readonly>
+    </div>
+    <div class="form-group col-md-3">
+        <label for="administrative_area_level_1">State</label>
+        <input id="administrative_area_level_1" type="text" class="form-control" name="state" value="{{state}}" placeholder="state" readonly>
+    </div>
+    <div class="form-group col-md-3">
+        <label for="postal_code">Pincode</label>
+        <input id="postal_code" type="text" class="form-control" name="zip"  maxlength="6" value="{{zip}}" placeholder="pincode" readonly>
+    </div>    
+</div>		
+<div class="form-row">
+    <div class="form-group col-3">
+        <label for="country">Country</label>
+		<input id="country" type="text" class="form-control" name="country" value="India" placeholder="country" readonly>
+    </div>
+</div>		
+<!-- hidden -->
+<div class="form-row">
+    <div class="form-group col-md-3">
+        <input id="latitude" type="hidden" class="form-control" name="lat" value="{{lat}}">
+    </div>
+    <div class="form-group col-md-3">
+        <input id="longitude" type="hidden" class="form-control" name="lng" value="{{lng}}">
+    </div>
+    <div class="form-group col-md-3">
+        <input id="place_id" type="hidden" class="form-control" name="place_id" value="{{place_id}}">
+    </div>    
+</div>		
+</div>
+	{{#user.address.pincode}}
+	<input type="radio" name="addrtype" value="gps" required> Use My Location
+	<input type="radio" name="addrtype" value="userinput" required checked> Add/Edit Address details	
+	{{/user.address.pincode}}{{^user.address.pincode}}
+	<input type="radio" name="addrtype" value="gps" required> Use My Location
+	<input type="radio" name="addrtype" value="userinput" required> Add/Edit Address details			
+	{{/user.address.pincode}}
+</fieldset>

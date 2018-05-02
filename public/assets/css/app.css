@@ -536,11 +536,11 @@ fieldset{
 legend{
     width: 20vmax;    
 }
-.indiv, .nonindiv{
+.indiv, .nonindiv, .gpsaddress, .manualaddress{
 display: none;
 }
 
-.indiv.open, .nonindiv.open{
+.indiv.open, .nonindiv.open, .gpsaddress.open, .manualaddress.open{
 display: table;
 }
 

@@ -42,7 +42,10 @@ app.set('partials', {
     footer: 'partials/footer',
     utilityJS: 'partials/utilityJS',
     oauth2_btns: 'partials/oauth2_btns',
-    oauth2_ajax: 'partials/oauth2_ajax'
+    oauth2_ajax: 'partials/oauth2_ajax',
+    user_address: 'partials/user_address',
+    profile: 'partials/profile',
+    google_mapJS: 'partials/google_mapJS'
 });
 app.use(logger('dev'));
 app.use(express.json());
@@ -80,6 +83,16 @@ app.use(function(req, res, next) {
                 delete req.user.password;
                 req.session.user = user;  // refresh the session value
                 res.locals.user = user;   // expose the user to the template  
+                let activeUser = false;
+                let indivUser = false;
+                if(user.active_flag === 'A'){
+                    activeUser = true;     
+                }
+                if(user.user_type === 'Individual'){
+                    indivUser = true;     
+                }                
+                res.locals.activeUser = activeUser;
+                res.locals.indivUser = indivUser;
                 next();
             } else if (!user) {
                 next();
