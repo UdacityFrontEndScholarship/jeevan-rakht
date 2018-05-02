@@ -92,7 +92,7 @@ router.post('/', rawParser,function(req, res, next) {
                     userObj.email = email
                     userObj.not_flag = 'N';
                     userObj.active_flag = 'A';
-                    userObj.type = '1';
+                    userObj.type = 'Individual';
                     createOAuthUser(userObj,function(err, newUser) {
                         if (err) {
                             return res.status(500).send({ "error": err.message });     
