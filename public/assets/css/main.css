@@ -1,7 +1,7 @@
 /* BRAND STYLES */
 
 :root {
-  --primary-color-light: #d20001;
+  --primary-color-light: #ff1919;
   --primary-color-dark: #900000;
   --secondary-color: #f1c816;
   --accent-color: #9db198;
@@ -519,7 +519,7 @@ footer {
 }
 
 .icon {
-  color: #aaaaaa;
+  color: #FAFAFA;
   padding-left: 15px;
 }
 
@@ -657,7 +657,7 @@ footer {
 }
 
 .footerImage {
-	padding-right: 4px;
+	padding: 10px;
     border-radius: 5%;
 }
 
