@@ -35,7 +35,11 @@
                         <button type="submit" class="signin-btn">SIGN IN</button>
                     </form>
 
-                    <p class="or">or</p>
+                    <div class="login-divider">
+                        <div class="bar bar-top"></div>
+                        <span class="login-or">OR</span>
+                        <div class="bar bar-bottom"></div>
+                    </div>
                     <!-- GOOGLE PLUS and FB SIGN IN buttons partials-->
                     {{>oauth2_btns}}
 
