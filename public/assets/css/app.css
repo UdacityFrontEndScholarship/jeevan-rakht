@@ -547,7 +547,9 @@ display: none;
 .indiv.open, .nonindiv.open, .gpsaddress.open, .manualaddress.open{
 display: table;
 }
-
+.form-group{
+  margin-bottom: 0;
+}
 /* ==== LOGIN PAGE STYLES ==== */
 
 .main-content {
@@ -581,6 +583,10 @@ display: table;
   max-width: 300px;
   margin: 0 auto;
   padding: 75px 0 63px;
+}
+
+.hidden{ 
+  display: none !important;
 }
 
 .input-wrapper {
@@ -835,7 +841,7 @@ select.form-control:not([size]):not([multiple]) {
   left: -1px;
 }
 .login-divider .bar-top {
-  top: 0;
+  top: 10px;
   left: 0;
 }
 .login-or {
@@ -844,7 +850,7 @@ select.form-control:not([size]):not([multiple]) {
   width: 18%;
   height: 30px;
   left: 41%;
-  top: -15px;
+  top: -5px;
   border: 2px solid #888;
   text-align: center;
   display: -webkit-flex;
@@ -865,7 +871,7 @@ select.form-control:not([size]):not([multiple]) {
   bottom: 0;
   right: 0;
   left: auto;
-  top: 0;
+  top: 10px;
 }
 
 /* Start Typeahead */
