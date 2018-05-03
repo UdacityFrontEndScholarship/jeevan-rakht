@@ -55,7 +55,7 @@ router.post('/', function(req, res, next) {
 				from: 'no-reply@jeevanrakht.in', 
 				to: user.email, 
 				subject: 'Account Verification Token', 
-				text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \n'+req.protocol+':\/\/' + req.headers.host + '\/verifyemail_finish?token=' + token.token + '.\n' 
+				text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \n'+req.protocol+':\/\/' + req.headers.host + '\/verify_finish?token=' + token.token + '.\n' 
 			};
 			client.sendMail(mailOptions, function (err) {
 				if (err) { 
