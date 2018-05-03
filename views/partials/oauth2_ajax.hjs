@@ -9,8 +9,8 @@
 					contentType: 'application/octet-stream; charset=utf-8',
 					data: authResult['code'],
 					success: function(result){
-                        $('#login, #signup').attr("style","display:none !important");
-                        $('#oauth-login-result').attr("style","display:unset");
+                        $('#login, #signup').addClass("hidden");
+                        $('#oauth-login-result').removeClass("hidden");
 						if (result){
 							$('#oauth-login-result').html('Login Successfull! <br>'+ result+ '<br>Redirecting');
 							setTimeout(function(){
@@ -63,8 +63,8 @@
 		    data: access_token,
 		    contentType: 'application/octet-stream; charset=utf-8',
 		    success: function(result) {
-				$('#login, #signup').attr("style","display:none !important");
-                $('#oauth-login-result').attr("style","display:unset");                
+				$('#login, #signup').addClass("hidden");
+				$('#oauth-login-result').removeClass("hidden");                
 		      // Handle or verify the server response if necessary.
 		      	if(result){
 			        $('#oauth-login-result').html('Login Successful!</br>'+ result + '</br>Redirecting...')

@@ -77,7 +77,7 @@ router.post('/', rawParser,function(req, res, next) {
                         }
                         let sendResp = function(){
                             console.log("Zooooooooooooooooom");
-                            let output = '';
+                            let output = '<div>';
                             output += '<h1>Welcome, ';
                             output += data['name'];
                             output += '!</h1>';
@@ -85,6 +85,7 @@ router.post('/', rawParser,function(req, res, next) {
                             output += data['picture'];
                             output += ' " style = "width: 160px; height: 160px;border-radius: 150px;\
                             -webkit-border-radius: 150px;-moz-border-radius: 150px;"> ';
+                            output += '</div>';
                             res.send(output);                        
                         };                        
                         if (!user) {
