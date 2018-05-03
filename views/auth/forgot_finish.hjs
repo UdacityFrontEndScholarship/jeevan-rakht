@@ -5,32 +5,34 @@
         <!-- Main content goes here -->      
         <div class="container vh-100 d-flex flex-column justify-content-between">
           {{>header}}
-        <section id="main" class="zi-1 bg-light">
       <!-- Your code goes here --> 
-        {{#alertMessage}}
-        <div class="alert alert-danger">{{alertMessage}}</div>
-        {{/alertMessage}}                 
-        <h2>Reset password</h2>
-        <form method="POST">	
-          <table id="tablecontainer">
-            <tr id ="tablerow">
-              <td class="text-right">New password :</td>
-              <td>
-                <input type="password" name="password" id="password" value="{{password}}" required placeholder="New password">
-              </td>
-            </tr>
-            <tr id ="tablerow">
-              <td>Confirm new password :</td>
-              <td>
-                <input type="password" name="verify" id="verify" value="{{vpw}}" required placeholder="Confirm new password">
-              </td>
-            </tr>
-          </table>
-          <br>	
-              <button type="submit" class="btn btn-primary">Submit</button>
-              <a href="/"><button type="button" class="btn btn-secondary">Cancel</button></a>
-          <br>                
-          </form>
+        <section class="my-5">
+            {{#alertMessage}}
+            <div class="alert alert-danger text-center">{{alertMessage}}</div>
+            {{/alertMessage}}            
+            <div class="main-content container zi-1 p-4 d-flex flex-column flex-wrap align-items-center">
+                <a href="/forgot" class="back-arrow">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <div id="content-heading">
+                    <h2 class="text-uppercase"><strong>Reset password</strong></h2>            
+                </div>
+                <form method="POST">	
+                <div id="email-link">
+                <div class="form-row input-wrapper input-wrapper-lg">
+                    <div class="form-group col-12">
+                        <input type="password" name="password" id="password" value="{{password}}" required placeholder="New password">
+                    </div>
+                    <div class="form-group col-12">
+                        <input type="password" name="verify" id="verify" value="{{vpw}}" required placeholder="Confirm new password">
+                    </div>                    
+                </div>               
+                </div> 
+                <br>	
+                    <button type="submit" class="btn-link">SUBMIT</button>
+                <br>                
+                </form>
+          </div>
         </section>
         {{>footer}}
         </div>

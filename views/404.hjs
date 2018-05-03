@@ -8,14 +8,16 @@
         <div class="container vh-100 d-flex flex-column justify-content-between">
            {{>header}}
       <!-- Your code goes here -->      
-        <section id="main" class="zi-1 bg-light">
-            <div class="container text-center">
-                <div class="row">
+        <section class="my-5">
+            <div class="main-content container zi-1 p-4 d-flex flex-column flex-wrap align-items-center">
+                <div id="content-heading">
+                    <h2 class="text-uppercase"><strong>404</strong></h2>            
+                </div>                
+                <div class="row text-center">
                 <div class="col">
-                    <h1>404</h1>
                     <p>We couldn’t find this page.</p>
                     <p>If you came here by folowing links from our site then please Contact Us to report the issue.</p>
-                    <p><a href="/" class="btn btn-primary zi-1">Return to homepage</a></p>
+                    <a href="/" class="btn-link my-2">Return to homepage</a>
                 </div>    
                 </div>	    
             </div>	

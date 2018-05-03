@@ -18,7 +18,7 @@ html, body {
 }
 
 body {
-  font-family: "Maven Pro", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: Montserrat, sans-serif;
 }
 
 #header {
@@ -533,9 +533,13 @@ fieldset{
     border-color: threedface;
     border-image: initial;
 }
-legend{
-    width: 20vmax;    
+legend, label{
+    width: 30vmax;    
+    font-family: Spectral, sans-serif;
+    font-style: italic;
+    color: var(--text-color-dark);
 }
+
 .indiv, .nonindiv, .gpsaddress, .manualaddress{
 display: none;
 }
@@ -543,31 +547,6 @@ display: none;
 .indiv.open, .nonindiv.open, .gpsaddress.open, .manualaddress.open{
 display: table;
 }
-
-#signup, #main{
-background-color: rgba(0, 0, 0, 0.5);
-margin-left: 15%;
-margin-right: 15%;
-margin-top: 1%; }
-
-input,select, textarea {
-color: black; }
-
-table {
-margin: 0 auto;
-z-index: 1;
-width: 100%;
-height: 50px; }
-
-#tablerow td{
-  text-align: center;
-  padding: 5px;
-}    
-#tablerow td:first-child{  
-  display: none;
-}
-
-
 
 /* ==== LOGIN PAGE STYLES ==== */
 
@@ -608,6 +587,16 @@ height: 50px; }
   position: relative;
 }
 
+.input-wrapper i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent-color);
+  font-size: 1em;
+  pointer-events: none;
+}
+
 .input-wrapper input {
   display: block;
   width: 100%;
@@ -620,6 +609,35 @@ height: 50px; }
   font-style: italic;
   color: var(--text-color-dark);
   outline: none;
+}
+.input-wrapper select {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px 35px 10px 15px;
+  border: 1.2px solid #f3f3f3;
+  border-radius: 3px;
+  background: #fff;
+  font-family: Spectral, sans-serif;
+  font-style: italic;
+  color: var(--text-color-dark);
+  outline: none;
+}
+select.form-control:not([size]):not([multiple]) {
+  height: calc(2.77rem + 2px);
+}
+.input-wrapper input:hover, .input-wrapper select:hover {
+  border-color: var(--secondary-color);
+}
+
+.input-wrapper input:focus, .input-wrapper select:focus {
+  font-style: normal;
+  box-shadow: 0 0 5px var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.input-wrapper input:focus ~ i {
+  color: var(--text-color-dark);
 }
 
 .input-wrapper-lg {
@@ -640,25 +658,6 @@ height: 50px; }
 
 :-ms-input-placeholder {
   color: var(--accent-color);
-}
-
-.input-wrapper input:focus {
-  box-shadow: 0 0 5px var(--secondary-color);
-  border-color: var(--secondary-color);
-}
-
-.input-wrapper i {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--accent-color);
-  font-size: 1em;
-  pointer-events: none;
-}
-
-.input-wrapper input:focus ~ i {
-  color: var(--text-color-dark);
 }
 
 .signin-btn {
@@ -765,7 +764,13 @@ height: 50px; }
   text-align: center;
   color: var(--text-color-dark);
 }
-
+#content-heading h2{
+  margin-top: 12px;
+  font-size: 1.6rem;
+  font-family: Montserrat, sans-serif;
+  text-align: center;
+  color: var(--text-color-dark);  
+}
 .donate-input-row {
   margin: 60px 0 25px;
 }
@@ -781,15 +786,7 @@ height: 50px; }
   }
 }
 
-.donate-input-row input:hover {
-  border-color: var(--secondary-color);
-}
-
-.donate-input-row input:focus {
-  font-style: normal;
-}
-
-.book-btn {
+.book-btn,.btn-link {
   display: block;
   width: 100%;
   max-width: 300px;
@@ -806,8 +803,69 @@ height: 50px; }
   transition: background .2s ease-out;
 }
 
-.book-btn:hover {
+.book-btn:hover ,.btn-link:hover {
   background: linear-gradient(var(--primary-color-light), var(--primary-color-dark));
+}
+
+.btn-link{
+  text-decoration: none !important;
+  color: var(--white) !important;
+  text-align: center !important;
+}
+
+#profile-util{
+  max-width: 300px;
+  width: 100%;
+}
+#box-250{
+  width: 250px;
+}
+/* OR divider in login/signup page */
+.login-divider {
+  width: 100%;
+  position: relative;
+  height: 40px;
+  margin-top: 20px;  
+}
+.login-divider .bar {
+  width: 41%;
+  height: 2px;
+  position: absolute;
+  background: #888;
+  left: -1px;
+}
+.login-divider .bar-top {
+  top: 0;
+  left: 0;
+}
+.login-or {
+  position: absolute;
+  display: block;
+  width: 18%;
+  height: 30px;
+  left: 41%;
+  top: -15px;
+  border: 2px solid #888;
+  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 1.2rem;
+  line-height: 30px;
+  color: #444;
+}
+.login-divider .bar-bottom {
+  bottom: 0;
+  right: 0;
+  left: auto;
+  top: 0;
 }
 
 /* Start Typeahead */
