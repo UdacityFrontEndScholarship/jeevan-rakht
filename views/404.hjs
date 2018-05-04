@@ -1,32 +1,93 @@
 <!DOCTYPE html>
 <html>
 
-    {{>head}}
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <body id="particles-js" class="m-md-3">
+        <title>JeevanRakht - </title>
+
+        <!-- Shortcut Icons -->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="apple-touch-icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+        <!-- SEO tags -->
+        <meta name="description" content="The Official website of JeevanRakht">
+        <meta name="keywords" content="JeevanRakht, Blood Dontation, Blood Bank, Google Udacity Project JeevanRakht">
+
+        <!--GOOGLE FONT-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Spectral:400,400i,700,700i" rel="stylesheet">
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="assets/css/bootstrap.css" />
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" />
+
+        <!-- Main CSS file -->
+        <link rel="stylesheet" href="assets/css/app.css" />
+    </head>
+    <body id="particles-js" class="m-md-3" >
         <!-- Main content goes here -->      
         <div class="container vh-100 d-flex flex-column justify-content-between">
-           {{>header}}
-      <!-- Your code goes here -->      
-        <section class="my-5">
-            <div class="main-content container zi-1 p-4 d-flex flex-column flex-wrap align-items-center">
-                <div id="content-heading">
-                    <h2 class="text-uppercase"><strong>404</strong></h2>            
-                </div>                
-                <div class="row text-center">
-                <div class="col">
-                    <p>We couldn’t find this page.</p>
-                    <p>If you came here by folowing links from our site then please Contact Us to report the issue.</p>
-                    <a href="/" class="btn-link my-2">Return to homepage</a>
-                </div>    
-                </div>	    
-            </div>	
-        </section>        
-            {{>footer}}
+           <header class="container d-flex justify-content-center align-items-center">
+               <div class="d-flex flex-1 justify-content-sm-center">
+                   <a href="/" class="logo-wrapper zi-1">
+                       <img src="assets/images/logo.png" alt="" class="logo">
+                   </a>
+               </div>
+               <div class="option-label mr-2 zi-1">
+                   <a href="/login" class="option-label">login </a>|
+                   <a href="/signup" class="option-label"> signup</a>
+               </div>
+               <a href="/users" class="zi-1" id="header">
+                   <img class="profile-btn fas fa-user-circle" src="" alt="">
+               </a>
+           </header>      <!-- Your code goes here -->
+      
+						<div id="foimg">
+  <img src="assets/images/404Errordk.png"  alt="404 eror image" style="width:50%;height:100%;" >
+</div><!--Image Link "https://preview.ibb.co/mEXXdn/1525413367266.png" , It can be removed-->
+				<div id="imat">
+					<img src="assets/images/404Errordk.png" alt="404 Eror Page" style="width:100%;height:100%;"><!--This is online Image Link "https://preview.ibb.co/mEXXdn/1525413367266.png" & it can be removed-->
+					</div>
+					<div id="mas">
+						<p>Sorry ,This bank has been robberd , You can go to our Home bank</p>
+					</div>
+					 <div id="btlink">
+						 <p><a href="/" class="btn btn-primary zi-1">Return Home</a></p>
+					</div>
+            <footer class="app-footer">
+                <div class="footer-content d-flex justify-content-around align-items-center zi-1">
+                    <a class="footer-link" href="tel:+919999999999">+91 - 9999999999</a>
+
+                    <span class="footer-dot">•</span>
+
+                    <a class="footer-link" href="index.html">
+                        <strong>Know More</strong>
+                    </a>
+
+                    <span class="footer-dot">•</span>
+
+                    <a class="footer-link" href="mailto:mail@jeevanrakht.in">mail@jeevanrakht.in</a>
+                </div>
+            </footer>
 
         </div>
         <!-- End Container -->
         
-       {{>utilityJS}}
-      </body>
+               <!-- Jquery -->
+               <script src="assets/js/jquery.min.js"></script>
+
+               <!-- Bootstrap -->
+               <script src="assets/js/popper.min.js"></script>
+               <script src="assets/js/bootstrap.min.js"></script>
+
+               <!-- Particles JS-->
+               <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+               <!-- Main JS file -->
+               <script src="assets/js/app.js"></script>      </body>
   </html>
