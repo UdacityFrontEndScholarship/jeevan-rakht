@@ -5,79 +5,107 @@
         <!-- Main content goes here -->      
         <div class="vh-100 d-flex flex-column justify-content-between">
           {{>header}}
-            <div id="oauth-login-result" class="container main-content my-auto p-4 text-center hidden"></div>
+            <div id="oauth-login-result" class="container my-4 zi-1 hidden">
+                <div id="oauth-result-content"></div>
+            </div>
       <!-- Your code goes here -->      
         <section id="signup" class="container my-5">
             {{#alertMessage}}
-            <div class="alert alert-danger text-center">{{alertMessage}}</div>
+            <div class="alert alert-danger text-center zi-1">{{alertMessage}}</div>
             {{/alertMessage}}            
-            <div class="container main-content zi-1 d-flex flex-column flex-wrap align-items-center">
+            <div class="main-content zi-1">
                 <a href="/" class="back-arrow">
                     <i class="fas fa-arrow-left"></i>
                 </a>
                 <div class="signin-wrapper">    
-                <form method="POST">
-                    <fieldset class="px-2 m-0"><legend class="text-center">Entity Type</legend>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="usertype" id="usertype1" value="Individual" required {{#inputValue.indiv}}checked{{/inputValue.indiv}}>
-                            <label class="form-check-label" for="addrtype1">Self(Individual)</label>
+                    <form method="POST">
+                        <div class="radios">
+                            <h3>Entity Type:</h3>
+
+                            <label>
+                                <input type="radio" name="usertype" value="Individual" required {{#inputValue.indiv}}checked{{/inputValue.indiv}}> 
+
+                                <span>Self (Individual)</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="usertype" value="Non-Individual" required {{#inputValue.nonIndiv}}checked{{/inputValue.nonIndiv}}> 
+
+                                <span>Blood Bank (Non-Individual)</span>
+                            </label>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="usertype" id="usertype2" value="Non-Individual" required {{#inputValue.nonIndiv}}checked{{/inputValue.nonIndiv}}>
-                            <label class="form-check-label" for="usertype2">Blood Bank(Non-Individual)</label>
-                        </div>                    
+                                         
                         <div class="indiv">
-                            <div class="form-row input-wrapper">
-                                <div class="form-group col-md-6">
-                                    <input type="text" class="form-control" name="firstname" id="fname" value="{{inputValue.firstname}}" aria-describedby="fnameHelp" placeholder="First Name">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <input type="text" class="form-control" name="lastname" id="lname" value="{{inputValue.lastname}}" aria-describedby="lnameHelp" placeholder="Last Name">    
-                                </div>
-                            </div>                        
-                        </div>
-                        <div class="nonindiv">
-                            <div class="form-row input-wrapper">
-                                <div class="form-group col-md-6">
-                                    <input id="orgname" type="text" class="form-control" name="orgname" value="{{inputValue.orgname}}" placeholder="bank name">
-                                </div>
+                            <div class="input-wrapper">
+                                <input type="text" name="firstname" id="fname" value="{{inputValue.firstname}}" aria-describedby="fnameHelp" placeholder="first name">
+
+                                <i class="far fa-user"></i>
                             </div>
-                            <div class="form-row input-wrapper">
-                                <div class="form-group col-md-6">
-                                    <input id="license" type="text" class="form-control" name="license" value="{{inputValue.license}}" placeholder="license">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <input id="stock" type="number" class="form-control" name="stock" value="{{inputValue.stock}}" placeholder="blood stock">
-                                </div>
-                            </div>                        
+
+                            <div class="input-wrapper">
+                                <input type="text" name="lastname" id="lname" value="{{inputValue.lastname}}" aria-describedby="lnameHelp" placeholder="last name">
+
+                                <i class="far fa-user"></i>   
+                            </div>                  
                         </div>
-                    </fieldset>
-                    <div class="form-row input-wrapper">
-                        <div class="form-group col-12">
+                        <!-- End indiv -->
+
+                        <div class="nonindiv">
+                            <div class="input-wrapper">
+                                <input id="orgname" type="text" name="orgname" value="{{inputValue.orgname}}" placeholder="bank name">
+
+                                <i class="fas fa-hospital-alt"></i>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <input id="license" type="text" name="license" value="{{inputValue.license}}" placeholder="license">
+
+                                <i class="fas fa-id-card"></i>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <input id="stock" type="number" name="stock" value="{{inputValue.stock}}" placeholder="blood stock">
+
+                                <i class="fas fa-tint"></i>
+                            </div>                    
+                        </div>
+                        <!-- End nonindiv -->
+                    
+                        <div class="input-wrapper">
                             <input type="email" name="email" id="email" value="{{inputValue.email}}" placeholder="email">
+
+                            <i class="far fa-envelope"></i>
                         </div>
-                        <div class="form-group col-12">
-                            <input type="password" name="pwd" id="password" value="{{pww}}" required placeholder="Password">
+
+                        <div class="input-wrapper">
+                            <input type="password" name="pwd" id="password" value="{{pww}}" required placeholder="password">
+
+                            <i class="fas fa-unlock"></i>
                         </div>
-                        <div class="form-group col-12">
-                            <input type="password" name="verify" id="verify" value="{{vpw}}" required placeholder="Confirm password">
+
+                        <div class="input-wrapper">
+                            <input type="password" name="verify" id="verify" value="{{vpw}}" required placeholder="confirm password">
+
+                            <i class="fas fa-unlock"></i>
                         </div>                    
-                    </div>                         
-                    <button type="submit" class="btn-link">SIGN UP</button>
-                </form>
-                <div class="login-divider">
-                    <div class="bar bar-top"></div>
-                    <span class="login-or">OR</span>
-                    <div class="bar bar-bottom"></div>
+                                            
+                        <button type="submit" class="btn-link">SIGN UP</button>
+                    </form>
+                    
+                    <div class="login-divider">
+                        <div class="bar bar-top"></div>
+                        <span class="login-or">OR</span>
+                        <div class="bar bar-bottom"></div>
+                    </div>
+                    <!-- GOOGLE PLUS and FB SIGN IN buttons partials-->
+                    {{>oauth2_btns}}
+                    <div class="help-txt mt-0 mb-2">
+                        <p>Already have an account? <strong>LOGIN</strong> <a href="/login">here</a>.</p>
+                    </div>                      
                 </div>
-                <!-- GOOGLE PLUS and FB SIGN IN buttons partials-->
-                {{>oauth2_btns}}
-                <div class="help-txt mt-0 mb-3">
-                    <p>Already have an account! <strong>LOGIN</strong> <a href="/login">here</a>.</p>
-                </div>                      
-                </div>        
-                </div>  
-            </div>
+                <!-- End signin-wrapper -->        
+            </div>  
+            <!-- End main-content -->
         </section>
         {{>footer}}
         </div>
@@ -95,11 +123,11 @@
             var RadioButtonCheck = $('form input[type=radio]:checked').val();
             console.log(RadioButtonCheck);
             if (RadioButtonCheck == "Individual") {
-                $(".indiv").addClass("open");
-                $(".nonindiv").removeClass("open");
+                $(".nonindiv").hide();
+                $(".indiv").slideDown();
             }else if (RadioButtonCheck == "Non-Individual") {
-                $(".nonindiv").addClass("open");
-                $(".indiv").removeClass("open");
+                $(".indiv").hide();
+                $(".nonindiv").slideDown();
             }
         };
         $(partySelect).on('change',callback);
