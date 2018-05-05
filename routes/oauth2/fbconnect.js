@@ -81,8 +81,7 @@ router.post('/', rawParser,function(req, res, next) {
                     output += '!</h1>';
                     output += '<img src="';
                     output += picture;
-                    output += ' " style = "width: 160px; height: 160px;border-radius: 150px;\
-                    -webkit-border-radius: 150px;-moz-border-radius: 150px;"> ';
+                    output += ' " style = "width: 150px; height: 150px; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;"> ';
                     output += '</div>';
                     res.send(output);    
                 };

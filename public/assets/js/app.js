@@ -45,3 +45,8 @@ $(".input-donation-date[type=date]").blur(function() {
         $(this).attr('placeholder', 'Last Donation Date');
     }
 });
+
+// Fixing select placeholder issue
+$("select.empty").change(function() {
+    $(this).removeClass('empty');
+})
