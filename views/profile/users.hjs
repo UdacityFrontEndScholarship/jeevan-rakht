@@ -7,9 +7,12 @@
           {{>header}}
       <!-- Your code goes here -->      
         <section class="my-5">
+            {{#successMessage}}
+            <div class="alert alert-success text-center">{{successMessage}}</div>
+            {{/successMessage}}
             {{#alertMessage}}
             <div class="alert alert-danger text-center">{{alertMessage}}</div>
-            {{/alertMessage}}            
+            {{/alertMessage}}                        
             <div class="main-content container zi-1 p-4 d-flex flex-column flex-wrap align-items-center">
                 <a href="/" class="back-arrow">
                     <i class="fas fa-arrow-left"></i>
@@ -17,7 +20,8 @@
                 <div id="content-heading">
                     <h2><strong>PROFILE</strong></h2>            
                 </div>
-                <form method="POST">	
+                <form method="POST">
+                    <input type="hidden" name="_method" value="PUT">	
                     {{>profile}}     
                     {{>user_address}}      
                 <br>	

@@ -1,6 +1,6 @@
 <fieldset class="px-2 m-0"><legend class="text-center"><strong>ADDRESS</strong></legend> 
 <div class="form-row ml-1">
-    {{#user.address.pincode}}
+    {{#gps}}
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" name="addrtype" id="addrtype1" value="gps" required checked>
         <label class="form-check-label" for="addrtype1">Use My Location</label>
@@ -9,7 +9,18 @@
         <input class="form-check-input" type="radio" name="addrtype" id="addrtype2" value="userinput" required>
         <label class="form-check-label" for="addrtype2">Add/Edit Address</label>
     </div>
-    {{/user.address.pincode}}{{^user.address.pincode}}
+    {{/gps}}
+    {{#manual}}
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="addrtype" id="addrtype1" value="gps" required >
+        <label class="form-check-label" for="addrtype1">Use My Location</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="addrtype" id="addrtype2" value="userinput" required checked>
+        <label class="form-check-label" for="addrtype2">Add/Edit Address</label>
+    </div>
+    {{/manual}}    
+    {{^manual}}{{^gps}}
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" name="addrtype" id="addrtype1" value="gps" required>
         <label class="form-check-label" for="addrtype1">Use My Location</label>
@@ -18,7 +29,7 @@
         <input class="form-check-input" type="radio" name="addrtype" id="addrtype2" value="userinput" required>
         <label class="form-check-label" for="addrtype2">Add/Edit Address</label>
     </div>
-    {{/user.address.pincode}}
+    {{/gps}}{{/manual}}
 </div>
 <div class="manualaddress open text-left">
 <div class="form-row input-wrapper">

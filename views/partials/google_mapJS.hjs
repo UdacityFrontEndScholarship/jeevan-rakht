@@ -24,14 +24,14 @@
 		    }
 		}else if (RadioButtonCheck == "userinput") {
 			for (var component in componentForm) {
-			  document.getElementById(component).value = '';
+			  //document.getElementById(component).value = '';
 			  $('#'+component).removeAttr('readonly');
 			}			
 		}
 	};
 
 	$(addrSelect).on('change',callback);	
-	// $(window).on('load',callback);
+	$(window).on('load',callback);
 
 	var geoOptions =  {
 		// timeout: 600,
