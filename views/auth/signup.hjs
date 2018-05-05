@@ -72,7 +72,7 @@
                         <!-- End nonindiv -->
                     
                         <div class="input-wrapper">
-                            <input type="email" name="email" id="email" value="{{inputValue.email}}" placeholder="email">
+                            <input type="email" name="email" id="email" value="{{inputValue.email}}" required placeholder="email">
 
                             <i class="far fa-envelope"></i>
                         </div>
@@ -124,10 +124,14 @@
             console.log(RadioButtonCheck);
             if (RadioButtonCheck == "Individual") {
                 $(".nonindiv").hide();
+                $(".nonindiv input").prop('required', false);
                 $(".indiv").slideDown();
+                $(".indiv input").prop('required', true);
             }else if (RadioButtonCheck == "Non-Individual") {
                 $(".indiv").hide();
+                $(".indiv input").prop('required', false);
                 $(".nonindiv").slideDown();
+                $(".nonindiv input").prop('required', true);
             }
         };
         $(partySelect).on('change',callback);
