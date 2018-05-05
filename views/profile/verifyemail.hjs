@@ -5,26 +5,31 @@
         <!-- Main content goes here -->      
         <div class="container vh-100 d-flex flex-column justify-content-between">
           {{>header}}
-        <section id="main" class="zi-1 text-center bg-light">
       <!-- Your code goes here --> 
-        {{#alertMessage}}
-        <div class="alert alert-danger">{{alertMessage}}</div>
-        {{/alertMessage}}                 
-        <h2>Verify Email</h2>
-        <form method="POST">	
-          <table id="tablecontainer">
-            <tr id ="tablerow">
-              <td>Email :</td>
-              <td>
-                <input type="email" name="email" id="email" value="{{email}}" required placeholder="email">
-              </td>
-            </tr>
-          </table>
-          <br>	
-              <button type="submit" class="btn btn-primary">Send activation link</button>
-              <a href="/"><button type="button" class="btn btn-secondary">Cancel</button></a>
-          <br>                
-          </form>
+        <section class="my-5">
+            {{#alertMessage}}
+            <div class="alert alert-danger text-center">{{alertMessage}}</div>
+            {{/alertMessage}}            
+            <div class="main-content container zi-1 p-4 d-flex flex-column flex-wrap align-items-center">
+                <a href="/users" class="back-arrow">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <div id="content-heading">
+                    <h2 class="text-uppercase"><strong>Verify Email</strong></h2>            
+                </div>
+              <form method="POST">	
+                <div id="box-250">
+                <div class="form-row input-wrapper input-wrapper-lg">
+                    <div class="form-group col-12">                
+                      <input type="email" class="form-control" name="email" id="email" value ="{{user.email}}" readonly placeholder="email">
+                    </div>
+                </div>               
+                </div> 
+                <br>	
+                    <button type="submit" class="btn-link">Send verification link</button>
+                <br>                
+              </form>
+            </div>  
         </section>
         {{>footer}}
         </div>

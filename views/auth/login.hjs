@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     {{>head}}
-    <body id="particles-js" m-md-3>
+    <body id="particles-js">
         <div class="vh-100 d-flex flex-column justify-content-between">
           {{>header}}
-        <div id="oauth-login-result" class="container p-2 p-md-4 bg-light text-center zi-1" style="display:none"></div>
+        <div id="oauth-login-result" class="container main-content p-4 text-center hidden"></div>
         
         <section id="login" class="container d-flex flex-column flex-wrap align-items-center my-5">
 
@@ -35,7 +35,11 @@
                         <button type="submit" class="signin-btn">SIGN IN</button>
                     </form>
 
-                    <p class="or">or</p>
+                    <div class="login-divider">
+                        <div class="bar bar-top"></div>
+                        <span class="login-or">OR</span>
+                        <div class="bar bar-bottom"></div>
+                    </div>
                     <!-- GOOGLE PLUS and FB SIGN IN buttons partials-->
                     {{>oauth2_btns}}
 
