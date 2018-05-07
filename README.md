@@ -90,10 +90,12 @@ verify with below command
 >>>node -v
 >>>npm -v
 ```
-
+* Make sure you run all your commands fron inside cloned /jeevan-rakht folder
 * Step3 -- Install the npm modules from the package.json
 ```
 >>> npm install
+this command installs all the node related packages required to run the app locally in 
+/node_modules folder. You can see this folder inside /jeevan-rakth folder after running npm install
 ```
 
 * Step4 -- Launch the application using below command:
@@ -117,8 +119,17 @@ i.e http://localhost:<your_env_port_variable>
 ```
 ![node_run](https://user-images.githubusercontent.com/15084301/38658058-17bea426-3e41-11e8-8dd6-9009ba81fcc3.JPG)
 
+```
+If you get an node-sass module error while running npm start saying app crashed,
+then run the command as shown in below image:
+```
+![image](https://user-images.githubusercontent.com/15084301/39688089-b99528fe-51ee-11e8-9ee2-35ec7a46ccf2.png)
+
 * Step5 -- No more steps
 ```
+Now you don't need to repeat above steps always to run the app rather its one time task.
+But if you clone the project in new location then again you need to repeat step 3(only).
+
 Connect with co-mods if you stuck anywhere
 ```
 ## RESTFull APIs for jeevanrakht web application
