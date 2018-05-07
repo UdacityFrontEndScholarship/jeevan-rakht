@@ -74,7 +74,7 @@ router.post('/', function(req, res, next) {
     if (!email) {
         return res.render('auth/signup', { title: 'Signup', alertMessage: 'Valid email is required.', inputValue: inputValue });
     } else if (!password) {
-        return res.render('auth/signup', { title: 'Signup', alertMessage: 'password must contail one capital & one small letter with total six chars min.', inputValue: inputValue });
+        return res.render('auth/signup', { title: 'Signup', alertMessage: 'password must contain one capital & one small letter with total six chars min.', inputValue: inputValue });
     } else if (req.body.pwd !== req.body.verify) {
         return res.render('auth/signup', { title: 'Signup', alertMessage: 'Both passwords should match.', inputValue: inputValue });
     } else {
