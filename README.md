@@ -13,7 +13,7 @@ This project consists of two part like all web application.
 * Backend Part -- Node.js with express.js and MongoDB
 
 ## Color palette
-![color palette](https://user-images.githubusercontent.com/15084301/38657620-eccfa7bc-3e3e-11e8-9dc2-2e1d6622b8ce.jpg)
+![color palette](https://raw.githubusercontent.com/UdacityFrontEndScholarship/jeevan-rakht/master/public/assets/Color%20palette.jpg)
 
 ## Homepage Mockup
 [jeevanrakht.pdf](https://github.com/UdacityFrontEndScholarship/jeevan-rakht/files/1907369/jeevanrakht.pdf)
