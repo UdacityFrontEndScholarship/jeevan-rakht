@@ -11,7 +11,7 @@ var expressValidator = require('express-validator');
 var mainRouter = require('./routes/main/app');
 var locateRouter = require('./routes/main/locate');
 var donateRouter = require('./routes/main/donate');
-var donorRouter = require('./routes/main/donor');
+var donorRouter = require('./routes/main/donar');
 var donorListRouter = require('./routes/main/donorlist');
 var connDonorRouter = require('./routes/main/conwith_donor');
 

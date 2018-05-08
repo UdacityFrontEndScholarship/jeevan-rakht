@@ -36,6 +36,7 @@ $(".input-when[type=date]").blur(function() {
 // 
 $(".input-donation-date").flatpickr({
     dateFormat: 'd/m/Y',
+    maxDate: 'today'
 });
 
 $(".input-donation-date[type=date]").blur(function() {
