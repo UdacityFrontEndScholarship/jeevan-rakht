@@ -6,16 +6,16 @@ function profile_validator(req, res, next) {
     if (req.user.user_type ==='Individual'){
         req.checkBody('firstname','firstname must contain minimum 3 chars.').notEmpty().isLength({ min: 3 });
         req.checkBody('lastname','lastname must contain minimum 3 chars.').notEmpty().isLength({ min: 3 });
-        req.checkBody('bloodgroup','One or more field is empty.').notEmpty();
-        req.checkBody('gender','One or more field is empty.').notEmpty();
+        req.checkBody('bloodgroup','bloodgroup is empty.').notEmpty();
+        req.checkBody('gender','gender is required.').notEmpty();
         req.checkBody('age','age must be numeric.').notEmpty().isNumeric();
         req.checkBody('height','height must be numeric.').notEmpty().isNumeric();
         req.checkBody('weight','weight must be numeric.').notEmpty().isNumeric();        
-        req.checkBody('last_donation','One or more field is empty.').notEmpty();
+        req.checkBody('last_donation','last blood donation date is required.').notEmpty();
     }else if(req.user.user_type ==='Non-Individual'){
         req.checkBody('orgname','orgname must contain minimum 3 chars.').notEmpty().isLength({ min: 3 });
         req.checkBody('license','license must contain minimum 3 chars.').notEmpty().isLength({ min: 3 });
-        req.checkBody('stock','One or more field is empty.').notEmpty().isNumeric();
+        req.checkBody('stock','stock must be numeric.').notEmpty().isNumeric();
     }
     req.checkBody('address1','Address line1 is required and first letter can\'t be special character.').notEmpty().matches(/^[a-zA-Z0-9]/);
     req.checkBody('address2','Address line2 is required and fist letter can\'t be special character.').notEmpty().matches(/^[a-zA-Z0-9]/);
@@ -37,4 +37,21 @@ function profile_validator(req, res, next) {
     }
 }
 
+function donate_validator(req, res, next) {
+    // A function decorator to avoid that code repetition
+    // fo checking user login status
+    var obj = req.body;
+    obj.title = 'Donate Blood';    
+    req.checkBody('bookcity','city must contain only alphabets and spaces.').notEmpty().matches(/^[a-zA-Z]+[a-zA-Z ]+$/);
+    req.checkBody('bookdate','Booking date is required.').notEmpty();
+    var errors = req.validationErrors();
+    if(errors){
+        obj.alertMessage = errors[0].msg;
+        res.render('main/donate', obj);
+    } else {
+        next();
+    }
+}
+
 module.exports.profile_validator = profile_validator;
+module.exports.donate_validator = donate_validator;

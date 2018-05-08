@@ -36,7 +36,7 @@ var findByEmail = function(email, callback) {
             callback(err, undefined);
             return;
         } else if (emailResult) {
-            console.log('Email found', emailResult);
+            console.log('Email found');
             callback(err, emailResult);
             return;
         }
@@ -52,7 +52,7 @@ var findById = function(id, callback) {
             callback(err, undefined);
             return;
         } else if (emailResult) {
-            console.log('user found', emailResult);
+            console.log('user found');
             callback(err, emailResult);
             return;
         }
@@ -205,6 +205,22 @@ var updateUser = function(userObj, callback) {
     });    
 }
 
+var bookAppointment = function(userObj, callback) {
+    var  item ={"indiv.appointment.appointment_date": userObj.bookdate,  
+                "indiv.appointment.donor_city" : userObj.bookcity,
+                updated : Date.now() 
+            };
+    UserAcct.findByIdAndUpdate(userObj.id, { $set: {item} }, function(err, result) {
+        if (err) {
+            callback(err, undefined);
+        } else if (result) {
+            callback(undefined, result);
+        } else if (!result) {
+            callback(undefined, undefined);
+        }
+    });    
+}
+
 module.exports.signupUser = signupUser;
 module.exports.findByEmail = findByEmail;
 module.exports.updateUser = updateUser;
@@ -214,3 +230,4 @@ module.exports.loginUser = loginUser;
 module.exports.findById = findById;
 module.exports.activateUser = activateUser;
 module.exports.updatePassword = updatePassword;
+module.exports.bookAppointment = bookAppointment;

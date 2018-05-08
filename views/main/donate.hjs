@@ -7,6 +7,12 @@
       {{>header}}
 
       <section class="container my-5">
+        {{#successMessage}}
+        <div class="alert alert-success text-center">{{successMessage}}</div>
+        {{/successMessage}}
+        {{#alertMessage}}
+        <div class="alert alert-danger text-center">{{alertMessage}}</div>
+        {{/alertMessage}}                                
         <div class="main-content zi-1">
         
           <a href="/" class="back-arrow">
@@ -20,14 +26,14 @@
               <div class="row donate-input-row">
                 <div class="col-md-8 py-0 px-0 px-sm-3">
                   <div class="input-wrapper input-wrapper-lg">
-                    <input type="text" autocomplete="off" class="input-location typeahead" title="Location" placeholder="Location">
+                    <input type="text" name="bookcity" value ="{{bookcity}}" autocomplete="off" class="input-location typeahead" title="Location" placeholder="Location" required>
                     <i class="fas fa-map-marker-alt"></i>
                   </div>
                 </div>
           
                 <div class="col-md-4 py-0 px-0 px-sm-3">
                   <div class="input-wrapper input-wrapper-lg">
-                    <input class="input-when" title="When" placeholder="When">
+                    <input class="input-when" name="bookdate" value="{{bookdate}}" title="When" placeholder="When" required>
                     <i class="far fa-calendar-alt"></i>
                   </div>
                 </div>
