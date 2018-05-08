@@ -46,9 +46,9 @@ router.post('/', function(req, res, next) {
             active_flag: 'N'
         }
         if (req.body.firstname.length < 3) {
-            return res.render('auth/signup', { title: 'Signup', alertMessage: 'Valid first name is required.', inputValue: inputValue });
+            return res.render('auth/signup', { title: 'Signup', alertMessage: 'first name must contain minimum 3 chars.', inputValue: inputValue });
         } else if (req.body.lastname.length < 3) {
-            return res.render('auth/signup', { title: 'Signup', alertMessage: 'Valid last name is required.', inputValue: inputValue });
+            return res.render('auth/signup', { title: 'Signup', alertMessage: 'last name must contain minimum 3 chars.', inputValue: inputValue });
         }
     } else if (req.body.usertype === 'Non-Individual') {
         var userObj = {
@@ -64,9 +64,9 @@ router.post('/', function(req, res, next) {
             active_flag: 'N'
         }
         if (req.body.orgname.length < 3) {
-            return res.render('auth/signup', { title: 'Signup', alertMessage: 'Valid organization name is required.', inputValue: inputValue });
+            return res.render('auth/signup', { title: 'Signup', alertMessage: 'organization name must contain minimum 3 chars.', inputValue: inputValue });
         } else if (req.body.license.length < 3) {
-            return res.render('auth/signup', { title: 'Signup', alertMessage: 'Valid license is required.', inputValue: inputValue });
+            return res.render('auth/signup', { title: 'Signup', alertMessage: 'license must contain minimum 3 chars.', inputValue: inputValue });
         } else if (req.body.stock < 1) {
             return res.render('auth/signup', { title: 'Signup', alertMessage: 'Stock should be 1 or more.', inputValue: inputValue });
         }
@@ -74,21 +74,22 @@ router.post('/', function(req, res, next) {
     if (!email) {
         return res.render('auth/signup', { title: 'Signup', alertMessage: 'Valid email is required.', inputValue: inputValue });
     } else if (!password) {
-        return res.render('auth/signup', { title: 'Signup', alertMessage: 'At least one capital letter is required in password.', inputValue: inputValue });
+        return res.render('auth/signup', { title: 'Signup', alertMessage: 'password must contail one capital & one small letter with total six chars min.', inputValue: inputValue });
     } else if (req.body.pwd !== req.body.verify) {
         return res.render('auth/signup', { title: 'Signup', alertMessage: 'Both passwords should match.', inputValue: inputValue });
     } else {
         findByEmail(req.body.email, function(err, emailResult) {
             if (err) {
-                return res.status(500).send({ "error": err.message });
+                let errormessage = "DB Error:"+err.message;
+                res.render('auth/signup', { title: 'Signup', alertMessage: errormessage , inputValue: inputValue });
             } else if (emailResult) {
                 res.render('auth/signup', { title: 'Signup', alertMessage: 'User already exists.', inputValue: inputValue });
                 return;
             } else if (!emailResult) {
                 signupUser(userObj, function(err, result) {
                     if (err) {
-                        console.error(err);
-                        return;
+                        let errormessage = "DB Error:"+err.message;
+                        res.render('auth/signup', { title: 'Signup', alertMessage: errormessage , inputValue: inputValue });
                     } else if (result) {
                         req.flash('successMessage', 'User created! You can now login.');
                         res.redirect('/login');

@@ -1,16 +1,51 @@
 <!DOCTYPE html>
 <html>
-    {{>head}}
-    <body id="particles-js" m-md-3>
-        <!-- Main content goes here -->      
-        <div class="container vh-100 d-flex flex-column justify-content-between">
-          {{>header}}
-        <section class="main zi-1">
-      <!-- Your code goes here -->      
+  {{>head}}
+  <body id="particles-js" m-md-3>
+    <div class="vh-100 d-flex flex-column justify-content-between">
+      
+      {{>header}}
 
-        </section>
-        {{>footer}}
+      <section class="container my-5">
+        <div class="main-content zi-1">
+        
+          <a href="/" class="back-arrow">
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        
+          <div class="content-wrapper">
+            <h2><strong>DONATE</strong> Blood</h2>
+            
+            <form method="POST">
+              <div class="row donate-input-row">
+                <div class="col-md-8 py-0 px-0 px-sm-3">
+                  <div class="input-wrapper input-wrapper-lg">
+                    <input type="text" autocomplete="off" class="input-location typeahead" title="Location" placeholder="Location">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                </div>
+          
+                <div class="col-md-4 py-0 px-0 px-sm-3">
+                  <div class="input-wrapper input-wrapper-lg">
+                    <input class="input-when" title="When" placeholder="When">
+                    <i class="far fa-calendar-alt"></i>
+                  </div>
+                </div>
+              </div>
+          
+              <button class="btn-link">BOOK</button>
+            </form>
+          </div>
+          <!-- End content-wrapper -->
+        
         </div>
-        {{>utilityJS}}
-      </body>
-  </html>
+        <!-- End main-content -->
+      </section>
+
+      {{>footer}}
+
+    </div>
+
+    {{>utilityJS}}
+  </body>
+</html>

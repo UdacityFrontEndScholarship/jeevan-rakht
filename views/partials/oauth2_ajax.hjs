@@ -9,16 +9,17 @@
 					contentType: 'application/octet-stream; charset=utf-8',
 					data: authResult['code'],
 					success: function(result){
-                        $('#login, #signup').attr("style","display:none !important");
-                        $('#oauth-login-result').attr("style","display:unset");
+                        $('#login, #signup').addClass("hidden");
+                        $('#oauth-login-result').removeClass("hidden");
 						if (result){
-							$('#oauth-login-result').html('Login Successfull! <br>'+ result+ '<br>Redirecting');
+							$('#oauth-result-content').html('<p>Login Successful!</p>'+ result + '<p class="loading">Redirecting <span>.</span><span>.</span><span>.</span></p>');
+
 							setTimeout(function(){
 								window.location.href="/";
 							},4000);
 						}else
 						{
-							$('#oauth-login-result').html('Failed to make server side call.\
+							$('#oauth-result-content').html('Failed to make server side call.\
 								Check your configuration and console.');
 						}
 					}
@@ -63,17 +64,18 @@
 		    data: access_token,
 		    contentType: 'application/octet-stream; charset=utf-8',
 		    success: function(result) {
-				$('#login, #signup').attr("style","display:none !important");
-                $('#oauth-login-result').attr("style","display:unset");                
+				$('#login, #signup').addClass("hidden");
+				$('#oauth-login-result').removeClass("hidden");                
 		      // Handle or verify the server response if necessary.
 		      	if(result){
-			        $('#oauth-login-result').html('Login Successful!</br>'+ result + '</br>Redirecting...')
+			        $('#oauth-result-content').html('<p>Login Successful!</p>'+ result + '<p class="loading">Redirecting <span>.</span><span>.</span><span>.</span></p>');
+					
 			        setTimeout(function() {
 			        		window.location.href = "/";
 			        }, 4000);
 			    }
 			    else{
-			        $('#oauth-login-result').html('Failed to make a server-side call. Check your configuration and console.');
+			        $('#oauth-result-content').html('Failed to make a server-side call. Check your configuration and console.');
 			    }
 		      }
 

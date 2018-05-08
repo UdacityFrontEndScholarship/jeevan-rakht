@@ -1,0 +1,74 @@
+{{#indivUser}}
+<div class="form-row input-wrapper">
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" name="firstname" id="fname" value="{{firstname}}" aria-describedby="fnameHelp" placeholder="First Name">
+    </div>
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" name="lastname" id="lname" value="{{lastname}}" aria-describedby="lnameHelp" placeholder="Last Name">    
+    </div>
+</div>
+<div class="form-row input-wrapper">
+    <div class="form-group col-md-3">
+        <input type="text" class="form-control" name="bloodgroup" id="bloodgroup" value="{{bloodgroup}}" placeholder="Blood Group">
+    </div>
+    <div class="form-group col-md-3">
+        <select class="form-control" name="gender" id="gender">
+            <option value="{{gender}}">{{gender}}</option>
+            {{#gender}}
+            <option>select</option>
+            {{/gender}}
+            {{^gender}}
+            <option selected>select</option>
+            {{/gender}}
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+        </select>
+    </div>
+    <div class="form-group col-md-6">
+        <input type="mobile" class="form-control" name="mobile" id="mobile" value="{{mobile}}" placeholder="Mobile" readonly>
+    </div>
+</div>
+<div class="form-row input-wrapper">
+    <div class="form-group col-md-3">
+        <input type="number" class="form-control" name="age" id="age" value="{{age}}" min="18" max="65" placeholder="Age(in years)">
+    </div>
+    <div class="form-group col-md-3">
+        <input type="number" class="form-control" name="height" id="height" value="{{height}}" min="60" placeholder="Height(in cm)">
+    </div>
+    <div class="form-group col-md-3">
+        <input type="number" class="form-control" name="weight" id="weight" value="{{weight}}" min="40" placeholder="Weight(in kg)">
+    </div>    
+</div>
+<div class="form-row input-wrapper">
+    <div class="form-group col-md-6">
+        <input class="input-donation-date" name="last_donation" id="last_donation" value="{{last_donation}}" placeholder="Last Donation Date">
+        <i class="far fa-calendar-alt"></i>
+    </div>
+</div>
+{{/indivUser}}
+{{^indivUser}}
+<div class="form-row input-wrapper">
+    <div class="form-group col-md-6">
+        <input id="orgname" type="text" class="form-control" name="orgname" value="{{orgname}}" placeholder="bank name">
+    </div>
+</div>
+<div class="form-row input-wrapper">
+    <div class="form-group col-md-6">
+        <input id="license" type="text" class="form-control" name="license" value="{{license}}" placeholder="license">
+    </div>
+    <div class="form-group col-md-6">
+        <input id="stock" type="number" class="form-control" name="stock" value="{{stock}}" placeholder="blood stock">
+    </div>
+</div>
+{{/indivUser}}
+<div class="form-row input-wrapper">
+    <div class="form-group col-md-6">
+        {{#activeUser}}
+        <label for="email">Email (verified):</label>
+        {{/activeUser}}{{^activeUser}}
+        <label for="email">Email (not verified):</label>
+        {{/activeUser}}
+        <input type="email" class="form-control" name="email" id="email" value ="{{email}}" readonly>
+    </div>
+</div>

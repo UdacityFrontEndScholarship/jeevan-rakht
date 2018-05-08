@@ -1,0 +1,72 @@
+<fieldset class="px-2 m-0"><legend class="text-center"><strong>ADDRESS</strong></legend> 
+<div class="form-row ml-1">
+    {{#gps}}
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="addrtype" id="addrtype1" value="gps" required checked>
+        <label class="form-check-label" for="addrtype1">Use My Location</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="addrtype" id="addrtype2" value="userinput" required>
+        <label class="form-check-label" for="addrtype2">Add/Edit Address</label>
+    </div>
+    {{/gps}}
+    {{#manual}}
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="addrtype" id="addrtype1" value="gps" required >
+        <label class="form-check-label" for="addrtype1">Use My Location</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="addrtype" id="addrtype2" value="userinput" required checked>
+        <label class="form-check-label" for="addrtype2">Add/Edit Address</label>
+    </div>
+    {{/manual}}    
+    {{^manual}}{{^gps}}
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="addrtype" id="addrtype1" value="gps" required>
+        <label class="form-check-label" for="addrtype1">Use My Location</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="addrtype" id="addrtype2" value="userinput" required>
+        <label class="form-check-label" for="addrtype2">Add/Edit Address</label>
+    </div>
+    {{/gps}}{{/manual}}
+</div>
+<div class="manualaddress open text-left">
+<div class="form-row input-wrapper">
+    <div class="form-group col-12">
+		<input id="addr_line1" class="form-control" type="text" name="address1" value="{{address1}}" placeholder="addr line 1" readonly>
+    </div>
+    <div class="form-group col-12">
+        <input id="administrative_area_level_2" class="form-control" type="text" name="address2" value="{{address2}}" placeholder="addr line 2" readonly>
+    </div>
+</div>		
+<div class="form-row input-wrapper">
+    <div class="form-group col-md-3">
+        <input id="locality" type="text" class="form-control" name="city" value="{{city}}" placeholder="city" readonly>
+    </div>
+    <div class="form-group col-md-3">
+        <input id="administrative_area_level_1" type="text" class="form-control" name="state" value="{{state}}" placeholder="state" readonly>
+    </div>
+    <div class="form-group col-md-3">
+        <input id="postal_code" type="text" class="form-control" name="zip"  maxlength="6" value="{{zip}}" placeholder="pincode" readonly>
+    </div>    
+</div>		
+<div class="form-row input-wrapper">
+    <div class="form-group col-3">
+		<input id="country" type="text" class="form-control" name="country" value="India" placeholder="country" readonly>
+    </div>
+</div>		
+<!-- hidden -->
+<div class="form-row input-wrapper">
+    <div class="form-group col-md-3">
+        <input id="latitude" type="hidden" class="form-control" name="lat" value="{{lat}}">
+    </div>
+    <div class="form-group col-md-3">
+        <input id="longitude" type="hidden" class="form-control" name="lng" value="{{lng}}">
+    </div>
+    <div class="form-group col-md-3">
+        <input id="place_id" type="hidden" class="form-control" name="place_id" value="{{place_id}}">
+    </div>    
+</div>		
+</div>
+</fieldset>

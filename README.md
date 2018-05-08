@@ -1,7 +1,7 @@
 # GoogleUdacity_JeevanRakht
-
-The code and development of the JeevanRakht's website is housed here.   
-For more details - [Refer to this paper.](https://paper.dropbox.com/doc/JeevanRakht-WebD-Project-ZroUbusvKbwRSRCDFHCOV)
+JeevanRakht is a Virtual Blood Bank web app, that aims at providing mechanism for people in need to directly talk to willing donors, and also find out blood availability in nearby blood banks.
+On this platform people willing to donate blood can sign up with details of their blood groups, location. Also there’ll be accounts of blood banks with details like number of packages of blood available and blood group, location of blood bank to filter out nearest blood banks.
+You can find the project's wireframe below which depicts the basic flow of our web application.
 
 ## Project Wireframe
 ![wireframe - flow](https://user-images.githubusercontent.com/15084301/38657424-c22747d2-3e3d-11e8-9447-7862553d7142.jpg)
@@ -13,7 +13,7 @@ This project consists of two part like all web application.
 * Backend Part -- Node.js with express.js and MongoDB
 
 ## Color palette
-![color palette](https://user-images.githubusercontent.com/15084301/38657620-eccfa7bc-3e3e-11e8-9dc2-2e1d6622b8ce.jpg)
+![color palette](https://raw.githubusercontent.com/UdacityFrontEndScholarship/jeevan-rakht/master/public/assets/Color%20palette.jpg)
 
 ## Homepage Mockup
 [jeevanrakht.pdf](https://github.com/UdacityFrontEndScholarship/jeevan-rakht/files/1907369/jeevanrakht.pdf)
@@ -25,22 +25,45 @@ https://jeevanrakht.herokuapp.com/
 https://jeevanrakht.herokuapp.com/index.html
 
 ## Learn About Folder Structure (Check FAQ for more info on folder structure)
-### Backend Part (node.js with MongoDB)
-* \bin:
-* \config:
-* \db:
-* \models
-* \routes
-* \views
-* \controllers
-* app.js
+```
+Note : The folder structure may changes i.e we may include/exclude some folders/files as project progresses but the 
+overall sructure will remain as presented below:
+```
+### Backend Part (node.js, express.js with MongoDB)
+* \bin          -- Application code listening for HTTP requests
+* \config       -- DB connection URL, OAuth2 secrets etc to be used in application
+* \db           -- MongoDB Driver code to be used in application
+* \models       -- MongoDB collections schema
+* \routes       -- Apllication code for handling different UI routes e.g /login, /users etc
+* \views        -- Apllication related htmls files related to application routes
+* \controllers  -- Methods to interact with DB and reflects the data on views
+* \utils        -- Common Utility functions used in application
+* app.js        -- Application driver code
 
 ### Frontend Part
-* \public   -- html files
+* \public   
+  - index.html -- homepage for our website
 * \public\assets -- This will have scss, css, js, images
+  - css
+    - app.css   -- CSS for our application
+    - main.css  -- CSS for our website
+  - js
+    - app.js    -- JS for our application
+    - main.js   -- JS for website
+  - images      -- Put your images here
+  - optimized_images  -- we will create optimized images using grunt & image magick to optimize site/app performance.
+  - scss        -- We are not using it as most people are not familier with scss
+
 * gulpfile.js -- This is a task runner to launch app and monitor for file(scss,css,js) changes and reloads the browser.
 
 ### Common to both Frontend and Backend
+* \views -- This will have htmls for our app (the htmls are with .hjs extension)
+  - \auth     -- This module will have htmls related to authentication and authorization e.g login, signup etc.
+  - \main     -- This module will have htmls related to main blocks of app e.g locate and donate
+  - \profile  -- This module will have htmls related to user profiles
+  - \partials -- This module will have common htmls blocks which will be used in all other htmls. e.g head, header, footer etc
+  - app.hjs   -- This is the home page of our app
+  - 404.hjs   -- html for page not found
 * package.json
 
 ### Below is used to generate Optimized Image
@@ -67,10 +90,12 @@ verify with below command
 >>>node -v
 >>>npm -v
 ```
-
+* Make sure you run all your commands fron inside cloned /jeevan-rakht folder
 * Step3 -- Install the npm modules from the package.json
 ```
 >>> npm install
+this command installs all the node related packages required to run the app locally in 
+/node_modules folder. You can see this folder inside /jeevan-rakth folder after running npm install
 ```
 
 * Step4 -- Launch the application using below command:
@@ -94,8 +119,17 @@ i.e http://localhost:<your_env_port_variable>
 ```
 ![node_run](https://user-images.githubusercontent.com/15084301/38658058-17bea426-3e41-11e8-8dd6-9009ba81fcc3.JPG)
 
+```
+If you get an node-sass module error while running npm start saying app crashed,
+then run the command as shown in below image:
+```
+![image](https://user-images.githubusercontent.com/15084301/39688089-b99528fe-51ee-11e8-9ee2-35ec7a46ccf2.png)
+
 * Step5 -- No more steps
 ```
+Now you don't need to repeat above steps always to run the app rather its one time task.
+But if you clone the project in new location then again you need to repeat step 3(only).
+
 Connect with co-mods if you stuck anywhere
 ```
 ## RESTFull APIs for jeevanrakht web application

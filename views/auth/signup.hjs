@@ -1,100 +1,111 @@
 <!DOCTYPE html>
 <html>
     {{>head}}
-    <body id="particles-js" m-md-3>
+    <body id="particles-js">
         <!-- Main content goes here -->      
-        <div class="container vh-100 d-flex flex-column justify-content-between">
+        <div class="vh-100 d-flex flex-column justify-content-between">
           {{>header}}
-        <div id="oauth-login-result" class="col-md-12 bg-light text-center" style="display:none"></div>
-        <section id="signup" class="zi-1 text-center bg-light">
-        <div class="container p-3">
-            {{#alertMessage}}
-            <div class="alert alert-danger">{{alertMessage}}</div>
-            {{/alertMessage}}
-        <h2>Signup</h2>
-        <form method="POST">
-            <fieldset><legend>User Type</legend>
-                <input type="radio" name="usertype" value="Individual" required {{#inputValue.indiv}}checked{{/inputValue.indiv}}> Self(Individual)
-                <input type="radio" name="usertype" value="Non-Individual" required {{#inputValue.nonIndiv}}checked{{/inputValue.nonIndiv}}> Blood Bank(Non-Individual)
-                <table class="indiv">
-                <tr id ="tablerow">
-                    <td>First Name :</td>
-                    <td>
-                        <input type="text" name="firstname" value="{{inputValue.firstname}}" placeholder="first name">
-                    </td>
-                </tr>
-                <tr id ="tablerow">
-                    <td>Last Name :</td>
-                    <td>
-                        <input type="text" name="lastname" value="{{inputValue.lastname}}" placeholder="last name">
-                    </td>
-                </tr>
-                </table>
-                <table class="nonindiv">
-                <tr id ="tablerow">
-                    <td>Bank Name :</td>
-                    <td>
-                        <input type="text" name="orgname" value="{{inputValue.orgname}}" placeholder="bank name">
-                    </td>
-                </tr>
-                <tr id ="tablerow">
-                    <td>Bank License :</td>
-                    <td>
-                        <input type="text" name="license" value="{{inputValue.license}}" placeholder="license">
-                    </td>
-                </tr>
-                <tr id ="tablerow">
-                    <td>Blood Unit Stock :</td>
-                    <td>
-                        <input type="number" name="stock" value="{{inputValue.stock}}" placeholder="blood stock">
-                    </td>
-                </tr>
-                </table>
-            </fieldset>
-            <table id="tablecontainer">
-                <tr id ="tablerow">
-                    <td>Email :</td>
-                    <td>
-                        <input type="email" name="email" id="email" value="{{inputValue.email}}" placeholder="email">
-                    </td>
-                </tr>                
-                <tr id ="tablerow">
-                    <td>Password :</td>
-                    <td>
-                        <input type="password" name="pwd" id="password" value="{{pww}}" required  placeholder="password">
-                    </td>
-                </tr>
-                <tr id ="errorrow">
-                    <td></td><td>{{ pwerror }} </td>
-                </tr>
-                <tr id ="tablerow">
-                    <td>Confirm Password :</td>
-                    <td>
-                        <input type="password" name="verify" id="verify" value="{{vpw}}" required  placeholder="confirm password">
-                    </td>
-                </tr>
-                {{!-- <tr id ="tablerow">
-                    <td>Send me the email alert for available blood need near me :</td>
-                    <td>
-                        <input type="radio" name="notif" value="0" required checked> No
-                        <input type="radio" name="notif" value="1" required> Yes
-                    </td>
-                </tr>			 --}}
-            </table>
-            <br>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <a href="/"><button type="button" class="btn btn-secondary">Cancel</button></a>
-            <br>
-        </form>
-        <div class="row p-3">   
-            <div class="col">
-                <h5 class=""><span>Already have an account!</span></h5>
-                <p><a class="font-weight-bold" href="/login">Go to login</a></p>                    
+            <div id="oauth-login-result" class="container my-4 zi-1 hidden">
+                <div id="oauth-result-content"></div>
             </div>
-        </div>    
-            <!-- GOOGLE PLUS and FB SIGN IN buttons partials-->
-            {{>oauth2_btns}}
-        </div>  
+      <!-- Your code goes here -->      
+        <section id="signup" class="container my-5">
+            {{#alertMessage}}
+            <div class="alert alert-danger text-center zi-1">{{alertMessage}}</div>
+            {{/alertMessage}}            
+            <div class="main-content zi-1">
+                <a href="/" class="back-arrow">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <div class="signin-wrapper">    
+                    <form method="POST">
+                        <div class="radios">
+                            <h3>Entity Type:</h3>
+
+                            <label>
+                                <input type="radio" name="usertype" value="Individual" required {{#inputValue.indiv}}checked{{/inputValue.indiv}}> 
+
+                                <span>Self (Individual)</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="usertype" value="Non-Individual" required {{#inputValue.nonIndiv}}checked{{/inputValue.nonIndiv}}> 
+
+                                <span>Blood Bank (Non-Individual)</span>
+                            </label>
+                        </div>
+                                         
+                        <div class="indiv">
+                            <div class="input-wrapper">
+                                <input type="text" name="firstname" id="fname" value="{{inputValue.firstname}}" aria-describedby="fnameHelp" placeholder="first name">
+
+                                <i class="far fa-user"></i>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <input type="text" name="lastname" id="lname" value="{{inputValue.lastname}}" aria-describedby="lnameHelp" placeholder="last name">
+
+                                <i class="far fa-user"></i>   
+                            </div>                  
+                        </div>
+                        <!-- End indiv -->
+
+                        <div class="nonindiv">
+                            <div class="input-wrapper">
+                                <input id="orgname" type="text" name="orgname" value="{{inputValue.orgname}}" placeholder="bank name">
+
+                                <i class="fas fa-hospital-alt"></i>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <input id="license" type="text" name="license" value="{{inputValue.license}}" placeholder="license">
+
+                                <i class="fas fa-id-card"></i>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <input id="stock" type="number" name="stock" value="{{inputValue.stock}}" placeholder="blood stock">
+
+                                <i class="fas fa-tint"></i>
+                            </div>                    
+                        </div>
+                        <!-- End nonindiv -->
+                    
+                        <div class="input-wrapper">
+                            <input type="email" name="email" id="email" value="{{inputValue.email}}" required placeholder="email">
+
+                            <i class="far fa-envelope"></i>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <input type="password" name="pwd" id="password" value="{{pww}}" required placeholder="password">
+
+                            <i class="fas fa-unlock"></i>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <input type="password" name="verify" id="verify" value="{{vpw}}" required placeholder="confirm password">
+
+                            <i class="fas fa-unlock"></i>
+                        </div>                    
+                                            
+                        <button type="submit" class="btn-link">SIGN UP</button>
+                    </form>
+                    
+                    <div class="login-divider">
+                        <div class="bar bar-top"></div>
+                        <span class="login-or">OR</span>
+                        <div class="bar bar-bottom"></div>
+                    </div>
+                    <!-- GOOGLE PLUS and FB SIGN IN buttons partials-->
+                    {{>oauth2_btns}}
+                    <div class="help-txt mt-0 mb-2">
+                        <p>Already have an account? <strong>LOGIN</strong> <a href="/login">here</a>.</p>
+                    </div>                      
+                </div>
+                <!-- End signin-wrapper -->        
+            </div>  
+            <!-- End main-content -->
         </section>
         {{>footer}}
         </div>
@@ -112,11 +123,15 @@
             var RadioButtonCheck = $('form input[type=radio]:checked').val();
             console.log(RadioButtonCheck);
             if (RadioButtonCheck == "Individual") {
-                $(".indiv").addClass("open");
-                $(".nonindiv").removeClass("open");
+                $(".nonindiv").hide();
+                $(".nonindiv input").prop('required', false);
+                $(".indiv").slideDown();
+                $(".indiv input").prop('required', true);
             }else if (RadioButtonCheck == "Non-Individual") {
-                $(".nonindiv").addClass("open");
-                $(".indiv").removeClass("open");
+                $(".indiv").hide();
+                $(".indiv input").prop('required', false);
+                $(".nonindiv").slideDown();
+                $(".nonindiv input").prop('required', true);
             }
         };
         $(partySelect).on('change',callback);

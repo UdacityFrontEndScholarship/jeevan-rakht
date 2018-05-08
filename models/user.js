@@ -13,37 +13,34 @@ var UserAccount = new Schema({
     },
     password: {
         type: String,
-        required: false
     },
     user_type: {
         type: String,
         required: true
     },
     indiv: {
-        name: { type: String },
+        name: { type: String }, 
+        first_name: { type: String },  
+        last_name :{ type: String }, 
         indiv_type: { type: String },
-        age: { type: Number, min: 18, max: 65 }
+        age: { type: Number, min: 18, max: 65 },
+        blood_grp: { type: String },    
+        gender: { type: String },        
+        dob: { type: Date },            
+        last_donation: { type: Date },                
+        height: { type: Number },    
+        weight:{ type: Number },                    
+        appointment : {
+                        appointment_date: { type: Date },  
+                        donor_city :{ type: String } ,
+                        blood_bank_id :{ type: mongoose.Schema.Types.ObjectId } 
+                    }
     },
     non_indiv: {
         org_name: { type: String }, 
         license: { type: String },
         unit_stock: { type: Number}
     },
-    gender: {
-        type: String
-    },        
-    dob: {
-        type: Date
-    },            
-    last_donation: {
-        type: Date
-    },                
-    height: {
-        type: Number
-    },    
-    weight:{
-        type: Number
-    },            
     notification_flag: {
         type: String,
         required: true
@@ -55,28 +52,33 @@ var UserAccount = new Schema({
     mobile: {
         type: String
     },
-    password: {
-        type: String
-    },
     OAuth2_user: {
         type: Array
     },
-    blood_grp: {
-        type: String
-    },    
     address: {
+        addr_type: { type: String },
         addr_line1: { type: String },
         addr_line2: { type: String },
         city: { type: String },
         state: { type: String },
         pincode: { type: String },
-        place_id: { type: String }
+        place_id: { type: String },
+        coordinates: {
+                latdec: { type: Number },
+                londec: { type: Number }
+            }
     },    
     picture: {
         type: Array        
     },
+    createdAt: { 
+        type: Date, 
+        required: true, 
+        default: Date.now 
+    },
     updated: { 
         type: Date, 
+        required: true, 
         default: Date.now 
     }
 });

@@ -1,25 +1,34 @@
 {{! header.hjs }}
-<header class="container d-flex justify-content-center align-items-center">
-    <div class="d-flex flex-1 justify-content-sm-center">
+<header class="container">
+    <div class="header-content text-center">
+
         <a href="/" class="logo-wrapper zi-1">
             <img src="assets/images/logo.png" alt="" class="logo">
         </a>
+
+        {{#user}}
+        <a href="#!" class="profile-btn zi-1">
+            {{#user.picture}}
+            <img id="profile-icon" src="{{user.picture}}" alt="">
+            {{/user.picture}}
+
+            {{^user.picture}}
+            <i class="fas fa-user-circle"></i>
+            {{/user.picture}}
+
+            <div class="drop-menu">
+                <a href="/users" class="mb-1">Profile <i class="fas fa-cog fa-fw pl-1"></i></a>
+                <a href="/logout">Logout <i class="fas fa-sign-out-alt fa-fw pl-1"></i></a>
+            </div>
+        </a>
+        {{/user}} 
+
+        {{^user}}
+        <a href="/login" class="login-btn zi-1">
+            <i class="fas fa-lock"></i>
+            <span>Login</span>
+        </a>
+        {{/user}}
+
     </div>
-    {{#user}}
-    <div class="option-label mr-2 zi-1">
-        <a href="/logout" class="option-label">logout </a>
-    </div>
-    <a href="/users" class="zi-1">
-        <img class="profile-btn fas fa-user-circle" id="profile-icon" src="{{user.picture}}" alt="">
-    </a>
-    {{/user}} 
-    {{^user}}
-    <div class="option-label mr-2 zi-1">
-        <a href="/login" class="option-label">login </a>|
-        <a href="/signup" class="option-label"> signup</a>
-    </div>
-    <a href="/users" class="zi-1" id="header">
-        <img class="profile-btn fas fa-user-circle" src="" alt="">
-    </a>
-    {{/user}}
 </header>
