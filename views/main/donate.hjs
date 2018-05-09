@@ -1,57 +1,70 @@
 <!DOCTYPE html>
 <html>
-  {{>head}}
-  <body id="particles-js" m-md-3>
-    <div class="vh-100 d-flex flex-column justify-content-between">
-      
-      {{>header}}
+{{>head}}
 
-      <section class="container my-5">
-        {{#successMessage}}
-        <div class="alert alert-success text-center">{{successMessage}}</div>
-        {{/successMessage}}
-        {{#alertMessage}}
-        <div class="alert alert-danger text-center">{{alertMessage}}</div>
-        {{/alertMessage}}                                
-        <div class="main-content zi-1">
-        
-          <a href="/" class="back-arrow">
-            <i class="fas fa-arrow-left"></i>
-          </a>
-        
-          <div class="content-wrapper">
-            <h2><strong>DONATE</strong> Blood</h2>
-            
-            <form method="POST">
-              <div class="row donate-input-row">
-                <div class="col-md-8 py-0 px-0 px-sm-3">
-                  <div class="input-wrapper input-wrapper-lg">
-                    <input type="text" name="bookcity" value ="{{bookcity}}" autocomplete="off" class="input-location typeahead" title="Location" placeholder="Location" required>
-                    <i class="fas fa-map-marker-alt"></i>
-                  </div>
-                </div>
-          
-                <div class="col-md-4 py-0 px-0 px-sm-3">
-                  <div class="input-wrapper input-wrapper-lg">
-                    <input class="input-when" name="bookdate" value="{{bookdate}}" title="When" placeholder="When" required>
-                    <i class="far fa-calendar-alt"></i>
-                  </div>
+<body id="particles-js" m-md-3>
+  <div class="vh-100 d-flex flex-column justify-content-between">
+
+    {{>header}}
+
+    <section class="container my-5">
+      {{#successMessage}}
+      <div class="alert alert-success text-center">{{successMessage}}</div>
+      {{/successMessage}} {{#alertMessage}}
+      <div class="alert alert-danger text-center">{{alertMessage}}</div>
+      {{/alertMessage}}
+      <div class="main-content zi-1">
+
+        <a href="/" class="back-arrow">
+          <i class="fas fa-arrow-left"></i>
+        </a>
+
+        <div class="content-wrapper">
+          <h2>
+            <strong>DONATE</strong> Blood</h2>
+
+          <form method="POST" name='donate-form' onsubmit="return validateForm()">
+            <div class="row donate-input-row">
+              <div class="col-md-8 py-0 px-0 px-sm-3">
+                <div class="input-wrapper input-wrapper-lg">
+                  <input type="text" name="bookcity" value="{{bookcity}}" autocomplete="off" class="input-location typeahead" title="Location"
+                    placeholder="Location" required>
+                  <i class="fas fa-map-marker-alt"></i>
                 </div>
               </div>
-          
-              <button class="btn-link">BOOK</button>
-            </form>
-          </div>
-          <!-- End content-wrapper -->
-        
+
+              <div class="col-md-4 py-0 px-0 px-sm-3">
+                <div class="input-wrapper input-wrapper-lg">
+                  <input class="input-when" name="bookdate" value="{{bookdate}}" title="When" placeholder="When" required>
+                  <i class="far fa-calendar-alt"></i>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn-link">BOOK</button>
+          </form>
         </div>
-        <!-- End main-content -->
-      </section>
+        <!-- End content-wrapper -->
 
-      {{>footer}}
+      </div>
+      <!-- End main-content -->
+    </section>
 
-    </div>
+    {{>footer}}
 
-    {{>utilityJS}}
-  </body>
+  </div>
+
+  {{>utilityJS}}
+  <script>
+    function validateForm() {
+      var city = $('form input[name=bookcity]').val();
+      var regex = /[^a-zA-z\s]/;
+      if (regex.test(city)) {
+        alert('city must contain only alphabets and spaces!');
+        return false;
+      }
+    }
+  </script>
+</body>
+
 </html>
