@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html>
-    {{>head}}
-    <body id="particles-js">
-        <!-- Main content goes here -->      
-        <div class="vh-100 d-flex flex-column justify-content-between">
-          {{>header}}
-            <div id="oauth-login-result" class="container my-4 zi-1 hidden">
-                <div id="oauth-result-content"></div>
-            </div>
-      <!-- Your code goes here -->      
+{{>head}}
+
+<body id="particles-js">
+    <!-- Main content goes here -->
+    <div class="vh-100 d-flex flex-column justify-content-between">
+        {{>header}}
+        <div id="oauth-login-result" class="container my-4 zi-1 hidden">
+            <div id="oauth-result-content"></div>
+        </div>
+        <!-- Your code goes here -->
         <section id="signup" class="container my-5">
             {{#alertMessage}}
             <div class="alert alert-danger text-center zi-1">{{alertMessage}}</div>
-            {{/alertMessage}}            
+            {{/alertMessage}}
             <div class="main-content zi-1">
                 <a href="/" class="back-arrow">
                     <i class="fas fa-arrow-left"></i>
                 </a>
-                <div class="signin-wrapper">    
-                    <form method="POST">
+                <div class="signin-wrapper">
+                    <form method="POST" name="signup-form" onsubmit="return validateForm()">
                         <div class="radios">
                             <h3>Entity Type:</h3>
 
                             <label>
-                                <input type="radio" name="usertype" value="Individual" required {{#inputValue.indiv}}checked{{/inputValue.indiv}}> 
+                                <input type="radio" name="usertype" value="Individual" required {{#inputValue.indiv}}checked{{/inputValue.indiv}}>
 
                                 <span>Self (Individual)</span>
                             </label>
 
                             <label>
-                                <input type="radio" name="usertype" value="Non-Individual" required {{#inputValue.nonIndiv}}checked{{/inputValue.nonIndiv}}> 
+                                <input type="radio" name="usertype" value="Non-Individual" required {{#inputValue.nonIndiv}}checked{{/inputValue.nonIndiv}}>
 
                                 <span>Blood Bank (Non-Individual)</span>
                             </label>
                         </div>
-                                         
+
                         <div class="indiv">
                             <div class="input-wrapper">
                                 <input type="text" name="firstname" id="fname" value="{{inputValue.firstname}}" aria-describedby="fnameHelp" placeholder="first name">
@@ -45,8 +46,8 @@
                             <div class="input-wrapper">
                                 <input type="text" name="lastname" id="lname" value="{{inputValue.lastname}}" aria-describedby="lnameHelp" placeholder="last name">
 
-                                <i class="far fa-user"></i>   
-                            </div>                  
+                                <i class="far fa-user"></i>
+                            </div>
                         </div>
                         <!-- End indiv -->
 
@@ -67,10 +68,10 @@
                                 <input id="stock" type="number" name="stock" min="0" value="{{inputValue.stock}}" placeholder="Blood stock(in ltr)">
 
                                 <i class="fas fa-tint"></i>
-                            </div>                    
+                            </div>
                         </div>
                         <!-- End nonindiv -->
-                    
+
                         <div class="input-wrapper">
                             <input type="email" name="email" id="email" value="{{inputValue.email}}" required placeholder="email">
 
@@ -87,11 +88,11 @@
                             <input type="password" name="verify" id="verify" value="{{vpw}}" required placeholder="confirm password">
 
                             <i class="fas fa-unlock"></i>
-                        </div>                    
-                                            
+                        </div>
+
                         <button type="submit" class="btn-link">SIGN UP</button>
                     </form>
-                    
+
                     <div class="login-divider">
                         <div class="bar bar-top"></div>
                         <span class="login-or">OR</span>
@@ -100,26 +101,28 @@
                     <!-- GOOGLE PLUS and FB SIGN IN buttons partials-->
                     {{>oauth2_btns}}
                     <div class="help-txt mt-0 mb-2">
-                        <p>Already have an account? <strong>LOGIN</strong> <a href="/login">here</a>.</p>
-                    </div>                      
+                        <p>Already have an account?
+                            <strong>LOGIN</strong>
+                            <a href="/login">here</a>.</p>
+                    </div>
                 </div>
-                <!-- End signin-wrapper -->        
-            </div>  
+                <!-- End signin-wrapper -->
+            </div>
             <!-- End main-content -->
         </section>
         {{>footer}}
-        </div>
-        {{>utilityJS}}
-        <!--Ajax Call to SIGN IN -->
-        {{>oauth2_ajax}}
-	    <!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
-	    <script async defer src="https://apis.google.com/js/client:platform.js?onload=start"></script>
-	    <!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->        
-        
-        <!--Below scripts controlls party type radio button action -->
-        <script>
+    </div>
+    {{>utilityJS}}
+    <!--Ajax Call to SIGN IN -->
+    {{>oauth2_ajax}}
+    <!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
+    <script async defer src="https://apis.google.com/js/client:platform.js?onload=start"></script>
+    <!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->
+
+    <!--Below scripts controlls party type radio button action -->
+    <script>
         var partySelect = $("input:radio[name=usertype]");
-        var callback = function(evt){
+        var callback = function (evt) {
             var RadioButtonCheck = $('form input[type=radio]:checked').val();
             console.log(RadioButtonCheck);
             if (RadioButtonCheck == "Individual") {
@@ -127,15 +130,54 @@
                 $(".nonindiv input").prop('required', false);
                 $(".indiv").slideDown();
                 $(".indiv input").prop('required', true);
-            }else if (RadioButtonCheck == "Non-Individual") {
+            } else if (RadioButtonCheck == "Non-Individual") {
                 $(".indiv").hide();
                 $(".indiv input").prop('required', false);
                 $(".nonindiv").slideDown();
                 $(".nonindiv input").prop('required', true);
             }
         };
-        $(partySelect).on('change',callback);
-        $(window).on('load',callback);
-        </script>        
-      </body>
-  </html>
+        $(partySelect).on('change', callback);
+        $(window).on('load', callback);
+        function validateForm() {
+            var radioButtonCheck = $('form input[type=radio]:checked').val();
+            var pass = $('#password').val();
+            var veriPass = $('#verify').val();
+            if (radioButtonCheck == 'Individual') {
+                var fname = $('#fname').val();
+                var lname = $('#lname').val();
+                if (fname.length < 3) {
+                    alert('first name must contain minimum 3 chars!');
+                    return false;
+                }
+                if (lname.length < 3) {
+                    alert('last name must contain minimum 3 chars!');
+                    return false;
+                }
+            }
+            if (radioButtonCheck == 'Non-Individual') {
+                var orgname = $('#orgname').val();
+                var license = $('#license').val();
+                if (orgname.length < 3) {
+                    alert('bank name must contain minimum 3 chars');
+                    return false;
+                }
+                if (license.length < 3) {
+                    alert('license name must contain minimum 3 chars');
+                    return false;
+                }
+            }
+            var regex = /^(?=.*[a-z])(?=.*[A-Z])/;
+            if (!regex.test(pass) || pass.length < 6) {
+                alert('password must contain one capital & one small letter with total six chars minimum');
+                return false;
+            }
+            if (pass !== veriPass) {
+                alert('passwords do not match!');
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
