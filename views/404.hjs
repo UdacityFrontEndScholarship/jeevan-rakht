@@ -4,29 +4,27 @@
     {{>head}}
 
     <body id="particles-js" class="m-md-3">
-        <!-- Main content goes here -->      
+        <!-- Main content goes here -->
         <div class="container vh-100 d-flex flex-column justify-content-between">
            {{>header}}
-      <!-- Your code goes here -->      
-        <section class="my-5">
-            <div class="main-content container zi-1 p-4 d-flex flex-column flex-wrap align-items-center">
-                <div id="content-heading">
-                    <h2 class="text-uppercase"><strong>404</strong></h2>            
-                </div>                
+      <!-- Your code goes here -->
+      <section class="my-5">
+         <div class="main-content container zi-1 p-4 d-flex flex-column flex-wrap align-items-center">
+           <div id="imat" class="text-center">
+                    <img src="assets/images/404Errordk.png" alt="404 Eror Page" class="w-50 h-100">
+                </div>
                 <div class="row text-center">
                 <div class="col">
-                    <p>We couldn’t find this page.</p>
-                    <p>If you came here by folowing links from our site then please Contact Us to report the issue.</p>
-                    <a href="/" class="btn-link my-2">Return to homepage</a>
-                </div>    
-                </div>	    
-            </div>	
-        </section>        
+                   <p id="mas">Sorry , This branch has been robbed , You can go to our Home bank</p>
+                   <a href="/" class="btn-link my-2">Return to homepage</a>
+                </div>
+                </div> </section>
+
             {{>footer}}
 
         </div>
         <!-- End Container -->
-        
+
        {{>utilityJS}}
       </body>
   </html>
