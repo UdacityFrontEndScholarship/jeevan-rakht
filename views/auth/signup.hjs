@@ -89,7 +89,7 @@
                             <i class="fas fa-unlock"></i>
                         </div>                    
                                             
-                        <button type="submit" class="btn-link">SIGN UP</button>
+                        <button id='signup-submit' type="submit" class="btn-link">SIGN UP</button>
                     </form>
                     
                     <div class="login-divider">

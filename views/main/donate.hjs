@@ -39,7 +39,7 @@
                 </div>
               </div>
           
-              <button class="btn-link">BOOK</button>
+              <button class="btn-link" id='donate-submit'>BOOK</button>
             </form>
           </div>
           <!-- End content-wrapper -->
