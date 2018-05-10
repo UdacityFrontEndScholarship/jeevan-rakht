@@ -519,9 +519,10 @@ display: table;
   width: 100%;
   border-radius: 10px;
   position: relative;
-  background-color: transparent;
 }
-
+#imat{
+background-color: transparent;
+}
 .back-arrow {
   color: var(--text-color-light);
   position: absolute;
