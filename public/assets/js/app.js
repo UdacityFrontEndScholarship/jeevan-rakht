@@ -64,16 +64,17 @@ $('#signup-submit').on('click',function (event){
 		var fname = $('#fname').val();
 		var lname = $('#lname').val();
 		if(checkName('First Name',fname)==false) flag = true;
-		if(checkName('Last Name',lname)==false) flag = true;;
+		else if(checkName('Last Name',lname)==false) flag = true;
+		else if(validatePass(pass,veriPass)==false) flag = true;
 	}
 	if (radioButtonCheck == 'Non-Individual') {
 		var orgname = $('#orgname').val();
 		var license = $('#license').val();
 		if(checkName('Organization Name',orgname)==false) flag = true;
-		if(checkLength('License Nanme',license,3)==false) flag = true;
+		else if(checkLength('License Nanme',license,3)==false) flag = true;
+		else if(validatePass(pass,veriPass)==false) flag = true;
 	}
 	//regular expression to chceck if the password contains uppercase and lowercase letters
-	if(validatePass(pass,veriPass)==false) flag = true;
 	if(flag) event.preventDefault();
 });
 
@@ -182,19 +183,19 @@ $('#profile-update').on('click',function(event){
 	if(jQuery.contains(document,orgname[0])){
 		let license = $('form input[name=license]');
 		if(checkName('Organization Name',orgname.val())==false) flag = true;
-		if(checkLength('License Name',license.val(),3)==false) flag =true;
+		else if(checkLength('License Name',license.val(),3)==false) flag =true;
 	}else{
 		let lname = $('form input[name=lastname]');
 		let bg = $('form select[name=bloodgroup] :selected');
 		let gen = $('form select[name=gender] :selected');
 		if(checkName('First Name',fname.val())==false) flag = true;
-		if(checkName('Last Name',lname.val())==false) flag = true;
+		else if(checkName('Last Name',lname.val())==false) flag = true;
 		//blocks to check if the user has selected blood group and gender from the select dropdown
-		if(bg.text()==='Blood group'){
+		else if(bg.text()==='Blood group'){
 			alert('Please select Blood Group!');
 			flag = true;
 		}
-		if(gen.text()==='select gender'){
+		else if(gen.text()==='select gender'){
 			alert('Please select gender!');
 			flag = true;
 		}
@@ -203,11 +204,11 @@ $('#profile-update').on('click',function(event){
 	//if the add/edit address radio is checked then only check for the input fields otherwise the fields will be filled automatically using Use My Location radio
 	if(radioButtonCheck==='userinput'){
 		if(checkRequired('Address Line 1',addr1.val())==false || checkSpecial('Address Line 1',addr1.val())==false) flag = true;
-		if(checkRequired('Address Line 2',addr2.val())==false || checkSpecial('Address Line 2',addr2.val())==false) flag = true;
-		if(checkAlphaSpaces('City',city.val())==false) flag = true;
-		if(checkAlphaSpaces('State',state.val())==false) flag = true;
+		else if(checkRequired('Address Line 2',addr2.val())==false || checkSpecial('Address Line 2',addr2.val())==false) flag = true;
+		else if(checkAlphaSpaces('City',city.val())==false) flag = true;
+		else if(checkAlphaSpaces('State',state.val())==false) flag = true;
 		//check for pincode validity only if the pincode is filled since it's not required
-		if(pincode.val().length!==0 && checkPincode(pincode.val())==false) flag = true;
+		else if(pincode.val().length!==0 && checkPincode(pincode.val())==false) flag = true;
 	}
 
 	if(flag) event.preventDefault();
