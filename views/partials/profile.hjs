@@ -74,7 +74,7 @@
         <input id="license" type="text" class="form-control" name="license" value="{{license}}" placeholder="license" required>
     </div>
     <div class="form-group col-md-6">
-        <input id="stock" type="number" class="form-control" name="stock" value="{{stock}}" placeholder="blood stock" required>
+        <input id="stock" type="number" class="form-control" name="stock" value="{{stock}}" placeholder="blood stock" min="0" required>
     </div>
 </div>
 {{/indivUser}}

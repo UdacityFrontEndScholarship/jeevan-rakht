@@ -64,22 +64,23 @@ $('#signup-submit').on('click',function (event){
 		var fname = $('#fname').val();
 		var lname = $('#lname').val();
 		if(checkName('First Name',fname)==false) flag = true;
-		if(checkName('Last Name',lname)==false) flag = true;;
+		else if(checkName('Last Name',lname)==false) flag = true;
+		else if(validatePass(pass,veriPass)==false) flag = true;
 	}
 	if (radioButtonCheck == 'Non-Individual') {
 		var orgname = $('#orgname').val();
 		var license = $('#license').val();
 		if(checkName('Organization Name',orgname)==false) flag = true;
-		if(checkLength('License Nanme',license)==false) flag = true;
+		else if(checkLength('License Nanme',license,3)==false) flag = true;
+		else if(validatePass(pass,veriPass)==false) flag = true;
 	}
 	//regular expression to chceck if the password contains uppercase and lowercase letters
-	if(validatePass(pass,veriPass)==false) flag = true;
 	if(flag) event.preventDefault();
 });
 
 //function to check if fname/lname are valid by checking their length and checking if they contain a number
 function checkName(field,val){
-	return checkLength(field,val)&&checkNumber(field,val);
+	return checkLength(field,val,3)&&checkNumber(field,val);
 }
 
 //function to check if the input contains any numbers
@@ -91,11 +92,11 @@ function checkNumber(field,val){
 	}else return true;
 }
 
-//function to check if the length of an input if greater than 3 characters
-function checkLength(field,val){
+//function to check if the length of an input if greater than len characters
+function checkLength(field,val,len){
 	val = val.trim();
-	if(val.length<3){
-		alert(field +" must contain minimum 3 characters");
+	if(val.length<len){
+		alert(field +" must contain minimum " +len+" characters");
 		return false;
 	}else return true;
 }
@@ -119,12 +120,96 @@ function validatePass(pass,veriPass){
 $('#donate-submit').on('click',function (event){
   //flag to decide whether to submit the form or not
   let flag = false;
-  var city = $('form input[name=bookcity]').val().trim();
-  //regular experssion to check for charecters other than uppercase/lowercase letters and space
-  var regex = /[^a-zA-z\s]/;
-  if (regex.test(city)) {
-	alert('city must contain only alphabets and spaces!');
-	flag = true;
-  }
+  var city = $('form input[name=bookcity]').val();
+  if(checkAlphaSpaces('City',city)==false) flag = true;
   if(flag) event.preventDefault();
+});
+
+//function to check if the field is filled or not if it's required
+function checkRequired(field,val){
+	val = val.trim();
+	if(val.length==0){
+		alert(field +' is required!');
+		return false;
+	}else return true;
+}
+
+//function to check if the first character of an input is a special character, returns false if the first character is a special character
+function checkSpecial(field,val){
+	val = val.trim();
+	//regex to check if the first character is an alphanumeric
+	let regex = /^[A-Za-z0-9]/;
+	if(!regex.test(val)){
+		alert(field +"'s first character should be an alphanumberic character, not a special character!");
+		return false;
+	}else return true;
+}
+
+//function to check if the input contains only alphabets and spaces
+function checkAlphaSpaces(field,val){
+	val = val.trim();
+	//regex to check for characters other than alphabets and spaces
+	let regex = /[^a-zA-z\s]/;
+	if(regex.test(val)){
+		alert(field +' must contain only alphabets and spaces!');
+		return false;
+	}else return true;
+}
+
+//function to validate pincode i.e if it's a 6 digit numerical value
+function checkPincode(val){
+	val = val.trim();
+	if(val.length!==6 || isNaN(val)){
+		alert('Pincode must be a six digit number!');
+		return false;
+	}else return true;
+}
+
+$('#profile-update').on('click',function(event){
+	//flag to decide whether to submit the form or not
+	let flag = false;
+
+	//getting elements of all the inputs
+	let orgname = $('form input[name=orgname]');
+	let fname = $('form input[name=firstname]');	
+	let addr1 = $('form input[name=address1]');
+	let addr2 = $('form input[name=address2]');
+	let city = $('form input[name=city]');
+	let state = $('form input[name=state]');
+	let pincode = $('form input[name=zip]');
+	let radioButtonCheck = $('form input[type=radio]:checked').val();
+
+	//if-else condition to check if the current form is for an organization or an individual based on if the form contains element 'orgname' or 'firstname'
+	if(jQuery.contains(document,orgname[0])){
+		let license = $('form input[name=license]');
+		if(checkName('Organization Name',orgname.val())==false) flag = true;
+		else if(checkLength('License Name',license.val(),3)==false) flag =true;
+	}else{
+		let lname = $('form input[name=lastname]');
+		let bg = $('form select[name=bloodgroup] :selected');
+		let gen = $('form select[name=gender] :selected');
+		if(checkName('First Name',fname.val())==false) flag = true;
+		else if(checkName('Last Name',lname.val())==false) flag = true;
+		//blocks to check if the user has selected blood group and gender from the select dropdown
+		else if(bg.text()==='Blood group'){
+			alert('Please select Blood Group!');
+			flag = true;
+		}
+		else if(gen.text()==='select gender'){
+			alert('Please select gender!');
+			flag = true;
+		}
+	}
+
+	//if the add/edit address radio is checked then only check for the input fields otherwise the fields will be filled automatically using Use My Location radio
+	if(radioButtonCheck==='userinput'){
+		if(checkRequired('Address Line 1',addr1.val())==false || checkSpecial('Address Line 1',addr1.val())==false) flag = true;
+		else if(checkRequired('Address Line 2',addr2.val())==false || checkSpecial('Address Line 2',addr2.val())==false) flag = true;
+		else if(checkAlphaSpaces('City',city.val())==false) flag = true;
+		else if(checkAlphaSpaces('State',state.val())==false) flag = true;
+		//check for pincode validity only if the pincode is filled since it's not required
+		else if(pincode.val().length!==0 && checkPincode(pincode.val())==false) flag = true;
+	}
+
+	if(flag) event.preventDefault();
 });
