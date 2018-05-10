@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 
 var signupUser = function(usrObj, callback) {
     var newUser = new UserAcct(usrObj);
-    bcrypt.genSalt(11, function(err, salt) {
+    bcrypt.genSalt(10, function(err, salt) {
         if (err) {
             console.log('Some error occured while salting.', err);
             callback(err, undefined);
@@ -137,7 +137,12 @@ var updatePassword = function(userObj, callback) {
         if (err) {
             callback(err, undefined);
         } else if (result) {
-            var salt = bcrypt.genSaltSync(10);
+        bcrypt.genSalt(10, function(err, salt) {
+            if (err) {
+                console.log('Some error occured while salting.', err);
+                callback(err, undefined);
+                return;
+            }                    
             bcrypt.hash(userObj.password, salt, function(err, hash) {
                 if (err) {
                     callback(err, undefined);
@@ -154,6 +159,7 @@ var updatePassword = function(userObj, callback) {
                     });
                 }
             });
+        });
         } else if (!result) {
             callback(undefined, undefined);
         }
