@@ -2,3 +2,137 @@
 This is our main css file.
 This file has been emptied because the whole website is being redesigned.
 */
+
+/* Importing brand fonts Montserrat and Spectral */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Spectral');
+
+
+footer {
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Spectral', serif;
+    background: #111111;
+    color: #999999;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+
+}
+
+/* footer .container {
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+} */
+
+footer ul li a, 
+footer ul li a:visited {
+    color: #999999;
+}
+
+footer ul li a:hover {
+    color: #eeeeee;
+    text-decoration: none;
+}
+
+footer .footer-email {
+    color: #eeeeee;
+    background: #333333;
+    border: none;
+    height: 3em;
+    font-size: 1em;
+    padding-left: 1em;
+    margin: 0 !important;
+    width: 70%;
+}
+
+footer .footer-email:active {
+    color: #eeeeee;
+}
+
+footer input::placeholder {
+    font-size: 0.9em !important;
+    color: #cccccc;
+}
+
+footer h5 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+footer .footer-subscribe, footer .after-footer {
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer .footer-subscribe h5 {
+    display: inline;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+footer .email-btn-wrapper {
+    /* white-space: nowrap; */
+    border: 1px solid #111111;
+    color: #cccccc;
+    width: 100%;
+}
+
+footer .btn-join {
+    height: 3em;
+    margin-left: -4px;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: #222222;
+    color: #cccccc;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+footer .email-btn-wrapper p {
+    font-size: 0.8em;
+}
+
+footer .after-footer {
+    background: #000000;
+}
+
+footer .after-footer a,
+footer .after-footer a:visited, 
+footer .after-footer a:active {
+    color: #444444;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+footer .after-footer a:hover {
+    text-decoration: none;
+    color: #555555;
+}
+
+@media (max-width: 576px) {
+    .after-footer {
+        text-align: center !important;
+        /* padding-left: 0 !important;
+        padding-right: 0 !important; */
+        padding: auto 0 !important;
+
+    }
+}
+
+@media (max-width: 768px) {
+    .after-footer {
+        text-align: center !important;
+        /* padding-left: 0 !important;
+        padding-right: 0 !important; */
+        margin: auto !important;
+    }
+}
+
+@media (min-width: 850px) {
+    .after-footer {
+        padding-right: 10% !important;
+    }
+}
+
