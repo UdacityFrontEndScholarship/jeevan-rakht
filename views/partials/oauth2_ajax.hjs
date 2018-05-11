@@ -13,9 +13,14 @@
                         $('#oauth-login-result').removeClass("hidden");
 						if (result){
 							$('#oauth-result-content').html('<p>Login Successful!</p>'+ result + '<p class="loading">Redirecting <span>.</span><span>.</span><span>.</span></p>');
-
+							var params = new URLSearchParams(window.location.search);
+							var nextURL = params.get('next');
 							setTimeout(function(){
-								window.location.href="/";
+								if (nextURL){
+									window.location.href=nextURL;		
+								}else{
+									window.location.href="/";
+								}								
 							},4000);
 						}else
 						{
@@ -69,9 +74,14 @@
 		      // Handle or verify the server response if necessary.
 		      	if(result){
 			        $('#oauth-result-content').html('<p>Login Successful!</p>'+ result + '<p class="loading">Redirecting <span>.</span><span>.</span><span>.</span></p>');
-					
+					var params = new URLSearchParams(window.location.search);
+					var nextURL = params.get('next');					
 			        setTimeout(function() {
-			        		window.location.href = "/";
+						if (nextURL){
+							window.location.href=nextURL;		
+						}else{
+							window.location.href="/";
+						}								
 			        }, 4000);
 			    }
 			    else{

@@ -25,7 +25,7 @@
                     {{>profile}}     
                     {{>user_address}}      
                 <br>	
-                    <button type="submit" class="btn-link">SAVE</button>
+                    <button type="submit" class="btn-link" id="profile-update">SAVE</button>
                 <br>                
                 </form>                
                 <div class="row no-gutters text-center" id="profile-util">

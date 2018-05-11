@@ -53,8 +53,8 @@ body {
     margin-top: 10px;
   }
   section#login, section#signup, section#main{
-    margin: 0; 
-    }   
+    margin: 0;
+    }
 }
 
 .card-img-top {
@@ -86,7 +86,7 @@ body {
   outline: none;
 }
 
-.input-wrapper input:hover, 
+.input-wrapper input:hover,
 .input-wrapper select:hover {
   border-color: var(--secondary-color);
 }
@@ -147,7 +147,7 @@ select.form-control:not([size]):not([multiple]) {
 .input-wrapper-lg select {
   padding: 16px 40px 16px 15px;
 }
-  
+
 ::-webkit-input-placeholder {
   color: var(--accent-color);
 }
@@ -185,7 +185,7 @@ select.form-control:not([size]):not([multiple]) {
   cursor: pointer;
   font-family: Spectral, serif;
   font-size: 1rem;
-  padding-left: 12px;  
+  padding-left: 12px;
 }
 
 /* === Button === */
@@ -425,25 +425,25 @@ canvas {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
-    margin-left: auto; 
+    margin-left: auto;
   }
 }
 
 @media (min-width: 768px) {
   .app-footer {
-    max-width: 720px; 
-  } 
+    max-width: 720px;
+  }
 }
 
 @media (min-width: 992px) {
   .app-footer {
-    max-width: 960px; 
-  } 
+    max-width: 960px;
+  }
 }
 
 @media (min-width: 1200px) {
   .app-footer {
-    max-width: 1140px; 
+    max-width: 1140px;
   }
 }
 
@@ -495,7 +495,7 @@ fieldset{
     border-image: initial;
 }
 legend, label{
-    width: 30vmax;    
+    width: 30vmax;
     font-family: Spectral, sans-serif;
     font-style: italic;
     color: var(--text-color-dark);
@@ -520,7 +520,9 @@ display: table;
   border-radius: 10px;
   position: relative;
 }
-
+#imat{
+background-color: transparent;
+}
 .back-arrow {
   color: var(--text-color-light);
   position: absolute;
@@ -547,7 +549,7 @@ display: table;
   padding: 75px 0 63px;
 }
 
-.hidden{ 
+.hidden{
   display: none !important;
 }
 
@@ -633,7 +635,7 @@ display: table;
   width: 100%;
   position: relative;
   height: 40px;
-  margin-top: 25px;  
+  margin-top: 25px;
   margin-bottom: 5px;
 }
 .login-divider .bar {
@@ -717,7 +719,7 @@ display: table;
   animation-delay: .4s;
 }
 
-@keyframes blink { 
+@keyframes blink {
   0% {
     opacity: .2;
   }
@@ -749,7 +751,7 @@ display: table;
   font-size: 1.6rem;
   font-family: Montserrat, sans-serif;
   text-align: center;
-  color: var(--text-color-dark);  
+  color: var(--text-color-dark);
 }
 .donate-input-row {
   margin: 60px 0 25px;
@@ -817,7 +819,7 @@ span.flatpickr-weekday {
   border-color: var(--secondary-color);
 }
 
-.flatpickr-day.today:hover, 
+.flatpickr-day.today:hover,
 .flatpickr-day.today:focus {
   background: var(--white);
   border-color: var(--secondary-color);
@@ -854,3 +856,104 @@ span.flatpickr-weekday {
     margin-top: 100px;
   }
 }
+
+/*Page 404 Error Designs latest modification*/
+
+/*Spcecial Text In error page */
+#mas {
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	word-spacing: 0.01em;
+	letter-spacing: 0.02em;
+	margin-bottom : 4%;
+}
+
+/*Error page CSS*/
+::-webkit-scrollbar {
+  display: none;
+}
+
+#error-page {
+  background: -webkit-radial-gradient(center, ellipse cover,  #960000 0%,#770000 41%,#4C0000 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding-bottom: 65px;
+  font-size: 20px;
+  height: 100vh;
+}
+
+body.ghost-bg{
+  background: -webkit-radial-gradient(center, ellipse cover,  #009688 0%,#00796B 41%,#004D40 100%);
+}
+
+body.spider-bg{
+  background: -webkit-radial-gradient(center, ellipse cover,  #FFB300 0%,#FFA000 41%,#E65100 100%);
+}
+
+svg {
+  height: 45vh;
+}
+svg:hover {
+  cursor: pointer;
+}
+
+#error-page-button a{
+  text-decoration: none;
+  color: #ffffff;
+}
+/* VAMPIRE */
+
+#head {
+  animation-name: vamp-head;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#arm {
+  animation-name: vamp-arm;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes vamp-head {
+  0% {
+    transform: translateY(20px);
+  }
+
+  30% {
+    transform: translateY(80px);
+  }
+
+  60% {
+    transform: translateY(80px);
+  }
+
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes vamp-arm {
+  0% {
+    transform: translateY(-20px);
+  }
+
+  30% {
+    transform: translateY(-80px);
+  }
+  60% {
+    transform: translateY(-80px);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
