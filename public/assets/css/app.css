@@ -76,7 +76,7 @@ body {
   display: block;
   width: 100%;
   margin-bottom: 15px;
-  padding: 11px 35px 11px 15px;
+  padding: 11px 38px 11px 15px;
   border: 1.2px solid #f3f3f3;
   border-radius: 3px;
   background: #fff;
@@ -96,6 +96,12 @@ body {
   font-style: normal;
   box-shadow: 0 0 5px var(--secondary-color);
   border-color: var(--secondary-color);
+}
+
+.input-wrapper input[readonly]:not(.flatpickr-input) {
+  background-color: #e9ecef;
+  opacity: 1;
+  color: var(--text-color-dark);
 }
 
 .input-wrapper select.no-caret {
@@ -160,6 +166,22 @@ select.form-control:not([size]):not([multiple]) {
   color: var(--accent-color);
 }
 
+fieldset {
+  margin-bottom: 28px;
+  border: 2.5px solid #f1f1f1;
+}
+
+legend {
+  width: 285px;
+  color: var(--text-color-dark);
+  font-size: 1.25rem;
+}
+
+label {
+  margin: .275rem  0 .22rem .1rem;
+  font-family: Spectral, serif;
+}
+
 .radios {
   margin-bottom: 15px;
 }
@@ -192,8 +214,8 @@ select.form-control:not([size]):not([multiple]) {
 
 .btn-link {
   display: block;
-  width: 100%;
-  max-width: 300px;
+  max-width: 100%;
+  width: 300px;
   margin: 0 auto;
   padding: 18px 0 15px;
   background: linear-gradient(var(--primary-color-light), var(--primary-color-light));
@@ -473,7 +495,7 @@ canvas {
 
 .footer-dot {
   color: var(--text-color-dark);
-  font-size: .9rem;
+  font-size: 1rem;
 }
 
 @media (min-width: 480px) {
@@ -482,24 +504,11 @@ canvas {
   }
 
   .footer-dot {
-    font-size: 1.05rem;
+    font-size: 1.3rem;
   }
 }
 
 /* Added by Backend team */
-fieldset{
-    margin: 10px;
-    border-width: 2px;
-    border-style: groove;
-    border-color: threedface;
-    border-image: initial;
-}
-legend, label{
-    width: 30vmax;
-    font-family: Spectral, sans-serif;
-    font-style: italic;
-    color: var(--text-color-dark);
-}
 
 .indiv, .nonindiv, .gpsaddress, .manualaddress{
 display: none;
@@ -855,6 +864,44 @@ span.flatpickr-weekday {
   #locate-form {
     margin-top: 100px;
   }
+}
+
+/* === PROFILE RELATED STYLES === */
+
+.page-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 28px;
+  font-family: Spectral, serif;
+}
+
+.page-links a {
+  color: var(--text-color-light);
+  font-style: italic;
+  font-size: 1.05rem;
+  -webkit-text-decoration: var(--text-color-light) solid underline;
+  text-decoration: var(--text-color-light) solid underline;
+  -webkit-text-underline-position: under;
+  text-underline-position: under;
+  cursor: pointer;
+}
+
+.page-links a:hover {
+  color: #000;
+  -webkit-text-decoration-color:#000;
+  text-decoration-color: #000;
+}
+
+.page-links span {
+  font-size: .8rem; 
+}
+
+.box-350 {
+  width: 100%;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*Page 404 Error Desings latest modification*/

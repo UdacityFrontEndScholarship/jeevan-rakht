@@ -3,17 +3,19 @@
     {{>head}}
     <body id="particles-js" m-md-3>
         <!-- Main content goes here -->      
-        <div class="container vh-100 d-flex flex-column justify-content-between">
+        <div class="vh-100 d-flex flex-column justify-content-between">
           {{>header}}
       <!-- Your code goes here -->      
-        <section class="my-5">
+        <section class="container my-5">
           {{#alertMessage}}
-          <div class="alert alert-danger text-center">{{alertMessage}}</div>
+          <div class="alert alert-danger text-center zi-1">{{alertMessage}}</div>
           {{/alertMessage}}       
-          <div class="main-content container zi-1 p-4 d-flex flex-column flex-wrap align-items-center">
-          <div id="box-250">
-            <a href="/" class="btn-link my-2">Return to homepage</a>
-          </div>  
+          <div class="main-content zi-1">
+            <div class="content-wrapper">
+              <div class="box-350">
+                <a href="/" class="btn-link">Return To Home Page</a>
+              </div>  
+            </div>
           </div>
         </section>
         {{>footer}}

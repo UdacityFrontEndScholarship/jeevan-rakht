@@ -2,37 +2,36 @@
 <html>
     {{>head}}
     <body id="particles-js" m-md-3>
-        <!-- Main content goes here -->      
-        <div class="container vh-100 d-flex flex-column justify-content-between">
+        <div class="vh-100 d-flex flex-column justify-content-between">
           {{>header}}
-      <!-- Your code goes here --> 
-        <section class="my-5">
+        <!-- Your code goes here --> 
+        <section class="container my-5">
             {{#alertMessage}}
-            <div class="alert alert-danger text-center">{{alertMessage}}</div>
+            <div class="alert alert-danger text-center zi-1">{{alertMessage}}</div>
             {{/alertMessage}}            
-            <div class="main-content container zi-1 p-4 d-flex flex-column flex-wrap align-items-center">
+            <div class="main-content zi-1">
                 <a href="/users" class="back-arrow">
                     <i class="fas fa-arrow-left"></i>
                 </a>
-                <div id="content-heading">
+
+                <div class="content-wrapper">
                     <h2 class="text-uppercase"><strong>Verify Email</strong></h2>            
+                
+                    <form method="POST" class="box-350 mt-5">	
+                        <div class="input-wrapper input-wrapper-lg">
+                            <input type="email" name="email" id="email" value ="{{user.email}}" readonly placeholder="email">
+                            <i class="far fa-envelope"></i>
+                        </div>   
+
+                        <button type="submit" class="btn-link w-100 mt-4">Send Verification Link</button> 
+                    </form>
                 </div>
-              <form method="POST">	
-                <div id="box-250">
-                <div class="form-row input-wrapper input-wrapper-lg">
-                    <div class="form-group col-12">                
-                      <input type="email" class="form-control" name="email" id="email" value ="{{user.email}}" readonly placeholder="email">
-                    </div>
-                </div>               
-                </div> 
-                <br>	
-                    <button type="submit" class="btn-link">Send verification link</button>
-                <br>                
-              </form>
+                <!-- End content-wrapper -->
             </div>  
+            <!-- End main-content -->
         </section>
         {{>footer}}
         </div>
         {{>utilityJS}}
-      </body>
-  </html>
+    </body>
+</html>
