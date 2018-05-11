@@ -64,7 +64,7 @@
                             </div>
 
                             <div class="input-wrapper">
-                                <input id="stock" type="number" name="stock" value="{{inputValue.stock}}" placeholder="blood stock">
+                                <input id="stock" type="number" name="stock" min="0" value="{{inputValue.stock}}" placeholder="Blood stock(in ltr)">
 
                                 <i class="fas fa-tint"></i>
                             </div>                    
@@ -89,7 +89,7 @@
                             <i class="fas fa-unlock"></i>
                         </div>                    
                                             
-                        <button type="submit" class="btn-link">SIGN UP</button>
+                        <button id='signup-submit' type="submit" class="btn-link">SIGN UP</button>
                     </form>
                     
                     <div class="login-divider">

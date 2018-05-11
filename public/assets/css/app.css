@@ -53,8 +53,8 @@ body {
     margin-top: 10px;
   }
   section#login, section#signup, section#main{
-    margin: 0; 
-    }   
+    margin: 0;
+    }
 }
 
 .card-img-top {
@@ -86,7 +86,7 @@ body {
   outline: none;
 }
 
-.input-wrapper input:hover, 
+.input-wrapper input:hover,
 .input-wrapper select:hover {
   border-color: var(--secondary-color);
 }
@@ -147,7 +147,7 @@ select.form-control:not([size]):not([multiple]) {
 .input-wrapper-lg select {
   padding: 16px 40px 16px 15px;
 }
-  
+
 ::-webkit-input-placeholder {
   color: var(--accent-color);
 }
@@ -185,7 +185,7 @@ select.form-control:not([size]):not([multiple]) {
   cursor: pointer;
   font-family: Spectral, serif;
   font-size: 1rem;
-  padding-left: 12px;  
+  padding-left: 12px;
 }
 
 /* === Button === */
@@ -425,25 +425,25 @@ canvas {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
-    margin-left: auto; 
+    margin-left: auto;
   }
 }
 
 @media (min-width: 768px) {
   .app-footer {
-    max-width: 720px; 
-  } 
+    max-width: 720px;
+  }
 }
 
 @media (min-width: 992px) {
   .app-footer {
-    max-width: 960px; 
-  } 
+    max-width: 960px;
+  }
 }
 
 @media (min-width: 1200px) {
   .app-footer {
-    max-width: 1140px; 
+    max-width: 1140px;
   }
 }
 
@@ -495,7 +495,7 @@ fieldset{
     border-image: initial;
 }
 legend, label{
-    width: 30vmax;    
+    width: 30vmax;
     font-family: Spectral, sans-serif;
     font-style: italic;
     color: var(--text-color-dark);
@@ -520,7 +520,9 @@ display: table;
   border-radius: 10px;
   position: relative;
 }
-
+#imat{
+background-color: transparent;
+}
 .back-arrow {
   color: var(--text-color-light);
   position: absolute;
@@ -547,7 +549,7 @@ display: table;
   padding: 75px 0 63px;
 }
 
-.hidden{ 
+.hidden{
   display: none !important;
 }
 
@@ -633,7 +635,7 @@ display: table;
   width: 100%;
   position: relative;
   height: 40px;
-  margin-top: 25px;  
+  margin-top: 25px;
   margin-bottom: 5px;
 }
 .login-divider .bar {
@@ -717,7 +719,7 @@ display: table;
   animation-delay: .4s;
 }
 
-@keyframes blink { 
+@keyframes blink {
   0% {
     opacity: .2;
   }
@@ -749,7 +751,7 @@ display: table;
   font-size: 1.6rem;
   font-family: Montserrat, sans-serif;
   text-align: center;
-  color: var(--text-color-dark);  
+  color: var(--text-color-dark);
 }
 .donate-input-row {
   margin: 60px 0 25px;
@@ -817,7 +819,7 @@ span.flatpickr-weekday {
   border-color: var(--secondary-color);
 }
 
-.flatpickr-day.today:hover, 
+.flatpickr-day.today:hover,
 .flatpickr-day.today:focus {
   background: var(--white);
   border-color: var(--secondary-color);
@@ -853,4 +855,16 @@ span.flatpickr-weekday {
   #locate-form {
     margin-top: 100px;
   }
+}
+
+/*Page 404 Error Desings latest modification*/
+
+/*Spcecial Text In erro page */
+#mas {
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	word-spacing: 0.01em;
+	letter-spacing: 0.02em;
+	margin-bottom : 4%;
 }
