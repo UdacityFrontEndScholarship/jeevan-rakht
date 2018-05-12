@@ -11,7 +11,7 @@ On this platform people willing to donate blood can sign up with details of thei
 You can find the project's wireframe below which depicts the basic flow of our web application.
 
 **Mods**
-@imran @gaurav @vidit @shashank @utkarsh @sujan @soumya
+@imran @gaurav @vidit @shashank @utkarsh @sujan @soumya @hardiki
 
 **Special Thanks to @akshit.udacity!!! **
 
