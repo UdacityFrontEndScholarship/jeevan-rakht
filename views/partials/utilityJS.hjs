@@ -17,3 +17,6 @@
 
 <!-- Main JS file -->
 <script src="assets/js/app.js"></script>
+
+<!-- Tween JS for error page-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js'></script>
