@@ -2,8 +2,9 @@ var express = require('express');
 var router = express.Router();
 var {verify_token} = require('../../controllers/tokenController');
 var {findById, activateUser} = require('../../controllers/userController');
+var { login_required } = require('../../utils/authValidator');
 
-router.get('/', function(req, res, next) {
+router.get('/',login_required, function(req, res, next) {
     token = req.query.token;
     if(!token){
       req.flash('alertMessage', 'Make sure you came here by following reset link sent to your email.');

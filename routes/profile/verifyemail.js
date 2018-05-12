@@ -3,8 +3,9 @@ var router = express.Router();
 var nodemailer = require('nodemailer');
 var {findByEmail} = require('../../controllers/userController');
 var {generate_token} = require('../../controllers/tokenController');
+var { login_required } = require('../../utils/authValidator');
 
-router.get('/', function(req, res, next) {
+router.get('/', login_required, function(req, res, next) {
   if(req.user && (req.user.active_flag === 'A')){
     req.flash('alertMessage', 'Email is already verified.');
     res.redirect('/users');		
@@ -13,7 +14,7 @@ router.get('/', function(req, res, next) {
   res.render('profile/verifyemail', { title: 'Verify Email'});
 });
 
-router.post('/', function(req, res, next) {
+router.post('/', login_required, function(req, res, next) {
 	// Make sure this account already exist
 	var in_email = req.body.email;
 	if(!in_email){
