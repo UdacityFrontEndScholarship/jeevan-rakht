@@ -68,7 +68,7 @@ nav .brand img {
     height: 100%;
     z-index: -1;
     transform: rotate(-6deg);
-    top: -75%;
+    top: -85%;
     left: -15%;
 }
 
@@ -101,11 +101,15 @@ nav .brand img {
     font-size: 27px;
     font-style: normal;
     cursor: pointer;
+    font-family: 'Spectral', serif;
 }
 
 .OneImage em {
     font-style: normal;
     padding-right: 10px;
+    text-transform:  uppercase;
+    font-family: "Montserrat";
+    font-weight: 500;
 }
 
 .OneImage:first-child {}
@@ -190,9 +194,52 @@ nav .brand img {
 
 
 
+.contentDivision{
+max-width:  1000px;
+margin-left:  auto;
+margin-right:  auto;
+position:  relative;
+z-index: 9;
+color: #3e3c3c;
+background-color:  #fff;
+border-radius: 22px;
+padding: 75px 27px;
+margin-bottom: 100px;
+}
 
+.whyDonate{
+float: left;
+width: 100%;
+background-color: #ad1c2a;
+padding-top: 64px;
+}
+.whyDonate ul{
 
-
+}
+.whyDonate ul{
+list-style:  none;
+}
+.whyDonate li{
+padding-left: 25px;
+position:  relative;
+}
+.whyDonate li>span{
+position:  absolute;
+left:  0;
+}
+.whyDonate h3{
+text-align:  center;
+text-shadow:  2px solid;
+text-shadow: -1px 0px 5px rgb(255, 255, 255);
+}
+.whyDonate h3+p{
+    max-width:  700px;
+    margin-left:  auto;
+    margin-right:  auto;
+    color: #fff;
+    margin-bottom: 3em;
+    margin-top: 2em;
+}
 
 
 
