@@ -917,9 +917,6 @@ span.flatpickr-weekday {
 }
 
 /*Error page*/
-::-webkit-scrollbar {
-  display: none;
-}
 
 #error-page {
   background: -webkit-radial-gradient(center, ellipse cover,  #960000 0%,#770000 41%,#4C0000 100%);
