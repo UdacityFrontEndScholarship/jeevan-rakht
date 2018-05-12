@@ -89,7 +89,10 @@ or go to codepen to check your changes you made in scss or html or js files. Jus
 verify with below command
 >>>node -v
 >>>npm -v
+With node 10.x version, I see people struggling to start the application using "npm start" command. 
+Therefore I request everyone to go for stable version of node i.e 8.11.
 ```
+
 * Make sure you run all your commands fron inside cloned /jeevan-rakht folder
 * Step3 -- Install the npm modules from the package.json
 ```
@@ -121,7 +124,8 @@ i.e http://localhost:<your_env_port_variable>
 
 ```
 If you get an node-sass module error while running npm start saying app crashed,
-then run the command as shown in below image:
+then make sure your node version is 8.11 (not 10.x) and 
+if the issue still persists then run the command as shown in below image:
 ```
 ![image](https://user-images.githubusercontent.com/15084301/39688089-b99528fe-51ee-11e8-9ee2-35ec7a46ccf2.png)
 
