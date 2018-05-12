@@ -63,7 +63,7 @@
     <div class="col-md-6 col-lg-4">
         <label for="mobile">Mobile:</label>
         <div class="input-wrapper">
-            <input type="mobile" name="mobile" id="mobile" value="{{mobile}}" placeholder="Mobile" required>
+            <input type="mobile" name="mobile" id="mobile" value="{{mobile}}" placeholder="Mobile" minlength="10" maxlength="10" required>
 
             <i class="fas fa-phone"></i>
         </div>
