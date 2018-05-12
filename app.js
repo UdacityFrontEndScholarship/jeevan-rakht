@@ -149,7 +149,7 @@ app.use(function(err, req, res, next) {
     console.log(err.stack);
     // render the error page
     res.status(err.status || 500);
-    res.render('404');
+    res.render('404',{ title: 'Page not found'});
 });
 
 module.exports = app;
