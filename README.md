@@ -1,3 +1,10 @@
+[![GitHub issues](https://img.shields.io/github/issues/UdacityFrontEndScholarship/jeevan-rakht.svg)](https://github.com/UdacityFrontEndScholarship/jeevan-rakht/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/UdacityFrontEndScholarship/jeevan-rakht.svg)](https://github.com/UdacityFrontEndScholarship/jeevan-rakht/pulls)
+[![GitHub forks](https://img.shields.io/github/forks/UdacityFrontEndScholarship/jeevan-rakht.svg?style=social&label=Fork)](https://github.com/UdacityFrontEndScholarship/jeevan-rakht/network)
+[![GitHub stars](https://img.shields.io/github/stars/UdacityFrontEndScholarship/jeevan-rakht.svg?style=social&label=Stars)](https://github.com/UdacityFrontEndScholarship/jeevan-rakht/stargazers)
+[![GitHub watchers](https://img.shields.io/github/watchers/UdacityFrontEndScholarship/jeevan-rakht.svg?style=social&label=Watch)](https://github.com/UdacityFrontEndScholarship/jeevan-rakht/watchers)
+[![GitHub contributors](https://img.shields.io/github/contributors/UdacityFrontEndScholarship/jeevan-rakht.svg)](https://github.com/UdacityFrontEndScholarship/jeevan-rakht/graphs/contributors)
+
 # GoogleUdacity_JeevanRakht
 JeevanRakht is a Virtual Blood Bank web app, that aims at providing mechanism for people in need to directly talk to willing donors, and also find out blood availability in nearby blood banks.
 On this platform people willing to donate blood can sign up with details of their blood groups, location. Also there’ll be accounts of blood banks with details like number of packages of blood available and blood group, location of blood bank to filter out nearest blood banks.
