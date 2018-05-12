@@ -10,6 +10,11 @@ JeevanRakht is a Virtual Blood Bank web app, that aims at providing mechanism fo
 On this platform people willing to donate blood can sign up with details of their blood groups, location. Also there’ll be accounts of blood banks with details like number of packages of blood available and blood group, location of blood bank to filter out nearest blood banks.
 You can find the project's wireframe below which depicts the basic flow of our web application.
 
+**Mods**
+@imran @gaurav @vidit @shashank @utkarsh @sujan @soumya
+
+**Special Thanks to @akshit.udacity!!! **
+
 ## Project Wireframe
 ![wireframe - flow](https://user-images.githubusercontent.com/15084301/38657424-c22747d2-3e3d-11e8-9447-7862553d7142.jpg)
 
