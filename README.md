@@ -1,3 +1,10 @@
+[![GitHub issues](https://img.shields.io/github/issues/UdacityFrontEndScholarship/jeevan-rakht.svg)](https://github.com/UdacityFrontEndScholarship/jeevan-rakht/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/UdacityFrontEndScholarship/jeevan-rakht.svg)](https://github.com/UdacityFrontEndScholarship/jeevan-rakht/pulls)
+[![GitHub forks](https://img.shields.io/github/forks/UdacityFrontEndScholarship/jeevan-rakht.svg?style=social&label=Fork)](https://github.com/UdacityFrontEndScholarship/jeevan-rakht/network)
+[![GitHub stars](https://img.shields.io/github/stars/UdacityFrontEndScholarship/jeevan-rakht.svg?style=social&label=Stars)](https://github.com/UdacityFrontEndScholarship/jeevan-rakht/stargazers)
+[![GitHub watchers](https://img.shields.io/github/watchers/UdacityFrontEndScholarship/jeevan-rakht.svg?style=social&label=Watch)](https://github.com/UdacityFrontEndScholarship/jeevan-rakht/watchers)
+[![GitHub contributors](https://img.shields.io/github/contributors/UdacityFrontEndScholarship/jeevan-rakht.svg)](https://github.com/UdacityFrontEndScholarship/jeevan-rakht/graphs/contributors)
+
 # GoogleUdacity_JeevanRakht
 JeevanRakht is a Virtual Blood Bank web app, that aims at providing mechanism for people in need to directly talk to willing donors, and also find out blood availability in nearby blood banks.
 On this platform people willing to donate blood can sign up with details of their blood groups, location. Also there’ll be accounts of blood banks with details like number of packages of blood available and blood group, location of blood bank to filter out nearest blood banks.
@@ -89,7 +96,10 @@ or go to codepen to check your changes you made in scss or html or js files. Jus
 verify with below command
 >>>node -v
 >>>npm -v
+With node 10.x version, I see people struggling to start the application using "npm start" command. 
+Therefore I request everyone to go for stable version of node i.e 8.11.
 ```
+
 * Make sure you run all your commands fron inside cloned /jeevan-rakht folder
 * Step3 -- Install the npm modules from the package.json
 ```
@@ -121,7 +131,8 @@ i.e http://localhost:<your_env_port_variable>
 
 ```
 If you get an node-sass module error while running npm start saying app crashed,
-then run the command as shown in below image:
+then make sure your node version is 8.11 (not 10.x) and 
+if the issue still persists then run the command as shown in below image:
 ```
 ![image](https://user-images.githubusercontent.com/15084301/39688089-b99528fe-51ee-11e8-9ee2-35ec7a46ccf2.png)
 

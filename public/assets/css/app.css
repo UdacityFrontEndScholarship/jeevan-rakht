@@ -915,3 +915,87 @@ span.flatpickr-weekday {
 	letter-spacing: 0.02em;
 	margin-bottom : 4%;
 }
+
+/*Error page*/
+::-webkit-scrollbar {
+  display: none;
+}
+
+#error-page {
+  background: -webkit-radial-gradient(center, ellipse cover,  #960000 0%,#770000 41%,#4C0000 100%);
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  height: 100vh;
+}
+body.ghost-bg{
+  background: -webkit-radial-gradient(center, ellipse cover,  #009688 0%,#00796B 41%,#004D40 100%);
+}
+body.spider-bg{
+  background: -webkit-radial-gradient(center, ellipse cover,  #FFB300 0%,#FFA000 41%,#E65100 100%);
+}
+
+svg {
+  height: 45vh;
+}
+svg:hover {
+  cursor: pointer;
+}
+h2 > a {
+  text-decoration: none !important;
+  color: #ffffff;
+}
+
+/* VAMPIRE */
+
+#head {
+  animation-name: vamp-head;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#arm {
+  animation-name: vamp-arm;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes vamp-head {
+  0% {
+    transform: translateY(20px);
+  }
+
+  30% {
+    transform: translateY(80px);
+  }
+
+  60% {
+    transform: translateY(80px);
+  }
+
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes vamp-arm {
+  0% {
+    transform: translateY(-20px);
+  }
+
+  30% {
+    transform: translateY(-80px);
+  }
+  60% {
+    transform: translateY(-80px);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
