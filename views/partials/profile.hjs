@@ -1,90 +1,144 @@
-{{#indivUser}}
-<div class="form-row input-wrapper">
-    <div class="form-group col-md-6">
-        <input type="text" class="form-control" name="firstname" id="fname" value="{{firstname}}" aria-describedby="fnameHelp" placeholder="First Name" required>
+<div class="form-row">
+    
+    {{#indivUser}}
+    <div class="col-md-6 col-lg-4">
+        <label for="fname">First Name:</label>
+        <div class="input-wrapper">
+            <input type="text" name="firstname" id="fname" value="{{firstname}}" aria-describedby="fnameHelp" placeholder="First Name" required>
+            <i class="fas fa-user"></i>
+        </div>
     </div>
-    <div class="form-group col-md-6">
-        <input type="text" class="form-control" name="lastname" id="lname" value="{{lastname}}" aria-describedby="lnameHelp" placeholder="Last Name" required>    
+
+    <div class="col-md-6 col-lg-4">
+        <label for="lname">Last Name:</label>
+        <div class="input-wrapper">
+            <input type="text" name="lastname" id="lname" value="{{lastname}}" aria-describedby="lnameHelp" placeholder="Last Name" required>
+            <i class="fas fa-user"></i>
+        </div>
     </div>
-</div>
-<div class="form-row input-wrapper">
-    <div class="form-group col-md-3">
-        <select class="form-control" name="bloodgroup" id="bloodgroup" required>
-            <option value="{{bloodgroup}}">{{bloodgroup}}</option>
-            {{#bloodgroup}}
-            <option value="" disabled>Blood group</option>
-            {{/bloodgroup}}
-            {{^bloodgroup}}
-            <option value="" disabled selected>Blood group</option>
-            {{/bloodgroup}}
-            <option value="A+">A+</option>
-            <option value="A-">A-</option>
-            <option value="B+">B+</option>
-            <option value="B-">B-</option>
-            <option value="AB+">AB+</option>
-            <option value="AB-">AB-</option>
-            <option value="O+">O+</option>
-            <option value="O-">O-</option>        
-        </select>
+
+    <div class="col-md-6 col-lg-4">
+        <label for="gender">Gender:</label>
+        <div class="input-wrapper">
+            <select class="empty no-caret" name="gender" id="gender" required>
+                {{#gender}}
+                <option value="{{gender}}">{{gender}}</option>
+                <option disabled>Gender</option>
+                {{/gender}} {{^gender}}
+                <option value="" disabled selected>Gender</option>
+                {{/gender}}
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <i class="fas fa-venus-mars"></i>
+        </div>
     </div>
-    <div class="form-group col-md-3">
-        <select class="form-control" name="gender" id="gender" required>
-            <option value="{{gender}}">{{gender}}</option>
-            {{#gender}}
-            <option disabled>select gender</option>
-            {{/gender}}
-            {{^gender}}
-            <option disabled selected>select gender</option>
-            {{/gender}}
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Others">Others</option>
-        </select>
+
+    <div class="col-md-6 col-lg-4">
+        <label for="bloodgroup">Blood Group:</label>
+        <div class="input-wrapper">
+            <select class="empty no-caret" name="bloodgroup" id="bloodgroup" required>
+                {{#bloodgroup}}
+                <option value="{{bloodgroup}}">{{bloodgroup}}</option>
+                <option value="" disabled>Blood Group</option>
+                {{/bloodgroup}} {{^bloodgroup}}
+                <option value="" disabled selected>Blood Group</option>
+                {{/bloodgroup}}
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+
+            <i class="fas fa-syringe"></i>
+        </div>
     </div>
-    <div class="form-group col-md-6">
-        <input type="mobile" class="form-control" name="mobile" id="mobile" value="{{mobile}}" placeholder="Mobile" readonly>
+
+    <div class="col-md-6 col-lg-4">
+        <label for="mobile">Mobile:</label>
+        <div class="input-wrapper">
+            <input type="mobile" name="mobile" id="mobile" value="{{mobile}}" placeholder="Mobile" minlength="10" maxlength="10" required>
+
+            <i class="fas fa-phone"></i>
+        </div>
     </div>
-</div>
-<div class="form-row input-wrapper">
-    <div class="form-group col-md-3">
-        <input type="number" class="form-control" name="age" id="age" value="{{age}}" min="18" max="65" placeholder="Age(in years)" required>
+
+    <div class="col-md-6 col-lg-4">
+        <label for="age">Age (in years):</label>
+        <div class="input-wrapper">
+            <input type="number" name="age" id="age" value="{{age}}" min="18" max="65" placeholder="Age (in years)" required>
+            <i class="fas fa-calendar-alt"></i>
+        </div>
     </div>
-    <div class="form-group col-md-3">
-        <input type="number" class="form-control" name="height" id="height" value="{{height}}" min="60" placeholder="Height(in cm)" required>
+
+    <div class="col-md-6 col-lg-4">
+        <label for="height">Height (in cm):</label>
+        <div class="input-wrapper">
+            <input type="number" name="height" id="height" value="{{height}}" min="60" placeholder="Height (in cm)" required>
+            <i class="fas fa-text-height"></i>
+        </div>
     </div>
-    <div class="form-group col-md-3">
-        <input type="number" class="form-control" name="weight" id="weight" value="{{weight}}" min="40" placeholder="Weight(in kg)" required>
-    </div>    
-</div>
-<div class="form-row input-wrapper">
-    <div class="form-group col-md-6">
-        <input class="input-donation-date" name="last_donation" id="last_donation" value="{{last_donation}}" placeholder="Last Donation Date" required>
-        <i class="far fa-calendar-alt"></i>
+
+    <div class="col-md-6 col-lg-4">
+        <label for="weight">Weight (in kg):</label>
+        <div class="input-wrapper">
+            <input type="number" name="weight" id="weight" value="{{weight}}" min="40" placeholder="Weight (in kg)" required>
+            <i class="fas fa-weight"></i>
+        </div>
     </div>
-</div>
-{{/indivUser}}
-{{^indivUser}}
-<div class="form-row input-wrapper">
-    <div class="form-group col-md-6">
-        <input id="orgname" type="text" class="form-control" name="orgname" value="{{orgname}}" placeholder="bank name" required>
+
+     <div class="col-md-6 col-lg-4">
+        <label for="last_donation">Last Donation Date:</label>
+        <div class="input-wrapper">
+            <input class="input-donation-date" name="last_donation" id="last_donation" value="{{last_donation}}" placeholder="Last Donation Date" required>
+            <i class="far fa-calendar-alt"></i>
+        </div>
     </div>
-</div>
-<div class="form-row input-wrapper">
-    <div class="form-group col-md-6">
-        <input id="license" type="text" class="form-control" name="license" value="{{license}}" placeholder="license" required>
+    {{/indivUser}} 
+
+    {{^indivUser}}
+    <div class="col-md-6 col-lg-4">
+        <label for="orgname">Bank Name</label>
+        <div class="input-wrapper">
+            <input id="orgname" type="text" name="orgname" value="{{orgname}}" placeholder="Bank Name" required>
+            <i class="fas fa-hospital-alt"></i>
+        </div>
     </div>
-    <div class="form-group col-md-6">
-        <input id="stock" type="number" class="form-control" name="stock" value="{{stock}}" placeholder="blood stock" min="0" required>
+
+    <div class="col-md-6 col-lg-4">
+        <label for="license">License</label>
+        <div class="input-wrapper">
+            <input id="license" type="text" name="license" value="{{license}}" placeholder="License" required>
+            <i class="fas fa-id-card"></i>
+        </div>
     </div>
-</div>
-{{/indivUser}}
-<div class="form-row input-wrapper">
-    <div class="form-group col-md-6">
+
+    <div class="col-md-6 col-lg-4">
+        <label for="stock">Blood Stock (in ltr)</label>
+        <div class="input-wrapper">
+            <input id="stock" type="number" min="0" name="stock" value="{{stock}}" placeholder="Blood Stock (in ltr)" required>
+            <i class="fas fa-tint"></i>
+        </div>
+    </div>
+    {{/indivUser}}
+
+    <div class="col-md-6 col-lg-4">
         {{#activeUser}}
         <label for="email">Email (verified):</label>
         {{/activeUser}}{{^activeUser}}
         <label for="email">Email (not verified):</label>
         {{/activeUser}}
-        <input type="email" class="form-control" name="email" id="email" value ="{{email}}" readonly>
+        <div class="input-wrapper">
+            <input type="email" class="form-control" name="email" id="email" value="{{email}}" readonly>
+            <i class="far fa-envelope"></i>
+        </div>
     </div>
+
 </div>
+<!-- End form-row -->

@@ -1,72 +1,112 @@
-<fieldset class="px-2 m-0"><legend class="text-center"><strong>ADDRESS</strong></legend> 
-<div class="form-row ml-1">
-    {{#gps}}
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="addrtype" id="addrtype1" value="gps" required checked>
-        <label class="form-check-label" for="addrtype1">Use My Location</label>
+<fieldset class="px-2 px-md-5 py-2 pt-md-3 pb-md-4 mt-3">
+    <legend class="text-center">
+        <strong>ADDRESS</strong>
+    </legend>
+
+    <div class="form-row d-sm-flex justify-content-sm-center pb-3">
+        {{#gps}}
+        <div class="form-check form-check-inline mb-1 mb-sm-0 mx-2 mx-sm-3">
+            <input class="form-check-input" type="radio" name="addrtype" id="addrtype1" value="gps" required checked>
+            <label class="form-check-label" for="addrtype1">Use My Location</label>
+        </div>
+
+        <div class="form-check form-check-inline mx-2 mx-sm-3">
+            <input class="form-check-input" type="radio" name="addrtype" id="addrtype2" value="userinput" required>
+            <label class="form-check-label" for="addrtype2">Add/Edit Address</label>
+        </div>
+        {{/gps}} 
+        
+        {{#manual}}
+        <div class="form-check form-check-inline mb-1 mb-sm-0 mx-2 mx-sm-3">
+            <input class="form-check-input" type="radio" name="addrtype" id="addrtype1" value="gps" required>
+            <label class="form-check-label" for="addrtype1">Use My Location</label>
+        </div>
+
+        <div class="form-check form-check-inline mx-2 mx-sm-3">
+            <input class="form-check-input" type="radio" name="addrtype" id="addrtype2" value="userinput" required checked>
+            <label class="form-check-label" for="addrtype2">Add/Edit Address</label>
+        </div>
+        {{/manual}} 
+        
+        {{^manual}}{{^gps}}
+        <div class="form-check form-check-inline mb-1 mb-sm-0 mx-2 mx-sm-3">
+            <input class="form-check-input" type="radio" name="addrtype" id="addrtype1" value="gps" required>
+            <label class="form-check-label" for="addrtype1">Use My Location</label>
+        </div>
+
+        <div class="form-check form-check-inline mx-2 mx-sm-3">
+            <input class="form-check-input" type="radio" name="addrtype" id="addrtype2" value="userinput" required>
+            <label class="form-check-label" for="addrtype2">Add/Edit Address</label>
+        </div>
+        {{/gps}}{{/manual}}
     </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="addrtype" id="addrtype2" value="userinput" required>
-        <label class="form-check-label" for="addrtype2">Add/Edit Address</label>
+    <!-- End form-row -->
+
+    <div class="manualaddress open text-left">
+        <div class="form-row">
+            <div class="col-12">
+                <label for="addr_line1">Address Line 1:</label>
+                <div class="input-wrapper">
+                    <input id="addr_line1" type="text" name="address1" value="{{address1}}" placeholder="Address Line 1" readonly>
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="administrative_area_level_2">Address Line 2:</label>
+                <div class="input-wrapper">
+                    <input id="administrative_area_level_2" type="text" name="address2" value="{{address2}}" placeholder="Address Line 2" readonly>
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="locality">City:</label>
+                <div class="input-wrapper">
+                    <input id="locality" type="text" name="city" value="{{city}}" placeholder="City" readonly>
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="administrative_area_level_1">State:</label>
+                <div class="input-wrapper">
+                    <input id="administrative_area_level_1" type="text" name="state" value="{{state}}" placeholder="State" readonly>
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="postal_code">Pin Code:</label>
+                <div class="input-wrapper">
+                    <input id="postal_code" type="text" name="zip" maxlength="6" value="{{zip}}" placeholder="Pin Code" readonly>
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="country">Country:</label>
+                <div class="input-wrapper">
+                    <input id="country" type="text" name="country" value="India" placeholder="country" readonly>
+                    <i class="fas fa-globe"></i>
+                </div>
+            </div>
+        </div>
+        <!-- End form-row -->
+
+        <!-- hidden -->
+        <div class="form-row input-wrapper">
+            <div class="form-group col-md-3">
+                <input id="latitude" type="hidden" class="form-control" name="lat" value="{{lat}}">
+            </div>
+            <div class="form-group col-md-3">
+                <input id="longitude" type="hidden" class="form-control" name="lng" value="{{lng}}">
+            </div>
+            <div class="form-group col-md-3">
+                <input id="place_id" type="hidden" class="form-control" name="place_id" value="{{place_id}}">
+            </div>
+        </div>
+        <!-- End form-row -->
     </div>
-    {{/gps}}
-    {{#manual}}
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="addrtype" id="addrtype1" value="gps" required >
-        <label class="form-check-label" for="addrtype1">Use My Location</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="addrtype" id="addrtype2" value="userinput" required checked>
-        <label class="form-check-label" for="addrtype2">Add/Edit Address</label>
-    </div>
-    {{/manual}}    
-    {{^manual}}{{^gps}}
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="addrtype" id="addrtype1" value="gps" required>
-        <label class="form-check-label" for="addrtype1">Use My Location</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="addrtype" id="addrtype2" value="userinput" required>
-        <label class="form-check-label" for="addrtype2">Add/Edit Address</label>
-    </div>
-    {{/gps}}{{/manual}}
-</div>
-<div class="manualaddress open text-left">
-<div class="form-row input-wrapper">
-    <div class="form-group col-12">
-		<input id="addr_line1" class="form-control" type="text" name="address1" value="{{address1}}" placeholder="addr line 1" readonly>
-    </div>
-    <div class="form-group col-12">
-        <input id="administrative_area_level_2" class="form-control" type="text" name="address2" value="{{address2}}" placeholder="addr line 2" readonly>
-    </div>
-</div>		
-<div class="form-row input-wrapper">
-    <div class="form-group col-md-3">
-        <input id="locality" type="text" class="form-control" name="city" value="{{city}}" placeholder="city" readonly>
-    </div>
-    <div class="form-group col-md-3">
-        <input id="administrative_area_level_1" type="text" class="form-control" name="state" value="{{state}}" placeholder="state" readonly>
-    </div>
-    <div class="form-group col-md-3">
-        <input id="postal_code" type="text" class="form-control" name="zip"  maxlength="6" value="{{zip}}" placeholder="pincode" readonly>
-    </div>    
-</div>		
-<div class="form-row input-wrapper">
-    <div class="form-group col-3">
-		<input id="country" type="text" class="form-control" name="country" value="India" placeholder="country" readonly>
-    </div>
-</div>		
-<!-- hidden -->
-<div class="form-row input-wrapper">
-    <div class="form-group col-md-3">
-        <input id="latitude" type="hidden" class="form-control" name="lat" value="{{lat}}">
-    </div>
-    <div class="form-group col-md-3">
-        <input id="longitude" type="hidden" class="form-control" name="lng" value="{{lng}}">
-    </div>
-    <div class="form-group col-md-3">
-        <input id="place_id" type="hidden" class="form-control" name="place_id" value="{{place_id}}">
-    </div>    
-</div>		
-</div>
+    <!-- End manualaddress -->
 </fieldset>
