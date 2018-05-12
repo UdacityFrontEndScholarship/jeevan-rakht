@@ -19,14 +19,13 @@ router.post('/',
       let userObj = req.body;
       userObj.title = 'Donate Blood';
       userObj.id = req.user._id;
-      console.log(userObj);
       bookAppointment(userObj, function(err, result) {
           if (err) {
               userObj.alertMessage = "DB Error:"+err.message;
               res.render('main/donate', userObj);
           } else if (result) {
               req.flash('successMessage', 'Appointment booked successfully.');
-              res.redirect('/');
+              res.redirect('/donate');
           }
       });
   });

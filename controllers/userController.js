@@ -1,5 +1,6 @@
 const UserAcct = require('../models/user');
 const bcrypt = require('bcryptjs');
+var moment = require('moment');
 
 var signupUser = function(usrObj, callback) {
     var newUser = new UserAcct(usrObj);
@@ -175,7 +176,7 @@ var updateUser = function(userObj, callback) {
             age: userObj.age,
             blood_grp: userObj.bloodgroup,
             gender: userObj.gender,        
-            last_donation: userObj.last_donation,                
+            last_donation: moment(userObj.last_donation,'DD/MM/YYYY').format('MM/DD/YYYY'),                
             height: userObj.height,    
             weight: userObj.weight                    
         },
@@ -211,12 +212,12 @@ var updateUser = function(userObj, callback) {
     });    
 }
 
-var bookAppointment = function(userObj, callback) {
-    var  item ={"indiv.appointment.appointment_date": userObj.bookdate,  
+var bookAppointment = function(userObj, callback) {    
+    var  item ={"indiv.appointment.appointment_date": moment(userObj.bookdate,'DD/MM/YYYY').format('MM/DD/YYYY'),
                 "indiv.appointment.donor_city" : userObj.bookcity,
-                updated : Date.now() 
+                "updated" : Date.now() 
             };
-    UserAcct.findByIdAndUpdate(userObj.id, { $set: {item} }, function(err, result) {
+    UserAcct.findByIdAndUpdate(userObj.id, { $set: item }, function(err, result) {
         if (err) {
             callback(err, undefined);
         } else if (result) {
