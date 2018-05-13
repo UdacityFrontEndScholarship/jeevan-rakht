@@ -29,8 +29,7 @@ nav {
 nav li {
     display: inline-block;
     margin: 0 3px;
-    min-width: 90px;
-    width: 12%;
+    min-width: 15%;
 }
 
 nav ul {
@@ -51,7 +50,9 @@ nav a {
     font-size: 21px;
 }
 
-nab .brand {}
+.brand {
+  text-align: center;
+}
 
 nav .brand img {
     background-color: #fff;
@@ -189,7 +190,7 @@ nav .brand img {
 }
 
 .factsHead{
-    
+
 }
 
 
