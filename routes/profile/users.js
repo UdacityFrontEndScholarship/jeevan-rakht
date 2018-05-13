@@ -38,6 +38,7 @@ router.post('/',
         if (req.body._method === 'PUT'){
             let userObj = req.body;
             userObj.id = req.user._id;
+            userObj.appointment = req.user.indiv.appointment;
             userObj.title = 'Profile';
             console.log(userObj);
             updateUser(userObj, function(err, result) {
