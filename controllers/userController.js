@@ -201,6 +201,7 @@ var updateUser = function(userObj, callback) {
         },    
         updated : Date.now() 
     };
+    item.indiv.appointment = userObj.appointment;
     UserAcct.findByIdAndUpdate(userObj.id, { $set: item }, function(err, result) {
         if (err) {
             callback(err, undefined);
@@ -228,6 +229,49 @@ var bookAppointment = function(userObj, callback) {
     });    
 }
 
+var getDonarList = function(userObj, callback) {    
+    var  donars =[];
+    UserAcct.find({$and : [
+                        {'indiv.appointment':{$exists:true}}
+                        ,{'indiv.appointment':{$ne:null}}
+                        ,{'_id':{$ne:userObj.user_id}}
+                        ]}, 
+                        { 'email':1
+                        ,'mobile':1
+                        ,'indiv.name':1
+                        ,'indiv.appointment':1
+                        ,'indiv.age':1
+                        ,'indiv.blood_grp': 1
+                        // ,'picture':1
+                        }
+        , function(err, result) {
+        if (err) {
+            callback(err, undefined);
+        } else if (result) {
+            callback(undefined, result);
+        } else if (!result) {
+            callback(undefined, undefined);
+        }
+    });    
+}
+
+var getDonarCount = function(userObj, callback) {    
+    var  donars =[];
+    UserAcct.count({$and : [
+                        {'indiv.appointment':{$exists:true}}
+                        ,{'indiv.appointment':{$ne:null}}
+                        ]},
+        function(err, result) {
+        if (err) {
+            callback(err, undefined);
+        } else if (result) {
+            callback(undefined, result);
+        } else if (!result) {
+            callback(undefined, undefined);
+        }
+    });    
+}
+
 module.exports.signupUser = signupUser;
 module.exports.findByEmail = findByEmail;
 module.exports.updateUser = updateUser;
@@ -238,3 +282,5 @@ module.exports.findById = findById;
 module.exports.activateUser = activateUser;
 module.exports.updatePassword = updatePassword;
 module.exports.bookAppointment = bookAppointment;
+module.exports.getDonarList = getDonarList;
+module.exports.getDonarCount = getDonarCount;

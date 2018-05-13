@@ -45,7 +45,8 @@ app.set('partials', {
     oauth2_ajax: 'partials/oauth2_ajax',
     user_address: 'partials/user_address',
     profile: 'partials/profile',
-    google_mapJS: 'partials/google_mapJS'
+    google_mapJS: 'partials/google_mapJS',
+    locate_ajax: 'partials/locate_ajax'
 });
 app.use(logger('dev'));
 app.use(express.json());

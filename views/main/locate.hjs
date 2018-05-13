@@ -53,14 +53,13 @@
                       </div>
                     </div>
                   </div>
-
-                  <button type="submit" class="btn-link mt-4 mt-md-5" id="locate-search">SEARCH</button>
+                  <button type="button" class="btn-link mt-4 mt-md-5" id="locate-search">SEARCH</button>
                 </form>
 
                 <div class="results-text mt-5">
                   <div class="d-flex justify-content-between align-items-center">
                     <span>
-                      Results for AB+ve blood in location
+                      Results for available blood donors
                     </span>
 
                     <a href="/locate" class="results-text-icon">
@@ -72,12 +71,7 @@
                 <!-- State B -->
                 <div id="stateB" class="mt-5">
                   <a href="#" class="units-wrapper">
-                    <span class="units">
-                      12
-                    </span>
-                    <span class="units-text">
-                      units <br> available
-                    </span>
+                      <!-- HTML will be inserted by AJAX call resultset -->
                   </a>
                 </div>
 
@@ -89,93 +83,22 @@
                         <tr class="py-4">
                           <th>Name</th>
                           <th>Age</th>
+                          <th>Blood Group</th>
+                          <th>City</th>
                           <th>Availability</th>
                           <th></th>
                         </tr>
                       </thead>
 
                       <tbody>
-                        <tr>
-                          <td>Rakesh</td>
-                          <td>32</td>
-                          <td>Today</td>
-                          <td class="td-last">
-                            <div class="contact-wrapper">
-                              <a class="contact-icon" href="#!">
-                                <i class="fas fa-user"></i>
-                              </a>
-
-                              <div class="contact-text text-left">CONTACT</div>
-                            </div>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>Rakesh</td>
-                          <td>32</td>
-                          <td>Today</td>
-                          <td class="td-last">
-                            <div class="contact-wrapper">
-                              <a class="contact-icon" href="#!">
-                                <i class="fas fa-user"></i>
-                              </a>
-
-                              <div class="contact-text text-left">CONTACT</div>
-                            </div>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>Rakesh</td>
-                          <td>32</td>
-                          <td>Today</td>
-                          <td class="td-last">
-                            <div class="contact-wrapper">
-                              <a class="contact-icon" href="#!">
-                                <i class="fas fa-user"></i>
-                              </a>
-
-                              <div class="contact-text text-left">CONTACT</div>
-                            </div>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>Rakesh</td>
-                          <td>32</td>
-                          <td>Today</td>
-                          <td class="td-last">
-                            <div class="contact-wrapper">
-                              <a class="contact-icon" href="#!">
-                                <i class="fas fa-user"></i>
-                              </a>
-
-                              <div class="contact-text text-left">CONTACT</div>
-                            </div>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>Rakesh</td>
-                          <td>32</td>
-                          <td>Today</td>
-                          <td class="td-last">
-                            <div class="contact-wrapper">
-                              <a class="contact-icon" href="#!">
-                                <i class="fas fa-user"></i>
-                              </a>
-
-                              <div class="contact-text text-left">CONTACT</div>
-                            </div>
-                          </td>
-                        </tr>
+                        <!-- HTML will be inserted by AJAX call resultset -->
                       </tbody>
                     </table>
                   </div>
                   <!-- End table-responsive -->
                 </div>
                 <!-- End stateC -->
-
+                <button type="button" class="btn-link mt-4 mt-md-5 hidden" id="backto-search-btn">BACK TO SEARCH</button>
               </div>
               <!-- End content-wrapper -->
             </div>
@@ -184,5 +107,6 @@
           {{>footer}}
         </div>
         {{>utilityJS}}
+        {{>locate_ajax}}
       </body>
   </html>
