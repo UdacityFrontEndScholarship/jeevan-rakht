@@ -1,0 +1,56 @@
+<script src="assets/js/moment.min.js"></script>
+<script>
+$('#locate-search').on('click',function(e){
+    e.preventDefault();
+    var locationURL = '/donarlist';
+    $.ajax({
+        type: "GET",
+        url: locationURL,
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }).done(function(response) {
+        const donorlist = JSON.parse(response);
+        $('#locate-form').hide();
+        $('#backto-search-btn').removeClass("hidden");
+        $(".results-text, #backto-search-btn").fadeIn('slow');
+        if(Object.keys(donorlist)[0] === 'donor_count'){
+          let donorCountBody = $('#stateB .units-wrapper');
+          $("#stateB").fadeIn('slow');        
+            let donorCount ='<span class="units">'+donorlist.donor_count+'</span>'
+                          +'<span class="units-text">donor(s) <br> available</span>';            
+            donorCountBody.html(donorCount);
+        }else{
+          $("#stateC").fadeIn('slow');        
+          $('#stateC table tbody tr').remove();                
+          let donorResultBody = $('#stateC table tbody');    
+          const donorLastCell = '<td class="td-last">\
+                <div class="contact-wrapper">\
+                  <a class="contact-icon" href="#!">\
+                    <i class="fas fa-user"></i>\
+                  </a>\
+                  <div class="contact-text text-left">CONTACT</div>\
+                </div>\
+              </td>';        
+          var donorRow="";
+          $.each(donorlist, function(index, donor){ 
+            donorRow+="<tr><td>"+donor.indiv.name+"</td>"
+                      +"<td>" + donor.indiv.age + "</td>" 
+                      +"<td>" + donor.indiv.blood_grp + "</td>" 
+                      +"<td>" + donor.indiv.appointment.donor_city + "</td>" 
+                      +"<td>" + moment(donor.indiv.appointment.appointment_date).format('DD/MM/YYYY') + "</td>"
+                      +donorLastCell
+                      +"</tr>"; 
+            donorResultBody.html(donorRow);
+          });
+        }        
+    }).fail(function(response) {
+        console.log(response);
+    });
+});    
+$("#backto-search-btn").click(function() {
+     $('#backto-search-btn').addClass("hidden");
+	 $("#stateC, #stateB, .results-text, #backto-search-btn").hide();
+	 $('#locate-form').fadeIn('slow');
+})
+</script>        

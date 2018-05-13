@@ -213,16 +213,3 @@ $('#profile-update').on('click',function(event){
 
 	if(flag) event.preventDefault();
 });
-
-// Locate States
-$("#locate-form").submit(function(e) {
-	e.preventDefault();
-	$(this).hide();
-	$(".results-text").fadeIn('slow');
-	$("#stateB").fadeIn('slow');
-})
-
-$("#stateB").click(function() {
-	$(this).hide();
-	$("#stateC").fadeIn('slow');
-})
