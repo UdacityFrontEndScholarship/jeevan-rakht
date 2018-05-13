@@ -8,8 +8,8 @@ var { updateUser } = require('../../controllers/userController');
 router.get('/', login_required, function(req, res, next) {
     let obj = {};
     obj.title      = 'Profile';
-    obj.firstname   = req.user.indiv.last_name;
-    obj.lastname    = req.user.indiv.first_name;
+    obj.firstname   = req.user.indiv.first_name;
+    obj.lastname    = req.user.indiv.last_name;
     obj.bloodgroup  = req.user.indiv.blood_grp;
     obj.gender      = req.user.indiv.gender;
     obj.age         = req.user.indiv.age;
