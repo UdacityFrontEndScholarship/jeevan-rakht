@@ -15,7 +15,7 @@ header {
 nav {
     float: left;
     width: 100%;
-    background-color: #c62131;
+    background-color: #d20001;
     padding: 15px 0px;
     padding-top:  0;
 }
@@ -26,13 +26,6 @@ nav {
     margin-right: auto;
 }
 
-nav li {
-    display: inline-block;
-    margin: 0 3px;
-    min-width: 90px;
-    width: 12%;
-}
-
 nav ul {
     margin: 0px;
     padding: 0;
@@ -40,31 +33,51 @@ nav ul {
     text-align: center;
 }
 
+nav li {
+    display: inline-block;
+    margin: 0 1.25em;
+    min-width: 90px;
+    max-width: 12%;
+}
+
+nav li:hover {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: #fff 2px solid;
+}
+
 nav a {
-    /* padding: 10px; */
-    height: 80px;
     display: inline-block;
     line-height: 80px;
     min-width: 100%;
     color: #fff;
     font-family: Spectral, serif;
-    font-size: 21px;
+    font-size: 1.2em;
 }
 
-nab .brand {}
+nav a:hover {
+    color: #fff;
+    text-decoration: none;
+}
 
-nav .brand img {
-    background-color: #fff;
-    width: 200px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    margin-top: -3px;
+nav li.brand img {
+    background: #fff;
+    padding: 10px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    display: inline-block;
+    max-height: 100px;
+}
+li.brand:hover {
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom:none;
 }
 
 .leftRedTop {
     position: absolute;
     width: 170%;
-    background-color: #c62131;
+    background-color: rgba(210, 0, 1, 1);
     height: 100%;
     z-index: -1;
     transform: rotate(-6deg);
@@ -104,12 +117,12 @@ nav .brand img {
     font-family: 'Spectral', serif;
 }
 
-.OneImage em {
+.OneImage strong {
     font-style: normal;
     padding-right: 10px;
     text-transform:  uppercase;
     font-family: "Montserrat";
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .OneImage:first-child {}
@@ -118,18 +131,29 @@ nav .brand img {
     margin-bottom: 32px;
 }
 
-.firstAction .OneImage {
-    border: 2px solid #fff;
+.OneImage {
+    border: 1px solid #fff;
 }
 
 .secondAction .OneImage {}
 
 .firstAction .OneImage label {
-    background-color: rgba(146, 0, 1, 0.75);
+    background-color: rgba(30, 30, 30, 0.85);
 }
 
 .secondAction .OneImage label {
-    background-color: rgba(255, 235, 59, 0.65);
+    background-color: rgba(255, 235, 59, 0.85);
+    color: rgb(30, 30, 30);
+}
+
+.firstAction .OneImage label:hover {
+    background-color: rgba(210, 0, 1, 0.87);
+    color: #ffffff;
+}
+
+.secondAction .OneImage label:hover {
+    background-color: rgba(210, 0, 1, 0.87);
+    color: #ffffff;
 }
 
 .funnyMyths {
@@ -144,7 +168,7 @@ nav .brand img {
     width: calc(100% + 221px);
     height: calc(100% + 208px);
     position: absolute;
-    background-color: #c62131;
+    background-color: rgba(210, 0, 1, 0.89);
     top: -55px;
     left: -100px;
     transform: rotate(3deg);
@@ -155,7 +179,7 @@ nav .brand img {
     width: calc(100% + 221px);
     height: 480px;
     position: absolute;
-    background-color: rgba(189, 32, 47, 0.89);
+    background-color: rgba(210, 0, 1, 0.69);
     top: 130px;
     left: -100px;
     transform: rotate(-14deg);
@@ -173,13 +197,11 @@ nav .brand img {
     font-size: 3em;
 }
 
-.funnyMyths h2.emoji {
+.emoji {
+    display: inline-block;
     transform: rotate(90deg);
     margin-top: 24px;
 }
-
-
-
 
 
 .vertical_center{
@@ -192,58 +214,73 @@ nav .brand img {
     
 }
 
-
-
 .contentDivision{
-max-width:  1000px;
-margin-left:  auto;
-margin-right:  auto;
-position:  relative;
-z-index: 9;
-color: #3e3c3c;
-background-color:  #fff;
-border-radius: 22px;
-padding: 75px 27px;
-margin-bottom: 100px;
+max-width:  1000px;
+margin-left:  auto;
+margin-right:  auto;
+position:  relative;
+z-index: 9;
+color: #3e3c3c;
+background-color:  #fff;
+border-radius: 22px;
+padding: 75px 27px;
+margin-bottom: 100px;
 }
 
-.whyDonate{
-float: left;
-width: 100%;
-background-color: #ad1c2a;
-padding-top: 64px;
-}
-.whyDonate ul{
-
-}
-.whyDonate ul{
-list-style:  none;
-}
-.whyDonate li{
-padding-left: 25px;
-position:  relative;
-}
-.whyDonate li>span{
-position:  absolute;
-left:  0;
-}
-.whyDonate h3{
-text-align:  center;
-text-shadow:  2px solid;
-text-shadow: -1px 0px 5px rgb(255, 255, 255);
-}
-.whyDonate h3+p{
-    max-width:  700px;
-    margin-left:  auto;
-    margin-right:  auto;
-    color: #fff;
-    margin-bottom: 3em;
-    margin-top: 2em;
+.sectionTitle {
+float: left;
+width: 100%;
+/*background-color: #d20001;*/
+background-color: rgba(210, 0, 1, 0.82);
+padding: 48px;
 }
 
+.sectionTitle ul {
+}
 
+.sectionTitle ul {
+list-style:  none;
+margin: 0 2em;
+padding: 0;
+}
 
+.sectionTitle li {
+padding-left: 25px;
+position:  relative;
+}
 
+.sectionTitle li>span {
+position:  absolute;
+left:  0;
+}
+
+.sectionTitle h2 {
+    font-size: 3em;
+    font-weight: 700;
+    color: #ffffff;
+    text-align:  center;
+    text-transform: uppercase;
+}
+
+.sectionTitle h2+p {
+max-width:  700px;
+margin-left:  auto;
+margin-right:  auto;
+color: #fff;
+margin-bottom: 3em;
+margin-top: 2em;
+}
+
+.backgroundTiltedLeft_2 {
+    width: calc(100% + 401px);
+    height: 425px;
+    position: absolute;
+    background-color: rgba(190, 0, 1, 0.69);
+    top: 500px;
+    left: -100px;
+    transform: rotate(15deg);
+    z-index: -1;
+}
 
 
 
@@ -385,7 +422,7 @@ footer .after-footer a:hover {
 .slider_wrapper {
     float: left;
     width: 100%;
-    margin-top: 130px;
+    margin-top: 50px;
 }
 
 .slider {
@@ -676,7 +713,7 @@ footer .after-footer a:hover {
     opacity: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #c62131;
+    background-color: #d20001;
     border-radius: 50%;
 }
 
