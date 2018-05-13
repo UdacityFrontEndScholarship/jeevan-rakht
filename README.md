@@ -11,9 +11,12 @@ On this platform people willing to donate blood can sign up with details of thei
 You can find the project's wireframe below which depicts the basic flow of our web application.
 
 **Mods**
-@imran @gaurav @vidit @shashank @utkarsh @sujan @soumya @hardiki
+@imran @gaurav @vidit @shashank @utkarsh2102 @sujan @soumya @hardiki
 
 **Special Thanks to @akshit.udacity!!! **
+
+Please refer to this [paper](https://paper.dropbox.com/doc/JeevanRakht-WebD-Project-5VccFMnQ3eXriP5Q20lPP) here. It'll give you an insight of the project's working.
+In case of any doubts regarding the same, do feel free to contact any mod or co-mod.
 
 ## Project Wireframe
 ![wireframe - flow](https://user-images.githubusercontent.com/15084301/38657424-c22747d2-3e3d-11e8-9447-7862553d7142.jpg)
