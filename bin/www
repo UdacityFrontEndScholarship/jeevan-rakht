@@ -85,9 +85,5 @@ function onError(error) {
 function onListening() {
   var addr = server.address();
   console.log("Web Server running on port "+ addr.port);
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  console.log('Listening on http://localhost:5000');
-  opn('http://localhost:5000');
+  opn('http://localhost:' + addr.port);
 }
