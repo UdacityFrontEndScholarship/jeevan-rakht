@@ -22,14 +22,14 @@
                   </div>
 
                   <div class="row">
-                    <div class="col-md-4">
+                    <!-- <div class="col-md-4">
                       <div class="input-wrapper input-wrapper-lg">
                         <input type="number" min="1" placeholder="Search radius in km" title="Search radius in kms">
                         <i class="far fa-compass"></i>
                       </div>
-                    </div>
+                    </div> -->
 
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                       <div class="input-wrapper input-wrapper-lg">
                         <select title="Blood group" class="no-caret empty" title="Blood group">
                           <option value="" disabled selected>Blood group</option>
@@ -46,7 +46,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                       <div class="input-wrapper input-wrapper-lg">
                         <input class="input-when" title="When" placeholder="When">
                         <i class="far fa-calendar-alt"></i>
@@ -54,11 +54,130 @@
                     </div>
                   </div>
 
-                  <button type="submit" class="btn-link mt-4 mt-md-5">SEARCH</button>
+                  <button type="submit" class="btn-link mt-4 mt-md-5" id="locate-search">SEARCH</button>
                 </form>
+
+                <div class="results-text mt-5">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span>
+                      Results for AB+ve blood in location
+                    </span>
+
+                    <a href="/locate" class="results-text-icon">
+                      <i class="fas fa-search"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- State B -->
+                <div id="stateB" class="mt-5">
+                  <a href="#" class="units-wrapper">
+                    <span class="units">
+                      12
+                    </span>
+                    <span class="units-text">
+                      units <br> available
+                    </span>
+                  </a>
+                </div>
+
+                <!-- State C -->
+                <div id="stateC" class="mt-5">
+                  <div class="table-responsive">
+                    <table class="table table-striped table-sm text-center" cellspacing="0" width="100%">
+                      <thead>
+                        <tr class="py-4">
+                          <th>Name</th>
+                          <th>Age</th>
+                          <th>Availability</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td>Rakesh</td>
+                          <td>32</td>
+                          <td>Today</td>
+                          <td class="td-last">
+                            <div class="contact-wrapper">
+                              <a class="contact-icon" href="#!">
+                                <i class="fas fa-user"></i>
+                              </a>
+
+                              <div class="contact-text text-left">CONTACT</div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>Rakesh</td>
+                          <td>32</td>
+                          <td>Today</td>
+                          <td class="td-last">
+                            <div class="contact-wrapper">
+                              <a class="contact-icon" href="#!">
+                                <i class="fas fa-user"></i>
+                              </a>
+
+                              <div class="contact-text text-left">CONTACT</div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>Rakesh</td>
+                          <td>32</td>
+                          <td>Today</td>
+                          <td class="td-last">
+                            <div class="contact-wrapper">
+                              <a class="contact-icon" href="#!">
+                                <i class="fas fa-user"></i>
+                              </a>
+
+                              <div class="contact-text text-left">CONTACT</div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>Rakesh</td>
+                          <td>32</td>
+                          <td>Today</td>
+                          <td class="td-last">
+                            <div class="contact-wrapper">
+                              <a class="contact-icon" href="#!">
+                                <i class="fas fa-user"></i>
+                              </a>
+
+                              <div class="contact-text text-left">CONTACT</div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>Rakesh</td>
+                          <td>32</td>
+                          <td>Today</td>
+                          <td class="td-last">
+                            <div class="contact-wrapper">
+                              <a class="contact-icon" href="#!">
+                                <i class="fas fa-user"></i>
+                              </a>
+
+                              <div class="contact-text text-left">CONTACT</div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- End table-responsive -->
+                </div>
+                <!-- End stateC -->
+
               </div>
               <!-- End content-wrapper -->
-
             </div>
             <!-- End main-content -->
           </section>
