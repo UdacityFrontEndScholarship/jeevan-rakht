@@ -15,6 +15,21 @@
     <meta name="description" content="The Official website of JeevanRakht">
     <meta name="keywords" content="JeevanRakht, Blood Dontation, Blood Bank, Google Udacity Project JeevanRakht">
 
+    <!-- itemprop global attribute -->
+    <meta itemprop="name" content="JeevanRakht">
+    <meta itemprop="description"
+            content="JeevanRakht is a Virtual Blood Bank web app">
+    <meta itemprop="image" content="https://jeevanrakht.herokuapp.com/assets/images/favicon.png">
+
+    <!-- Open Graph protocol markup -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="JeevanRakht">
+    <meta property="og:image" content="https://jeevanrakht.herokuapp.com/assets/images/favicon.png">
+    <meta property="og:description"
+            content="JeevanRakht is a Virtual Blood Bank web app">
+    <meta property="og:site_name" content="JeevanRakht">
+    <meta property="og:url" content="https://jeevanrakht.herokuapp.com/"/>
+
     <!--GOOGLE FONT-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Spectral:400,400i,700,700i" rel="stylesheet">
 
