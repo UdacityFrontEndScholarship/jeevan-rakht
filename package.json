@@ -1,0 +1,47 @@
+{
+  "name": "jeevanrakht",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "express-validator": "^5.1.2",
+    "googleapis": "^29.0.0",
+    "hjs": "~0.0.6",
+    "http-errors": "~1.6.2",
+    "jquery": "^3.3.1",
+    "jwt-decode": "^2.2.0",
+    "keygrip": "^1.0.2",
+    "moment": "^2.22.1",
+    "mongoose": "^5.0.14",
+    "morgan": "~1.9.0",
+    "node-sass-middleware": "0.11.0",
+    "nodemailer": "^4.6.4",
+    "popper.js": "^1.14.1",
+    "validator": "^9.4.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "grunt": "^1.0.2",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-mkdir": "^1.0.0",
+    "grunt-responsive-images": "^1.10.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-sass": "^3.2.1"
+  }
+}
