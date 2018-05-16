@@ -37,10 +37,10 @@ router.post('/',
     function(req, res, next) {
         if (req.body._method === 'PUT'){
             let userObj = req.body;
-            userObj.id = req.user._id;
+            userObj.id = req.user._id;          
+            userObj.usertype = req.user.user_type;
             userObj.appointment = req.user.indiv.appointment;
             userObj.title = 'Profile';
-            console.log(userObj);
             updateUser(userObj, function(err, result) {
                 if (err) {
                     userObj.alertMessage = "DB Error:"+err.message;

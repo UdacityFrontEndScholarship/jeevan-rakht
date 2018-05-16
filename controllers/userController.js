@@ -169,22 +169,6 @@ var updatePassword = function(userObj, callback) {
 
 var updateUser = function(userObj, callback) {
     var  item ={
-        indiv: {
-            name: userObj.firstname + ' ' + userObj.lastname,
-            first_name: userObj.firstname,  
-            last_name : userObj.lastname, 
-            age: userObj.age,
-            blood_grp: userObj.bloodgroup,
-            gender: userObj.gender,        
-            last_donation: moment(userObj.last_donation,'DD/MM/YYYY').format('MM/DD/YYYY'),                
-            height: userObj.height,    
-            weight: userObj.weight                    
-        },
-        non_indiv: {
-            org_name: userObj.orgname,
-            license: userObj.license,
-            unit_stock: userObj.stock
-        },
         mobile: userObj.mobile,
         address: {
             addr_type: userObj.addrtype,
@@ -201,7 +185,27 @@ var updateUser = function(userObj, callback) {
         },    
         updated : Date.now() 
     };
-    item.indiv.appointment = userObj.appointment;
+    if (userObj.usertype === 'Individual'){
+        item.indiv = {
+            name: userObj.firstname + ' ' + userObj.lastname,
+            first_name: userObj.firstname,  
+            last_name : userObj.lastname, 
+            age: userObj.age,
+            blood_grp: userObj.bloodgroup,
+            gender: userObj.gender,        
+            last_donation: moment(userObj.last_donation,'DD/MM/YYYY').format('MM/DD/YYYY'),                
+            height: userObj.height,    
+            weight: userObj.weight,
+            appointment : userObj.appointment
+        };
+    }else{
+        item.non_indiv = {
+            org_name: userObj.orgname,
+            license: userObj.license,
+            unit_stock: userObj.stock
+        };
+    }
+
     UserAcct.findByIdAndUpdate(userObj.id, { $set: item }, function(err, result) {
         if (err) {
             callback(err, undefined);
