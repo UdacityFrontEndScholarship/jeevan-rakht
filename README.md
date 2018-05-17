@@ -41,9 +41,10 @@ https://jeevanrakht.herokuapp.com/index.html
 
 ## Learn About Folder Structure (Check FAQ for more info on folder structure)
 ```
-Note : The folder structure may changes i.e we may include/exclude some folders/files as project progresses but the 
-overall sructure will remain as presented below:
+Note : The folder structure may changes i.e we may include/exclude some folders/files 
+as project progresses but the overall sructure will remain as presented below:
 ```
+
 ### Backend Part (node.js, express.js with MongoDB)
 * \bin          -- Application code listening for HTTP requests
 * \config       -- DB connection URL, OAuth2 secrets etc to be used in application
@@ -89,6 +90,10 @@ overall sructure will remain as presented below:
 * Procfile
 * Procfile.windows
 <br />[Learn about building, deploying and managing your apps on Heroku](https://devcenter.heroku.com/)
+
+### Generic Web Stack Diagram
+![image](https://user-images.githubusercontent.com/15084301/40181948-eb29ca52-5a07-11e8-8bac-3cb0506ccfe6.png)
+<br />[Know more about web stack](https://dzone.com/articles/why-full-stack-development-is-too-good-for-you-in)
 
 ## How to launch the app locally?
 * Step1 -- Fork the project repo and clone it in your local directory
