@@ -234,12 +234,16 @@ var bookAppointment = function(userObj, callback) {
 }
 
 var getDonarList = function(userObj, callback) {    
-    var  donars =[];
-    UserAcct.find({$and : [
-                        {'indiv.appointment':{$exists:true}}
-                        ,{'indiv.appointment':{$ne:null}}
-                        ,{'_id':{$ne:userObj.user_id}}
-                        ]}, 
+    var queryFilter = { $and: [
+        {'indiv.appointment':{$exists:true}}
+        ,{'indiv.appointment':{$ne:null}}
+        ] };
+    if (userObj.user_id) { queryFilter.$and.push({'_id':{$ne:userObj.user_id}}); }
+    if (userObj.bloodgroup) { queryFilter.$and.push({"indiv.blood_grp": userObj.bloodgroup}); }
+    if (userObj.bookcity) { queryFilter.$and.push({"indiv.appointment.donor_city": userObj.bookcity}); }
+    if (userObj.bookdate) { queryFilter.$and.push({"indiv.appointment.appointment_date": moment.utc(userObj.bookdate,'DD/MM/YYYY').format()}); }    
+    var  donars =[];        
+    UserAcct.find(queryFilter, 
                         { 'email':1
                         ,'mobile':1
                         ,'indiv.name':1
