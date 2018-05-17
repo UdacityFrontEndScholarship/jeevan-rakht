@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     {{>head}}
-    <body id="particles-js" m-md-3>
+    <body id="particles-js">
         <!-- Main content goes here -->      
         <div class="vh-100 d-flex flex-column justify-content-between">
           {{>header}}
@@ -17,7 +17,7 @@
 
                 <form method="POST" id="locate-form">
                   <div class="input-wrapper input-wrapper-lg mb-md-4">
-                    <input type="text" autocomplete="off" class="input-location typeahead" title="Location" placeholder="Location">
+                    <input type="text" id="bookcity" name="bookcity" autocomplete="off" class="input-location typeahead" title="Location" placeholder="Location">
                     <i class="fas fa-map-marker-alt"></i>
                   </div>
 
@@ -31,8 +31,9 @@
 
                     <div class="col-md-6">
                       <div class="input-wrapper input-wrapper-lg">
-                        <select title="Blood group" class="no-caret empty" title="Blood group">
+                        <select name="bloodgroup" id="bloodgroup" title="Blood group" class="no-caret empty" title="Blood group">
                           <option value="" disabled selected>Blood group</option>
+                          <option value="">All</option>
                           <option value="A+">A+</option>
                           <option value="A-">A-</option>
                           <option value="B+">B+</option>
@@ -48,7 +49,7 @@
 
                     <div class="col-md-6">
                       <div class="input-wrapper input-wrapper-lg">
-                        <input class="input-when" title="When" placeholder="When">
+                        <input type="text" class="input-when" id="bookdate" name="bookdate" title="When" placeholder="When">
                         <i class="far fa-calendar-alt"></i>
                       </div>
                     </div>

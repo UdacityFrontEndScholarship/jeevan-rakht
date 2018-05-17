@@ -3,9 +3,14 @@
 $('#locate-search').on('click',function(e){
     e.preventDefault();
     var locationURL = '/donarlist';
+    var formData = {};
+    formData.bloodgroup = $('#bloodgroup').val();
+    formData.bookcity = $('#bookcity').val();
+    formData.bookdate = $('#bookdate').val();
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: locationURL,
+        data: JSON.stringify(formData),
         headers: {
             'Content-Type': 'application/json',
         }
