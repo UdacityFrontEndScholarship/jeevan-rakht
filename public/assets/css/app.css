@@ -749,6 +749,9 @@ background-color: transparent;
 }
 
 /* ==== DONATE PAGE STYLES ==== */
+table caption{
+  caption-side: top;
+}
 
 .content-wrapper {
   max-width: 900px;
