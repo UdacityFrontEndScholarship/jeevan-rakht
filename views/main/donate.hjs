@@ -77,8 +77,12 @@
     {{>utilityJS}}
     <script src="assets/js/moment.min.js"></script>
     <script>
-      var old_bookdate = moment($('#old-bookdate').text()).format('DD/MM/YYYY');
-      $('#old-bookdate').text(old_bookdate);
+      let booking_date = $('#old-bookdate').text();
+      let old_bookdate ="";
+      if(booking_date){
+        old_bookdate = moment(booking_date).format('DD/MM/YYYY');
+        $('#old-bookdate').text(old_bookdate);
+      }      
     </script>
   </body>
 </html>

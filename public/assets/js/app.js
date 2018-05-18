@@ -78,6 +78,18 @@ $('#signup-submit').on('click',function (event){
 	if(flag) event.preventDefault();
 });
 
+//function to check if the format of an input date is DD/MM/YYYY
+function checkDate(field,val){
+	val = val.trim();
+	let regex = /^(0?[1-9]|1\d|2\d|3[01])\/(0?[1-9]|1[0-2])\/(19|20)\d{2}$/;
+	if(regex.test(val)){
+		return true;
+	}else{
+		alert(field +' format should be dd/mm/yyyy.');
+		return false;
+	}
+}
+
 //function to check if fname/lname are valid by checking their length and checking if they contain a number
 function checkName(field,val){
 	return checkLength(field,val,3)&&checkNumber(field,val);
@@ -121,7 +133,9 @@ $('#donate-submit').on('click',function (event){
   //flag to decide whether to submit the form or not
   let flag = false;
   var city = $('form input[name=bookcity]').val();
+  let bookdate = $('form input[name=bookdate]').val();	
   if(checkAlphaSpaces('City',city)==false) flag = true;
+  else if(checkDate('Booking date',bookdate)==false) flag = true;
   if(flag) event.preventDefault();
 });
 
@@ -149,8 +163,14 @@ function checkSpecial(field,val){
 function checkAlphaSpaces(field,val){
 	val = val.trim();
 	//regex to check for characters other than alphabets and spaces
-	let regex = /[^a-zA-z\s]/;
-	if(regex.test(val)){
+	let regex = /^[a-zA-Z]+[a-zA-Z ]+$/;
+	if(!val){
+		alert(field +' is required!');
+		return false;
+	}else if(val.length<2){
+		alert(field +' must contain minimum two alphabets!');
+		return false;
+	}else if(!regex.test(val)){
 		alert(field +' must contain only alphabets and spaces!');
 		return false;
 	}else return true;
@@ -168,7 +188,6 @@ function checkPincode(val){
 $('#profile-update').on('click',function(event){
 	//flag to decide whether to submit the form or not
 	let flag = false;
-
 	//getting elements of all the inputs
 	let orgname = $('form input[name=orgname]');
 	let fname = $('form input[name=firstname]');	
@@ -188,6 +207,7 @@ $('#profile-update').on('click',function(event){
 		let lname = $('form input[name=lastname]');
 		let bg = $('form select[name=bloodgroup] :selected');
 		let gen = $('form select[name=gender] :selected');
+		let last_donation = $('form input[name=last_donation]');	
 		if(checkName('First Name',fname.val())==false) flag = true;
 		else if(checkName('Last Name',lname.val())==false) flag = true;
 		//blocks to check if the user has selected blood group and gender from the select dropdown
@@ -199,8 +219,9 @@ $('#profile-update').on('click',function(event){
 			alert('Please select gender!');
 			flag = true;
 		}
+		else if(checkDate('Last Donation date',last_donation.val())==false) flag = true;
 	}
-
+	console.log("flag: "+ flag);
 	//if the add/edit address radio is checked then only check for the input fields otherwise the fields will be filled automatically using Use My Location radio
 	if(radioButtonCheck==='userinput'){
 		if(checkRequired('Address Line 1',addr1.val())==false || checkSpecial('Address Line 1',addr1.val())==false) flag = true;

@@ -15,7 +15,9 @@ router.get('/', login_required, function(req, res, next) {
     obj.age         = req.user.indiv.age;
     obj.height      = req.user.indiv.height;
     obj.weight      = req.user.indiv.weight;
-    obj.last_donation  = moment(req.user.indiv.last_donation,'MM/DD/YYYY').format('DD/MM/YYYY');
+    if(req.user.indiv.last_donation){
+        obj.last_donation  = moment(req.user.indiv.last_donation,'MM/DD/YYYY').format('DD/MM/YYYY');
+    }
     obj.orgname     = req.user.non_indiv.org_name;
     obj.license     = req.user.non_indiv.license;
     obj.stock       = req.user.non_indiv.unit_stock;
@@ -40,7 +42,9 @@ router.post('/',
         userObj.title = 'Profile';        
         if (req.body._method === 'PUT'){
             userObj.usertype = req.user.user_type;
-            userObj.appointment = req.user.indiv.appointment;            
+            if(req.user.indiv.appointment){
+              userObj.appointment = req.user.indiv.appointment;            
+            };
             updateUser(userObj, function(err, result) {
                 if (err) {
                     userObj.alertMessage = "DB Error:"+err.message;
