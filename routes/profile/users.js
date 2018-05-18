@@ -15,7 +15,9 @@ router.get('/', login_required, function(req, res, next) {
     obj.age         = req.user.indiv.age;
     obj.height      = req.user.indiv.height;
     obj.weight      = req.user.indiv.weight;
-    obj.last_donation  = moment(req.user.indiv.last_donation,'MM/DD/YYYY').format('DD/MM/YYYY');
+    if(req.user.indiv.last_donation){
+        obj.last_donation  = moment(req.user.indiv.last_donation,'MM/DD/YYYY').format('DD/MM/YYYY');
+    }
     obj.orgname     = req.user.non_indiv.org_name;
     obj.license     = req.user.non_indiv.license;
     obj.stock       = req.user.non_indiv.unit_stock;

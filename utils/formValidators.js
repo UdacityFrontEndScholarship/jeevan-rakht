@@ -2,11 +2,9 @@ function profile_validator(req, res, next) {
     // A function decorator to avoid that code repetition
     // fo checking user login status
     if(req.body._method === 'DELETE'){
-        console.log('Delete Account POST');
         next();        
         return;
     }
-    console.log('Update Account POST');
     var obj = req.body;
     obj.title = 'Profile';    
     if (req.user.user_type ==='Individual'){
@@ -18,6 +16,7 @@ function profile_validator(req, res, next) {
         req.checkBody('height','height must be numeric.').notEmpty().isNumeric();
         req.checkBody('weight','weight must be numeric.').notEmpty().isNumeric();        
         req.checkBody('last_donation','last blood donation date is required.').notEmpty();
+        req.checkBody('last_donation','date format should be dd/mm/yyyy.').matches(/^(0?[1-9]|1\d|2\d|3[01])\/(0?[1-9]|1[0-2])\/(19|20)\d{2}$/);
     }else if(req.user.user_type ==='Non-Individual'){
         req.checkBody('orgname','orgname must contain minimum 3 chars.').notEmpty().isLength({ min: 3 });
         req.checkBody('license','license must contain minimum 3 chars.').notEmpty().isLength({ min: 3 });
@@ -49,7 +48,8 @@ function donate_validator(req, res, next) {
     var obj = req.body;
     obj.title = 'Donate Blood';    
     req.checkBody('bookcity','city must contain only alphabets and spaces.').notEmpty().matches(/^[a-zA-Z]+[a-zA-Z ]+$/);
-    req.checkBody('bookdate','Booking date is required.').notEmpty();
+    req.checkBody('bookdate','booking date is required.').notEmpty();
+    req.checkBody('bookdate','date format should be dd/mm/yyyy.').matches(/^(0?[1-9]|1\d|2\d|3[01])\/(0?[1-9]|1[0-2])\/(19|20)\d{2}$/);
     var errors = req.validationErrors();
     if(errors){
         obj.alertMessage = errors[0].msg;
