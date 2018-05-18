@@ -163,8 +163,14 @@ function checkSpecial(field,val){
 function checkAlphaSpaces(field,val){
 	val = val.trim();
 	//regex to check for characters other than alphabets and spaces
-	let regex = /[^a-zA-z\s]/;
-	if(regex.test(val)){
+	let regex = /^[a-zA-Z]+[a-zA-Z ]+$/;
+	if(!val){
+		alert(field +' is required!');
+		return false;
+	}else if(val.length<2){
+		alert(field +' must contain minimum two alphabets!');
+		return false;
+	}else if(!regex.test(val)){
 		alert(field +' must contain only alphabets and spaces!');
 		return false;
 	}else return true;
