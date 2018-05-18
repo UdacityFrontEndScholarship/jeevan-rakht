@@ -211,7 +211,6 @@ label {
 }
 
 /* === Button === */
-
 .btn-link {
   display: block;
   max-width: 100%;
@@ -237,6 +236,15 @@ label {
   text-decoration: none !important;
   color: var(--white) !important;
   text-align: center !important;
+}
+
+.btn-link-secondary{
+  color: #fff;
+  background: linear-gradient(var(--text-color-light), var(--text-color-light));
+  border-color: #6c757d;
+}
+.btn-link-secondary:hover {
+  background: linear-gradient(var(--text-color-light), var(--text-color-dark));
 }
 
 /* === Styles related to app.hjs === */
@@ -1045,6 +1053,16 @@ span.flatpickr-weekday {
 
 .contact-wrapper:hover .contact-icon {
   box-shadow: -1px 0 2px rgba(0, 0, 0, .12);
+}
+
+/* === Delete Account Modal Styles === */
+.modal-body, .modal-footer{
+  text-align: center;
+  justify-content: center;
+}
+#deleteAccountModal .modal-footer button{
+  width: 100px;
+  margin: 0.5rem;
 }
 
 /* === PROFILE RELATED STYLES === */

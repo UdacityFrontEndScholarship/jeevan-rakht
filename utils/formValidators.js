@@ -1,6 +1,12 @@
 function profile_validator(req, res, next) {
     // A function decorator to avoid that code repetition
     // fo checking user login status
+    if(req.body._method === 'DELETE'){
+        console.log('Delete Account POST');
+        next();        
+        return;
+    }
+    console.log('Update Account POST');
     var obj = req.body;
     obj.title = 'Profile';    
     if (req.user.user_type ==='Individual'){

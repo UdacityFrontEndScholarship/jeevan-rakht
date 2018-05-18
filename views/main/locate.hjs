@@ -84,7 +84,7 @@
                         <tr class="py-4">
                           <th>Name</th>
                           <th>Age</th>
-                          <th>Blood Group</th>
+                          <th>Blood&nbspGroup</th>
                           <th>City</th>
                           <th>Availability</th>
                           <th></th>

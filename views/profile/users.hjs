@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     {{>head}}
-    <body id="particles-js" m-md-3>
+    <body id="particles-js">
         <!-- Main content goes here -->      
         <div class="vh-100 d-flex flex-column justify-content-between">
           {{>header}}
@@ -35,12 +35,41 @@
                         <span class="mx-3">•</span>
                         
                         <a href="/forgot" class="">Update Password</a>
+                        
+                        <span class="mx-3">•</span>
+                        <!-- link trigger modal -->                        
+                        <a href="" data-toggle="modal" data-target="#deleteAccountModal" class="">Delete Account</a>
                     </div>
+
                 </div>
                 <!-- End content-wrapper -->
             </div>
             <!-- End main-content -->
-        </section>        
+        </section>      
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteAccountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered content-wrapper" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="w-100"><strong>DELETE</strong> Account</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>You will lose all the data permanently once account is deleted. Do you still want to proceed?</p>
+                        </div>
+                            <form method="POST">
+                                <input type="hidden" name="_method" value="DELETE">	                        
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn-link" id="profile-delete-btn">Yes</button>
+                                    <button type="button" class="btn-link btn-link-secondary" data-dismiss="modal">No</button>                                            
+                                </div>
+                            </form>        
+                        </div>
+                    </div>
+                    </div>    
+                    <!-- End Modal -->                          
         {{>footer}}
         </div>
         {{>utilityJS}}
