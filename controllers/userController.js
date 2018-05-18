@@ -95,7 +95,6 @@ var createOAuthUser = function(usrObj, callback) {
             callback(err, undefined);
             return;
         }
-        console.log('Saved from user model', data);
         callback(err, data);
     });
 }
@@ -204,9 +203,11 @@ var updateUser = function(userObj, callback) {
             gender: userObj.gender,        
             last_donation: moment(userObj.last_donation,'DD/MM/YYYY').format('MM/DD/YYYY'),                
             height: userObj.height,    
-            weight: userObj.weight,
-            appointment : userObj.appointment
+            weight: userObj.weight
         };
+        if (userObj.appointment){
+            item.indiv.appointment = userObj.appointment;    
+        }
     }else{
         item.non_indiv = {
             org_name: userObj.orgname,
@@ -246,12 +247,13 @@ var getDonarList = function(userObj, callback) {
     var queryFilter = { $and: [
         {'indiv.appointment':{$exists:true}}
         ,{'indiv.appointment':{$ne:null}}
+        ,{'indiv.appointment':{$ne:{}}}
         ] };
     if (userObj.user_id) { queryFilter.$and.push({'_id':{$ne:userObj.user_id}}); }
     if (userObj.bloodgroup) { queryFilter.$and.push({"indiv.blood_grp": userObj.bloodgroup}); }
     if (userObj.bookcity) { queryFilter.$and.push({"indiv.appointment.donor_city": userObj.bookcity}); }
     if (userObj.bookdate) { queryFilter.$and.push({"indiv.appointment.appointment_date": moment.utc(userObj.bookdate,'DD/MM/YYYY').format()}); }    
-    var  donars =[];        
+    var  donars =[];      
     UserAcct.find(queryFilter, 
                         { 'email':1
                         ,'mobile':1
@@ -277,6 +279,7 @@ var getDonarCount = function(userObj, callback) {
     UserAcct.count({$and : [
                         {'indiv.appointment':{$exists:true}}
                         ,{'indiv.appointment':{$ne:null}}
+                        ,{'indiv.appointment':{$ne:{}}}
                         ]},
         function(err, result) {
         if (err) {

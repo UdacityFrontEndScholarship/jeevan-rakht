@@ -42,7 +42,9 @@ router.post('/',
         userObj.title = 'Profile';        
         if (req.body._method === 'PUT'){
             userObj.usertype = req.user.user_type;
-            userObj.appointment = req.user.indiv.appointment;            
+            if(req.user.indiv.appointment){
+              userObj.appointment = req.user.indiv.appointment;            
+            };
             updateUser(userObj, function(err, result) {
                 if (err) {
                     userObj.alertMessage = "DB Error:"+err.message;
