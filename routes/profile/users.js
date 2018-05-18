@@ -3,7 +3,7 @@ var router = express.Router();
 var moment = require('moment');
 var { login_required } = require('../../utils/authValidator');
 var { profile_validator } = require('../../utils/formValidators');
-var { updateUser } = require('../../controllers/userController');
+var { updateUser,deleteUser } = require('../../controllers/userController');
 
 router.get('/', login_required, function(req, res, next) {
     let obj = {};
@@ -35,12 +35,12 @@ router.post('/',
     login_required,
     profile_validator,
     function(req, res, next) {
+        let userObj = req.body;
+        userObj.id = req.user._id;          
+        userObj.title = 'Profile';        
         if (req.body._method === 'PUT'){
-            let userObj = req.body;
-            userObj.id = req.user._id;          
             userObj.usertype = req.user.user_type;
-            userObj.appointment = req.user.indiv.appointment;
-            userObj.title = 'Profile';
+            userObj.appointment = req.user.indiv.appointment;            
             updateUser(userObj, function(err, result) {
                 if (err) {
                     userObj.alertMessage = "DB Error:"+err.message;
@@ -56,12 +56,17 @@ router.post('/',
                 }
             });
         }else if(req.body._method === 'DELETE'){
-            res.send('delete profile');
+            deleteUser(userObj, function(err, result) {
+                if (err) {
+                    userObj.alertMessage = "DB Error:"+err.message;
+                    res.render('profile/users', userObj);
+                } else if (result) {
+                    req.flash('successMessage', 'Profile deleted successfully.');
+                    console.log('Delete Account Successfull');
+                    res.redirect('/');
+                }
+            });            
         }
     });
-
-router.delete('/', function(req, res, next) {
-    res.send('delete profile');
-});
 
 module.exports = router;

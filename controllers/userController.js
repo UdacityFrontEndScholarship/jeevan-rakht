@@ -62,13 +62,22 @@ var findById = function(id, callback) {
     });
 }
 
-var deleteUser = function(email, callback) {
-    UserAcct.remove({ email: email }, function(err, success) {
-        if (!err) {
-            console.log('Email Removed', success);
-            callback(err, success);
+var deleteUser = function(userObj, callback) {
+    UserAcct.findOne({ '_id': userObj.id }, function(err, result) {
+        if (err) {
+            callback(err, undefined);
+        } else if (result) {
+            UserAcct.deleteOne({ '_id': userObj.id }, function(err, success) {
+                if (err) {
+                    callback(err, undefined);
+                } else if (success) {
+                    callback(undefined, success);
+                } else if (!success) {
+                    callback(undefined, undefined);
+                }
+            });
         }
-    });
+    });    
 }
 var createOAuthUser = function(usrObj, callback) {
     var newUser = new UserAcct({
