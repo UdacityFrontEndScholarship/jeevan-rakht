@@ -101,7 +101,7 @@ router.post('/', rawParser,function(req, res, next) {
                                 }
                                 // sets a cookie with the user's info
                                 req.session.user = newUser;
-                                req.flash('successMessage', 'User created with Google Signin.');
+                                req.flash('successMessage', 'User created succesfully using Google Signin.');
                                 sendResp();
                             });
                         }else if(user){
