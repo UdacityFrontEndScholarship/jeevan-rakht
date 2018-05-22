@@ -65,6 +65,15 @@ router.post('/',
                     userObj.alertMessage = "DB Error:"+err.message;
                     res.render('profile/users', userObj);
                 } else if (result) {
+                //Clear user object from session
+                    delete req.session.user;
+                //Clear session data for OAuth2 User
+                    delete req.session.access_token;
+                    delete req.session.gplus_id;
+                    delete req.session.fb_id;
+                    delete req.session.picture;
+                    delete req.session.email;
+                    delete req.session.username;
                     req.flash('successMessage', 'Profile deleted successfully.');
                     console.log('Delete Account Successfull');
                     res.redirect('/');

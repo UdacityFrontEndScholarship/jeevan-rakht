@@ -98,7 +98,7 @@ router.post('/', rawParser,function(req, res, next) {
                             return res.status(500).send({ "error": err.message });     
                         }
                         req.session.user = newUser;
-                        req.flash('successMessage', 'User created with Google Signin.');
+                        req.flash('successMessage', 'User created succesfully using Facebook Signin.');
                         sendResp();
                     });
                 }else if(user){
