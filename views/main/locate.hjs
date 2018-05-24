@@ -6,6 +6,12 @@
         <div class="vh-100 d-flex flex-column justify-content-between">
           {{>header}}
           <section class="container my-5">
+            {{#successMessage}}
+            <div class="alert alert-success text-center zi-1">{{successMessage}}</div>
+            {{/successMessage}}
+            {{#alertMessage}}
+            <div class="alert alert-danger text-center zi-1">{{alertMessage}}</div>
+            {{/alertMessage}}                        
             <div class="main-content zi-1">
 
               <a href="/" class="back-arrow">
@@ -105,9 +111,40 @@
             </div>
             <!-- End main-content -->
           </section>
+                    <!-- Modal -->
+                    <div class="modal fade confirmation-modal" id="connWithDonor" tabindex="-1" role="dialog" aria-labelledby="connWithDonor" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered content-wrapper" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="w-100"><strong>CONTACT</strong> Donor</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>We will sent your details along with a request mail to the donor. Do you still want to proceed?</p>
+                        </div>
+                            <form name="modal-form" method="POST" action="/conwith_donor">
+                                <input id="donor_name" type="hidden" name="donor_name" value="">
+                                <input id="email" type="hidden" name="email" value="">
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn-link" id="contact-donor-modal-btn">Yes</button>
+                                    <button type="button" class="btn-link btn-link-secondary" data-dismiss="modal">No</button>                                            
+                                </div>
+                            </form>        
+                        </div>
+                    </div>
+                    </div>    
+                    <!-- End Modal -->                          
           {{>footer}}
         </div>
         {{>utilityJS}}
+        <script>
+            $("#contact-donor-modal-btn").on('click',(function(e) {     
+              let donarName  = $('form[name=modal-form] input[name=donor_name]').val()
+              let donarEmail = $('form[name=modal-form] input[name=email]').val()
+            }))            
+        </script>                    
         {{>locate_ajax}}
       </body>
   </html>
