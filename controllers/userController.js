@@ -82,6 +82,7 @@ var deleteUser = function(userObj, callback) {
 var createOAuthUser = function(usrObj, callback) {
     var newUser = new UserAcct({
         user_name: usrObj.username,
+        'indiv.name': usrObj.username,
         email: usrObj.email,
         picture: usrObj.picture,
         active_flag: usrObj.active_flag,
