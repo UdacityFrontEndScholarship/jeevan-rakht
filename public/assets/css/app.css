@@ -1063,7 +1063,7 @@ span.flatpickr-weekday {
   text-align: center;
   justify-content: center;
 }
-#deleteAccountModal .modal-footer button{
+.confirmation-modal .modal-footer button{
   width: 100px;
   margin: 0.5rem;
 }
