@@ -1,78 +1,37 @@
 <!DOCTYPE html>
 <html>
+    {{>head}}
+    <body id="particles-js" m-md-3>     
+        <div class="vh-100 d-flex flex-column justify-content-between">
+            {{>header}}
+            <!-- Your code goes here -->      
+            <section class="container my-5">
+                {{#alertMessage}}
+                <div class="alert alert-danger text-center zi-1">{{alertMessage}}</div>
+                {{/alertMessage}}            
+                <div class="main-content zi-1">
+                    <a href="/login" class="back-arrow">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <div class="content-wrapper">
+                        <h2 class="text-uppercase"><strong>Password Link</strong></h2>            
+                    
+                        <form method="POST" class="box-350 mt-5">	
+                            <div class="input-wrapper input-wrapper-lg">
+                                <input type="email" name="email" id="email" value ="{{email}}" placeholder="enter your email">
+                                <i class="far fa-envelope"></i>
+                            </div>   
 
-        <title>JeevanRakht - {{title}}</title>
-
-        <!-- Shortcut Icons -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
-        <link rel="apple-touch-icon" type="image/x-icon" href="assets/images/favicon.ico">
-
-        <!-- SEO tags -->
-        <meta name="description" content="The Official website of JeevanRakht">
-        <meta name="keywords" content="JeevanRakht, Blood Dontation, Blood Bank, Google Udacity Project JeevanRakht">
-
-        <!--GOOGLE FONT-->
-        <link href="https://fonts.googleapis.com/css?family=Arvo|Lato" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
-
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="assets/css/bootstrap.css" />
-
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <!-- Main CSS file -->
-        <link rel="stylesheet" href="assets/css/app.css" />
-    </head>
-
-    <body m-md-3>
-        <!-- Main content goes here -->      
-          <section id="header" class="jumbotron px-0 py-3 p-sm-2 m-0 rounded-0 text-left">
-              <div class="container">
-                <div class="row">
-                  <div class="col-6 col-md-2 offset-md-8 offset-3 my-auto text-right"><a href="/login" class="text-danger">login </a>|<a href="/signup" class="text-danger"> signup</a> </div>
-                  <div class="col-3 col-md-2"><a href="/users"><img src="assets/images/profile.jpg" class="rounded rounded-circle" alt=""></a></div>
+                            <button type="submit" class="btn-link w-100 mt-4">Send Me Reset Link</button> 
+                        </form>
+                    </div>
+                    <!-- End content-wrapper -->
                 </div>
-              </div>
-          </section>
-        <section id="main">
-      <!-- Your code goes here -->      
-
-        </section>
-        <section class="footer p-4 mb-2 text-center text-danger">
-          <div class="row">
-            <div class="col-12 text-center">
-                <p>Want to know more?</p>
-            </div>
-            <div class="col-xs-12 col-md-3 text-primary">
-              <a href="mailto:jeevanrakht.in@gmail.com" target="_blank">Contact Us</a>
-            </div>
-            <div class="col-xs-12 col-md-3 text-primary">
-              <a href="index.html" target="_blank">Go to website</a>
-            </div>
-            <div class="col-xs-12 col-md-3 text-primary">
-              <a href="policy.html" target="_blank">Terms &amp; policy</a>
-            </div>
-            <div class="col-xs-12 col-md-3 text-primary">
-              <a href="privacy.html" target="_blank">Privacy</a>
-            </div>
-            <div class="col-12 text-center mt-3">
-                <p>&copy; 2018, jeevanrakht.in, Inc. or its affiliates</p>
-            </div>                                          
-          </div>
-        </section>
-        <!-- Jquery -->
-        <script src="assets/js/jquery.min.js"></script>
-        <!-- Bootstrap -->
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <!-- Main JS file -->
-        <script src="assets/js/app.js"></script>
-      </body>
-  </html>
+                <!-- End main-content -->
+            </section>
+            {{>footer}}
+        </div>
+        {{>utilityJS}}
+    </body>
+</html>

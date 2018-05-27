@@ -1,110 +1,141 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title>JeevanRakht - {{title}}</title>
-
-        <!-- Shortcut Icons -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
-        <link rel="apple-touch-icon" type="image/x-icon" href="assets/images/favicon.ico">
-
-        <!-- SEO tags -->
-        <meta name="description" content="The Official website of JeevanRakht">
-        <meta name="keywords" content="JeevanRakht, Blood Dontation, Blood Bank, Google Udacity Project JeevanRakht">
-
-        <!--GOOGLE FONT-->
-        <link href="https://fonts.googleapis.com/css?family=Arvo|Lato" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
-
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="assets/css/bootstrap.css" />
-
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <!-- Main CSS file -->
-        <link rel="stylesheet" href="assets/css/app.css" />
-    </head>
-
-    <body m-md-3>
+    {{>head}}
+    <body id="particles-js">
         <!-- Main content goes here -->      
-          <section id="header" class="jumbotron px-0 py-3 p-sm-2 m-0 rounded-0 text-left">
-              <div class="container">
-                <div class="row">
-                  <div class="col-6 col-md-2 offset-md-8 offset-3 my-auto text-right"><a href="/login" class="text-danger">login </a>|<a href="/signup" class="text-danger"> signup</a> </div>
-                  <div class="col-3 col-md-2"><a href="/users"><img src="assets/images/profile.jpg" class="rounded rounded-circle" alt=""></a></div>
-                </div>
-              </div>
-          </section>
-        <section id="signup">
-        <div class="container p-3 mt-5 bg-light">
+        <div class="vh-100 d-flex flex-column justify-content-between">
+          {{>header}}
+            <div id="oauth-login-result" class="container my-4 zi-1 hidden">
+                <div id="oauth-result-content"></div>
+            </div>
+      <!-- Your code goes here -->      
+        <section id="signup" class="container my-5">
             {{#alertMessage}}
-            <div class="alert alert-danger">{{alertMessage}}</div>
-            {{/alertMessage}}
-            <form method="POST" action="/signup">
-                <div class="form-group">
-                    <label for="firstname">First name</label>
-                    <input type="text" name="fname" class="form-control" id="firstname" autocomplete="name" aria-describedby="firstname" placeholder="Enter Name">
+            <div class="alert alert-danger text-center zi-1">{{alertMessage}}</div>
+            {{/alertMessage}}            
+            <div class="main-content zi-1">
+                <a href="/" class="back-arrow">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <div class="signin-wrapper">    
+                    <form method="POST">
+                        <div class="radios">
+                            <h3>Entity Type:</h3>
+
+                            <label>
+                                <input type="radio" name="usertype" value="Individual" required {{#inputValue.indiv}}checked{{/inputValue.indiv}}> 
+
+                                <span>Self (Individual)</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="usertype" value="Non-Individual" required {{#inputValue.nonIndiv}}checked{{/inputValue.nonIndiv}}> 
+
+                                <span>Blood Bank (Non-Individual)</span>
+                            </label>
+                        </div>
+                                         
+                        <div class="indiv">
+                            <div class="input-wrapper">
+                                <input type="text" name="firstname" id="fname" value="{{inputValue.firstname}}" aria-describedby="fnameHelp" placeholder="first name">
+
+                                <i class="far fa-user"></i>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <input type="text" name="lastname" id="lname" value="{{inputValue.lastname}}" aria-describedby="lnameHelp" placeholder="last name">
+
+                                <i class="far fa-user"></i>   
+                            </div>                  
+                        </div>
+                        <!-- End indiv -->
+
+                        <div class="nonindiv">
+                            <div class="input-wrapper">
+                                <input id="orgname" type="text" name="orgname" value="{{inputValue.orgname}}" placeholder="bank name">
+
+                                <i class="fas fa-hospital-alt"></i>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <input id="license" type="text" name="license" value="{{inputValue.license}}" placeholder="license">
+
+                                <i class="fas fa-id-card"></i>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <input id="stock" type="number" name="stock" min="0" value="{{inputValue.stock}}" placeholder="Blood stock(in ltr)">
+
+                                <i class="fas fa-tint"></i>
+                            </div>                    
+                        </div>
+                        <!-- End nonindiv -->
+                    
+                        <div class="input-wrapper">
+                            <input type="email" name="email" id="email" value="{{inputValue.email}}" required placeholder="email">
+
+                            <i class="far fa-envelope"></i>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <input type="password" name="pwd" id="password" value="{{pww}}" required placeholder="password">
+
+                            <i class="fas fa-unlock"></i>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <input type="password" name="verify" id="verify" value="{{vpw}}" required placeholder="confirm password">
+
+                            <i class="fas fa-unlock"></i>
+                        </div>                    
+                                            
+                        <button id='signup-submit' type="submit" class="btn-link">SIGN UP</button>
+                    </form>
+                    
+                    <div class="login-divider">
+                        <div class="bar bar-top"></div>
+                        <span class="login-or">OR</span>
+                        <div class="bar bar-bottom"></div>
+                    </div>
+                    <!-- GOOGLE PLUS and FB SIGN IN buttons partials-->
+                    {{>oauth2_btns}}
+                    <div class="help-txt mt-0 mb-2">
+                        <p>Already have an account? <strong>LOGIN</strong> <a href="/login">here</a>.</p>
+                    </div>                      
                 </div>
-                <div class="form-group">
-                    <label for="mobileHelp">Mobile</label>
-                    <input type="number" name="number" class="form-control" id="mobileHelp" autocomplete="mobile" aria-describedby="mobileHelp" placeholder="Enter Mobile">
-                    <small id="mobileHelp" class="form-text text-muted">We'll never share your mobile with anyone else.</small>
-                </div>                            
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" autocomplete="email" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" name="pass1" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group">
-                    <label for="confPassword1">Confirm password</label>
-                    <input type="password" name="pass2" class="form-control" id="confPassword1" placeholder="Password">
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" name="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <a href="/"><button type="button" class="btn btn-secondary">Cancel</button></a>
-            </form>
-        </div>  
+                <!-- End signin-wrapper -->        
+            </div>  
+            <!-- End main-content -->
         </section>
-        <section class="footer p-4 mb-2 text-center text-danger">
-          <div class="row">
-            <div class="col-12 text-center">
-                <p>Want to know more?</p>
-            </div>
-            <div class="col-xs-12 col-md-3 text-primary">
-              <a href="mailto:jeevanrakht.in@gmail.com" target="_blank">Contact Us</a>
-            </div>
-            <div class="col-xs-12 col-md-3 text-primary">
-              <a href="index.html" target="_blank">Go to website</a>
-            </div>
-            <div class="col-xs-12 col-md-3 text-primary">
-              <a href="policy.html" target="_blank">Terms &amp; policy</a>
-            </div>
-            <div class="col-xs-12 col-md-3 text-primary">
-              <a href="privacy.html" target="_blank">Privacy</a>
-            </div>
-            <div class="col-12 text-center mt-3">
-                <p>&copy; 2018, jeevanrakht.in, Inc. or its affiliates</p>
-            </div>                                          
-          </div>
-        </section>
-        <!-- Jquery -->
-        <script src="assets/js/jquery.min.js"></script>
-        <!-- Bootstrap -->
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <!-- Main JS file -->
-        <script src="assets/js/app.js"></script>
+        {{>footer}}
+        </div>
+        {{>utilityJS}}
+        <!--Ajax Call to SIGN IN -->
+        {{>oauth2_ajax}}
+	    <!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
+	    <script async defer src="https://apis.google.com/js/client:platform.js?onload=start"></script>
+	    <!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->        
+        
+        <!--Below scripts controlls party type radio button action -->
+        <script>
+        var partySelect = $("input:radio[name=usertype]");
+        var callback = function(evt){
+            var RadioButtonCheck = $('form input[type=radio]:checked').val();
+            console.log(RadioButtonCheck);
+            if (RadioButtonCheck == "Individual") {
+                $(".nonindiv").hide();
+                $(".nonindiv input").prop('required', false);
+                $(".indiv").slideDown();
+                $(".indiv input").prop('required', true);
+            }else if (RadioButtonCheck == "Non-Individual") {
+                $(".indiv").hide();
+                $(".indiv input").prop('required', false);
+                $(".nonindiv").slideDown();
+                $(".nonindiv input").prop('required', true);
+            }
+        };
+        $(partySelect).on('change',callback);
+        $(window).on('load',callback);
+        </script>        
       </body>
   </html>

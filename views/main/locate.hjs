@@ -1,78 +1,150 @@
 <!DOCTYPE html>
 <html>
-
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title>JeevanRakht - {{title}}</title>
-
-        <!-- Shortcut Icons -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
-        <link rel="apple-touch-icon" type="image/x-icon" href="assets/images/favicon.ico">
-
-        <!-- SEO tags -->
-        <meta name="description" content="The Official website of JeevanRakht">
-        <meta name="keywords" content="JeevanRakht, Blood Dontation, Blood Bank, Google Udacity Project JeevanRakht">
-
-        <!--GOOGLE FONT-->
-        <link href="https://fonts.googleapis.com/css?family=Arvo|Lato" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
-
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="assets/css/bootstrap.css" />
-
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <!-- Main CSS file -->
-        <link rel="stylesheet" href="assets/css/app.css" />
-    </head>
-
-    <body m-md-3>
+    {{>head}}
+    <body id="particles-js">
         <!-- Main content goes here -->      
-          <section id="header" class="jumbotron px-0 py-3 p-sm-2 m-0 rounded-0 text-left">
-              <div class="container">
-                <div class="row">
-                  <div class="col-6 col-md-2 offset-md-8 offset-3 my-auto text-right"><a href="/login" class="text-danger">login </a>|<a href="/signup" class="text-danger"> signup</a> </div>
-                  <div class="col-3 col-md-2"><a href="/users"><img src="assets/images/profile.jpg" class="rounded rounded-circle" alt=""></a></div>
-                </div>
-              </div>
-          </section>
-        <section class="main">
-      <!-- Your code goes here -->      
+        <div class="vh-100 d-flex flex-column justify-content-between">
+          {{>header}}
+          <section class="container my-5">
+            {{#successMessage}}
+            <div class="alert alert-success text-center zi-1">{{successMessage}}</div>
+            {{/successMessage}}
+            {{#alertMessage}}
+            <div class="alert alert-danger text-center zi-1">{{alertMessage}}</div>
+            {{/alertMessage}}                        
+            <div class="main-content zi-1">
 
-        </section>
-        <section class="footer p-4 mb-2 text-center text-danger">
-          <div class="row">
-            <div class="col-12 text-center">
-                <p>Want to know more?</p>
+              <a href="/" class="back-arrow">
+                <i class="fas fa-arrow-left"></i>
+              </a>
+
+              <div class="content-wrapper">
+                <h2><strong>LOCATE</strong> Blood</h2>
+
+                <form method="POST" id="locate-form">
+                  <div class="input-wrapper input-wrapper-lg mb-md-4">
+                    <input type="text" id="bookcity" name="bookcity" autocomplete="off" class="input-location typeahead" title="Location" placeholder="Location">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+
+                  <div class="row">
+                    <!-- <div class="col-md-4">
+                      <div class="input-wrapper input-wrapper-lg">
+                        <input type="number" min="1" placeholder="Search radius in km" title="Search radius in kms">
+                        <i class="far fa-compass"></i>
+                      </div>
+                    </div> -->
+
+                    <div class="col-md-6">
+                      <div class="input-wrapper input-wrapper-lg">
+                        <select name="bloodgroup" id="bloodgroup" title="Blood group" class="no-caret empty" title="Blood group">
+                          <option value="" disabled selected>Blood group</option>
+                          <option value="">All</option>
+                          <option value="A+">A+</option>
+                          <option value="A-">A-</option>
+                          <option value="B+">B+</option>
+                          <option value="B-">B-</option>
+                          <option value="AB+">AB+</option>
+                          <option value="AB-">AB-</option>
+                          <option value="O+">O+</option>
+                          <option value="O-">O-</option>
+                        </select>
+                        <i class="fas fa-syringe"></i>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="input-wrapper input-wrapper-lg">
+                        <input type="text" class="input-when" id="bookdate" name="bookdate" title="When" placeholder="When">
+                        <i class="far fa-calendar-alt"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn-link mt-4 mt-md-5" id="locate-search">SEARCH</button>
+                </form>
+
+                <div class="results-text mt-5">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span>
+                      Results for available blood donors
+                    </span>
+
+                    <a href="/locate" class="results-text-icon">
+                      <i class="fas fa-search"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- State B -->
+                <div id="stateB" class="mt-5">
+                  <a href="#" class="units-wrapper">
+                      <!-- HTML will be inserted by AJAX call resultset -->
+                  </a>
+                </div>
+
+                <!-- State C -->
+                <div id="stateC" class="mt-5">
+                  <div class="table-responsive">
+                    <table class="table table-striped table-sm text-center" cellspacing="0" width="100%">
+                      <thead>
+                        <tr class="py-4">
+                          <th>Name</th>
+                          <th>Age</th>
+                          <th>Blood&nbspGroup</th>
+                          <th>City</th>
+                          <th>Availability</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <!-- HTML will be inserted by AJAX call resultset -->
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- End table-responsive -->
+                </div>
+                <!-- End stateC -->
+                <button type="button" class="btn-link mt-4 mt-md-5 hidden" id="backto-search-btn">BACK TO SEARCH</button>
+              </div>
+              <!-- End content-wrapper -->
             </div>
-            <div class="col-xs-12 col-md-3 text-primary">
-              <a href="mailto:jeevanrakht.in@gmail.com" target="_blank">Contact Us</a>
-            </div>
-            <div class="col-xs-12 col-md-3 text-primary">
-              <a href="index.html" target="_blank">Go to website</a>
-            </div>
-            <div class="col-xs-12 col-md-3 text-primary">
-              <a href="policy.html" target="_blank">Terms &amp; policy</a>
-            </div>
-            <div class="col-xs-12 col-md-3 text-primary">
-              <a href="privacy.html" target="_blank">Privacy</a>
-            </div>
-            <div class="col-12 text-center mt-3">
-                <p>&copy; 2018, jeevanrakht.in, Inc. or its affiliates</p>
-            </div>                                          
-          </div>
-        </section>
-        <!-- Jquery -->
-        <script src="assets/js/jquery.min.js"></script>
-        <!-- Bootstrap -->
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <!-- Main JS file -->
-        <script src="assets/js/app.js"></script>
+            <!-- End main-content -->
+          </section>
+                    <!-- Modal -->
+                    <div class="modal fade confirmation-modal" id="connWithDonor" tabindex="-1" role="dialog" aria-labelledby="connWithDonor" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered content-wrapper" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="w-100"><strong>CONTACT</strong> Donor</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>We will sent your details along with a request mail to the donor. Do you still want to proceed?</p>
+                        </div>
+                            <form name="modal-form" method="POST" action="/conwith_donor">
+                                <input id="donor_name" type="hidden" name="donor_name" value="">
+                                <input id="email" type="hidden" name="email" value="">
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn-link" id="contact-donor-modal-btn">Yes</button>
+                                    <button type="button" class="btn-link btn-link-secondary" data-dismiss="modal">No</button>                                            
+                                </div>
+                            </form>        
+                        </div>
+                    </div>
+                    </div>    
+                    <!-- End Modal -->                          
+          {{>footer}}
+        </div>
+        {{>utilityJS}}
+        <script>
+            $("#contact-donor-modal-btn").on('click',(function(e) {     
+              let donarName  = $('form[name=modal-form] input[name=donor_name]').val()
+              let donarEmail = $('form[name=modal-form] input[name=email]').val()
+            }))            
+        </script>                    
+        {{>locate_ajax}}
       </body>
   </html>

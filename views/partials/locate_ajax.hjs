@@ -1,0 +1,81 @@
+<script src="assets/js/moment.min.js"></script>
+<script>
+$('#locate-search').on('click',function(e){
+    e.preventDefault();
+    var locationURL = '/donarlist';
+    var formData = {};
+    formData.bloodgroup = $('#bloodgroup').val();
+    formData.bookcity = $('#bookcity').val();
+    formData.bookdate = $('#bookdate').val();
+    $.ajax({
+        type: "POST",
+        url: locationURL,
+        data: JSON.stringify(formData),
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }).done(function(response) {
+        const donorlist = JSON.parse(response);
+        $('#locate-form').hide();
+        $('#backto-search-btn').removeClass("hidden");
+        $(".results-text, #backto-search-btn").fadeIn('slow');
+        if(Object.keys(donorlist)[0] === 'donor_count'){
+          let donorCountBody = $('#stateB .units-wrapper');
+          $("#stateB").fadeIn('slow');        
+            let donorCount ='<span class="units">'+donorlist.donor_count+'</span>'
+                          +'<span class="units-text">donor(s) <br> available</span>';            
+            donorCountBody.html(donorCount);
+        }else{
+          $("#stateC").fadeIn('slow');        
+          $('#stateC table tbody tr').remove();                
+          let donorResultBody = $('#stateC table tbody');    
+          const donorLastCellTemplate = '<td class="td-last">\
+                <div class="contact-wrapper">\
+                  <a class="contact-icon" href="#!">\
+                    <i class="fas fa-user"></i>\
+                  </a>\
+                    <form name="form-%n%" class="contact-donor" method="POST" action="/conwith_donor">\
+                        <input id="donor_name" type="hidden" name="donor_name" value="%donor_name%">\
+                        <input id="email" type="hidden" name="email" value="%email%">\
+                        <div class="contact-text text-left">\
+                            <button type="submit" data-toggle="modal" data-target="#connWithDonor" style="background:none;border:none;cursor:pointer;outline:none;text-decoration:underline" class="contact-donor-btn">CONTACT</button>\
+                        </div>\
+                    </form>\
+                </div>\
+              </td>';        
+          var donorRow=""; 
+          $.each(donorlist, function(index, donor){ 
+            let donorLastCell = donorLastCellTemplate;
+            donorLastCell = donorLastCell.replace('%n%',index);
+            donorLastCell = donorLastCell.replace('%donor_name%',donor.indiv.name);
+            donorLastCell = donorLastCell.replace('%email%',donor.email);
+            console.log(donorLastCell);
+            console.log(donor.indiv.name,donor.email);
+            donorRow+="<tr><td>"+donor.indiv.name+"</td>"
+                      +"<td>" + donor.indiv.age + "</td>" 
+                      +"<td>" + donor.indiv.blood_grp + "</td>" 
+                      +"<td>" + donor.indiv.appointment.donor_city + "</td>" 
+                      +"<td>" + moment(donor.indiv.appointment.appointment_date).format('DD/MM/YYYY') + "</td>"
+                      +donorLastCell
+                      +"</tr>"; 
+            donorResultBody.html(donorRow);
+            $(".contact-donor").on('submit',(function(e) {
+                e.preventDefault();                
+                let x = $(e.target);
+                let donarName  = $('form[name='+x[0].name+'] input[name=donor_name]').val()
+                let donarEmail = $('form[name='+x[0].name+'] input[name=email]').val()
+                $('form[name=modal-form] input[name=donor_name]').val(donarName);
+                $('form[name=modal-form] input[name=email]').val(donarEmail);
+            }))            
+          });
+        }        
+    }).fail(function(response) {
+        console.log(response);
+    });
+});    
+$("#backto-search-btn").click(function() {
+    $('#backto-search-btn').addClass("hidden");
+    $("#stateC, #stateB, .results-text, #backto-search-btn").hide();
+    $('#locate-form').fadeIn('slow');
+})
+</script>        
