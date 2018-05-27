@@ -14,7 +14,9 @@
     <!-- SEO tags -->
     <meta name="description" content="The Official website of JeevanRakht">
     <meta name="keywords" content="JeevanRakht, Blood Dontation, Blood Bank, Google Udacity Project JeevanRakht">
-
+    
+    {{!-- Adding Theme Color of Jeevan Rakht To Browser tabs--}}
+    <meta name="theme-color" content="#d20001">
     <!-- itemprop global attribute -->
     <meta itemprop="name" content="JeevanRakht">
     <meta itemprop="description"
