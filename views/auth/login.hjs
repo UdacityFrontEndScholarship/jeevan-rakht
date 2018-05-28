@@ -4,7 +4,9 @@
     <body id="particles-js">
         <div class="vh-100 d-flex flex-column justify-content-between">
           {{>header}}
-        <div id="oauth-login-result" class="container main-content p-4 text-center hidden"></div>
+        <div id="oauth-login-result" class="container my-4 zi-1 hidden">
+            <div id="oauth-result-content"></div>
+        </div>
         
         <section id="login" class="container d-flex flex-column flex-wrap align-items-center my-5">
 
@@ -32,7 +34,7 @@
                             <i class="fas fa-unlock"></i>
                         </div>
 
-                        <button type="submit" class="signin-btn">SIGN IN</button>
+                        <button type="submit" class="btn-link">SIGN IN</button>
                     </form>
 
                     <div class="login-divider">

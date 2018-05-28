@@ -1,45 +1,75 @@
 <!DOCTYPE html>
 <html>
     {{>head}}
-    <body id="particles-js" m-md-3>
+    <body id="particles-js">
         <!-- Main content goes here -->      
-        <div class="container vh-100 d-flex flex-column justify-content-between">
+        <div class="vh-100 d-flex flex-column justify-content-between">
           {{>header}}
       <!-- Your code goes here -->      
-        <section class="my-5">
+        <section class="container my-5">
+            {{#successMessage}}
+            <div class="alert alert-success text-center zi-1">{{successMessage}}</div>
+            {{/successMessage}}
             {{#alertMessage}}
-            <div class="alert alert-danger text-center">{{alertMessage}}</div>
-            {{/alertMessage}}            
-            <div class="main-content container zi-1 p-4 d-flex flex-column flex-wrap align-items-center">
+            <div class="alert alert-danger text-center zi-1">{{alertMessage}}</div>
+            {{/alertMessage}}                        
+            <div class="main-content zi-1">
                 <a href="/" class="back-arrow">
                     <i class="fas fa-arrow-left"></i>
                 </a>
-                <div id="content-heading">
-                    <h2><strong>PROFILE</strong></h2>            
+
+                <div class="content-wrapper">
+                    <h2><strong>PROFILE</strong></h2>      
+
+                    <form class="mt-4 mt-md-5" method="POST">
+                        <input type="hidden" name="_method" value="PUT">	
+                        {{>profile}}     
+                        {{>user_address}}      
+                        
+                        <button type="submit" class="btn-link" id="profile-update">SAVE</button>            
+                    </form>  
+
+                    <div class="page-links">
+                        <a href="/verify" class="">Verify Email</a>
+
+                        <span class="mx-3">•</span>
+                        
+                        <a href="/forgot" class="">Update Password</a>
+                        
+                        <span class="mx-3">•</span>
+                        <!-- link trigger modal -->                        
+                        <a href="" data-toggle="modal" data-target="#deleteAccountModal" class="">Delete Account</a>
+                    </div>
+
                 </div>
-                <form method="POST">	
-                    {{>profile}}     
-                    {{>user_address}}      
-                <br>	
-                    <button type="submit" class="btn-link">SAVE</button>
-                <br>                
-                </form>                
-                <div class="row no-gutters text-center" id="profile-util">
-                    <div class="col-12">
-                      <a href="/verify" class="btn-link mb-2">Verify Email</a>
-                    </div>
-                    {{!-- <div class="col-xs-12 col-md-3">
-                      <a href="/update_email" class="btn save-btn btn-block m-2">Update email</a>
-                    </div>
-                    <div class="col-xs-12 col-md-3">
-                      <a href="/update_mobile" class="btn save-btn btn-block m-2">Update phone</a>
-                    </div> --}}
-                    <div class="col-12">
-                      <a href="/forgot" class="btn-link my-2">Update password</a>
-                    </div>
-                </div>
+                <!-- End content-wrapper -->
             </div>
-        </section>        
+            <!-- End main-content -->
+        </section>      
+                    <!-- Modal -->
+                    <div class="modal fade confirmation-modal" id="deleteAccountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered content-wrapper" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="w-100"><strong>DELETE</strong> Account</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>You will lose all the data permanently once account is deleted. Do you still want to proceed?</p>
+                        </div>
+                            <form method="POST">
+                                <input type="hidden" name="_method" value="DELETE">	                        
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn-link" id="profile-delete-btn">Yes</button>
+                                    <button type="button" class="btn-link btn-link-secondary" data-dismiss="modal">No</button>                                            
+                                </div>
+                            </form>        
+                        </div>
+                    </div>
+                    </div>    
+                    <!-- End Modal -->                          
         {{>footer}}
         </div>
         {{>utilityJS}}

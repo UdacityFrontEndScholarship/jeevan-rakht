@@ -7,11 +7,11 @@ var sassMiddleware = require('node-sass-middleware');
 var cookieSession = require('cookie-session');
 var flash = require('connect-flash');
 var Keygrip = require('keygrip')
-
+var expressValidator = require('express-validator');
 var mainRouter = require('./routes/main/app');
 var locateRouter = require('./routes/main/locate');
 var donateRouter = require('./routes/main/donate');
-var donorRouter = require('./routes/main/donor');
+var donorRouter = require('./routes/main/donar');
 var donorListRouter = require('./routes/main/donorlist');
 var connDonorRouter = require('./routes/main/conwith_donor');
 
@@ -45,12 +45,14 @@ app.set('partials', {
     oauth2_ajax: 'partials/oauth2_ajax',
     user_address: 'partials/user_address',
     profile: 'partials/profile',
-    google_mapJS: 'partials/google_mapJS'
+    google_mapJS: 'partials/google_mapJS',
+    locate_ajax: 'partials/locate_ajax'
 });
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(expressValidator());
 // trust first proxy, remove below line when deploying in order to secure cookies over https connection
 app.set('trust proxy', 1)
 app.use(cookieSession({
@@ -148,7 +150,7 @@ app.use(function(err, req, res, next) {
     console.log(err.stack);
     // render the error page
     res.status(err.status || 500);
-    res.render('404');
+    res.render('404',{ title: 'Page not found'});
 });
 
 module.exports = app;

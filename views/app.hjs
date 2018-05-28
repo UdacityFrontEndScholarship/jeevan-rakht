@@ -7,7 +7,9 @@
     <div class="vh-100 d-flex flex-column justify-content-between">
 
         {{>header}}
-
+        {{#successMessage}}
+        <div class="alert alert-success text-center mx-auto mt-4">{{successMessage}}</div>
+        {{/successMessage}}
         <main class="options-wrapper d-flex flex-wrap justify-content-center mt-4 mb-5">
             <div class="option mx-4 zi-1">
                 <div class="option-label">
