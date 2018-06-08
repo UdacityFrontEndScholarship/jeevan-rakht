@@ -3,6 +3,35 @@ body {
     background-color: #232323;
 }
 
+.header
+{
+padding: 0;
+overflow-x:scroll visible;
+background-color:white;
+text-align: center;
+font-size: 75px;
+font-weight: bolder;
+color: rgb(97, 6, 6);
+font-family: 'Montserrat:400,500,700','Spectral:400,500,700';
+}
+.subhead{
+    font-family: 'Montserrat:400,500,700','Spectral:400,500,700';
+    font-size:20px;
+    background: white;
+    overflow-x: auto; 
+    overflow-y:auto;   
+    scrollbar-base-color:#ffeaff;
+    padding-left: 45px;
+    padding-right: 10px;
+    padding-bottom:10px;
+    padding-top:10px;
+}
+
+.icon
+{
+    float: right;
+    padding: 5px;
+}
 .container-fluid{
     padding: 0;
 }
