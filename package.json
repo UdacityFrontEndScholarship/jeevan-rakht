@@ -22,7 +22,7 @@
     "googleapis": "^29.0.0",
     "hjs": "~0.0.6",
     "http-errors": "~1.6.2",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "jwt-decode": "^2.2.0",
     "keygrip": "^1.0.2",
     "moment": "^2.22.1",
