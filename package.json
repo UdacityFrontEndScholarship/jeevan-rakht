@@ -19,7 +19,7 @@
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "express-validator": "^5.1.2",
-    "googleapis": "^29.0.0",
+    "googleapis": "^39.1.0",
     "hjs": "~0.0.6",
     "http-errors": "~1.6.2",
     "jquery": "^3.3.1",
