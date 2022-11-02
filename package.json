@@ -40,7 +40,7 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-mkdir": "^1.0.0",
     "grunt-responsive-images": "^1.10.1",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-sass": "^3.2.1"
   }
